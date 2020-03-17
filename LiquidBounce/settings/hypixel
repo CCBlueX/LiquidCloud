@@ -1,4 +1,6 @@
-# AutoSettings for Hypixel
+# Server: hypixel.net
+# Client: LiquidBounce Build71
+# Client Version: 1.8.9
 
 AntiBot Tab true
 AntiBot TabMode Contains
@@ -24,7 +26,8 @@ AtAllProvider Retry false
 
 AutoArmor MaxDelay 125
 AutoArmor MinDelay 75
-AutoArmor InvOpen true
+# Perfect working without "InvOpen"?
+AutoArmor InvOpen false
 AutoArmor SimulateInventory true
 AutoArmor NoMove false
 AutoArmor ItemDelay 0
@@ -64,10 +67,11 @@ ChestStealer AutoCloseMinDelay 100
 ChestStealer CloseOnFull true
 ChestStealer ChestTitle true
 
-# Criticals HypixelPacket mode is patched
 Criticals Mode Jump
-Criticals Delay 0
-Criticals HurtTime 10
+# Criticals Sometimes banning in Lobby
+Criticals Mode HypixelPacket
+Criticals Delay 200
+Criticals HurtTime 1
 
 Damage Mode NCP
 Damage Damage 1
@@ -76,11 +80,6 @@ FastBreak BreakDamage 0.8
 
 FastUse Mode AAC
 FastUse Delay 91
-
-Fly Mode Hypixel
-Fly Hypixel-Boost false
-Fly Hypixel-BoostDelay 750
-Fly Hypixel-BoostTimer 5.0
 
 Fucker Block 26
 Fucker Instant false
@@ -106,12 +105,12 @@ InventoryMove AACAdditionPro false
 InventoryMove NoMoveClicks false
 
 KillAura MaxCPS 12
-KillAura MinCPS 10
+KillAura MinCPS 9
 KillAura HurtTime 10
-KillAura Range 4.1
+KillAura Range 4.3
 KillAura ThroughWallsRange 4.1
-KillAura RangeSprintReducement 0
-KillAura Priority Health
+KillAura RangeSprintReducement 0.0
+KillAura Priority LivingTime
 KillAura TargetMode Single
 KillAura Swing true
 KillAura KeepSprint true
@@ -123,28 +122,25 @@ KillAura RayCast false
 KillAura RayCastIgnored true
 KillAura LivingRayCast false
 KillAura AAC false
-KillAura MaxTurnSpeed 80.0
-KillAura MinTurnSpeed 50.0
+KillAura MaxTurnSpeed 35.0
+KillAura MinTurnSpeed 15.0
 KillAura SilentRotation true
-KillAura RotationStrafe false
-KillAura RandomCenter true
+KillAura RandomCenter false
 KillAura Outborder false
 KillAura FOV 180.0
 KillAura Predict true
-KillAura MaxPredictSize 1.0
-KillAura MinPredictSize 0.5
+KillAura MaxPredictSize 1.50
+KillAura MinPredictSize 1.00
 KillAura FailRate 0.0
-KillAura FakeSwing false
+KillAura FakeSwing true
 KillAura NoInvAttack false
-KillAura NoInvDelay 100
-KillAura RotationStrafe false
 
-LiquidWalk Mode Spartan
+LiquidWalk Mode Dolphin
 
 LongJump Mode NCP
 LongJump NCPBoost 4.10
 
-NoFall Mode CubeCraft
+NoFall Mode Packet
 
 NoRotateSet Confirm false
 NoRotateSet ConfirmIllegalRotation false
@@ -182,7 +178,8 @@ Scaffold ExpandLength 1
 Scaffold Rotations true
 Scaffold KeepRotation true
 Scaffold Zitter false
-Scaffold Timer 1.0
+# Faster
+Scaffold Timer 1.09
 Scaffold SpeedModifier 1.0
 Scaffold SameY false
 Scaffold SafeWalk true
@@ -218,6 +215,8 @@ Sprint CheckServerSideOnlyGround false
 Step Mode Jump
 # b71 (https://github.com/CCBlueX/LiquidBounce1.8-Issues/issues/3586)
 Step Mode MotionNCP
+# NCP too working 
+Step Mode NCP
 Step JumpHeight 0.42
 Step Height 1.0
 Step Delay 0
@@ -239,7 +238,7 @@ Velocity Mode Simple
 # Toggles
 
 AntiBot toggle true
-Criticals toggle false
+Criticals toggle true
 Strafe toggle false
 AutoArmor toggle true
 Velocity toggle true
@@ -250,7 +249,7 @@ NoSlow toggle true
 NoRotateSet toggle true
 InventoryMove toggle true
 FastClimb toggle false
-NoFall toggle false
+NoFall toggle true
 
 # Targets
 targetPlayer true
@@ -265,9 +264,12 @@ unchat &r
 unchat &r
 unchat &r
 unchat &r
-unchat &r                   &7→ &c&lHYPIXEL SETTINGS &7| &b03/12/2020 &7←
-unchat &r                &3&lTower &a& &3&lStep &aare bypassing fine!
-unchat &r      &cDo not use Fly (Patched 03/12.2020), NoFall or packet criticals!
+unchat &r                   &7→ &c&lHYPIXEL SETTINGS &7| &b03/17/2020 &7←
+unchat &r                &3&lTower &a& &3&lStep &aare bypassing fine
+unchat &r             &c"TargetStrafe" called "RotationStrafe" on KillAura
+unchat &r         &cAntiFall/AntiVoid etc. called "BugUp", Enable "BugUp" when Falling..
+unchat &r          &cDo not use Fly (Patched 03/12.2020), packet criticals or
+unchat &r    &cHypixelPacket Criticals are Bannable on Game Lobbies, Jump Criticals too working.
 unchat &r
-unchat &r                  &aJOIN US: &3https://discord.gg/gdQ82He
+unchat &r     &aJOIN US: &3https://discord.gg/gdQ82He / https://v.ht/&6scorpion3013&3areBest
 unchat &r
