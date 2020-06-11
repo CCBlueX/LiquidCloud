@@ -100,7 +100,7 @@ BowAimbot ThroughWalls false
 BowAimbot PredictSize 2.0
 BowAimbot Priority Direction
 BowAimbot Mark true
-BufferSpeed SpeedLimit true
+BufferSpeedLimit true
 BufferSpeed MaxSpeed 2.0
 BufferSpeed Buffer true
 BufferSpeed Stairs true
@@ -556,3 +556,4 @@ WaterSpeed Speed 1.17
 Zoot BadEffects true
 Zoot Fire true
 Zoot NoAir false
+chat &6Config originally made by Nereuxofficial.
