@@ -70,7 +70,6 @@ AutoLeave Mode Quit
 AutoPot Health 13.0
 AutoPot Delay 1000
 AutoPot OpenInv false
-AutoPot SimulateInventory false
 AutoPot GroundDistance 5.0
 AutoPot Mode Normal
 AutoRespawn Instant false
@@ -100,7 +99,7 @@ BowAimbot ThroughWalls false
 BowAimbot PredictSize 2.0
 BowAimbot Priority Direction
 BowAimbot Mark true
-BufferSpeedLimit true
+BufferSpeed SpeedLimit true
 BufferSpeed MaxSpeed 2.0
 BufferSpeed Buffer true
 BufferSpeed Stairs true
