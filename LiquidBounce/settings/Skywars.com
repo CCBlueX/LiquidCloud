@@ -1,4 +1,28 @@
-chat &4&lSettings made by Crackedzocker
+AACClickTP Block 26
+AACClickTP InstantBlockFucker true
+AACClickTP FuckerRotate false
+AACClickTP Swing true
+AACClickTP Mode AAC3New
+AACClickTP DelayMode Dynamic
+AACClickTP CustomDelay 500.0
+AACClickTP WaitTicks 10
+AACClickTP StayAtTarget false
+AACClickTP MaxStayTicks 21
+AACClickTP UseNoXZMoveTimer false
+AACClickTP NoXZMoveTimer 0.6
+AACClickTP Button Middle
+AACClickTP TargetESP false
+AACClickTP R 10
+AACClickTP G 10
+AACClickTP B 10
+AACTP FlySpeed 3.0
+AACTP Block 26
+AACTP InstantBlockFucker true
+AACTP FuckerRotate false
+AACTP Swing true
+AACTP Mode AAC
+AACTP DisableOnDmg true
+AACTP AroundWalls false
 Aimbot Range 4.4
 Aimbot TurnSpeed 2.0
 Aimbot FOV 180.0
@@ -24,6 +48,7 @@ AntiBot Ping false
 AntiBot NeedHit false
 AntiBot DuplicateInWorld false
 AntiBot DuplicateInTab false
+AntiBots Mode Basic
 AtAllProvider MaxDelay 2142
 AtAllProvider MinDelay 1785
 AtAllProvider Retry true
@@ -45,7 +70,6 @@ AutoLeave Mode Quit
 AutoPot Health 13.0
 AutoPot Delay 1000
 AutoPot OpenInv false
-AutoPot SimulateInventory false
 AutoPot GroundDistance 5.0
 AutoPot Mode Normal
 AutoRespawn Instant false
@@ -56,6 +80,15 @@ AutoSoup SimulateInventory true
 AutoSoup Bowl Drop
 AutoWeapon SpoofItem true
 AutoWeapon SpoofTicks 10
+BetterCriticals Mode Packet
+BetterCriticals PacketAirCrits false
+BetterCriticals PacketLessPackets false
+BetterCriticals PacketHurttime 2
+BetterCriticals PacketDelay 500
+BetterCriticals PacketTimerDelay 500
+BetterCriticals PacketTimer 0.33
+BetterCriticals PacketHopPacketHeight 0.15
+BetterCriticals PacketHopFirstMotion 0.149
 Blink Pulse true
 Blink PulseDelay 942
 BlockWalk Cobweb true
@@ -66,7 +99,7 @@ BowAimbot ThroughWalls false
 BowAimbot PredictSize 2.0
 BowAimbot Priority Direction
 BowAimbot Mark true
-bufferspeed speedlimit true
+BufferSpeed SpeedLimit true
 BufferSpeed MaxSpeed 2.0
 BufferSpeed Buffer true
 BufferSpeed Stairs true
@@ -121,6 +154,82 @@ ConsoleSpammer Delay 0
 Criticals Mode Hop
 Criticals Delay 66
 Criticals HurtTime 10
+CubeAutoBlock §4§lSettings: 
+CubeAutoBlock  Interact, Server-Side, Client-Side
+CubeAutoBlock BlockRange 8.0
+CubeAutoBlock BlockAnimation Size
+CubeAutoBlock Animation 3
+CubeAutoBlock Vibration 0.0
+CubeAutoBlock Binding NONE
+CubeClipper §4§lSettings 
+CubeClipper  Clip Down, Indicate
+CubeClipper NeededPackets 15
+CubeClipper FallingSpeed 1.0
+CubeClipper MaxUpDistance 2
+CubeClipper MaxDownDistance 10
+CubeClipper Binding NONE
+CubeCore LatestVersion 8.312
+CubeCore Status OUTDATED CUBECORE
+CubeCore Updated Unknown
+CubeCore Note You have to download the newest version from §4§lbit.ly/dyskord§c!
+CubeFastLadder MovementDistance 2.95
+CubeFastLadder CheckerClimb 3
+CubeFastLadder FromLadder 0.275
+CubeFastLadder TickRate 2
+CubeFastLadder Timer 0.75
+CubeFastLadder Binding NONE
+CubeFastUse Mode Constant
+CubeFastUse Timer 0.65
+CubeFastUse WaitTicks 9
+CubeFastUse ConstantPackets 2
+CubeFastUse PacketsAtOnce 24
+CubeFastUse Binding NONE
+CubeFloat Mode Fast
+CubeFloat MovementDistance 2.98
+CubeFloat StartMovement 1.0
+CubeFloat AdditionalDistance 0.25
+CubeFloat MovementTimer 1.15
+CubeFloat AdditionalTimer 0.94
+CubeFloat AltitudeVariation 0.53
+CubeFloat WaitTicks 12
+CubeFloat ClipDistance 1.0
+CubeFloat LandingSpeed 0.7
+CubeFloat AutoDisableDistance 0
+CubeFloat Binding NONE
+CubeInsults §2§lKillInsults Settings: 
+CubeInsults §aKillInsults Hello, how are you today %n%? I wish you a great day!; You've stolen my dreams with your empty words and promises, %n%! How dare you?!; L %n%, get a life child.; %n% was like father to me!; Don't report me %n%, I'm just wearing gaming socks.; Hey %n%! Remember: Sentinel is never watching.; Sub to PewDiePie %n%!; Let's plant some trees %n%!; Quit horsin' around %n%! Play me some of that jumping music?; Not even a thank you %n%?; I think that %n% is hacking!; %n%, that's hot, that's hot...; %n% shark tututuruturu!; TOP 1 PvPer: %n%; I believe I can fly, %n%, I believe I can touch the sky!; Don't mind me %n%, I'm just passing by.; I don't care %n%, I love it!; Joe mamma must be proud of you %n%!; You're adopted %n%.
+CubeInsults Delay 60
+CubeInsults §2§lSoundEffect Settings: 
+CubeInsults §aSoundEffect random.pop
+CubeInsults IncreasingPitch true
+CubeInsults Volume 2.0
+CubeInsults Binding NONE
+CubeNoFall ForceMovement true
+CubeNoFall FallDistance 4
+CubeNoFall Range 5
+CubeNoFall Delay 10
+CubeNoFall AntiFire true
+CubeNoFall FireDelay 10
+CubeNoFall Binding NONE
+CubePlay DownloadConfig true
+CubePlay §4§lSettings: 
+CubePlay  Play Again, Config Manager, Auto Config, Auto Bind, Auto Team, Air Step
+CubePlay §2§lAuto Join Settings: 
+CubePlay §aAuto Join Play Solo SkyWars, Kick Only
+CubePlay RetryInterval 30
+CubePlay Binding NONE
+CubeSpeed MovementDistance 2.3
+CubeSpeed AdditionalDistance 0.2
+CubeSpeed MovementTicks 1
+CubeSpeed AdditionalTicks 2
+CubeSpeed AltitudeVariation 0.0
+CubeSpeed AscendingTicks 0
+CubeSpeed DescendingTicks 0
+CubeSpeed AscendingTimer 0.8
+CubeSpeed DescendingTimer 0.8
+CubeSpeed Binding NONE
+CubeStaffDetector Delay 45
+CubeStaffDetector Binding NONE
 Damage Mode NCP
 Damage Damage 1
 Derp Headless false
@@ -197,7 +306,7 @@ Kick Mode Quit
 KillAura MaxCPS 12
 KillAura MinCPS 8
 KillAura HurtTime 10
-KillAura Range 5.0
+KillAura Range 5.75
 KillAura ThroughWallsRange 4.0
 KillAura RangeSprintReducement 0.4
 KillAura Priority Distance
@@ -207,7 +316,7 @@ KillAura KeepSprint true
 KillAura AutoBlock false
 KillAura InteractAutoBlock false
 KillAura DelayedBlock false
-KillAura BlockRate 39
+KillAura BlockRate 100
 KillAura RayCast true
 KillAura RayCastIgnored true
 KillAura LivingRayCast true
@@ -236,6 +345,23 @@ LiquidWalk AACFlyMotion 0.5
 LongJump Mode AACv3
 LongJump NCPBoost 3.0
 LongJump AutoJump false
+ModulesManager §4§lSettings: 
+ModulesManager  Motion, Toggle Modules, Check Server, Show Stats, Show Speeds
+ModulesManager §2§lOnLoadEnable Settings: 
+ModulesManager §aOnLoadEnable CubeFastLadder, CubeAutoBlock, CubePlay, CubeClipper, CubeInsults, CubePlay, CubeNoFall, CubeFastUse
+ModulesManager §2§lOnLoadExecute Settings: 
+ModulesManager §aOnLoadExecute 
+ModulesManager §2§lOnLoadDisable Settings: 
+ModulesManager §aOnLoadDisable 
+ModulesManager §2§lAutoEnable Settings: 
+ModulesManager §aAutoEnable KillAura, ChestStealer, ChestAura, InventoryCleaner
+ModulesManager §2§lAutoDisable Settings: 
+ModulesManager §aAutoDisable CubeSpeed, CubeFloat, KillAura, ChestStealer, ChestAura, InventoryCleaner
+ModulesManager §2§lAutoDisableInGame Settings: 
+ModulesManager §aAutoDisableInGame ChestAura
+ModulesManager §2§lRoundStartMessage Settings: 
+ModulesManager §aMessage Good luck, have fun!; Hello, how are you everyone today?; Hello, it's my birthday today!; I love CubeCraft!; hackers are everywhere; hi; hello; glhf
+ModulesManager Color 5
 NoFall Mode LAAC
 NoPitchLimit ServerSide true
 NoRotateSet Confirm true
@@ -263,6 +389,14 @@ Nuker NukeDelay 1
 Phase Mode AAC3.5.0
 PingSpoof MaxDelay 932
 PingSpoof MinDelay 762
+PresetManager General 
+PresetManager RemoveModuleHelp false
+PresetManager RemovePresetInfo false
+PresetManager Presets 
+PresetManager > HiveSG false
+PresetManager > GommeGunGame false
+PresetManager > GommeGunGame2 false
+PresetManager > GommeBW_SW false
 Reach CombatReach 300.0
 Reach BuildReach 5.0
 Regen Mode Spartan
@@ -279,7 +413,7 @@ Scaffold MinDelay 0
 Scaffold PlaceableDelay false
 Scaffold AutoBlock true
 Scaffold StayAutoBlock true
-Scaffold Sprint false
+Scaffold Sprint true
 Scaffold Swing false
 Scaffold Search true
 Scaffold Down false
@@ -315,11 +449,14 @@ SlimeJump Mode Add
 Sneak Mode Legit
 Sneak StopMove false
 Speed Mode AACLowHop3
+Speed CustomSpeed 0.2
+Speed CustomY 0.41
+Speed CustomTimer 1.16
 Speed CustomStrafe false
 Speed CustomResetXZ true
 Speed CustomResetY true
-Speed AAC-PortLength 8.1
-Speed AACGround-Timer 1.35
+Speed AAC-PortLength 1.71
+Speed AACGround-Timer 1.27
 Speed CubeCraft-PortLength 2.322
 Speed MineplexGround-Speed 0.1
 Sprint AllDirections false
@@ -335,6 +472,46 @@ SuperKnockback HurtTime 10
 TNTBlock Fuse 10
 TNTBlock Range 9.0
 TNTBlock AutoSword true
+TPHit Mode AAC3New
+TPHit DelayMode Dynamic
+TPHit CustomDelay 500.0
+TPHit WaitTicks 10
+TPHit UseNoXZMoveTimer false
+TPHit NoXZMoveTimer 0.6
+TPHit AntiKick false
+TPHit ShowTargetHUD false
+TPHit X 405
+TPHit Y 330
+TPHit Scale 1.0
+TPHit BGAlpha 150
+TPHit ShadowText true
+TPHit FontNumber 0
+TPHit Selected font Roboto Medium
+TargetInfo §7§lGeneral Settings 
+TargetInfo X 430
+TargetInfo Y 310
+TargetInfo Scale 1.0
+TargetInfo ShowTargetOnView false
+TargetInfo  0
+TargetInfo §7§lBackground Settings 
+TargetInfo BGRed 0
+TargetInfo BGGreen 0
+TargetInfo BGBlue 0
+TargetInfo BGAlpha 150
+TargetInfo §7§lText Settings 
+TargetInfo TextRed 255
+TargetInfo TextGreen 255
+TargetInfo TextBlue 255
+TargetInfo TextY 0.0
+TargetInfo ShadowText true
+TargetInfo §7§lBorder Settings 
+TargetInfo Border true
+TargetInfo BorderRed 255
+TargetInfo BorderGreen 255
+TargetInfo BorderBlue 255
+TargetInfo BorderAlpha 255
+TargetInfo BorderStrength 2.0
+TargetInfo Font  Roboto Medium
 Teams ScoreboardTeam true
 Teams Color true
 Teams GommeSW false
@@ -378,53 +555,4 @@ WaterSpeed Speed 1.17
 Zoot BadEffects true
 Zoot Fire true
 Zoot NoAir false
-
-chat &4&lTargets: 
-TargetPlayers
-chat &6Target Players true
-TargetInvisible
-chat &6 Target Invisible true
-TargetDead
-chat &6Target Dead true
-chat &4&lToggles: 
-FastClimb Toggle true
-Velocity Toggle true
-FastStairs Toggle true
-Killaura Toggle true
-FastUse Toggle true
-NoWeb Toggle true
-BowAimbot Toggle true
-CubeNoFall Toggle true
-AutoArmor Toggle true
-Fullbright Toggle true
-AACStep Toggle true
-AntiBlind Toggle true
-AntiCactus Toggle true
-ItemESP Toggle true
-NoSlow Toggle true
-AntiBot Toggle true
-Reach Toggle true
-Sprint Toggle true
-TPHit Toggle true
-InventoryMove Toggle true
-ChestStealer Toggle true
-InventoryCleaner Toggle false
-PingSpoof Toggle true
-Criticals Toggle false
-WaterSpeed Toggle true
-BetterCriticals Toggle true
-CubeClipper Toggle true
-
-chat &4&lDescriptions: 
-chat &6&l=====================================================
-chat &6Fly works.
-chat &6AACZero works, but it flags around a bit. But it doesn't banish and shouldn't kick.
-chat &6The TP hit works, but you may only use it a maximum of 3 times in a row, otherwise you will be kicked.
-chat &6If you feel like the game is running in SlowMotion, you need to turn off BetterCrtiticals and turn it on again, then it's fixed.
-chat &6CubeNoFall Works with Fly.
-chat &6BetterCriticals turn you towards the gener, that is completely normal. You can do some flags with the speed but you get much better hits.
-chat &5&lFor better cheating download my script pack: https://bit.ly/2Q6BJJn .
-chat &5&lExtract the file, copy all scripts and put them into the %appdata%\.minecraft\LiquidBounce-1.8\scripts or into the %appdata%\.LiquidLauncher\gameDir\LiquidBounce-1.8\scripts folder. Depending on whether you use the Launcher or LB via mods.
-chat &6&l=====================================================
-chat &4&lSettings made by Crackedzocker. Improved by Nereuxofficial
-
+chat &6Config originally made by Nereuxofficial.
