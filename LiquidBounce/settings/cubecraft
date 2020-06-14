@@ -16,11 +16,14 @@ ChestStealer AutoCloseMaxDelay 5
 ChestStealer AutoCloseMinDelay 5
 ChestStealer CloseOnFull true
 ChestStealer ChestTitle true
-Criticals Mode HypixelPacket
+Criticals Mode Jump
 Criticals Delay 200
 Criticals HurtTime 1
 FastUse Mode AAC
-FastUse Delay 91
+FastUse NoMove false
+FastUse CustomDelay 0
+FastUse CustomSpeed 2
+FastUse CustomTimer 1.1
 InventoryCleaner MaxDelay 111
 InventoryCleaner MinDelay 63
 InventoryCleaner InvOpen true
@@ -45,10 +48,13 @@ KillAura TargetMode Single
 KillAura Swing true
 KillAura KeepSprint true
 KillAura AutoBlock false
-KillAura RayCast true
-KillAura RayCastIgnored true
-KillAura LivingRayCast true
-KillAura AAC true
+KillAura InteractAutoBlock true
+KillAura DelayedBlock true
+KillAura BlockRate 100
+KillAura RayCast false
+KillAura RayCastIgnored false
+KillAura LivingRayCast false
+KillAura AAC false
 KillAura MaxTurnSpeed 65.0
 KillAura MinTurnSpeed 50.0
 KillAura SilentRotation true
@@ -64,12 +70,8 @@ KillAura FakeSwing false
 KillAura NoInvAttack false
 KillAura NoInvDelay 0
 KillAura LimitedMultiTargets 0
-LiquidWalk Mode AAC
-LiquidWalk NoJump true
-LiquidWalk AACFlyMotion 0.5
-NoRotateSet Confirm true
-NoRotateSet ConfirmIllegalRotation false
-NoRotateSet NoZero false
+NoFall Mode CubeCraft
+NoFall MinMLGHeight 5.0
 NoSlow BlockForwardMultiplier 1.0
 NoSlow BlockStrafeMultiplier 1.0
 NoSlow ConsumeForwardMultiplier 1.0
@@ -137,7 +139,6 @@ Tower TeleportHeight 1.0
 Tower TeleportDelay 0
 Tower TeleportGround true
 Tower TeleportNoMotion false
-Tower Counter true
 Velocity Horizontal 0.0
 Velocity Vertical 0.0
 Velocity Mode Simple
@@ -145,7 +146,6 @@ Velocity ReverseStrength 1.0
 Velocity SmoothReverseStrength 0.02
 Velocity AACPushXZReducer 2.0
 Velocity AACPushYReducer true
-
 # toggles
 NoSlow toggle true
 Regen toggle false
@@ -155,15 +155,10 @@ NoFall toggle false
 FastUse toggle false
 Criticals toggle true
 Velocity toggle true
-
+Criticals toggle false
 Sptint toggle true
 AutoArmor toggle true
 InventoryMove toggle true
 ChestStealer toggle true
 InventoryCleaner toggle true
-
 targetPlayer true
-
-chat &a&lCubeCraft Config /// 11/06/2020
-chat &bBefore loading, execute .panic nonrender, then load again!
-chat &4Don't autoblock with NoSlow, you can get banned.
