@@ -1,3 +1,10 @@
+/*
+ *     Grim Config     
+ * by Coccocoa's Helper 
+ *     Version 1.1
+ */
+
+# Module values
 Aimbot Range 4.4
 Aimbot TurnSpeed 100.0
 Aimbot InViewTurnSpeed 35.0
@@ -28,6 +35,13 @@ AntiBot DuplicateInWorld false
 AntiBot DuplicateInTab false
 AntiBot AlwaysInRadius false
 
+AntiFireBall Range 4.5
+AntiFireBall Delay 300
+AntiFireBall Swing Normal
+AntiFireBall Rotations true
+AntiFireBall MaxTurnSpeed 120.0
+AntiFireBall MinTurnSpeed 80.0
+
 AtAllProvider MaxDelay 1000
 AtAllProvider MinDelay 500
 AtAllProvider Retry false
@@ -52,6 +66,7 @@ AutoClicker MinCPS 14
 AutoClicker Right true
 AutoClicker Left true
 AutoClicker Jitter false
+AutoClicker AutoBlock false
 
 AutoLeave Health 8.0
 AutoLeave Mode Quit
@@ -162,15 +177,17 @@ FastBreak BreakDamage 0.8
 
 FastClimb Mode Vanilla
 FastClimb Speed 0.2872
-
 FastPlace Speed 0
 FastPlace OnlyBlocks true
 FastPlace OnlyWhenFacingBlocks true
 
 FastStairs Mode NCP
 
-FastUse Mode NCP
-FastUse NoMove false
+FastUse Mode Custom
+FastUse NoMove true
+FastUse CustomDelay 0
+FastUse CustomSpeed 34
+FastUse CustomTimer 0.1
 
 Fly Mode Vanilla
 Fly VanillaSpeed 2.0
@@ -205,7 +222,7 @@ InventoryCleaner MaxDelay 0
 InventoryCleaner ItemDelay 0
 InventoryCleaner InvOpen false
 InventoryCleaner SimulateInventory true
-InventoryCleaner NoMove false
+InventoryCleaner NoMoveClicks false
 InventoryCleaner IgnoreVehicles false
 InventoryCleaner Hotbar true
 InventoryCleaner RandomSlot false
@@ -232,19 +249,22 @@ KeepAlive Mode /heal
 
 Kick Mode Quit
 
+KillAura SimulateCooldown false
 KillAura MaxCPS 12
 KillAura MinCPS 9
 KillAura HurtTime 10
-KillAura SimulateCooldown false
-KillAura Range 3.7
+KillAura ClickOnly false
+KillAura Range 6.0
 KillAura ThroughWallsRange 3.0
 KillAura RangeSprintReduction 0.0
 KillAura Priority Distance
 KillAura TargetMode Switch
+KillAura SwitchDelay 15
 KillAura Swing true
 KillAura KeepSprint false
 KillAura AutoBlock Packet
 KillAura InteractAutoBlock false
+KillAura SmartAutoBlock false
 KillAura BlockRate 25
 KillAura MaxTurnSpeed 180.0
 KillAura MinTurnSpeed 180.0
@@ -252,15 +272,18 @@ KillAura RayCast true
 KillAura RayCastIgnored false
 KillAura LivingRayCast true
 KillAura AAC false
+KillAura KeepRotationTicks 1
 KillAura Micronized false
 KillAura SilentRotation true
 KillAura Strafe Strict
 KillAura RandomCenter false
 KillAura Outborder false
 KillAura FOV 180.0
-KillAura Predict false
+KillAura Predict true
+KillAura MaxPredictSize 1.0
+KillAura MinPredictSize 1.0
 KillAura FailRate 0.0
-KillAura FakeSwing false
+KillAura FakeSwing true
 KillAura NoInvAttack false
 KillAura Mark true
 KillAura FakeSharp true
@@ -275,6 +298,9 @@ LongJump NCPBoost 4.25
 LongJump AutoJump false
 
 NoFall Mode SpoofGround
+
+NoFluid Water true
+NoFluid Lava true
 
 NoPitchLimit ServerSide true
 
@@ -311,8 +337,33 @@ Phase Mode Vanilla
 PingSpoof MaxDelay 1000
 PingSpoof MinDelay 500
 
+PotionSpoof Speed false
+PotionSpoof Slowness false
+PotionSpoof Haste false
+PotionSpoof MiningFatigue false
+PotionSpoof Blindness false
+PotionSpoof Strength false
+PotionSpoof JumpBoost false
+PotionSpoof Weakness false
+PotionSpoof Regeneration false
+PotionSpoof Wither false
+PotionSpoof Resistance false
+PotionSpoof FireResistance false
+PotionSpoof Absorption false
+PotionSpoof HealthBoost false
+PotionSpoof Poison false
+PotionSpoof Saturation false
+PotionSpoof WaterBreathing false
+
 Reach CombatReach 3.5
 Reach BuildReach 5.0
+
+Refill Delay 400
+Refill ItemDelay 400
+Refill Mode Swap
+Refill InvOpen false
+Refill SimulateInventory false
+Refill NoMoveClicks false
 
 Regen Mode Vanilla
 Regen Speed 100
@@ -327,9 +378,8 @@ SafeWalk AirSafe false
 SafeWalk MaxFallDistance 5
 
 Scaffold Mode Normal
-Scaffold PlaceDelay true
+Scaffold PlaceDelay false
 Scaffold DoExtraClicks false
-Scaffold MaxDelay 0
 Scaffold AutoBlock Spoof
 Scaffold Sprint false
 Scaffold Swing false
@@ -343,14 +393,14 @@ Scaffold Strafe true
 Scaffold StabilizedRotation true
 Scaffold SilentRotation true
 Scaffold KeepRotation false
-Scaffold KeepTicks 20
+Scaffold KeepTicks 1
 Scaffold SearchMode Area
 Scaffold MinDist 0.0
 Scaffold MaxTurnSpeed 180.0
 Scaffold MinTurnSpeed 180.0
 Scaffold Zitter Off
 Scaffold Timer 1.0
-Scaffold SpeedModifier 1.05
+Scaffold SpeedModifier 1.0
 Scaffold Slow false
 Scaffold SameY false
 Scaffold SafeWalk false
@@ -376,7 +426,11 @@ Sneak StopMove false
 
 Speed Mode AACBHop
 
-Sprint Mode Legit
+Sprint Mode Vanilla
+Sprint AllDirections false
+Sprint Blindness true
+Sprint Food true
+Sprint CheckServerSide false
 
 Step Mode NCP
 Step Height 1.0
@@ -388,6 +442,11 @@ Strafe OnGroundStrafe false
 Strafe AllDirectionsJump false
 
 SuperKnockback HurtTime 10
+SuperKnockback Mode SneakPacket
+SuperKnockback OnlyGround false
+SuperKnockback Delay 0
+SuperKnockback OnlyMove true
+SuperKnockback OnlyMoveForward true
 
 TNTBlock Fuse 10
 TNTBlock Range 9.0
@@ -400,6 +459,7 @@ Teams GommeSW false
 Teleport IgnoreNoCollision true
 Teleport Mode Blink
 Teleport Button Middle
+Teleport NeedSneak true
 
 Timer Speed 2.0
 Timer OnMove true
@@ -419,9 +479,7 @@ Tower Counter true
 Trigger MaxCPS 8
 Trigger MinCPS 5
 
-Velocity Mode Simple
-Velocity Horizontal 60.0
-Velocity Vertical 100.0
+Velocity Mode Jump
 
 WallClimb Mode Simple
 
@@ -431,7 +489,7 @@ Zoot BadEffects true
 Zoot Fire true
 Zoot NoAir false
 
-// Module Toggles
+# Module States
 AbortBreaking toggle false
 Aimbot toggle false
 AirJump toggle false
@@ -439,6 +497,7 @@ AirLadder toggle false
 AntiAFK toggle false
 AntiBot toggle false
 AntiCactus toggle false
+AntiFireBall toggle false
 AntiHunger toggle false
 AtAllProvider toggle false
 AutoAccount toggle false
@@ -459,7 +518,7 @@ Backtrack toggle false
 BedGodMode toggle false
 Blink toggle false
 BlockWalk toggle false
-BowAimbot toggle false
+BowAimbot toggle true
 BufferSpeed toggle false
 BugUp toggle false
 ChestAura toggle false
@@ -477,7 +536,7 @@ FastBreak toggle false
 FastClimb toggle false
 FastPlace toggle false
 FastStairs toggle false
-FastUse toggle false
+FastUse toggle true
 Fly toggle false
 ForceUnicodeChat toggle false
 Freeze toggle false
@@ -490,7 +549,7 @@ HitBox toggle false
 IceSpeed toggle false
 Ignite toggle false
 InventoryCleaner toggle false
-InventoryMove toggle false
+InventoryMove toggle true
 ItemTeleport toggle false
 KeepAlive toggle false
 KeepContainer toggle false
@@ -506,11 +565,12 @@ MoreCarry toggle false
 MultiActions toggle false
 NoClip toggle false
 NoFall toggle false
+NoFluid toggle false
 NoFriends toggle false
 NoJumpDelay toggle false
 NoPitchLimit toggle false
 NoRotateSet toggle false
-NoSlow toggle true
+NoSlow toggle false
 NoSlowBreak toggle false
 NoWeb toggle false
 Nuker toggle false
@@ -521,7 +581,9 @@ PingSpoof toggle false
 Plugins toggle false
 PortalMenu toggle false
 PotionSaver toggle false
+PotionSpoof toggle false
 Reach toggle false
+Refill toggle false
 Regen toggle false
 ResourcePackSpoof toggle false
 ReverseStep toggle false
@@ -544,7 +606,7 @@ Timer toggle false
 Tower toggle false
 Trigger toggle false
 VehicleOneHit toggle false
-Velocity toggle true
+Velocity toggle false
 WallClimb toggle false
 WaterSpeed toggle false
 Zoot toggle false
