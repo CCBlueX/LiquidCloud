@@ -17,8 +17,8 @@ jobs:
       - name: List Branch Folders
         id: list_branches
         run: |
-          echo "Listing branch folders..."
-          ls LiquidBounce/settings/
+          branches=$(ls LiquidBounce/settings/)
+          echo "::set-output name=branches::$branches"
 
       - name: Get Last Commit State
         id: get_last_commit_state
@@ -43,11 +43,12 @@ jobs:
 
       - name: Upload Files
         id: upload_files
-        #if: ${{ github.event_name == 'push' || env.changes == 'true' }} # Run this step for push events or when changes are detected
+        if: ${{ github.event_name == 'push' || env.changes == 'true' }} # Run this step for push events or when changes are detected
         env:
           AUTHORIZATION: ${{ secrets.AUTHORIZATION }}
         run: |
-          for branch_folder in ${{ steps.list_branches.outputs.stdout }}; do
+          branches="${{ steps.list_branches.outputs.branches }}"
+          for branch_folder in $branches; do
             if [ -d "LiquidBounce/settings/$branch_folder" ]; then
               echo "Processing files in directory: LiquidBounce/settings/$branch_folder"
               for file in LiquidBounce/settings/"$branch_folder"/*; do
@@ -67,7 +68,8 @@ jobs:
         env:
           AUTHORIZATION: ${{ secrets.AUTHORIZATION }}
         run: |
-          for branch_folder in ${{ steps.list_branches.outputs.stdout }}; do
+          branches="${{ steps.list_branches.outputs.branches }}"
+          for branch_folder in $branches; do
             if [ -d "LiquidBounce/settings/$branch_folder" ]; then
               echo "Processing files in directory: LiquidBounce/settings/$branch_folder"
               deleted_files=$(git diff --diff-filter=D --name-only $last_commit HEAD -- "LiquidBounce/settings/$branch_folder")
