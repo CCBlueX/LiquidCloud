@@ -18,11 +18,12 @@ jobs:
         id: list_branches
         run: |
           branches=$(ls LiquidBounce/settings/)
-          echo "$branches" >> $GITHUB_ENV
+          echo "::set-output name=branches::$branches"
 
       - name: Get Last Commit State
         id: get_last_commit_state
         run: |
+          echo "Getting last commit state..."
           echo "LAST_COMMIT=$(git rev-parse HEAD)" >> $GITHUB_ENV
 
       - name: Check for Changes
@@ -46,7 +47,7 @@ jobs:
         env:
           AUTHORIZATION: ${{ secrets.AUTHORIZATION }}
         run: |
-          branches=$(cat $GITHUB_ENV)
+          branches="${{ steps.list_branches.outputs.branches }}"
           for branch_folder in $branches; do
             if [ -d "LiquidBounce/settings/$branch_folder" ]; then
               echo "Processing files in directory: LiquidBounce/settings/$branch_folder"
@@ -56,7 +57,7 @@ jobs:
                   contributors=$(git log --follow --format="%aN" -- "$file" | sort | uniq)
                   echo "Uploading file: $file"
                   echo "Contributors: $contributors"
-                  curl -vf -X POST -H "Authorization: $AUTHORIZATION" -F "settings_file=@$file" -F "name=$setting_id" -F "contributors=$contributors" "https://api.liquidbounce.net/api/v1/client/$branch_folder/settings/upload/global"
+                  curl -X POST -H "Authorization: $AUTHORIZATION" -F "settings_file=@$file" -F "name=$setting_id" -F "contributors=$contributors" "https://api.liquidbounce.net/api/v1/client/$branch_folder/settings/upload/global"
                 fi
               done
             fi
@@ -67,7 +68,7 @@ jobs:
         env:
           AUTHORIZATION: ${{ secrets.AUTHORIZATION }}
         run: |
-          branches=$(cat $GITHUB_ENV)
+          branches="${{ steps.list_branches.outputs.branches }}"
           for branch_folder in $branches; do
             if [ -d "LiquidBounce/settings/$branch_folder" ]; then
               echo "Processing files in directory: LiquidBounce/settings/$branch_folder"
@@ -75,7 +76,7 @@ jobs:
               for deleted_file in $deleted_files; do
                 setting_id=$(basename "$deleted_file" | cut -f 1 -d '.')
                 echo "Deleting file: $setting_id"
-                curl -vf -X DELETE -H "Authorization: $AUTHORIZATION" "https://api.liquidbounce.net/api/v1/client/$setting_id/settings/upload/global"
+                curl -X DELETE -H "Authorization: $AUTHORIZATION" "https://api.liquidbounce.net/api/v1/client/$setting_id/settings/upload/global"
               done
             fi
           done
