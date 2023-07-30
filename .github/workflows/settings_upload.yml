@@ -47,7 +47,7 @@ jobs:
                   setting_id=$(basename "$file" | cut -f 1 -d '.')
                   echo "Uploading file: $file"
                   echo "Contributors: $contributors"
-                  curl -X POST -H "Authorization: $AUTHORIZATION" -F "settings_file=@$file" -F "name=$setting_id" -F "contributors=$contributors" "https://api.liquidbounce.net/api/v1/client/$branch_folder/settings/upload/global"
+                  curl -v -X POST -H "Authorization: $AUTHORIZATION" -F "settings_file=@$file" -F "name=$setting_id" -F "contributors=$contributors" "https://api.liquidbounce.net/api/v1/client/$branch_folder/settings/upload/global"
                 fi
               done
             fi
@@ -64,7 +64,7 @@ jobs:
               for deleted_file in $deleted_files; do
                 setting_id=$(basename "$deleted_file" | cut -f 1 -d '.')
                 echo "Deleting file: $setting_id"
-                curl -X DELETE -H "Authorization: $AUTHORIZATION" "https://api.liquidbounce.net/api/v1/client/$setting_id/settings/upload/global"
+                curl -v -X DELETE -H "Authorization: $AUTHORIZATION" "https://api.liquidbounce.net/api/v1/client/$setting_id/settings/upload/global"
               done
             fi
           done
