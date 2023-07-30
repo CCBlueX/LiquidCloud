@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - '*'
+  workflow_dispatch: # Allow manual triggering of the workflow
 
 jobs:
   upload_settings:
@@ -20,18 +21,20 @@ jobs:
 
       - name: Check for Changes
         id: check_changes
+        if: ${{ github.event_name == 'push' }} # Only run this step for push events
         run: |
           git fetch --depth=1 origin "${GITHUB_REF#refs/heads/}"; # Fetch the latest commit on the current branch
           changes=$(git log --name-only -1 FETCH_HEAD -- LiquidBounce/settings/)
           if [[ -n "$changes" ]]; then
             echo "changes=true" >> $GITHUB_ENV
+            echo "Changes detected in LiquidBounce/settings/"
           else
-            echo "No changes detected in LiquidBounce/settings/."
+            echo "No changes detected in LiquidBounce/settings/"
           fi
 
-      - name: Upload Files and Delete Files
-        id: upload_and_delete_files
-        if: env.changes == 'true'
+      - name: Upload Files
+        id: upload_files
+        if: ${{ github.event_name == 'push' || env.changes == 'true' }} # Run this step for push events or when changes are detected
         env:
           AUTHORIZATION: ${{ secrets.AUTHORIZATION }}
         run: |
@@ -47,7 +50,16 @@ jobs:
                   curl -X POST -H "Authorization: $AUTHORIZATION" -F "settings_file=@$file" -F "name=$setting_id" -F "contributors=$contributors" "https://api.liquidbounce.net/api/v1/client/$branch_folder/settings/upload/global"
                 fi
               done
+            fi
+          done
 
+      - name: Delete Files
+        if: ${{ github.event_name == 'push' || env.changes == 'true' }} # Run this step for push events or when changes are detected
+        env:
+          AUTHORIZATION: ${{ secrets.AUTHORIZATION }}
+        run: |
+          for branch_folder in ${{ steps.list_branches.outputs.stdout }}; do
+            if [ -d "LiquidBounce/settings/$branch_folder" ]; then
               deleted_files=$(git log --diff-filter=D --name-only -1 FETCH_HEAD -- "LiquidBounce/settings/$branch_folder")
               for deleted_file in $deleted_files; do
                 setting_id=$(basename "$deleted_file" | cut -f 1 -d '.')
