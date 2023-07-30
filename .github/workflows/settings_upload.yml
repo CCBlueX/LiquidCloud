@@ -25,6 +25,8 @@ jobs:
           changes=$(git log --name-only -1 FETCH_HEAD -- LiquidBounce/settings/)
           if [[ -n "$changes" ]]; then
             echo "changes=true" >> $GITHUB_ENV
+          else
+            echo "No changes detected in LiquidBounce/settings/."
           fi
 
       - name: Upload Files and Delete Files
@@ -35,6 +37,7 @@ jobs:
         run: |
           for branch_folder in ${{ steps.list_branches.outputs.stdout }}; do
             if [ -d "LiquidBounce/settings/$branch_folder" ]; then
+              echo "Processing files in directory: LiquidBounce/settings/$branch_folder"
               for file in LiquidBounce/settings/"$branch_folder"/*; do
                 if [ -f "$file" ]; then
                   contributors=$(git log --follow --format="%aN" -- "$file" | sort | uniq)
