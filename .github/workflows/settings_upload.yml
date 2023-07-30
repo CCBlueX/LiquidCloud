@@ -18,12 +18,11 @@ jobs:
         id: list_branches
         run: |
           branches=$(ls LiquidBounce/settings/)
-          echo "::set-output name=branches::$branches"
+          echo "$branches" >> $GITHUB_ENV
 
       - name: Get Last Commit State
         id: get_last_commit_state
         run: |
-          echo "Getting last commit state..."
           echo "LAST_COMMIT=$(git rev-parse HEAD)" >> $GITHUB_ENV
 
       - name: Check for Changes
@@ -47,7 +46,7 @@ jobs:
         env:
           AUTHORIZATION: ${{ secrets.AUTHORIZATION }}
         run: |
-          branches="${{ steps.list_branches.outputs.branches }}"
+          branches=$(cat $GITHUB_ENV)
           for branch_folder in $branches; do
             if [ -d "LiquidBounce/settings/$branch_folder" ]; then
               echo "Processing files in directory: LiquidBounce/settings/$branch_folder"
@@ -68,7 +67,7 @@ jobs:
         env:
           AUTHORIZATION: ${{ secrets.AUTHORIZATION }}
         run: |
-          branches="${{ steps.list_branches.outputs.branches }}"
+          branches=$(cat $GITHUB_ENV)
           for branch_folder in $branches; do
             if [ -d "LiquidBounce/settings/$branch_folder" ]; then
               echo "Processing files in directory: LiquidBounce/settings/$branch_folder"
