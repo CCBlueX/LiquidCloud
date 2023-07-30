@@ -21,7 +21,11 @@ jobs:
       - name: Check for Changes
         id: check_changes
         run: |
-          git diff --quiet HEAD^ HEAD -- LiquidBounce/settings/ || echo "changes=true" >> $GITHUB_ENV
+          git fetch --depth=1 origin "${GITHUB_REF#refs/heads/}"; # Fetch the latest commit on the current branch
+          changes=$(git log --name-only -1 FETCH_HEAD -- LiquidBounce/settings/)
+          if [[ -n "$changes" ]]; then
+            echo "changes=true" >> $GITHUB_ENV
+          fi
 
       - name: Upload Files and Delete Files
         id: upload_and_delete_files
@@ -41,7 +45,7 @@ jobs:
                 fi
               done
 
-              deleted_files=$(git diff --diff-filter=D --name-only HEAD^ HEAD "LiquidBounce/settings/$branch_folder")
+              deleted_files=$(git log --diff-filter=D --name-only -1 FETCH_HEAD -- "LiquidBounce/settings/$branch_folder")
               for deleted_file in $deleted_files; do
                 setting_id=$(basename "$deleted_file" | cut -f 1 -d '.')
                 echo "Deleting file: $setting_id"
