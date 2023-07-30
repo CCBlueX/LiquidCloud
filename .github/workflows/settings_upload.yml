@@ -17,14 +17,23 @@ jobs:
       - name: List Branch Folders
         id: list_branches
         run: |
+          echo "Listing branch folders..."
           ls LiquidBounce/settings/
+
+      - name: Get Last Commit State
+        id: get_last_commit_state
+        run: |
+          echo "Getting last commit state..."
+          echo "LAST_COMMIT=$(git rev-parse HEAD)" >> $GITHUB_ENV
 
       - name: Check for Changes
         id: check_changes
         if: ${{ github.event_name == 'push' }} # Only run this step for push events
         run: |
+          echo "Checking for changes in LiquidBounce/settings/..."
+          last_commit=$LAST_COMMIT
           git fetch --depth=1 origin "${GITHUB_REF#refs/heads/}"; # Fetch the latest commit on the current branch
-          changes=$(git log --name-only -1 FETCH_HEAD -- LiquidBounce/settings/)
+          changes=$(git diff --name-only $last_commit HEAD -- LiquidBounce/settings/)
           if [[ -n "$changes" ]]; then
             echo "changes=true" >> $GITHUB_ENV
             echo "Changes detected in LiquidBounce/settings/"
@@ -43,8 +52,8 @@ jobs:
               echo "Processing files in directory: LiquidBounce/settings/$branch_folder"
               for file in LiquidBounce/settings/"$branch_folder"/*; do
                 if [ -f "$file" ]; then
-                  contributors=$(git log --follow --format="%aN" -- "$file" | sort | uniq)
                   setting_id=$(basename "$file" | cut -f 1 -d '.')
+                  contributors=$(git log --follow --format="%aN" -- "$file" | sort | uniq)
                   echo "Uploading file: $file"
                   echo "Contributors: $contributors"
                   curl -vf -X POST -H "Authorization: $AUTHORIZATION" -F "settings_file=@$file" -F "name=$setting_id" -F "contributors=$contributors" "https://api.liquidbounce.net/api/v1/client/$branch_folder/settings/upload/global"
@@ -60,7 +69,8 @@ jobs:
         run: |
           for branch_folder in ${{ steps.list_branches.outputs.stdout }}; do
             if [ -d "LiquidBounce/settings/$branch_folder" ]; then
-              deleted_files=$(git log --diff-filter=D --name-only -1 FETCH_HEAD -- "LiquidBounce/settings/$branch_folder")
+              echo "Processing files in directory: LiquidBounce/settings/$branch_folder"
+              deleted_files=$(git diff --diff-filter=D --name-only $last_commit HEAD -- "LiquidBounce/settings/$branch_folder")
               for deleted_file in $deleted_files; do
                 setting_id=$(basename "$deleted_file" | cut -f 1 -d '.')
                 echo "Deleting file: $setting_id"
