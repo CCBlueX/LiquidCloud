@@ -18,15 +18,34 @@ jobs:
         run: |
           ls LiquidBounce/settings/
 
-      - name: Upload Files
-        id: upload_files
+      - name: Check for Changes
+        id: check_changes
+        run: |
+          git diff --quiet HEAD^ HEAD -- LiquidBounce/settings/ || echo "changes=true" >> $GITHUB_ENV
+
+      - name: Upload Files and Delete Files
+        id: upload_and_delete_files
+        if: env.changes == 'true'
         env:
           AUTHORIZATION: ${{ secrets.AUTHORIZATION }}
         run: |
           for branch_folder in ${{ steps.list_branches.outputs.stdout }}; do
             if [ -d "LiquidBounce/settings/$branch_folder" ]; then
               for file in LiquidBounce/settings/"$branch_folder"/*; do
-                curl -X POST -H "Authorization: $AUTHORIZATION" -F "settings_file=@$file" -F "name=$(basename $file)" "https://api.liquidbounce.net/api/v1/client/$branch_folder/settings/upload/global"
+                if [ -f "$file" ]; then
+                  contributors=$(git log --follow --format="%aN" -- "$file" | sort | uniq)
+                  setting_id=$(basename "$file" | cut -f 1 -d '.')
+                  echo "Uploading file: $file"
+                  echo "Contributors: $contributors"
+                  curl -X POST -H "Authorization: $AUTHORIZATION" -F "settings_file=@$file" -F "name=$setting_id" -F "contributors=$contributors" "https://api.liquidbounce.net/api/v1/client/$branch_folder/settings/upload/global"
+                fi
+              done
+
+              deleted_files=$(git diff --diff-filter=D --name-only HEAD^ HEAD "LiquidBounce/settings/$branch_folder")
+              for deleted_file in $deleted_files; do
+                setting_id=$(basename "$deleted_file" | cut -f 1 -d '.')
+                echo "Deleting file: $setting_id"
+                curl -X DELETE -H "Authorization: $AUTHORIZATION" "https://api.liquidbounce.net/api/v1/client/$setting_id/settings/upload/global"
               done
             fi
           done
