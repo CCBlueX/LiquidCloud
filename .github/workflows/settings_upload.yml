@@ -13,12 +13,6 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
 
-      - name: Set up Java
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'adopt'
-          java-version: '16'
-
       - name: List Branch Folders
         id: list_branches
         run: |
@@ -26,11 +20,13 @@ jobs:
 
       - name: Upload Files
         id: upload_files
+        env:
+          AUTHORIZATION: ${{ secrets.AUTHORIZATION }}
         run: |
           for branch_folder in ${{ steps.list_branches.outputs.stdout }}; do
             if [ -d "LiquidBounce/settings/$branch_folder" ]; then
               for file in LiquidBounce/settings/"$branch_folder"/*; do
-                curl -X POST -F "settings_file=@$file" -F "name=$(basename $file)" "https://api.liquidbounce.net/api/v1/client/$branch_folder/settings/upload/global"
+                curl -X POST -H "Authorization: $AUTHORIZATION" -F "settings_file=@$file" -F "name=$(basename $file)" "https://api.liquidbounce.net/api/v1/client/$branch_folder/settings/upload/global"
               done
             fi
           done
