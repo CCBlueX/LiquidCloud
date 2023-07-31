@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - 'master'
+    paths:
+      - LiquidBounce/settings/**
 
 jobs:
   upload_settings:
@@ -36,6 +38,7 @@ jobs:
           done
 
       - name: Delete Files
+        id: delete_files
         env:
           AUTHORIZATION: ${{ secrets.AUTHORIZATION }}
         run: |
