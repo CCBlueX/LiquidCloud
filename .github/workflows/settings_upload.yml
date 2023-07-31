@@ -12,14 +12,12 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # Fetch all history for all tags and branches
+        uses: actions/checkout@v2
 
       - name: List Branch Folders
         id: list_branches
         run: |
-          branches=$(ls LiquidBounce/settings/)
+          branches=$(find LiquidBounce/settings/* -type d -maxdepth 0)
           echo "::set-output name=branches::$branches"
 
       - name: Get Last Commit State
@@ -50,7 +48,6 @@ jobs:
           done
 
       - name: Delete Files
-        if: ${{ github.event_name == 'push' }} # Run this step only for push events
         env:
           AUTHORIZATION: ${{ secrets.AUTHORIZATION }}
         run: |
@@ -62,7 +59,7 @@ jobs:
               for deleted_file in $deleted_files; do
                 setting_id=$(basename "$deleted_file" | cut -f 1 -d '.')
                 echo "Deleting file: $setting_id"
-                curl -X DELETE -H "Authorization: $AUTHORIZATION" "https://api.liquidbounce.net/api/v1/client/$setting_id/settings/upload/global"
+                curl -X DELETE -H "Authorization: $AUTHORIZATION" "https://api.liquidbounce.net/api/v1/client/settings/$setting_id"
               done
             fi
           done
