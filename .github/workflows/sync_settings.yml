@@ -1,10 +1,9 @@
-name: Upload Settings
+name: Sync settings
 
 on:
   push:
     branches:
-      - '*'
-  workflow_dispatch: # Allow manual triggering of the workflow
+      - 'master'
 
 jobs:
   upload_settings:
@@ -12,7 +11,9 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history for all tags and branches
 
       - name: Upload Files
         id: upload_files
@@ -35,7 +36,6 @@ jobs:
           done
 
       - name: Delete Files
-        if: ${{ github.event_name == 'push' }} # Run this step only for push events
         env:
           AUTHORIZATION: ${{ secrets.AUTHORIZATION }}
         run: |
