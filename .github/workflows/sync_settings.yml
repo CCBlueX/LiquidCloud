@@ -1,0 +1,52 @@
+name: Upload Settings
+
+on:
+  push:
+    branches:
+      - '*'
+  workflow_dispatch: # Allow manual triggering of the workflow
+
+jobs:
+  upload_settings:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Upload Files
+        id: upload_files
+        env:
+          AUTHORIZATION: ${{ secrets.AUTHORIZATION }}
+        run: |
+          for branch_folder in LiquidBounce/settings/*; do
+            if [ -d "$branch_folder" ]; then
+              echo "Processing files in directory: $branch_folder"
+              for file in "$branch_folder"/*; do
+                if [ -f "$file" ]; then
+                  setting_id=$(basename "$file" | cut -f 1 -d '.')
+                  contributors=$(git log --follow --format="%aN" -- "$file" | sort | uniq | paste -sd "," -)
+                  echo "Uploading file: $file"
+                  echo "Contributors: $contributors"
+                  curl -X POST -H "Authorization: $AUTHORIZATION" -F "settings_file=@$file" -F "name=$setting_id" -F "contributors=$contributors" "https://api.liquidbounce.net/api/v1/client/$(basename $branch_folder)/settings/upload/global"
+                fi
+              done
+            fi
+          done
+
+      - name: Delete Files
+        if: ${{ github.event_name == 'push' }} # Run this step only for push events
+        env:
+          AUTHORIZATION: ${{ secrets.AUTHORIZATION }}
+        run: |
+          for branch_folder in LiquidBounce/settings/*; do
+            if [ -d "$branch_folder" ]; then
+              echo "Processing files in directory: $branch_folder"
+              deleted_files=$(git diff --diff-filter=D --name-only $last_commit HEAD -- "$branch_folder")
+              for deleted_file in $deleted_files; do
+                setting_id=$(basename "$deleted_file" | cut -f 1 -d '.')
+                echo "Deleting file: $setting_id"
+                curl -X DELETE -H "Authorization: $AUTHORIZATION" "https://api.liquidbounce.net/api/v1/client/settings/$setting_id"
+              done
+            fi
+          done
