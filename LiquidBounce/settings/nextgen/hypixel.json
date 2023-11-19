@@ -280,10 +280,6 @@
               "value": true
             },
             {
-              "name": "MurderMystery",
-              "value": false
-            },
-            {
               "name": "Charged",
               "value": 13
             },
@@ -297,6 +293,14 @@
             {
               "name": "DelayBetweenShots",
               "value": 0
+            },
+            {
+              "name": "AimThreshold",
+              "value": 1.5
+            },
+            {
+              "name": "RequiresHypotheticalHit",
+              "value": false
             }
           ]
         },
@@ -306,10 +310,6 @@
             {
               "name": "Enabled",
               "value": true
-            },
-            {
-              "name": "PredictionCofactor",
-              "value": 1.0
             },
             {
               "name": "MinExpectedPull",
@@ -823,6 +823,30 @@
       ]
     },
     {
+      "name": "Backtrack",
+      "value": [
+        {
+          "name": "Enabled",
+          "value": true
+        },
+        {
+          "name": "Range",
+          "value": {
+            "from": 2.6,
+            "to": 3.4
+          }
+        },
+        {
+          "name": "Delay",
+          "value": 200
+        },
+        {
+          "name": "BoxColor",
+          "value": 1931747218
+        }
+      ]
+    },
+    {
       "name": "BadWIFI",
       "value": [
         {
@@ -830,15 +854,28 @@
           "value": false
         },
         {
-          "name": "MaxPacketsInBuffer",
-          "value": {
-            "from": 20,
-            "to": 30
-          }
+          "name": "Delay",
+          "value": 550
         },
         {
-          "name": "EnemyRange",
-          "value": 5.0
+          "name": "RangeToStart",
+          "value": 6.57
+        },
+        {
+          "name": "RecoilTime",
+          "value": 750
+        },
+        {
+          "name": "StopWhileUsingItem",
+          "value": false
+        },
+        {
+          "name": "Color",
+          "value": -11993201
+        },
+        {
+          "name": "Rainbow",
+          "value": false
         }
       ]
     },
@@ -933,8 +970,8 @@
         {
           "name": "Blocks",
           "value": [
-            "minecraft:snow",
-            "minecraft:cobweb"
+            "minecraft:cobweb",
+            "minecraft:snow"
           ]
         }
       ]
@@ -955,8 +992,8 @@
           "value": 2.5
         },
         {
-          "name": "Indicator",
-          "value": true
+          "name": "Mode",
+          "value": "FlyFlag"
         }
       ]
     },
@@ -977,7 +1014,7 @@
         },
         {
           "name": "Delay",
-          "value": 5
+          "value": 5.0
         },
         {
           "name": "VisualSwing",
@@ -1002,11 +1039,11 @@
             },
             {
               "name": "Timeout",
-              "value": 10
+              "value": 10.0
             },
             {
               "name": "MaxRetries",
-              "value": 4
+              "value": 4.0
             }
           ]
         },
@@ -1043,7 +1080,7 @@
             },
             {
               "name": "TicksUntilReset",
-              "value": 5
+              "value": 5.0
             },
             {
               "name": "Silent",
@@ -1058,20 +1095,20 @@
       "value": [
         {
           "name": "Enabled",
-          "value": true
+          "value": false
         },
         {
           "name": "Delay",
           "value": {
-            "from": 120,
-            "to": 200
+            "from": 2,
+            "to": 4
           }
         },
         {
           "name": "CloseDelay",
           "value": {
-            "from": 50,
-            "to": 50
+            "from": 2,
+            "to": 3
           }
         },
         {
@@ -1081,6 +1118,19 @@
         {
           "name": "CheckTitle",
           "value": true
+        }
+      ]
+    },
+    {
+      "name": "ClientSpoofer",
+      "value": [
+        {
+          "name": "Enabled",
+          "value": false
+        },
+        {
+          "name": "Mode",
+          "value": "lunar"
         }
       ]
     },
@@ -1153,6 +1203,14 @@
                 {
                   "name": "OptimizeForCooldown",
                   "value": true
+                },
+                {
+                  "name": "CheckKillaura",
+                  "value": true
+                },
+                {
+                  "name": "CheckTrigger",
+                  "value": false
                 }
               ]
             }
@@ -1171,11 +1229,11 @@
             },
             {
               "name": "CritParticles",
-              "value": 1
+              "value": 1.0
             },
             {
               "name": "MagicParticles",
-              "value": 4
+              "value": 4.0
             }
           ]
         }
@@ -1382,11 +1440,11 @@
       "value": [
         {
           "name": "Enabled",
-          "value": false
+          "value": true
         },
         {
           "name": "BreakDamage",
-          "value": 0.8
+          "value": 0.97
         }
       ]
     },
@@ -1395,7 +1453,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": false
+          "value": true
         },
         {
           "name": "Cooldown",
@@ -1546,6 +1604,10 @@
             "VerusDamage": {
               "name": "VerusDamage",
               "value": []
+            },
+            "VulcanGlide": {
+              "name": "VulcanGlide",
+              "value": []
             }
           }
         },
@@ -1661,9 +1723,9 @@
         {
           "name": "TargetedBlocks",
           "value": [
-            "minecraft:trapped_chest",
             "minecraft:ender_chest",
-            "minecraft:chest"
+            "minecraft:chest",
+            "minecraft:trapped_chest"
           ]
         }
       ]
@@ -1778,11 +1840,11 @@
         },
         {
           "name": "MaxBlocks",
-          "value": 512
+          "value": 512.0
         },
         {
           "name": "MaxArrows",
-          "value": 256
+          "value": 256.0
         },
         {
           "name": "UsefulItems",
@@ -1992,6 +2054,10 @@
           "value": false
         },
         {
+          "name": "WhileBlocking",
+          "value": false
+        },
+        {
           "name": "AutoBlocking",
           "value": [
             {
@@ -2000,11 +2066,11 @@
             },
             {
               "name": "TickOff",
-              "value": 1.0
+              "value": 1
             },
             {
               "name": "TickOn",
-              "value": 0.0
+              "value": 1
             },
             {
               "name": "OnScanRange",
@@ -2475,7 +2541,7 @@
           "value": [
             {
               "name": "Enabled",
-              "value": false
+              "value": true
             },
             {
               "name": "Forward",
@@ -2486,8 +2552,12 @@
               "value": 1.0
             },
             {
+              "name": "OnlySlowOnServerSide",
+              "value": true
+            },
+            {
               "name": "Choice",
-              "active": "Reuse",
+              "active": "None",
               "value": [],
               "choices": {
                 "None": {
@@ -2844,10 +2914,7 @@
         },
         {
           "name": "Delay",
-          "value": {
-            "from": 500,
-            "to": 1000
-          }
+          "value": 500
         }
       ]
     },
@@ -3033,13 +3100,13 @@
         },
         {
           "name": "SlotResetDelay",
-          "value": 5
+          "value": 5.0
         },
         {
           "name": "Delay",
           "value": {
-            "from": 0,
-            "to": 0
+            "from": 2,
+            "to": 2
           }
         },
         {
@@ -3066,7 +3133,7 @@
             },
             {
               "name": "TicksUntilReset",
-              "value": 15
+              "value": 15.0
             },
             {
               "name": "Silent",
@@ -3084,7 +3151,7 @@
         },
         {
           "name": "MinDist",
-          "value": 0.0
+          "value": 0.02
         },
         {
           "name": "ZitterMode",
@@ -3194,7 +3261,7 @@
             },
             {
               "name": "SlowSpeed",
-              "value": 0.97
+              "value": 0.95
             }
           ]
         },
@@ -3443,7 +3510,7 @@
         },
         {
           "name": "Strength",
-          "value": 1.0
+          "value": 0.3
         }
       ]
     },
@@ -3503,6 +3570,15 @@
         {
           "name": "Chance",
           "value": 100
+        }
+      ]
+    },
+    {
+      "name": "SwordBlock",
+      "value": [
+        {
+          "name": "Enabled",
+          "value": true
         }
       ]
     },
@@ -3619,7 +3695,7 @@
         },
         {
           "name": "NormalSpeedTicks",
-          "value": 20
+          "value": 20.0
         },
         {
           "name": "BoostSpeed",
@@ -3627,7 +3703,7 @@
         },
         {
           "name": "BoostSpeedTicks",
-          "value": 20
+          "value": 20.0
         },
         {
           "name": "OnMove",
@@ -3804,6 +3880,37 @@
                 {
                   "name": "AttacksToWork",
                   "value": 4
+                }
+              ]
+            },
+            "JumpReset": {
+              "name": "JumpReset",
+              "value": [
+                {
+                  "name": "JumpByReceivedHits",
+                  "value": [
+                    {
+                      "name": "Enabled",
+                      "value": false
+                    },
+                    {
+                      "name": "HitsUntilJump",
+                      "value": 2
+                    }
+                  ]
+                },
+                {
+                  "name": "JumpByDelay",
+                  "value": [
+                    {
+                      "name": "Enabled",
+                      "value": true
+                    },
+                    {
+                      "name": "TicksUntilJump",
+                      "value": 2
+                    }
+                  ]
                 }
               ]
             }
