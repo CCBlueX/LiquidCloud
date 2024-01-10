@@ -50,7 +50,7 @@ jobs:
             if [ -d "$branch_folder" ]; then
               branch_name=$(basename "$branch_folder")
               echo "Uploading tar file: $branch_name.tar"
-              curl -X POST -H "Authorization: $AUTHORIZATION" -F "settings_file=@$branch_name.tar" -F "name=null" -F "contributors=null" "https://api.liquidbounce.net/api/v1/client/$branch_name/settings/upload/bundle"
+              curl -X POST -H "Authorization: $AUTHORIZATION" -F "settings_bundle=@$branch_name.tar" "https://api.liquidbounce.net/api/v1/client/$branch_name/settings/upload/bundle"
             fi
           done
         
