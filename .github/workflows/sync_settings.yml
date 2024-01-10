@@ -1,7 +1,6 @@
 name: Sync settings
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - '*'
@@ -23,15 +22,22 @@ jobs:
             if [ -d "$branch_folder" ]; then
               echo "Processing files in directory: $branch_folder"
               branch_name=$(basename "$branch_folder")
-              tar -cvf "$branch_name.tar" "$branch_folder" --transform='flags=r;s|/*||'
+              # Create a TAR file with the settings content
+              tar -cvf "$branch_name.tar" -C "$branch_folder" .
               for file in "$branch_folder"/*; do
                 if [ -f "$file" ]; then
                   setting_id=$(basename "$file" | cut -f 1 -d '.')
                   contributors=$(git log --follow --format="%aN" -- "$file" | sort | uniq | paste -sd "," -)
-                  echo "{\"setting_id\":\"$setting_id\",\"contributors\":\"$contributors\",\"timestamp\":\"$(date -u +"%Y-%m-%dT%H:%M:%SZ")\"}" > "$setting_id.meta"
+                  meta_file="$setting_id.meta"
+                  echo "{\"setting_id\":\"$setting_id\",\"contributors\":\"$contributors\",\"timestamp\":\"$(date -u +"%Y-%m-%dT%H:%M:%SZ")\"}" > "$meta_file"
+                  # Append the .meta file to the TAR archive if it exists
+                  if [ -f "$meta_file" ]; then
+                    tar -rvf "$branch_name.tar" "$meta_file"
+                    # Clean up the .meta file after adding it to the archive
+                    rm "$meta_file"
+                  fi
                 fi
               done
-              tar -rvf "$branch_name.tar" "$branch_folder"/*.meta
             fi
           done
 
@@ -46,6 +52,7 @@ jobs:
               echo "Uploading tar file: $branch_name.tar"
               curl -X POST -H "Authorization: $AUTHORIZATION" -F "settings_bundle=@$branch_name.tar" "https://api.liquidbounce.net/api/v1/client/$branch_name/settings/upload/bundle"
             fi
+          done
         
       - name: Upload TAR Files to Artifacts
         uses: actions/upload-artifact@v2
