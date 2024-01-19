@@ -340,7 +340,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": true
+          "value": false
         }
       ]
     },
@@ -441,6 +441,80 @@
         },
         {
           "name": "Hotbar",
+          "value": true
+        }
+      ]
+    },
+    {
+      "name": "AutoBalls",
+      "value": [
+        {
+          "name": "Enabled",
+          "value": false
+        },
+        {
+          "name": "Range",
+          "value": 30.0
+        },
+        {
+          "name": "ClickScheduler",
+          "value": [
+            {
+              "name": "CPS",
+              "value": {
+                "from": 6,
+                "to": 9
+              }
+            }
+          ]
+        },
+        {
+          "name": "Target",
+          "value": [
+            {
+              "name": "FOV",
+              "value": 180.0
+            },
+            {
+              "name": "Priority",
+              "value": "Direction"
+            }
+          ]
+        },
+        {
+          "name": "Rotations",
+          "value": [
+            {
+              "name": "TurnSpeed",
+              "value": {
+                "from": 180.0,
+                "to": 180.0
+              }
+            },
+            {
+              "name": "SmoothMode",
+              "value": "Relative"
+            },
+            {
+              "name": "FixVelocity",
+              "value": false
+            },
+            {
+              "name": "ResetThreshold",
+              "value": 2.0
+            },
+            {
+              "name": "TicksUntilReset",
+              "value": 5
+            },
+            {
+              "name": "Silent",
+              "value": true
+            }
+          ]
+        },
+        {
+          "name": "ConsiderInventory",
           "value": true
         }
       ]
@@ -660,7 +734,7 @@
           "value": false
         },
         {
-          "name": "Left",
+          "name": "Attack",
           "value": [
             {
               "name": "Enabled",
@@ -693,11 +767,27 @@
                   ]
                 }
               ]
+            },
+            {
+              "name": "Objective",
+              "value": "Any"
+            },
+            {
+              "name": "OnItemUse",
+              "value": "Wait"
+            },
+            {
+              "name": "Weapon",
+              "value": "Any"
+            },
+            {
+              "name": "DelayPostStopUse",
+              "value": 0
             }
           ]
         },
         {
-          "name": "Right",
+          "name": "Use",
           "value": [
             {
               "name": "Enabled",
@@ -715,6 +805,19 @@
                 }
               ]
             }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AutoConfig",
+      "value": [
+        {
+          "name": "Blacklist",
+          "value": [
+            "poke.sexy",
+            "eu.loyisa.cn",
+            "anticheat-test.com"
           ]
         }
       ]
@@ -1406,39 +1509,6 @@
       ]
     },
     {
-      "name": "BadWIFI",
-      "value": [
-        {
-          "name": "Enabled",
-          "value": false
-        },
-        {
-          "name": "Delay",
-          "value": 0
-        },
-        {
-          "name": "RangeToStart",
-          "value": 6.57
-        },
-        {
-          "name": "RecoilTime",
-          "value": 750
-        },
-        {
-          "name": "StopWhileUsingItem",
-          "value": false
-        },
-        {
-          "name": "Color",
-          "value": -11993201
-        },
-        {
-          "name": "Rainbow",
-          "value": false
-        }
-      ]
-    },
-    {
       "name": "Blink",
       "value": [
         {
@@ -1456,19 +1526,6 @@
         {
           "name": "EvadeArrows",
           "value": true
-        },
-        {
-          "name": "Pulse",
-          "value": [
-            {
-              "name": "Enabled",
-              "value": true
-            },
-            {
-              "name": "Delay",
-              "value": 20
-            }
-          ]
         },
         {
           "name": "Breadcrumbs",
@@ -1529,8 +1586,8 @@
         {
           "name": "Blocks",
           "value": [
-            "minecraft:snow",
-            "minecraft:cobweb"
+            "minecraft:cobweb",
+            "minecraft:snow"
           ]
         }
       ]
@@ -1543,16 +1600,12 @@
           "value": false
         },
         {
-          "name": "MaxFallDistance",
-          "value": 10
-        },
-        {
-          "name": "MaxDistanceToSetback",
-          "value": 2.5
-        },
-        {
           "name": "Mode",
-          "value": "FlyFlag"
+          "value": "BlinkBack"
+        },
+        {
+          "name": "MaximumFallDamage",
+          "value": 10.0
         }
       ]
     },
@@ -1764,7 +1817,7 @@
         },
         {
           "name": "Mode",
-          "active": "None",
+          "active": "Jump",
           "value": [],
           "choices": {
             "None": {
@@ -1809,7 +1862,7 @@
                   "value": true
                 },
                 {
-                  "name": "CheckTrigger",
+                  "name": "CheckAutoClicker",
                   "value": false
                 }
               ]
@@ -2146,6 +2199,38 @@
       ]
     },
     {
+      "name": "FakeLag",
+      "value": [
+        {
+          "name": "Enabled",
+          "value": true
+        },
+        {
+          "name": "Range",
+          "value": {
+            "from": 2.0,
+            "to": 5.0
+          }
+        },
+        {
+          "name": "Delay",
+          "value": 125
+        },
+        {
+          "name": "EvadeArrows",
+          "value": true
+        },
+        {
+          "name": "Color",
+          "value": -19640
+        },
+        {
+          "name": "Rainbow",
+          "value": false
+        }
+      ]
+    },
+    {
       "name": "FastBreak",
       "value": [
         {
@@ -2456,30 +2541,30 @@
           "value": true
         },
         {
-          "name": "Target",
+          "name": "Targets",
           "value": [
-            "minecraft:cyan_bed",
-            "minecraft:gray_bed",
+            "minecraft:orange_bed",
             "minecraft:black_bed",
+            "minecraft:brown_bed",
+            "minecraft:lime_bed",
+            "minecraft:purple_bed",
+            "minecraft:magenta_bed",
+            "minecraft:dragon_egg",
+            "minecraft:light_gray_bed",
+            "minecraft:light_blue_bed",
+            "minecraft:gray_bed",
+            "minecraft:cyan_bed",
+            "minecraft:pink_bed",
+            "minecraft:blue_bed",
+            "minecraft:red_bed",
             "minecraft:white_bed",
             "minecraft:yellow_bed",
-            "minecraft:purple_bed",
-            "minecraft:green_bed",
-            "minecraft:light_blue_bed",
-            "minecraft:dragon_egg",
-            "minecraft:magenta_bed",
-            "minecraft:orange_bed",
-            "minecraft:lime_bed",
-            "minecraft:blue_bed",
-            "minecraft:pink_bed",
-            "minecraft:light_gray_bed",
-            "minecraft:brown_bed",
-            "minecraft:red_bed"
+            "minecraft:green_bed"
           ]
         },
         {
           "name": "Delay",
-          "value": 0
+          "value": 20
         },
         {
           "name": "Action",
@@ -2537,9 +2622,9 @@
         {
           "name": "TargetedBlocks",
           "value": [
+            "minecraft:trapped_chest",
             "minecraft:chest",
-            "minecraft:ender_chest",
-            "minecraft:trapped_chest"
+            "minecraft:ender_chest"
           ]
         }
       ]
@@ -2786,11 +2871,11 @@
         },
         {
           "name": "SlotItem-3",
-          "value": "Pickaxe"
+          "value": "Pearl"
         },
         {
           "name": "SlotItem-4",
-          "value": "Axe"
+          "value": "Ignore"
         },
         {
           "name": "SlotItem-5",
@@ -4061,15 +4146,6 @@
       ]
     },
     {
-      "name": "PerfectHit",
-      "value": [
-        {
-          "name": "Enabled",
-          "value": false
-        }
-      ]
-    },
-    {
       "name": "PerfectHorseJump",
       "value": [
         {
@@ -4126,7 +4202,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": false
+          "value": true
         },
         {
           "name": "ClickScheduler",
@@ -4171,8 +4247,8 @@
             {
               "name": "TurnSpeed",
               "value": {
-                "from": 40.0,
-                "to": 60.0
+                "from": 180.0,
+                "to": 180.0
               }
             },
             {
@@ -4403,7 +4479,7 @@
             },
             {
               "name": "FixVelocity",
-              "value": false
+              "value": true
             },
             {
               "name": "ResetThreshold",
@@ -4941,10 +5017,6 @@
                 {
                   "name": "VerticalAcceleration",
                   "value": true
-                },
-                {
-                  "name": "TimeBoostTicks",
-                  "value": 12
                 }
               ]
             },
@@ -5216,27 +5288,74 @@
       "value": [
         {
           "name": "Enabled",
-          "value": false
+          "value": true
         },
         {
-          "name": "NormalSpeed",
-          "value": 0.5
-        },
-        {
-          "name": "NormalSpeedTicks",
-          "value": 20
-        },
-        {
-          "name": "BoostSpeed",
-          "value": 2.0
-        },
-        {
-          "name": "BoostSpeedTicks",
-          "value": 20
-        },
-        {
-          "name": "OnMove",
-          "value": false
+          "name": "Mode",
+          "active": "Boost",
+          "value": [],
+          "choices": {
+            "Classic": {
+              "name": "Classic",
+              "value": [
+                {
+                  "name": "Speed",
+                  "value": 2.0
+                }
+              ]
+            },
+            "Pulse": {
+              "name": "Pulse",
+              "value": [
+                {
+                  "name": "NormalSpeed",
+                  "value": 0.5
+                },
+                {
+                  "name": "NormalSpeedTicks",
+                  "value": 20
+                },
+                {
+                  "name": "BoostSpeed",
+                  "value": 2.0
+                },
+                {
+                  "name": "BoostSpeedTicks",
+                  "value": 20
+                },
+                {
+                  "name": "OnMove",
+                  "value": false
+                }
+              ]
+            },
+            "Boost": {
+              "name": "Boost",
+              "value": [
+                {
+                  "name": "BoostSpeed",
+                  "value": 1.3
+                },
+                {
+                  "name": "SlowSpeed",
+                  "value": 0.6
+                },
+                {
+                  "name": "TimeBoostTicks",
+                  "value": 12
+                },
+                {
+                  "name": "NormalizeDuringCombat",
+                  "value": true
+                },
+                {
+                  "name": "AllowNegative",
+                  "value": false
+                }
+              ]
+            }
+          },
+          "valueType": "CHOICE"
         }
       ]
     },
@@ -5274,55 +5393,6 @@
         {
           "name": "PauseOnFlag",
           "value": true
-        }
-      ]
-    },
-    {
-      "name": "Trigger",
-      "value": [
-        {
-          "name": "Enabled",
-          "value": false
-        },
-        {
-          "name": "ClickScheduler",
-          "value": [
-            {
-              "name": "CPS",
-              "value": {
-                "from": 5,
-                "to": 8
-              }
-            },
-            {
-              "name": "Cooldown",
-              "value": [
-                {
-                  "name": "Enabled",
-                  "value": true
-                },
-                {
-                  "name": "CooldownRange",
-                  "value": {
-                    "from": 0.9,
-                    "to": 1.0
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "OnItemUse",
-          "value": "Wait"
-        },
-        {
-          "name": "Weapon",
-          "value": "Any"
-        },
-        {
-          "name": "DelayPostStopUse",
-          "value": 0
         }
       ]
     },
@@ -5511,10 +5581,10 @@
     }
   ],
   "author": "1zuna",
-  "date": "15/01/2024",
-  "time": "22:52:43",
+  "date": "19/01/2024",
+  "time": "03:15:13",
   "clientVersion": "1.0.0",
-  "clientCommit": "git-a0f453d",
+  "clientCommit": "git-3b6f8c1",
   "serverAddress": "hypixel.net",
   "protocolName": "1.20.3",
   "protocolVersion": 765,
