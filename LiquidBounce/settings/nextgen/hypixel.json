@@ -354,6 +354,20 @@
       ]
     },
     {
+      "name": "AntiStaff",
+      "value": [
+        {
+          "name": "VelocityCheck",
+          "value": [
+            {
+              "name": "Enabled",
+              "value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "AntiVanish",
       "value": [
         {
@@ -810,19 +824,6 @@
       ]
     },
     {
-      "name": "AutoConfig",
-      "value": [
-        {
-          "name": "Blacklist",
-          "value": [
-            "poke.sexy",
-            "eu.loyisa.cn",
-            "anticheat-test.com"
-          ]
-        }
-      ]
-    },
-    {
       "name": "AutoDisable",
       "value": [
         {
@@ -1127,6 +1128,10 @@
         {
           "name": "HealthToIgnoreRegen",
           "value": 5
+        },
+        {
+          "name": "Cooldown",
+          "value": 0
         },
         {
           "name": "CombatPauseTime",
@@ -1586,8 +1591,8 @@
         {
           "name": "Blocks",
           "value": [
-            "minecraft:cobweb",
-            "minecraft:snow"
+            "minecraft:snow",
+            "minecraft:cobweb"
           ]
         }
       ]
@@ -1754,23 +1759,6 @@
         {
           "name": "CheckTitle",
           "value": true
-        }
-      ]
-    },
-    {
-      "name": "ClickRecorder",
-      "value": [
-        {
-          "name": "Reset",
-          "value": false
-        },
-        {
-          "name": "StartFromZero",
-          "value": false
-        },
-        {
-          "name": "IgnoreInstructions",
-          "value": false
         }
       ]
     },
@@ -2543,23 +2531,23 @@
         {
           "name": "Targets",
           "value": [
+            "minecraft:blue_bed",
+            "minecraft:magenta_bed",
+            "minecraft:lime_bed",
             "minecraft:orange_bed",
             "minecraft:black_bed",
-            "minecraft:brown_bed",
-            "minecraft:lime_bed",
             "minecraft:purple_bed",
-            "minecraft:magenta_bed",
             "minecraft:dragon_egg",
-            "minecraft:light_gray_bed",
-            "minecraft:light_blue_bed",
-            "minecraft:gray_bed",
-            "minecraft:cyan_bed",
             "minecraft:pink_bed",
-            "minecraft:blue_bed",
-            "minecraft:red_bed",
+            "minecraft:gray_bed",
+            "minecraft:light_gray_bed",
+            "minecraft:cyan_bed",
+            "minecraft:brown_bed",
             "minecraft:white_bed",
-            "minecraft:yellow_bed",
-            "minecraft:green_bed"
+            "minecraft:red_bed",
+            "minecraft:green_bed",
+            "minecraft:light_blue_bed",
+            "minecraft:yellow_bed"
           ]
         },
         {
@@ -2946,8 +2934,8 @@
             {
               "name": "CPS",
               "value": {
-                "from": 7,
-                "to": 12
+                "from": 8,
+                "to": 14
               }
             },
             {
@@ -2970,7 +2958,7 @@
         },
         {
           "name": "Range",
-          "value": 3.21
+          "value": 3.25
         },
         {
           "name": "ScanExtraRange",
@@ -3395,7 +3383,7 @@
                   "name": "Box",
                   "value": [
                     {
-                      "name": "FadeSeconds",
+                      "name": "Fade",
                       "value": 4
                     },
                     {
@@ -3588,12 +3576,17 @@
         },
         {
           "name": "Mode",
-          "active": "SpoofGround",
+          "active": "Blink",
           "value": [],
           "choices": {
             "SpoofGround": {
               "name": "SpoofGround",
-              "value": []
+              "value": [
+                {
+                  "name": "FallDistance",
+                  "value": 1.7
+                }
+              ]
             },
             "NoGround": {
               "name": "NoGround",
@@ -3659,6 +3652,22 @@
             "Verus": {
               "name": "Verus",
               "value": []
+            },
+            "Blink": {
+              "name": "Blink",
+              "value": [
+                {
+                  "name": "FallDistance",
+                  "value": {
+                    "from": 1.0,
+                    "to": 20.0
+                  }
+                },
+                {
+                  "name": "SpoofDistance",
+                  "value": 0.5
+                }
+              ]
             }
           },
           "valueType": "CHOICE"
@@ -4497,7 +4506,7 @@
         },
         {
           "name": "RotationMode",
-          "value": "Center"
+          "value": "Random"
         },
         {
           "name": "BridgeMode",
@@ -4583,11 +4592,19 @@
           "value": 1.0
         },
         {
+          "name": "KeepY",
+          "value": false
+        },
+        {
+          "name": "SlowdownOnJump",
+          "value": 0.0
+        },
+        {
           "name": "SimulatePlacementAttempts",
           "value": [
             {
               "name": "Enabled",
-              "value": false
+              "value": true
             },
             {
               "name": "ClickScheduler",
@@ -4638,11 +4655,11 @@
           "value": [
             {
               "name": "Enabled",
-              "value": false
+              "value": true
             },
             {
               "name": "BlocksToEagle",
-              "value": 1
+              "value": 4
             },
             {
               "name": "EagleEdgeDistance",
@@ -4668,7 +4685,7 @@
             },
             {
               "name": "WhenGoingDiagonal",
-              "value": false
+              "value": true
             },
             {
               "name": "PredictFactor",
@@ -5152,7 +5169,7 @@
               "name": "SprintTap",
               "value": [
                 {
-                  "name": "ReSprintTicks",
+                  "name": "ReSprint",
                   "value": {
                     "from": 0,
                     "to": 1
@@ -5164,14 +5181,14 @@
               "name": "WTap",
               "value": [
                 {
-                  "name": "TicksUntilMovementBlock",
+                  "name": "UntilMovementBlock",
                   "value": {
                     "from": 0,
                     "to": 1
                   }
                 },
                 {
-                  "name": "TicksUntilAllowedMovement",
+                  "name": "UntilAllowedMovement",
                   "value": {
                     "from": 0,
                     "to": 1
@@ -5288,7 +5305,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": false
+          "value": true
         },
         {
           "name": "Mode",
@@ -5444,6 +5461,10 @@
                 {
                   "name": "Vertical",
                   "value": 1.0
+                },
+                {
+                  "name": "CancelMotion",
+                  "value": true
                 }
               ]
             },
@@ -5452,7 +5473,7 @@
               "value": [
                 {
                   "name": "Delay",
-                  "value": 2
+                  "value": 0
                 },
                 {
                   "name": "Strength",
@@ -5514,7 +5535,7 @@
                       "value": true
                     },
                     {
-                      "name": "TicksUntilJump",
+                      "name": "UntilJump",
                       "value": 2
                     }
                   ]
@@ -5525,20 +5546,15 @@
           "valueType": "CHOICE"
         },
         {
-          "name": "Delayed",
-          "value": [
-            {
-              "name": "Enabled",
-              "value": false
-            },
-            {
-              "name": "Ticks",
-              "value": {
-                "from": 3,
-                "to": 6
-              }
-            }
-          ]
+          "name": "Delay",
+          "value": {
+            "from": 0,
+            "to": 0
+          }
+        },
+        {
+          "name": "PauseOnFlag",
+          "value": 2
         }
       ]
     },
@@ -5578,15 +5594,19 @@
           "value": "Full"
         }
       ]
+    },
+    {
+      "name": "SpeedModule",
+      "value": []
     }
   ],
-  "author": "1zuna",
-  "date": "19/01/2024",
-  "time": "03:15:13",
-  "clientVersion": "1.0.0",
-  "clientCommit": "git-3b6f8c1",
+  "author": "1zun4",
+  "date": "25/01/2024",
+  "time": "11:06:35",
+  "clientVersion": "0.1.1",
+  "clientCommit": "git-c10cf62",
   "serverAddress": "hypixel.net",
-  "protocolName": "1.20.3",
+  "protocolName": "1.20.3-1.20.4",
   "protocolVersion": 765,
   "type": "Rage",
   "status": "Bypassing"
