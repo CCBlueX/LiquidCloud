@@ -1591,8 +1591,8 @@
         {
           "name": "Blocks",
           "value": [
-            "minecraft:snow",
-            "minecraft:cobweb"
+            "minecraft:cobweb",
+            "minecraft:snow"
           ]
         }
       ]
@@ -1628,7 +1628,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": false
+          "value": true
         },
         {
           "name": "Range",
@@ -1725,7 +1725,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": false
+          "value": true
         },
         {
           "name": "StartDelay",
@@ -2543,23 +2543,23 @@
         {
           "name": "Targets",
           "value": [
-            "minecraft:magenta_bed",
-            "minecraft:black_bed",
-            "minecraft:gray_bed",
-            "minecraft:cyan_bed",
-            "minecraft:light_blue_bed",
-            "minecraft:pink_bed",
             "minecraft:purple_bed",
-            "minecraft:light_gray_bed",
+            "minecraft:magenta_bed",
             "minecraft:brown_bed",
-            "minecraft:white_bed",
+            "minecraft:light_gray_bed",
+            "minecraft:blue_bed",
+            "minecraft:black_bed",
             "minecraft:red_bed",
             "minecraft:orange_bed",
-            "minecraft:lime_bed",
-            "minecraft:blue_bed",
-            "minecraft:yellow_bed",
+            "minecraft:light_blue_bed",
             "minecraft:dragon_egg",
-            "minecraft:green_bed"
+            "minecraft:cyan_bed",
+            "minecraft:green_bed",
+            "minecraft:gray_bed",
+            "minecraft:white_bed",
+            "minecraft:lime_bed",
+            "minecraft:yellow_bed",
+            "minecraft:pink_bed"
           ]
         },
         {
@@ -2622,9 +2622,9 @@
         {
           "name": "TargetedBlocks",
           "value": [
+            "minecraft:ender_chest",
             "minecraft:chest",
-            "minecraft:trapped_chest",
-            "minecraft:ender_chest"
+            "minecraft:trapped_chest"
           ]
         }
       ]
@@ -4464,7 +4464,7 @@
         {
           "name": "Delay",
           "value": {
-            "from": 0,
+            "from": 1,
             "to": 1
           }
         },
@@ -4518,15 +4518,64 @@
         },
         {
           "name": "RotationMode",
-          "value": "Random"
+          "value": "Stabilized"
         },
         {
           "name": "AimTiming",
           "value": "Normal"
         },
         {
-          "name": "BridgeMode",
-          "value": "TellyNCP"
+          "name": "Technique",
+          "active": "Telly",
+          "value": [],
+          "choices": {
+            "Normal": {
+              "name": "Normal",
+              "value": []
+            },
+            "Eagle": {
+              "name": "Eagle",
+              "value": [
+                {
+                  "name": "BlocksToEagle",
+                  "value": 0
+                },
+                {
+                  "name": "EdgeDistance",
+                  "value": 0.01
+                }
+              ]
+            },
+            "Telly": {
+              "name": "Telly",
+              "value": [
+                {
+                  "name": "Strafe",
+                  "value": [
+                    {
+                      "name": "Enabled",
+                      "value": true
+                    },
+                    {
+                      "name": "StraightSpeed",
+                      "value": {
+                        "from": 0.41,
+                        "to": 0.41
+                      }
+                    },
+                    {
+                      "name": "DiagonalSpeed",
+                      "value": {
+                        "from": 0.29,
+                        "to": 0.29
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "valueType": "CHOICE"
         },
         {
           "name": "IgnoreOpenInventory",
@@ -4608,12 +4657,12 @@
           "value": 1.0
         },
         {
-          "name": "KeepY",
+          "name": "SameY",
           "value": false
         },
         {
           "name": "SlowdownOnJump",
-          "value": 0.15
+          "value": 0.0
         },
         {
           "name": "SimulatePlacementAttempts",
@@ -4663,23 +4712,6 @@
             {
               "name": "SpeedLimit",
               "value": 0.12
-            }
-          ]
-        },
-        {
-          "name": "Eagle",
-          "value": [
-            {
-              "name": "Enabled",
-              "value": false
-            },
-            {
-              "name": "BlocksToEagle",
-              "value": 0
-            },
-            {
-              "name": "EagleEdgeDistance",
-              "value": 0.01
             }
           ]
         },
@@ -5226,6 +5258,15 @@
       ]
     },
     {
+      "name": "SwingFix",
+      "value": [
+        {
+          "name": "Enabled",
+          "value": false
+        }
+      ]
+    },
+    {
       "name": "SwordBlock",
       "value": [
         {
@@ -5260,7 +5301,7 @@
         },
         {
           "name": "Mode",
-          "active": "Motion",
+          "active": "Clip",
           "value": [],
           "choices": {
             "Motion": {
@@ -5268,7 +5309,7 @@
               "value": [
                 {
                   "name": "Motion",
-                  "value": 0.2872
+                  "value": 0.29
                 }
               ]
             },
@@ -5284,7 +5325,7 @@
           "value": [
             {
               "name": "Enabled",
-              "value": true
+              "value": false
             }
           ]
         },
@@ -5293,7 +5334,7 @@
           "value": [
             {
               "name": "Enabled",
-              "value": true
+              "value": false
             },
             {
               "name": "Slipperiness",
@@ -5614,12 +5655,16 @@
   ],
   "author": "1zun4",
   "date": "25/01/2024",
-  "time": "19:15:39",
+  "time": "23:04:20",
   "clientVersion": "0.1.2",
-  "clientCommit": "git-efe2c28",
+  "clientCommit": "git-eeca813",
   "serverAddress": "hypixel.net",
   "protocolName": "1.20.3",
   "protocolVersion": 765,
   "type": "Rage",
-  "status": "Bypassing"
+  "status": "Bypassing",
+  "chat": [
+    "§5If you want to §cRISK IT§5, you can try enabling '§6Interact§5' AutoBlock. I am not 100% certain yet if it will cause autobans or not.",
+    "§5Otherwise, this config should not auto ban, if it does, please contact me on §6https://www.guilded.gg/CCBlueX"
+  ]
 }
