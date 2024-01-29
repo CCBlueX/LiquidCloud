@@ -1,7 +1,7 @@
 /*
  *  Hypixel Config     
  *    by guosic
- *   Version 1.4
+ *   Version 1.6
  */
 
 # Module Values
@@ -22,44 +22,51 @@ AntiBot Ping false
 AntiBot NeedHit false
 AntiBot DuplicateInWorld false
 AntiBot DuplicateInTab false
+AntiBot Properties false
 AntiBot AlwaysInRadius false
 
-AutoArmor MaxTicks 2
-AutoArmor MinTicks 0
+AutoArmor MaxDelay 100
+AutoArmor MinDelay 50
+AutoArmor MinItemAge 0
 AutoArmor InvOpen true
-AutoArmor NoMove true
-AutoArmor ItemTicks 0
+AutoArmor AutoClose false
+AutoArmor StartDelay 50
+AutoArmor SmartSwap true
+AutoArmor NoMoveClicks false
 AutoArmor Hotbar false
 
 ChestStealer MaxDelay 100
 ChestStealer MinDelay 50
-ChestStealer DelayOnFirst true
-ChestStealer TakeRandomized false
-ChestStealer OnlyItems false
-ChestStealer NoCompass true
-ChestStealer AutoClose true
-ChestStealer AutoCloseMaxDelay 0
-ChestStealer CloseOnFull true
+ChestStealer StartDelay 100
+ChestStealer CloseDelay 0
+ChestStealer NoMoveClicks false
 ChestStealer ChestTitle true
+ChestStealer RandomSlot false
 
-InventoryCleaner MaxDelay 100
+GameDetector GameModeCheck false
+GameDetector CapabilitiesCheck true
+GameDetector TabListCheck false
+GameDetector TeamsCheck false
+GameDetector InvisibilityCheck false
+GameDetector CompassCheck false
+GameDetector EntityCheck false
+GameDetector ScoreboardCheck false
+
+InventoryCleaner MaxDelay 80
 InventoryCleaner MinDelay 50
-InventoryCleaner ItemDelay 0
+InventoryCleaner MinItemAge 0
 InventoryCleaner InvOpen true
-InventoryCleaner NoMoveClicks true
-InventoryCleaner NoClicksInAir false
-InventoryCleaner NoClicksOnGround false
-InventoryCleaner IgnoreVehicles false
-InventoryCleaner Hotbar true
+InventoryCleaner AutoClose false
+InventoryCleaner StartDelay 50
+InventoryCleaner NoMoveClicks false
 InventoryCleaner RandomSlot false
-InventoryCleaner Sort true
 
 KillAura SimulateCooldown false
-KillAura MaxCPS 20
-KillAura MinCPS 14
+KillAura MaxCPS 13
+KillAura MinCPS 8
 KillAura HurtTime 10
 KillAura ClickOnly false
-KillAura Range 4.0
+KillAura Range 3.2
 KillAura ScanRange 2.0
 KillAura ThroughWallsRange 2.0
 KillAura RangeSprintReduction 0.0
@@ -70,15 +77,10 @@ KillAura KeepSprint true
 KillAura AutoBlock Packet
 KillAura ReleaseAutoBlock true
 KillAura IgnoreTickRule false
-KillAura InteractAutoBlock true
-KillAura SmartAutoBlock true
-KillAura ForceBlockWhenStill true
-KillAura CheckEnemyWeapon true
-KillAura BlockRange 3.2
-KillAura MaxOwnHurtTime 2
-KillAura MaxOpponentDirectionDiff 60.0
-KillAura MaxOpponentSwingProgress 1
 KillAura BlockRate 100
+KillAura SwitchStartBlock false
+KillAura InteractAutoBlock true
+KillAura SmartAutoBlock false
 KillAura MaxTurnSpeed 180.0
 KillAura MinTurnSpeed 180.0
 KillAura RayCast true
@@ -96,11 +98,21 @@ KillAura FOV 180.0
 KillAura Predict true
 KillAura MaxPredictSize 2.0
 KillAura MinPredictSize 0.5
-KillAura FailRate 0
-KillAura FakeSwing true
-KillAura NoInvAttack true
+KillAura FakeSwing false
+KillAura NoInvAttack false
 KillAura NoConsumeAttack NoHits
-KillAura NoInvDelay 0
+
+NoSlow SwordMode None
+NoSlow BlockForwardMultiplier 1.0
+NoSlow BlockStrafeMultiplier 1.0
+NoSlow ConsumeMode None
+NoSlow ConsumeForwardMultiplier 0.2
+NoSlow ConsumeStrafeMultiplier 0.2
+NoSlow BowMode None
+NoSlow BowForwardMultiplier 0.2
+NoSlow BowStrafeMultiplier 0.2
+NoSlow Soulsand false
+NoSlow LiquidPush false
 
 Scaffold Mode Normal
 Scaffold PlaceDelay false
@@ -108,13 +120,17 @@ Scaffold DoExtraClicks true
 Scaffold ExtraClickMaxCPS 20
 Scaffold ExtraClickMinCPS 9
 Scaffold PlacementAttempt Independent
-Scaffold AutoBlock Off
+Scaffold AutoBlock Spoof
 Scaffold Sprint false
 Scaffold Down false
+Scaffold UseStaticRotation true
+Scaffold AllowClutching true
+Scaffold HorizontalClutchBlocks 5
+Scaffold VerticalClutchBlocks 3
 Scaffold Eagle Off
 Scaffold Rotations Stabilized
-Scaffold Strafe true
 Scaffold SilentRotation true
+Scaffold Strafe false
 Scaffold KeepRotation true
 Scaffold KeepTicks 3
 Scaffold SearchMode Area
@@ -126,22 +142,19 @@ Scaffold Zitter Off
 Scaffold Timer 1.0
 Scaffold SpeedModifier 1.0
 Scaffold Slow true
-Scaffold SlowSpeed 0.95
+Scaffold SlowOnlyGround true
+Scaffold SlowSpeed 0.97
 Scaffold SameY false
 Scaffold SafeWalk true
 Scaffold AirSafe false
 
 Speed Mode HypixelHop
 
-Sprint Mode Vanilla
-Sprint AllDirections false
-Sprint Blindness true
-Sprint UsingItem false
-Sprint Food true
-Sprint CheckServerSide true
-Sprint CheckServerSideOnlyGround false
+Sprint Mode Legit
+Sprint OnlyOnSprintPress false
+Sprint AlwaysCorrectSprint false
 
-SuperKnockback Delay 200
+SuperKnockback Delay 0
 SuperKnockback HurtTime 10
 SuperKnockback Mode SprintTap
 SuperKnockback OnlyGround false
@@ -155,6 +168,7 @@ Teams GommeSW false
 Velocity Mode Simple
 Velocity Horizontal 0.0
 Velocity Vertical 1.0
+Velocity LimitMaxMotion false
 
 # Module States
 AbortBreaking toggle false
@@ -209,6 +223,7 @@ Fly toggle false
 ForceUnicodeChat toggle false
 Freeze toggle false
 Fucker toggle false
+GameDetector toggle true
 Ghost toggle false
 GhostHand toggle false
 GodMode toggle false
@@ -238,7 +253,7 @@ NoFriends toggle false
 NoJumpDelay toggle true
 NoPitchLimit toggle false
 NoRotateSet toggle false
-NoSlow toggle false
+NoSlow toggle true
 NoSlowBreak toggle false
 NoWeb toggle false
 Nuker toggle false
@@ -265,7 +280,7 @@ Speed toggle false
 Sprint toggle true
 Step toggle false
 Strafe toggle false
-SuperKnockback toggle true
+SuperKnockback toggle false
 TNTBlock toggle false
 Teams toggle true
 Teleport toggle false
@@ -288,7 +303,7 @@ targetDead false
 
 # Chat
 chat &r
-chat &r                   &7→ &c&lHYPIXEL SETTINGS &7| &b20/09/2023 &7←
-chat &r&bCurrent bypasses include &b&lKillAura, Scaffold, Speed, ChestStealer, AutoArmor, and InventoryCleaner&7.
-chat &r&bCurrent Status: &aBypassing (Tested: 20/09/2023)
+chat &r                   &7→ &c&lHYPIXEL SETTINGS &7| &b7/01/2024 &7←
+chat &r&bCurrent bypasses include &b&lKillAura, ChestStealer, AutoArmor, and InventoryCleaner&7.
+chat &r&bCurrent Status: &aBypassing (Tested: 7/01/2024)
 chat &r

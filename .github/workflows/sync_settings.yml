@@ -3,9 +3,7 @@ name: Sync settings
 on:
   push:
     branches:
-      - 'master'
-    paths:
-      - LiquidBounce/settings/**
+      - '*'
 
 jobs:
   upload_settings:
@@ -17,39 +15,47 @@ jobs:
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
 
-      - name: Upload Files
+      - name: Create TAR and Meta Files
+        id: create_tar
+        run: |
+          for branch_folder in LiquidBounce/settings/*; do
+            if [ -d "$branch_folder" ]; then
+              echo "Processing files in directory: $branch_folder"
+              branch_name=$(basename "$branch_folder")
+              # Create a TAR file with the settings content
+              tar -cvf "$branch_name.tar" -C "$branch_folder" .
+              for file in "$branch_folder"/*; do
+                if [ -f "$file" ]; then
+                  setting_id=$(basename "$file" | cut -f 1 -d '.')
+                  contributors=$(git log --follow --format="%aN" -- "$file" | sort | uniq | paste -sd "," -)
+                  meta_file="$setting_id.meta"
+                  echo "{\"setting_id\":\"$setting_id\",\"contributors\":\"$contributors\",\"timestamp\":\"$(date -u +"%Y-%m-%dT%H:%M:%SZ")\"}" > "$meta_file"
+                  # Append the .meta file to the TAR archive if it exists
+                  if [ -f "$meta_file" ]; then
+                    tar -rvf "$branch_name.tar" "$meta_file"
+                    # Clean up the .meta file after adding it to the archive
+                    rm "$meta_file"
+                  fi
+                fi
+              done
+            fi
+          done
+
+      - name: Upload TAR and Meta Files
         id: upload_files
         env:
           AUTHORIZATION: ${{ secrets.AUTHORIZATION }}
         run: |
           for branch_folder in LiquidBounce/settings/*; do
             if [ -d "$branch_folder" ]; then
-              echo "Processing files in directory: $branch_folder"
-              for file in "$branch_folder"/*; do
-                if [ -f "$file" ]; then
-                  setting_id=$(basename "$file" | cut -f 1 -d '.')
-                  contributors=$(git log --follow --format="%aN" -- "$file" | sort | uniq | paste -sd "," -)
-                  echo "Uploading file: $file"
-                  echo "Contributors: $contributors"
-                  curl -X POST -H "Authorization: $AUTHORIZATION" -F "settings_file=@$file" -F "name=$setting_id" -F "contributors=$contributors" "https://api.liquidbounce.net/api/v1/client/$(basename $branch_folder)/settings/upload/global"
-                fi
-              done
+              branch_name=$(basename "$branch_folder")
+              echo "Uploading tar file: $branch_name.tar"
+              curl -X POST -H "Authorization: $AUTHORIZATION" -F "settings_bundle=@$branch_name.tar" "https://api.liquidbounce.net/api/v1/client/$branch_name/settings/upload/bundle"
             fi
           done
-
-      - name: Delete Files
-        id: delete_files
-        env:
-          AUTHORIZATION: ${{ secrets.AUTHORIZATION }}
-        run: |
-          for branch_folder in LiquidBounce/settings/*; do
-            if [ -d "$branch_folder" ]; then
-              echo "Processing files in directory: $branch_folder"
-              deleted_files=$(git diff --diff-filter=D --name-only $last_commit HEAD -- "$branch_folder")
-              for deleted_file in $deleted_files; do
-                setting_id=$(basename "$deleted_file" | cut -f 1 -d '.')
-                echo "Deleting file: $setting_id"
-                curl -X DELETE -H "Authorization: $AUTHORIZATION" "https://api.liquidbounce.net/api/v1/client/settings/$setting_id"
-              done
-            fi
-          done
+        
+      - name: Upload TAR Files to Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: tar-artifacts
+          path: ./*.tar
