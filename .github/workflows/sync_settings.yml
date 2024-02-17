@@ -29,7 +29,8 @@ jobs:
                   setting_id=$(basename "$file" | cut -f 1 -d '.')
                   contributors=$(git log --follow --format="%aN" -- "$file" | sort | uniq | paste -sd "," -)
                   meta_file="$setting_id.meta"
-                  echo "{\"setting_id\":\"$setting_id\",\"contributors\":\"$contributors\",\"timestamp\":\"$(date -u +"%Y-%m-%dT%H:%M:%SZ")\"}" > "$meta_file"
+                  modify_date=$(git log -1 --format=%ai -- "$file" | cut -d ' ' -f 1,2 | tr ' ' 'T')Z
+                  echo "{\"setting_id\":\"$setting_id\",\"contributors\":\"$contributors\",\"timestamp\":\"$modify_date\"}" > "$meta_file"
                   # Append the .meta file to the TAR archive if it exists
                   if [ -f "$meta_file" ]; then
                     tar -rvf "$branch_name.tar" "$meta_file"
