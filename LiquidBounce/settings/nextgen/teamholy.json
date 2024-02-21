@@ -460,7 +460,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": false
+          "value": true
         },
         {
           "name": "InventoryConstraints",
@@ -692,7 +692,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": false
+          "value": true
         },
         {
           "name": "Attack",
@@ -752,7 +752,7 @@
           "value": [
             {
               "name": "Enabled",
-              "value": false
+              "value": true
             },
             {
               "name": "ClickScheduler",
@@ -760,8 +760,8 @@
                 {
                   "name": "CPS",
                   "value": {
-                    "from": 5,
-                    "to": 8
+                    "from": 13,
+                    "to": 34
                   }
                 }
               ]
@@ -1811,6 +1811,35 @@
       ]
     },
     {
+      "name": "ClickTp",
+      "value": [
+        {
+          "name": "Enabled",
+          "value": true
+        },
+        {
+          "name": "Range",
+          "value": 500.0
+        },
+        {
+          "name": "Cooldown",
+          "value": 20
+        },
+        {
+          "name": "LagAfter",
+          "value": 40
+        },
+        {
+          "name": "Jumps",
+          "value": 3
+        },
+        {
+          "name": "StartDelay",
+          "value": 5
+        }
+      ]
+    },
+    {
       "name": "ClientSpoofer",
       "value": [
         {
@@ -2273,7 +2302,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": true
+          "value": false
         },
         {
           "name": "Range",
@@ -2608,7 +2637,7 @@
         },
         {
           "name": "WallRange",
-          "value": 1.0
+          "value": 4.67
         },
         {
           "name": "Entrance",
@@ -2710,9 +2739,9 @@
         {
           "name": "TargetedBlocks",
           "value": [
-            "minecraft:chest",
+            "minecraft:trapped_chest",
             "minecraft:ender_chest",
-            "minecraft:trapped_chest"
+            "minecraft:chest"
           ]
         }
       ]
@@ -2876,7 +2905,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": false
+          "value": true
         },
         {
           "name": "InventoryConstraints",
@@ -2884,22 +2913,22 @@
             {
               "name": "StartDelay",
               "value": {
-                "from": 5,
-                "to": 6
+                "from": 0,
+                "to": 0
               }
             },
             {
               "name": "ClickDelay",
               "value": {
-                "from": 4,
-                "to": 7
+                "from": 1,
+                "to": 3
               }
             },
             {
               "name": "CloseDelay",
               "value": {
-                "from": 1,
-                "to": 3
+                "from": 0,
+                "to": 0
               }
             },
             {
@@ -4411,45 +4440,18 @@
         },
         {
           "name": "AutoBlock",
-          "value": true
-        },
-        {
-          "name": "AlwaysHoldBlock",
-          "value": false
-        },
-        {
-          "name": "SlotResetDelay",
-          "value": 5
-        },
-        {
-          "name": "Rotations",
           "value": [
             {
-              "name": "TurnSpeed",
-              "value": {
-                "from": 180.0,
-                "to": 180.0
-              }
-            },
-            {
-              "name": "SmoothMode",
-              "value": "Relative"
-            },
-            {
-              "name": "FixVelocity",
+              "name": "Enabled",
               "value": true
             },
             {
-              "name": "ResetThreshold",
-              "value": 1.0
-            },
-            {
-              "name": "TicksUntilReset",
-              "value": 30
-            },
-            {
-              "name": "ChangeLook",
+              "name": "Always",
               "value": false
+            },
+            {
+              "name": "SlotResetDelay",
+              "value": 5
             }
           ]
         },
@@ -4515,12 +4517,79 @@
           "valueType": "CHOICE"
         },
         {
-          "name": "IgnoreOpenInventory",
-          "value": true
+          "name": "AutoJump",
+          "value": [
+            {
+              "name": "Enabled",
+              "value": true
+            },
+            {
+              "name": "WhenGoingDiagonal",
+              "value": true
+            },
+            {
+              "name": "PredictFactor",
+              "value": 0.2
+            },
+            {
+              "name": "UseDelay",
+              "value": true
+            },
+            {
+              "name": "MaxBlocks",
+              "value": 12
+            }
+          ]
         },
         {
-          "name": "MinDist",
-          "value": 0.01
+          "name": "Breezily",
+          "value": [
+            {
+              "name": "Enabled",
+              "value": false
+            },
+            {
+              "name": "EdgeDistance",
+              "value": {
+                "from": 0.45,
+                "to": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "name": "Tower",
+          "active": "Pulldown",
+          "value": [],
+          "choices": {
+            "None": {
+              "name": "None",
+              "value": []
+            },
+            "Motion": {
+              "name": "Motion",
+              "value": [
+                {
+                  "name": "Motion",
+                  "value": 0.42
+                },
+                {
+                  "name": "TriggerHeight",
+                  "value": 0.78
+                }
+              ]
+            },
+            "Pulldown": {
+              "name": "Pulldown",
+              "value": [
+                {
+                  "name": "Trigger",
+                  "value": 0.1
+                }
+              ]
+            }
+          },
+          "valueType": "CHOICE"
         },
         {
           "name": "SafeWalk",
@@ -4557,37 +4626,8 @@
           "valueType": "CHOICE"
         },
         {
-          "name": "ZitterMode",
-          "active": "Off",
-          "value": [],
-          "choices": {
-            "Off": {
-              "name": "Off",
-              "value": []
-            },
-            "Teleport": {
-              "name": "Teleport",
-              "value": [
-                {
-                  "name": "Speed",
-                  "value": 0.13
-                },
-                {
-                  "name": "Strength",
-                  "value": 0.05
-                },
-                {
-                  "name": "GroundOnly",
-                  "value": true
-                }
-              ]
-            },
-            "Smooth": {
-              "name": "Smooth",
-              "value": []
-            }
-          },
-          "valueType": "CHOICE"
+          "name": "MinDist",
+          "value": 0.01
         },
         {
           "name": "Timer",
@@ -4598,8 +4638,40 @@
           "value": false
         },
         {
-          "name": "SlowdownOnJump",
-          "value": 0.0
+          "name": "Rotations",
+          "value": [
+            {
+              "name": "TurnSpeed",
+              "value": {
+                "from": 180.0,
+                "to": 180.0
+              }
+            },
+            {
+              "name": "SmoothMode",
+              "value": "Relative"
+            },
+            {
+              "name": "FixVelocity",
+              "value": true
+            },
+            {
+              "name": "ResetThreshold",
+              "value": 1.0
+            },
+            {
+              "name": "TicksUntilReset",
+              "value": 30
+            },
+            {
+              "name": "ChangeLook",
+              "value": false
+            }
+          ]
+        },
+        {
+          "name": "IgnoreOpenInventory",
+          "value": true
         },
         {
           "name": "SimulatePlacementAttempts",
@@ -4675,31 +4747,6 @@
           ]
         },
         {
-          "name": "AutoJump",
-          "value": [
-            {
-              "name": "Enabled",
-              "value": true
-            },
-            {
-              "name": "WhenGoingDiagonal",
-              "value": true
-            },
-            {
-              "name": "PredictFactor",
-              "value": 0.2
-            },
-            {
-              "name": "UseDelay",
-              "value": true
-            },
-            {
-              "name": "MaxBlocks",
-              "value": 12
-            }
-          ]
-        },
-        {
           "name": "StabilizeMovement",
           "value": [
             {
@@ -4707,47 +4754,6 @@
               "value": true
             }
           ]
-        },
-        {
-          "name": "Breezily",
-          "value": [
-            {
-              "name": "Enabled",
-              "value": false
-            },
-            {
-              "name": "EdgeDistance",
-              "value": {
-                "from": 0.45,
-                "to": 0.5
-              }
-            }
-          ]
-        },
-        {
-          "name": "Tower",
-          "active": "None",
-          "value": [],
-          "choices": {
-            "None": {
-              "name": "None",
-              "value": []
-            },
-            "Motion": {
-              "name": "Motion",
-              "value": [
-                {
-                  "name": "Motion",
-                  "value": 0.42
-                },
-                {
-                  "name": "TriggerHeight",
-                  "value": 0.78
-                }
-              ]
-            }
-          },
-          "valueType": "CHOICE"
         }
       ]
     },
@@ -4894,7 +4900,7 @@
         {
           "name": "Delay",
           "value": {
-            "from": 0,
+            "from": 2,
             "to": 2
           }
         }
@@ -5665,8 +5671,8 @@
     }
   ],
   "author": "1zuna",
-  "date": "20/02/2024",
-  "time": "23:16:18",
+  "date": "21/02/2024",
+  "time": "22:57:03",
   "clientVersion": "0.1.5",
   "clientCommit": "git-45ab728",
   "serverAddress": "teamholy.de",
