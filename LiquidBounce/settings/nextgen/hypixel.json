@@ -559,7 +559,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": true
+          "value": false
         }
       ]
     },
@@ -600,7 +600,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": true
+          "value": false
         },
         {
           "name": "VoidLevel",
@@ -2305,11 +2305,37 @@
       ]
     },
     {
+      "name": "BungeeSpoofer",
+      "value": [
+        {
+          "name": "Enabled",
+          "value": false
+        },
+        {
+          "name": "Host",
+          "value": "127.0.0.1"
+        },
+        {
+          "name": "CustomUuid",
+          "value": [
+            {
+              "name": "Enabled",
+              "value": false
+            },
+            {
+              "name": "UUID",
+              "value": "85ac9d5ec3204e94933b3b0b8f6c512b"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "ChestStealer",
       "value": [
         {
           "name": "Enabled",
-          "value": true
+          "value": false
         },
         {
           "name": "Constraints",
@@ -2643,7 +2669,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": true
+          "value": false
         },
         {
           "name": "Locked",
@@ -2651,7 +2677,7 @@
         },
         {
           "name": "Mode",
-          "active": "NoGround",
+          "active": "Jump",
           "value": [],
           "choices": {
             "None": {
@@ -2729,7 +2755,7 @@
             },
             {
               "name": "Fake",
-              "value": true
+              "value": false
             },
             {
               "name": "CritParticles",
@@ -2950,6 +2976,31 @@
       ]
     },
     {
+      "name": "DebugRecorder",
+      "value": [
+        {
+          "name": "Mode",
+          "active": "Generic",
+          "value": [],
+          "choices": {
+            "Generic": {
+              "name": "Generic",
+              "value": []
+            },
+            "CPS": {
+              "name": "CPS",
+              "value": []
+            },
+            "Aim": {
+              "name": "Aim",
+              "value": []
+            }
+          },
+          "valueType": "CHOICE"
+        }
+      ]
+    },
+    {
       "name": "Derp",
       "value": [
         {
@@ -3071,6 +3122,19 @@
             "GrimSpectate": {
               "name": "GrimSpectate",
               "value": []
+            },
+            "VulcanScaffold": {
+              "name": "VulcanScaffold",
+              "value": []
+            },
+            "SpigotSpam": {
+              "name": "SpigotSpam",
+              "value": [
+                {
+                  "name": "Message",
+                  "value": "/skill"
+                }
+              ]
             }
           },
           "valueType": "CHOICE"
@@ -3102,6 +3166,10 @@
           "value": true
         },
         {
+          "name": "InstantStop",
+          "value": false
+        },
+        {
           "name": "Speed",
           "value": [
             {
@@ -3117,6 +3185,22 @@
               "value": 1.0
             }
           ]
+        },
+        {
+          "name": "Mode",
+          "active": "Vanilla",
+          "value": [],
+          "choices": {
+            "Static": {
+              "name": "Static",
+              "value": []
+            },
+            "Vanilla": {
+              "name": "Vanilla",
+              "value": []
+            }
+          },
+          "valueType": "CHOICE"
         }
       ]
     },
@@ -3858,6 +3942,10 @@
                 }
               ]
             },
+            "Vulcan286-Teleport-18": {
+              "name": "Vulcan286-Teleport-18",
+              "value": []
+            },
             "Grim2859-V": {
               "name": "Grim2859-V",
               "value": [
@@ -3924,12 +4012,16 @@
                   "value": 0.4
                 },
                 {
-                  "name": "Glue",
+                  "name": "Strafe",
                   "value": true
                 },
                 {
-                  "name": "Strafe",
-                  "value": true
+                  "name": "Clipping",
+                  "value": -0.5
+                },
+                {
+                  "name": "Blink",
+                  "value": false
                 },
                 {
                   "name": "FallDamage",
@@ -4038,23 +4130,23 @@
         {
           "name": "Targets",
           "value": [
-            "minecraft:red_bed",
-            "minecraft:white_bed",
-            "minecraft:light_blue_bed",
-            "minecraft:purple_bed",
-            "minecraft:cyan_bed",
-            "minecraft:gray_bed",
-            "minecraft:dragon_egg",
-            "minecraft:magenta_bed",
-            "minecraft:yellow_bed",
-            "minecraft:lime_bed",
-            "minecraft:green_bed",
-            "minecraft:black_bed",
-            "minecraft:orange_bed",
-            "minecraft:brown_bed",
-            "minecraft:light_gray_bed",
             "minecraft:pink_bed",
-            "minecraft:blue_bed"
+            "minecraft:cyan_bed",
+            "minecraft:black_bed",
+            "minecraft:white_bed",
+            "minecraft:gray_bed",
+            "minecraft:blue_bed",
+            "minecraft:lime_bed",
+            "minecraft:magenta_bed",
+            "minecraft:light_gray_bed",
+            "minecraft:yellow_bed",
+            "minecraft:red_bed",
+            "minecraft:purple_bed",
+            "minecraft:green_bed",
+            "minecraft:light_blue_bed",
+            "minecraft:dragon_egg",
+            "minecraft:brown_bed",
+            "minecraft:orange_bed"
           ]
         },
         {
@@ -5296,11 +5388,11 @@
       "value": [
         {
           "name": "Enabled",
-          "value": true
+          "value": false
         },
         {
           "name": "Mode",
-          "active": "NoGround",
+          "active": "Blink",
           "value": [],
           "choices": {
             "SpoofGround": {
@@ -5318,7 +5410,16 @@
             },
             "Packet": {
               "name": "Packet",
-              "value": []
+              "value": [
+                {
+                  "name": "PacketType",
+                  "value": "Full"
+                },
+                {
+                  "name": "Always",
+                  "value": false
+                }
+              ]
             },
             "MLG": {
               "name": "MLG",
@@ -5461,23 +5562,29 @@
               "name": "Verus",
               "value": []
             },
+            "ForceJump": {
+              "name": "ForceJump",
+              "value": [
+                {
+                  "name": "BlockDistance",
+                  "value": 0.76
+                },
+                {
+                  "name": "FallDistance",
+                  "value": 3.35
+                },
+                {
+                  "name": "JumpHeight",
+                  "value": 0.11
+                }
+              ]
+            },
             "Blink": {
               "name": "Blink",
               "value": [
                 {
-                  "name": "FallDistance",
-                  "value": {
-                    "from": 1.0,
-                    "to": 20.0
-                  }
-                },
-                {
-                  "name": "SpoofDistance",
-                  "value": 0.5
-                },
-                {
-                  "name": "OnGroundTicks",
-                  "value": 10
+                  "name": "MaximumFallDistance",
+                  "value": 20.0
                 }
               ]
             },
@@ -5875,6 +5982,10 @@
           "choices": {
             "Air": {
               "name": "Air",
+              "value": []
+            },
+            "Grim2361": {
+              "name": "Grim2361",
               "value": []
             }
           },
@@ -6603,8 +6714,8 @@
                     {
                       "name": "StraightSpeed",
                       "value": {
-                        "from": 0.4,
-                        "to": 0.5
+                        "from": 0.41,
+                        "to": 0.41
                       }
                     },
                     {
@@ -6626,7 +6737,7 @@
           "value": [
             {
               "name": "Enabled",
-              "value": true
+              "value": false
             }
           ]
         },
@@ -6770,8 +6881,8 @@
                     {
                       "name": "HorizontalTurnSpeed",
                       "value": {
-                        "from": 120.0,
-                        "to": 140.0
+                        "from": 150.0,
+                        "to": 150.0
                       }
                     },
                     {
@@ -6856,7 +6967,7 @@
             },
             {
               "name": "FixVelocity",
-              "value": true
+              "value": false
             },
             {
               "name": "ResetThreshold",
@@ -6962,7 +7073,7 @@
           "value": [
             {
               "name": "Enabled",
-              "value": true
+              "value": false
             }
           ]
         },
@@ -7347,7 +7458,12 @@
             },
             "GrimCollide": {
               "name": "GrimCollide",
-              "value": []
+              "value": [
+                {
+                  "name": "BoostSpeed",
+                  "value": 0.08
+                }
+              ]
             }
           },
           "valueType": "CHOICE"
@@ -7359,6 +7475,40 @@
         {
           "name": "NotWhileSneaking",
           "value": false
+        }
+      ]
+    },
+    {
+      "name": "Spider",
+      "value": [
+        {
+          "name": "Enabled",
+          "value": false
+        },
+        {
+          "name": "Locked",
+          "value": false
+        },
+        {
+          "name": "Mode",
+          "active": "Vanilla",
+          "value": [],
+          "choices": {
+            "Vanilla": {
+              "name": "Vanilla",
+              "value": [
+                {
+                  "name": "Motion",
+                  "value": 0.3
+                }
+              ]
+            },
+            "Vulcan": {
+              "name": "Vulcan",
+              "value": []
+            }
+          },
+          "valueType": "CHOICE"
         }
       ]
     },
@@ -7804,11 +7954,11 @@
                 },
                 {
                   "name": "Vertical",
-                  "value": 0.0
+                  "value": 1.0
                 },
                 {
                   "name": "MotionHorizontal",
-                  "value": 0.0
+                  "value": 0.5
                 },
                 {
                   "name": "MotionVertical",
@@ -7945,10 +8095,10 @@
     }
   ],
   "author": "1zuna",
-  "date": "02/04/2024",
-  "time": "07:52:54",
-  "clientVersion": "0.2.0",
-  "clientCommit": "git-e46d279",
+  "date": "14/04/2024",
+  "time": "00:48:54",
+  "clientVersion": "0.2.1",
+  "clientCommit": "git-a1ef629",
   "serverAddress": "hypixel.net",
   "protocolName": "1.20.3-1.20.4",
   "protocolVersion": 765,
