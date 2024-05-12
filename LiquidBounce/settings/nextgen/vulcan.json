@@ -2125,6 +2125,19 @@
               "value": false
             }
           ]
+        },
+        {
+          "name": "Health",
+          "value": [
+            {
+              "name": "Enabled",
+              "value": true
+            },
+            {
+              "name": "Health",
+              "value": 18
+            }
+          ]
         }
       ]
     },
@@ -2298,8 +2311,8 @@
         {
           "name": "Blocks",
           "value": [
-            "minecraft:cobweb",
-            "minecraft:snow"
+            "minecraft:snow",
+            "minecraft:cobweb"
           ]
         }
       ]
@@ -2985,31 +2998,6 @@
         {
           "name": "Motion",
           "value": 5.0
-        }
-      ]
-    },
-    {
-      "name": "DebugRecorder",
-      "value": [
-        {
-          "name": "Mode",
-          "active": "Generic",
-          "value": [],
-          "choices": {
-            "Generic": {
-              "name": "Generic",
-              "value": []
-            },
-            "CPS": {
-              "name": "CPS",
-              "value": []
-            },
-            "Aim": {
-              "name": "Aim",
-              "value": []
-            }
-          },
-          "valueType": "CHOICE"
         }
       ]
     },
@@ -4220,22 +4208,22 @@
         {
           "name": "Targets",
           "value": [
-            "minecraft:red_bed",
-            "minecraft:gray_bed",
-            "minecraft:cyan_bed",
             "minecraft:yellow_bed",
+            "minecraft:cyan_bed",
             "minecraft:pink_bed",
+            "minecraft:white_bed",
             "minecraft:brown_bed",
             "minecraft:green_bed",
-            "minecraft:white_bed",
-            "minecraft:purple_bed",
-            "minecraft:magenta_bed",
-            "minecraft:lime_bed",
-            "minecraft:light_blue_bed",
-            "minecraft:orange_bed",
             "minecraft:blue_bed",
-            "minecraft:black_bed",
+            "minecraft:red_bed",
+            "minecraft:lime_bed",
+            "minecraft:orange_bed",
             "minecraft:dragon_egg",
+            "minecraft:purple_bed",
+            "minecraft:gray_bed",
+            "minecraft:black_bed",
+            "minecraft:light_blue_bed",
+            "minecraft:magenta_bed",
             "minecraft:light_gray_bed"
           ]
         },
@@ -4404,9 +4392,9 @@
         {
           "name": "TargetedBlocks",
           "value": [
-            "minecraft:ender_chest",
             "minecraft:trapped_chest",
-            "minecraft:chest"
+            "minecraft:chest",
+            "minecraft:ender_chest"
           ]
         }
       ]
@@ -4825,12 +4813,12 @@
               "name": "CPS",
               "value": {
                 "from": 20,
-                "to": 20
+                "to": 24
               }
             },
             {
               "name": "Technique",
-              "value": "Spamming"
+              "value": "Butterfly"
             },
             {
               "name": "Cooldown",
@@ -5074,7 +5062,7 @@
             },
             {
               "name": "BlockMode",
-              "value": "Interact"
+              "value": "Basic"
             },
             {
               "name": "UnblockMode",
@@ -6687,6 +6675,10 @@
             }
           },
           "valueType": "CHOICE"
+        },
+        {
+          "name": "MaximumFallDistance",
+          "value": 1.0
         }
       ]
     },
@@ -6753,6 +6745,14 @@
           }
         },
         {
+          "name": "MinDist",
+          "value": 0.0
+        },
+        {
+          "name": "Timer",
+          "value": 1.0
+        },
+        {
           "name": "AutoBlock",
           "value": [
             {
@@ -6770,12 +6770,13 @@
           ]
         },
         {
-          "name": "RotationMode",
-          "value": "ReverseYaw"
-        },
-        {
-          "name": "AimTiming",
-          "value": "Normal"
+          "name": "Prediction",
+          "value": [
+            {
+              "name": "Enabled",
+              "value": false
+            }
+          ]
         },
         {
           "name": "Technique",
@@ -6784,46 +6785,87 @@
           "choices": {
             "Normal": {
               "name": "Normal",
-              "value": []
-            },
-            "Eagle": {
-              "name": "Eagle",
               "value": [
                 {
-                  "name": "BlocksToEagle",
-                  "value": 2
+                  "name": "RotationMode",
+                  "value": "Stabilized"
                 },
                 {
-                  "name": "EdgeDistance",
-                  "value": 0.01
-                }
-              ]
-            },
-            "Telly": {
-              "name": "Telly",
-              "value": [
-                {
-                  "name": "Strafe",
+                  "name": "Eagle",
                   "value": [
                     {
                       "name": "Enabled",
                       "value": false
                     },
                     {
-                      "name": "StraightSpeed",
-                      "value": {
-                        "from": 0.45,
-                        "to": 0.55
-                      }
+                      "name": "Mode",
+                      "value": "Input"
                     },
                     {
-                      "name": "DiagonalSpeed",
-                      "value": {
-                        "from": 0.39,
-                        "to": 0.39
-                      }
+                      "name": "BlocksToEagle",
+                      "value": 0
+                    },
+                    {
+                      "name": "EdgeDistance",
+                      "value": 0.01
                     }
                   ]
+                },
+                {
+                  "name": "Telly",
+                  "value": [
+                    {
+                      "name": "Enabled",
+                      "value": false
+                    }
+                  ]
+                },
+                {
+                  "name": "Down",
+                  "value": [
+                    {
+                      "name": "Enabled",
+                      "value": false
+                    }
+                  ]
+                },
+                {
+                  "name": "StabilizeMovement",
+                  "value": [
+                    {
+                      "name": "Enabled",
+                      "value": false
+                    }
+                  ]
+                }
+              ]
+            },
+            "GodBridge": {
+              "name": "GodBridge",
+              "value": [
+                {
+                  "name": "Mode",
+                  "value": "Jump"
+                },
+                {
+                  "name": "ForceSneakBelowCount",
+                  "value": 3
+                },
+                {
+                  "name": "SneakTime",
+                  "value": 1
+                }
+              ]
+            },
+            "Breezily": {
+              "name": "Breezily",
+              "value": [
+                {
+                  "name": "EdgeDistance",
+                  "value": {
+                    "from": 0.45,
+                    "to": 0.5
+                  }
                 }
               ]
             }
@@ -6831,54 +6873,8 @@
           "valueType": "CHOICE"
         },
         {
-          "name": "Prediction",
-          "value": [
-            {
-              "name": "Enabled",
-              "value": true
-            }
-          ]
-        },
-        {
-          "name": "AutoJump",
-          "value": [
-            {
-              "name": "Enabled",
-              "value": false
-            },
-            {
-              "name": "WhenGoingDiagonal",
-              "value": false
-            },
-            {
-              "name": "PredictFactor",
-              "value": 0.54
-            },
-            {
-              "name": "UseDelay",
-              "value": false
-            },
-            {
-              "name": "MaxBlocks",
-              "value": 3
-            }
-          ]
-        },
-        {
-          "name": "Breezily",
-          "value": [
-            {
-              "name": "Enabled",
-              "value": false
-            },
-            {
-              "name": "EdgeDistance",
-              "value": {
-                "from": 0.35,
-                "to": 0.35
-              }
-            }
-          ]
+          "name": "SameY",
+          "value": "Off"
         },
         {
           "name": "Tower",
@@ -6894,7 +6890,7 @@
               "value": [
                 {
                   "name": "Motion",
-                  "value": 0.41
+                  "value": 0.39
                 },
                 {
                   "name": "TriggerHeight",
@@ -6908,6 +6904,23 @@
                 {
                   "name": "Trigger",
                   "value": 0.16
+                }
+              ]
+            },
+            "Karhu": {
+              "name": "Karhu",
+              "value": [
+                {
+                  "name": "Timer",
+                  "value": 1.0
+                },
+                {
+                  "name": "Trigger",
+                  "value": 0.06
+                },
+                {
+                  "name": "Pulldown",
+                  "value": true
                 }
               ]
             }
@@ -6954,23 +6967,15 @@
           "valueType": "CHOICE"
         },
         {
-          "name": "MinDist",
-          "value": 0.0
-        },
-        {
-          "name": "Timer",
-          "value": 1.0
-        },
-        {
-          "name": "SameY",
-          "value": false
+          "name": "Swing",
+          "value": "DoNotHide"
         },
         {
           "name": "Rotations",
           "value": [
             {
               "name": "AngleSmooth",
-              "active": "Sigmoid",
+              "active": "Linear",
               "value": [],
               "choices": {
                 "Linear": {
@@ -7069,7 +7074,7 @@
             },
             {
               "name": "ResetThreshold",
-              "value": 1.0
+              "value": 180.0
             },
             {
               "name": "TicksUntilReset",
@@ -7078,12 +7083,16 @@
             {
               "name": "ChangeLook",
               "value": false
+            },
+            {
+              "name": "ConsiderInventory",
+              "value": false
+            },
+            {
+              "name": "RotationTiming",
+              "value": "Normal"
             }
           ]
-        },
-        {
-          "name": "IgnoreOpenInventory",
-          "value": false
         },
         {
           "name": "SimulatePlacementAttempts",
@@ -7115,32 +7124,6 @@
           ]
         },
         {
-          "name": "Ledge",
-          "value": [
-            {
-              "name": "Enabled",
-              "value": false
-            },
-            {
-              "name": "SneakTime",
-              "value": 2
-            }
-          ]
-        },
-        {
-          "name": "Swing",
-          "value": [
-            {
-              "name": "Enabled",
-              "value": true
-            },
-            {
-              "name": "Silent",
-              "value": false
-            }
-          ]
-        },
-        {
           "name": "Slow",
           "value": [
             {
@@ -7154,35 +7137,64 @@
           ]
         },
         {
-          "name": "SpeedLimiter",
+          "name": "StrafeOnJump",
           "value": [
             {
               "name": "Enabled",
               "value": false
             },
             {
+              "name": "StraightSpeed",
+              "value": {
+                "from": 0.48,
+                "to": 0.49
+              }
+            },
+            {
+              "name": "DiagonalSpeed",
+              "value": {
+                "from": 0.48,
+                "to": 0.49
+              }
+            }
+          ]
+        },
+        {
+          "name": "SpeedLimiter",
+          "value": [
+            {
+              "name": "Enabled",
+              "value": true
+            },
+            {
               "name": "SpeedLimit",
-              "value": 0.33
+              "value": 0.37
             }
           ]
         },
         {
-          "name": "Down",
+          "name": "Blink",
           "value": [
             {
               "name": "Enabled",
               "value": false
+            },
+            {
+              "name": "Time",
+              "value": {
+                "from": 50,
+                "to": 250
+              }
+            },
+            {
+              "name": "FallCancel",
+              "value": true
             }
           ]
         },
         {
-          "name": "StabilizeMovement",
-          "value": [
-            {
-              "name": "Enabled",
-              "value": false
-            }
-          ]
+          "name": "Ledge",
+          "value": false
         }
       ]
     },
@@ -7428,7 +7440,7 @@
         },
         {
           "name": "Mode",
-          "active": "Custom",
+          "active": "Vulcan286",
           "value": [],
           "choices": {
             "LegitHop": {
@@ -7476,7 +7488,7 @@
                     },
                     {
                       "name": "PullDownDuringFall",
-                      "value": 0.12
+                      "value": 0.2
                     }
                   ]
                 },
@@ -7642,7 +7654,7 @@
         },
         {
           "name": "StopOnAir",
-          "value": false
+          "value": true
         }
       ]
     },
@@ -7699,7 +7711,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": true
+          "value": false
         },
         {
           "name": "Locked",
@@ -8197,16 +8209,25 @@
           "value": "Full"
         }
       ]
+    },
+    {
+      "name": "LegitSpeed",
+      "value": [
+        {
+          "name": "Enabled",
+          "value": false
+        }
+      ]
     }
   ],
   "author": "KenCqrson",
-  "date": "06/05/2024",
-  "time": "22:40:30",
+  "date": "12/05/2024",
+  "time": "12:52:07",
   "clientVersion": "0.5.0",
-  "clientCommit": "git-f515523",
+  "clientCommit": "git-f734629",
   "serverAddress": "anticheat-test.com",
-  "protocolName": "1.20-1.20.1",
-  "protocolVersion": 763,
+  "protocolName": "1.20.3-1.20.4",
+  "protocolVersion": 765,
   "type": "Rage",
   "status": "Bypassing"
 }
