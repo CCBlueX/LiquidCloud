@@ -645,7 +645,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": false
+          "value": true
         },
         {
           "name": "Constraints",
@@ -1366,8 +1366,8 @@
                 {
                   "name": "CPS",
                   "value": {
-                    "from": 16,
-                    "to": 18
+                    "from": 10,
+                    "to": 16
                   }
                 },
                 {
@@ -2071,6 +2071,10 @@
         {
           "name": "SwapPreviousDelay",
           "value": 20
+        },
+        {
+          "name": "RequireSneaking",
+          "value": false
         }
       ]
     },
@@ -2311,8 +2315,8 @@
         {
           "name": "Blocks",
           "value": [
-            "minecraft:snow",
-            "minecraft:cobweb"
+            "minecraft:cobweb",
+            "minecraft:snow"
           ]
         }
       ]
@@ -2348,7 +2352,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": true
+          "value": false
         },
         {
           "name": "Constraints",
@@ -3002,6 +3006,31 @@
       ]
     },
     {
+      "name": "DebugRecorder",
+      "value": [
+        {
+          "name": "Mode",
+          "active": "Generic",
+          "value": [],
+          "choices": {
+            "Generic": {
+              "name": "Generic",
+              "value": []
+            },
+            "CPS": {
+              "name": "CPS",
+              "value": []
+            },
+            "Aim": {
+              "name": "Aim",
+              "value": []
+            }
+          },
+          "valueType": "CHOICE"
+        }
+      ]
+    },
+    {
       "name": "Derp",
       "value": [
         {
@@ -3207,7 +3236,7 @@
         },
         {
           "name": "EagleEdgeDistance",
-          "value": 0.01
+          "value": 0.1
         }
       ]
     },
@@ -4110,6 +4139,10 @@
                   "value": 60.0
                 }
               ]
+            },
+            "HycraftDamage": {
+              "name": "HycraftDamage",
+              "value": []
             }
           },
           "valueType": "CHOICE"
@@ -4208,23 +4241,23 @@
         {
           "name": "Targets",
           "value": [
-            "minecraft:yellow_bed",
-            "minecraft:cyan_bed",
-            "minecraft:black_bed",
-            "minecraft:lime_bed",
-            "minecraft:white_bed",
             "minecraft:brown_bed",
-            "minecraft:gray_bed",
-            "minecraft:red_bed",
-            "minecraft:purple_bed",
-            "minecraft:blue_bed",
-            "minecraft:light_gray_bed",
-            "minecraft:light_blue_bed",
-            "minecraft:orange_bed",
+            "minecraft:black_bed",
             "minecraft:magenta_bed",
             "minecraft:pink_bed",
+            "minecraft:purple_bed",
+            "minecraft:cyan_bed",
+            "minecraft:dragon_egg",
+            "minecraft:light_gray_bed",
             "minecraft:green_bed",
-            "minecraft:dragon_egg"
+            "minecraft:red_bed",
+            "minecraft:orange_bed",
+            "minecraft:lime_bed",
+            "minecraft:gray_bed",
+            "minecraft:white_bed",
+            "minecraft:blue_bed",
+            "minecraft:light_blue_bed",
+            "minecraft:yellow_bed"
           ]
         },
         {
@@ -4246,6 +4279,14 @@
         {
           "name": "PrioritizeOverKillAura",
           "value": false
+        },
+        {
+          "name": "IgnoreSelfBed",
+          "value": false
+        },
+        {
+          "name": "BedDistance",
+          "value": 24.0
         },
         {
           "name": "Rotations",
@@ -4392,9 +4433,9 @@
         {
           "name": "TargetedBlocks",
           "value": [
-            "minecraft:trapped_chest",
             "minecraft:chest",
-            "minecraft:ender_chest"
+            "minecraft:ender_chest",
+            "minecraft:trapped_chest"
           ]
         }
       ]
@@ -5898,6 +5939,10 @@
                 "Rehold": {
                   "name": "Rehold",
                   "value": []
+                },
+                "Blink": {
+                  "name": "Blink",
+                  "value": []
                 }
               },
               "valueType": "CHOICE"
@@ -6593,7 +6638,7 @@
         },
         {
           "name": "Speed",
-          "value": 100
+          "value": 35
         },
         {
           "name": "Timer",
@@ -7736,7 +7781,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": true
+          "value": false
         },
         {
           "name": "Mode",
@@ -8209,22 +8254,87 @@
           "value": "Full"
         }
       ]
+    },
+    {
+      "name": "KillInsults",
+      "value": [
+        {
+          "name": "Toxic Words",
+          "value": [
+            "Did {TARGET} pay for that loss?",
+            "Get LiquidBounce from liquidbounce.net",
+            "Did {TARGET}\u0027s dad not come back after he wanted to buy some milk?",
+            "RISE against other cheaters by getting LiquidBounce from liquidbounce.net",
+            "Are you afraid of me?",
+            "Why not use LiquidBounce?",
+            "#SwitchToLiquidBounce5",
+            "Did {TARGET} forget to left click?",
+            "{TARGET} takes up 2 seats on the bus",
+            "It is impossible to miss {TARGET} with their man boobs",
+            "Come on {TARGET}, report me to the obese staff",
+            "{TARGET} is the type to overdose on Benadryl for a Tiktok video",
+            "No wonder {TARGET} dropped out of college",
+            "Here\u0027s your ticket to spectator, {TARGET}",
+            "{TARGET} said they would never give me up and never let me down, I am sad",
+            "The latest update to LiquidBounce fps booster client gave me 1000 fps and regedits for better velocity",
+            "{TARGET} became Transgender just to join the 50% a day later",
+            "Drink hand sanitizer so we can get rid of {TARGET}",
+            "Even the MC Virgins are less virgin than {TARGET}",
+            "{TARGET}\u0027s free trial of life has expired",
+            "{TARGET} is socially awkward",
+            "I bet {TARGET} believes in the flat earth",
+            "{TARGET} is the reason why society is failing",
+            "Pay to lose",
+            "Get good, get LiquidBounce @ liquidbounce.net",
+            "Why would I be cheating when I am recording?",
+            "{TARGET} is such a degenerate that {TARGET} believes EQ has more value than IQ",
+            "The air could\u0027ve taken {TARGET} away because of how weak {TARGET} is",
+            "Even Kurt Cobain is more alive than {TARGET} with his wounds from a shotgun and heroin in his veins",
+            "{TARGET} is breaking down more than Nirvana after Kurt Cobain\u0027s death",
+            "Does {TARGET} buy their groceries at the dollar store?",
+            "Does {TARGET} need some pvp advice?",
+            "I\u0027d smack {TARGET}, but that would be animal abuse",
+            "I don\u0027t cheat, {TARGET} just needs to click faster",
+            "Welcome to my rape dungeon! population: {TARGET}",
+            "{TARGET} pressed the wrong button when they installed Minecraft?",
+            "If the body is 70% water than how is {TARGET}\u0027s body 100% salt?",
+            "LiquidBounce is sexier than {TARGET}",
+            "Oh, {TARGET} is recording? Well I am too",
+            "{TARGET} is the type of person who would brute force interpolation",
+            "{TARGET} go drown in your own salt",
+            "{TARGET} is literally heavier than Overflow",
+            "Excuse me {TARGET}, I don\u0027t speak retard",
+            "Hmm, the problem {TARGET} is having looks like a skin color issue",
+            "{TARGET} I swear I\u0027m on Lunar Client",
+            "Hey! Wise up {TARGET}! Don\u0027t waste your time without LiquidBounce",
+            "{TARGET} didn\u0027t even stand a chance",
+            "If opposites attract I hope {TARGET} finds someone who is intelligent, honest and cultured",
+            "If laughter is the best medicine, {TARGET}\u0027s face must be curing the world",
+            "{TARGET} is the type of person to climb over a glass wall to see what\u0027s on the other side",
+            "What does {TARGET}\u0027s IQ and their girlfriend have in common? They\u0027re both below 5."
+          ]
+        },
+        {
+          "name": "Randomize",
+          "value": false
+        }
+      ]
     }
   ],
   "author": "@bruh.theassistant",
-  "date": "13/05/2024",
+  "date": "22/05/2024",
   "time": "17:01:54",
   "clientVersion": "0.5.1",
   "clientCommit": "git-5ee7020",
   "serverAddress": "mc.hycraft.us",
   "protocolName": "1.20.3-1.20.4",
   "protocolVersion": 765,
-  "type": "Rage",
+  "type": "Ghost",
   "status": "Bypassing",
   "chat": [
-    "update v0.1.0",
+    "update v0.1.1",
     "This config shouldn't silent flag.",
-    "Instead of scaffold, use eagle. It's basically legitscaffold.",
+    "Instead of scaffold, use eagle. It's basically legit scaffold.",
     "Use it on any version you like, 1.8.x-1.20.x!"
   ]
 
