@@ -1,74 +1,79 @@
 {
   "comment": "Another example config for pіkа nеtwоrk",
-  "traderTitle": "shop",
+  "comment2": "but almost every item is located within the same category",
+  "comment3": "thus a purchase process can be faster",
+  "traderTitles": ["shop"],
   "initialCategorySlot": 0,
-  "items": [
+  "elements": [
     {
-      "comment": "pika iron sword",
-      "itemID": "iron_sword", "minAmount": 1,
-      "categorySlot": 0, "itemSlot": 28,
-      "price": [
-        [{"itemID": "gold_ingot", "minAmount": 8}]
-      ]
-    },
-    {
-      "comment": "pika stone sword",
-      "itemID": "stone_sword", "minAmount": 1,
-      "categorySlot": 0, "itemSlot": 25,
-      "price": [
-        [{"itemID": "iron_ingot", "minAmount": 12}]
-      ],
-      "checkItems": [
-        {"itemID": "iron_sword", "minAmount": 1}
-      ]
-    },
-    {
-      "comment": "pika wool blocks (x64)",
-      "itemID": "wool", "minAmount": 64,
+      "item": {"id": "wool", "minAmount": 96},
+      "amountPerClick": 16,
       "categorySlot": 0, "itemSlot": 20,
-      "price": [
-        [{"itemID": "iron_ingot", "minAmount": 4}]
-      ]
+      "price": {"id": "iron_ingot", "minAmount": 4}
     },
     {
-      "comment": "pika golden apple (x1)",
-      "itemID": "golden_apple", "minAmount": 1,
-      "categorySlot": 0, "itemSlot": 37,
-      "price": [
-        [{"itemID": "gold_ingot", "minAmount": 3}]
-      ]
+      "item": {"id": "diamond_boots"},
+      "categorySlot": 1, "itemSlot": 21,
+      "price": {"id": "emerald", "minAmount": 6}
     },
     {
-      "comment": "pika iron armor",
-      "itemID": "iron_boots", "minAmount": 1,
+      "item": {"id": "iron_boots"},
       "categorySlot": 0, "itemSlot": 19,
-      "price": [
-        [{"itemID": "gold_ingot", "minAmount": 12}]
-      ]
+      "price": {"id": "gold_ingot", "minAmount": 12},
+      "purchaseConditions": {"all": [{"id": "golden_apple", "min": 2}, {"id": "diamond_boots", "max": 0}]}
     },
     {
-      "comment": "pika chainmail armor",
-      "itemID": "chainmail_boots", "minAmount": 1,
+      "item": {"id": "chainmail_boots"},
       "categorySlot": 1, "itemSlot": 19,
-      "price": [
-        [{"itemID": "iron_ingot", "minAmount": 24}]
-      ]
+      "price": {"id": "iron_ingot", "minAmount": 24},
+      "purchaseConditions": {"all": [{"id": "iron_boots", "max": 0}, {"id": "diamond_boots", "max": 0}]}
     },
     {
-      "comment": "pika wooden pickaxe",
-      "itemID": "wooden_pickaxe", "minAmount": 1,
-      "categorySlot": 1, "itemSlot": 33,
-      "price": [
-        [{"itemID": "iron_ingot", "minAmount": 24}]
-      ]
+      "item": {"id": "iron_sword"},
+      "categorySlot": 0, "itemSlot": 28,
+      "price": {"id": "gold_ingot", "minAmount": 8}
     },
     {
-      "comment": "pika wooden axe",
-      "itemID": "wooden_axe", "minAmount": 1,
-      "categorySlot": 1, "itemSlot": 34,
-      "price": [
-        [{"itemID": "iron_ingot", "minAmount": 24}]
-      ]
+      "item": {"id": "stone_sword"},
+      "categorySlot": 0, "itemSlot": 25,
+      "price": {"id": "iron_ingot", "minAmount": 12},
+      "purchaseConditions": {"id": "iron_sword", "max": 0}
+    },
+    {
+      "item": {"id": "wooden_pickaxe"},
+      "categorySlot": 0, "itemSlot": 33,
+      "price": {"id": "iron_ingot", "minAmount": 10}
+    },
+    {
+      "item": {"id": "wooden_axe"},
+      "categorySlot": 0, "itemSlot": 34,
+      "price": {"id": "iron_ingot", "minAmount": 10}
+    },
+    {
+      "item": {"id": "golden_apple", "minAmount": 2},
+      "categorySlot": 0, "itemSlot": 37,
+      "price": {"id": "gold_ingot", "minAmount": 3}
+    },
+    {
+      "item": {"id": "golden_apple", "minAmount": 5},
+      "categorySlot": 0, "itemSlot": 37,
+      "price": {"id": "gold_ingot", "minAmount": 3},
+      "purchaseConditions": {"id": "iron_boots"}
+    },
+    {
+      "item": {"id": "fire_charge", "minAmount": 5},
+      "categorySlot": 0, "itemSlot": 38,
+      "price": {"id": "iron_ingot", "minAmount": 40}
+    },
+    {
+      "item": {"id": "potion:speed"},
+      "categorySlot": 0, "itemSlot": 42,
+      "price": {"id": "emerald", "minAmount": 1}
+    },
+    {
+      "item": {"id": "potion:jump_boost"},
+      "categorySlot": 0, "itemSlot": 43,
+      "price": {"id": "emerald", "minAmount": 1}
     }
   ]
 }
