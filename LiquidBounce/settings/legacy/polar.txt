@@ -1,7 +1,7 @@
 /*
  *      Polar Config     
  *     by thatonecoder
- *   Version 1.0-alpha.2
+ *   Version 1.0-alpha.4
  */
 
 # Module Values
@@ -26,13 +26,15 @@ AntiBot DuplicateInTab false
 AntiBot Properties false
 AntiBot AlwaysInRadius false
 
-AntiFireball Range 3.0
+AntiFireball Range 4.0
 AntiFireball Swing Normal
 AntiFireball Rotations true
 AntiFireball SmootherMode Relative
 AntiFireball Strafe true
 AntiFireball SimulateShortStop false
-AntiFireball StartFirstRotationSlow true
+AntiFireball StartRotatingSlow true
+AntiFireball SlowDownOnDirectionChange false
+AntiFireball UseStraightLinePath true
 AntiFireball MaxHorizontalSpeed 120.0
 AntiFireball MinHorizontalSpeed 90.0
 AntiFireball MaxVerticalSpeed 90.0
@@ -86,29 +88,6 @@ BowAimbot MaxVerticalSpeed 180.0
 BowAimbot MinVerticalSpeed 180.0
 BowAimbot AngleThresholdUntilReset 5.0
 
-ChestAura Chest false
-ChestAura EnderChest false
-ChestAura Range 5.0
-ChestAura Delay 100
-ChestAura ThroughWalls true
-ChestAura ThroughWallsRange 3.0
-ChestAura MinDistanceFromOpponent 10.0
-ChestAura IgnoreLootedChests true
-ChestAura DetectChestRefill true
-ChestAura Rotations true
-ChestAura SilentRotation true
-ChestAura SimulateShortStop false
-ChestAura StartFirstRotationSlow true
-ChestAura MaxHorizontalSpeed 180.0
-ChestAura MinHorizontalSpeed 180.0
-ChestAura MaxVerticalSpeed 180.0
-ChestAura MinVerticalSpeed 180.0
-ChestAura Strafe Off
-ChestAura SmootherMode Relative
-ChestAura KeepRotationTicks 5
-ChestAura AngleThresholdUntilReset 5.0
-ChestAura OpenInfo Off
-
 ChestStealer SmartDelay true
 ChestStealer DelayMultiplier 150
 ChestStealer SmartOrder true
@@ -145,7 +124,9 @@ Fucker Rotations true
 Fucker Strafe Silent
 Fucker SmootherMode Relative
 Fucker SimulateShortStop false
-Fucker StartFirstRotationSlow true
+Fucker StartRotatingSlow false
+Fucker SlowDownOnDirectionChange false
+Fucker UseStraightLinePath false
 Fucker MaxHorizontalSpeed 180.0
 Fucker MinHorizontalSpeed 180.0
 Fucker MaxVerticalSpeed 180.0
@@ -192,13 +173,13 @@ InventoryMove SilentlyCloseAndReopen false
 
 KillAura SimulateCooldown false
 KillAura SimulateDoubleClicking true
-KillAura MaxCPS 16
-KillAura MinCPS 12
+KillAura MaxCPS 17
+KillAura MinCPS 14
 KillAura HurtTime 10
 KillAura ClickOnly false
 KillAura Range 3.0
 KillAura ScanRange 2.5
-KillAura ThroughWallsRange 0.0
+KillAura ThroughWallsRange 1.58
 KillAura RangeSprintReduction 0.0
 KillAura Priority Distance
 KillAura TargetMode Single
@@ -206,52 +187,46 @@ KillAura Swing true
 KillAura KeepSprint false
 KillAura OnScaffold false
 KillAura OnDestroyBlock false
-KillAura AutoBlock Packet
-KillAura BlockMaxRange 3.0
+KillAura AutoBlock Fake
+KillAura BlockMaxRange 3.5
 KillAura UnblockMode Stop
-KillAura ReleaseAutoBlock true
-KillAura ForceBlockRender true
-KillAura IgnoreTickRule false
-KillAura BlockRate 75
-KillAura SwitchStartBlock false
-KillAura InteractAutoBlock true
-KillAura BlinkAutoBlock false
-KillAura SmartAutoBlock true
-KillAura ForceBlockWhenStill true
-KillAura CheckEnemyWeapon true
-KillAura BlockRange 3.0
-KillAura MaxOwnHurtTime 3
-KillAura MaxOpponentDirectionDiff 60.0
-KillAura MaxOpponentSwingProgress 1
+KillAura SmartAutoBlock false
 KillAura NoRotation false
-KillAura StartFirstRotationSlow true
+KillAura StartRotatingSlow true
+KillAura SlowDownOnDirectionChange true
+KillAura UseStraightLinePath false
 KillAura MaxHorizontalSpeed 80.0
-KillAura MinHorizontalSpeed 70.0
-KillAura MaxVerticalSpeed 60.0
-KillAura MinVerticalSpeed 45.0
+KillAura MinHorizontalSpeed 65.0
+KillAura MaxVerticalSpeed 75.0
+KillAura MinVerticalSpeed 60.0
 KillAura RayCast true
 KillAura RayCastIgnored true
 KillAura LivingRayCast true
-KillAura UseHitDelay false
+KillAura UseHitDelay true
+KillAura HitDelayTicks 1
 KillAura KeepRotationTicks 3
 KillAura AngleThresholdUntilReset 5.0
 KillAura SilentRotation true
 KillAura Strafe Silent
 KillAura SmootherMode Relative
 KillAura SimulateShortStop false
-KillAura RandomCenter false
+KillAura RandomizeRotations true
+KillAura UseSpotsToRandomize true
 KillAura Outborder false
+KillAura HighestBodyPointToTarget Head
+KillAura LowestBodyPointToTarget Feet
 KillAura FOV 180.0
-KillAura PredictClientMovement 0.25
-KillAura PredictEnemyPosition 0.75
+KillAura PredictClientMovement 2
+KillAura PredictOnlyWhenOutOfRange false
+KillAura PredictEnemyPosition 0.5
 KillAura FailSwing true
 KillAura RespectMissCooldown true
 KillAura SwingOnlyInAir false
-KillAura MaxRotationDifferenceToSwing 60.0
+KillAura MaxRotationDifferenceToSwing 90.0
 KillAura SwingWhenTicksLate true
 KillAura TicksLateToSwing 10
-KillAura SimulateClosingInventory false
-KillAura NoInvAttack false
+KillAura NoInvAttack true
+KillAura NoInvDelay 350
 
 NoFall Mode MLG
 
@@ -261,16 +236,17 @@ Scaffold TowerMode None
 Scaffold ScaffoldMode GodBridge
 Scaffold DoExtraClicks true
 Scaffold SimulateDoubleClicking false
-Scaffold ExtraClickMaxCPS 18
-Scaffold ExtraClickMinCPS 16
+Scaffold ExtraClickMaxCPS 24
+Scaffold ExtraClickMinCPS 20
 Scaffold PlacementAttempt Independent
 Scaffold AutoBlock Spoof
-Scaffold SortByHighestAmount true
+Scaffold SortByHighestAmount false
+Scaffold EarlySwitch true
+Scaffold SlotAmountBeforeSwitch 3
 Scaffold Sprint true
 Scaffold WaitForRotations false
-Scaffold UseStaticRotation false
-Scaffold MinGodBridgePitch 75.0
-Scaffold MaxGodBridgePitch 80.0
+Scaffold UseStaticRotation true
+Scaffold GodBridgePitch 73.5
 Scaffold AutoJump true
 Scaffold JumpAutomatically true
 Scaffold AllowClutching true
@@ -282,12 +258,15 @@ Scaffold SilentRotation true
 Scaffold SimulateShortStop false
 Scaffold Strafe true
 Scaffold KeepRotation true
-Scaffold KeepTicks 5
-Scaffold StartFirstRotationSlow true
-Scaffold MaxHorizontalSpeed 65.0
-Scaffold MinHorizontalSpeed 50.0
-Scaffold MaxVerticalSpeed 30.0
-Scaffold MinVerticalSpeed 20.0
+Scaffold KeepTicks 1
+Scaffold StartRotatingSlow true
+Scaffold CurvePitchRotation false
+Scaffold SlowDownOnDirectionChange true
+Scaffold UseStraightLinePath true
+Scaffold MaxHorizontalSpeed 180.0
+Scaffold MinHorizontalSpeed 150.0
+Scaffold MaxVerticalSpeed 180.0
+Scaffold MinVerticalSpeed 180.0
 Scaffold AngleThresholdUntilReset 5.0
 Scaffold Zitter Off
 Scaffold Timer 1.0
@@ -311,10 +290,10 @@ StaffDetector Warn Chat
 SuperKnockback Delay 100
 SuperKnockback HurtTime 10
 SuperKnockback Mode WTap
-SuperKnockback MaxTicksUntilBlock 3
-SuperKnockback MinTicksUntilBlock 2
-SuperKnockback ReSprintMaxTicks 3
-SuperKnockback ReSprintMinTicks 2
+SuperKnockback MaxTicksUntilBlock 1
+SuperKnockback MinTicksUntilBlock 1
+SuperKnockback ReSprintMaxTicks 1
+SuperKnockback ReSprintMinTicks 1
 SuperKnockback TargetDistance 3
 SuperKnockback OnlyGround false
 SuperKnockback OnlyMove true
@@ -447,9 +426,10 @@ Zoot toggle false
 
 # Chat
 chat &r
-chat &r                   &7→ &c&lPOLAR SETTINGS &7| &b23/07/2024 &7←
+chat &r                   &7→ &c&lPOLAR SETTINGS &7| &b28/07/2024 &7←
 chat &r&bCurrent bypasses include &b&lKillAura, Backtrack, Scaffold, ChestStealer, AutoArmor, and InventoryCleaner&7.
-chat &r&bThis config might mitigate after some time, but it's currently being improved.
+chat &r&bThis config is EXPERIMENTAL - you might get banned after a few minutes.
+chat &r&bTested on Jartex BedWars, lasted infinitely.
 chat &r&bIf you lag, try to disable Backtrack; otherwise, just ignore this.
-chat &r&bCurrent Status: &aBypassing (Tested: 23/07/2024)
+chat &r&bCurrent Status: &aBypassing (Tested: 27/07/2024)
 chat &r
