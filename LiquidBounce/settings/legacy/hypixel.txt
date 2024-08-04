@@ -1,5 +1,5 @@
 /*
- * hypixel config by 182exe (7/1/2024)
+ * hypixel config by 182exe, EclipsesDev (8/4/2024)
  * 
  * removed module settings that don't need to be configured or are preference and don't matter
  * everything force enabled on load is usable
@@ -10,7 +10,7 @@
  * bind criticals & killaura together
  *
  * working modules:
- * aura (semi ab), noslow (swords w/ aura, bow full, eat full), inventory modules (instant stealer, manager, autoarmor), scaffold (sprint jump), criticals, antibot/teams, antifireball, blink nofall (manual, read up), bednuker (do not use with aura), fakelag
+ * aura (blink ab), noslow (swords w/ aura), inventory modules (instant stealer, manager, autoarmor), scaffold (sprint jump), criticals, antibot/teams, antifireball, blink nofall (manual, read up), bednuker (do not use with aura), fakelag
  */
 
 AntiBot Tab true
@@ -218,6 +218,8 @@ KillAura KeepSprint false
 KillAura OnScaffold false
 KillAura OnDestroyBlock false
 KillAura AutoBlock Packet
+KillAura BlockMaxRange 5.0
+KillAura UnblockMode Switch
 KillAura ReleaseAutoBlock false
 KillAura IgnoreTickRule false
 KillAura BlockRate 100
@@ -232,13 +234,16 @@ KillAura BlockRange 3.0
 KillAura MaxOwnHurtTime 20
 KillAura MaxOpponentDirectionDiff 360.0
 KillAura MaxOpponentSwingProgress 5
-KillAura StartFirstRotationSlow false
+KillAura NoRotation false
+KillAura StartRotatingSlow false
+KillAura SlowDownOnDirectionChange false
+KillAura UseStraightLinePath true
 KillAura MaxHorizontalSpeed 180.0
 KillAura MinHorizontalSpeed 180.0
 KillAura MaxVerticalSpeed 180.0
 KillAura MinVerticalSpeed 180.0
 KillAura RayCast true
-KillAura RayCastIgnored true
+KillAura RayCastIgnored false
 KillAura LivingRayCast true
 KillAura UseHitDelay false
 KillAura HitDelayTicks 1
@@ -320,7 +325,9 @@ Scaffold KeepRotation true
 Scaffold KeepTicks 1
 Scaffold SearchMode Area
 Scaffold MinDist 0.0
-Scaffold StartFirstRotationSlow false
+Scaffold StartRotatingSlow false
+Scaffold SlowDownOnDirectionChange false
+Scaffold UseStraightLinePath false
 Scaffold MaxHorizontalSpeed 180.0
 Scaffold MinHorizontalSpeed 180.0
 Scaffold MaxVerticalSpeed 180.0
@@ -370,7 +377,7 @@ Sprint Food true
 Sprint CheckServerSide true
 Sprint CheckServerSideOnlyGround true
 Sprint NoPackets true
-Sprint toggle false
+Sprint toggle true
 Strafe Strength 0.0
 Strafe NoMoveStop false
 Strafe OnGroundStrafe true
