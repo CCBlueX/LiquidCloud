@@ -66,13 +66,19 @@ BugUp Mode GhostBlock
 BugUp MaxFallDistance 10
 BugUp MaxDistanceToSetback 10
 
-ChestStealer MaxDelay 100
-ChestStealer MinDelay 75
+ChestStealer SmartDelay false
+ChestStealer SimulateShortStop false
+ChestStealer MaxDelay 150
+ChestStealer MinDelay 125
 ChestStealer StartDelay 50
 ChestStealer CloseDelay 50
 ChestStealer NoMoveClicks false
 ChestStealer ChestTitle false
 ChestStealer RandomSlot true
+
+FakeLag Delay 550
+FakeLag RecoilTime 750
+FakeLag AllowedDistanceToPlayers 3.5
 
 FastClimb Mode AAC3.0.0
 
@@ -122,12 +128,12 @@ InventoryMove NoMoveClicks false
 InventoryMove Undetectable false
 
 KillAura SimulateCooldown false
-KillAura SimulateDoubleClicking true
+KillAura SimulateDoubleClicking false
 KillAura MaxCPS 20
-KillAura MinCPS 16
+KillAura MinCPS 11
 KillAura HurtTime 10
 KillAura ClickOnly false
-KillAura Range 3.5
+KillAura Range 3.2
 KillAura ScanRange 3.0
 KillAura ThroughWallsRange 3.0
 KillAura RangeSprintReduction 0.0
@@ -140,34 +146,40 @@ KillAura KeepSprint true
 KillAura OnScaffold false
 KillAura OnDestroyBlock false
 KillAura AutoBlock Packet
-KillAura BlockMaxRange 3.0
+KillAura BlockMaxRange 3.04
 KillAura UnblockMode Stop
 KillAura ReleaseAutoBlock false
-KillAura UpdatedNCPAutoBlock false
+KillAura UpdatedNCPAutoBlock true
 KillAura SwitchStartBlock false
 KillAura InteractAutoBlock false
 KillAura BlinkAutoBlock false
 KillAura SmartAutoBlock false
 KillAura NoRotation false
-KillAura StartFirstRotationSlow false
+KillAura StartRotatingSlow false
+KillAura SlowDownOnDirectionChange false
+KillAura UseStraightLinePath false
 KillAura MaxHorizontalSpeed 180.0
 KillAura MinHorizontalSpeed 180.0
 KillAura MaxVerticalSpeed 180.0
 KillAura MinVerticalSpeed 180.0
 KillAura RayCast false
 KillAura UseHitDelay false
-KillAura KeepRotationTicks 3
+KillAura KeepRotationTicks 1
 KillAura AngleThresholdUntilReset 5.0
+KillAura MinRotationDifference 1.0
 KillAura SilentRotation true
 KillAura Strafe Off
-KillAura SmootherMode Relative
+KillAura SmootherMode Linear
 KillAura SimulateShortStop false
-KillAura RandomCenter false
+KillAura RandomizeRotations false
 KillAura Outborder false
+KillAura HighestBodyPointToTarget Head
+KillAura LowestBodyPointToTarget Feet
+KillAura MaxHorizontalBodySearch 0.7
+KillAura MinHorizontalBodySearch 0.3
 KillAura FOV 180.0
-KillAura PredictClientMovement 2
-KillAura PredictOnlyWhenOutOfRange false
-KillAura PredictEnemyPosition 1.5
+KillAura PredictClientMovement 0
+KillAura PredictEnemyPosition 0.0
 KillAura FailSwing false
 KillAura SimulateClosingInventory false
 KillAura NoInvAttack false
@@ -177,11 +189,18 @@ NoFall Mode MLG
 Scaffold TowerMode None
 Scaffold ScaffoldMode Normal
 Scaffold PlaceDelay false
-Scaffold DoExtraClicks false
+Scaffold DoExtraClicks true
+Scaffold SimulateDoubleClicking true
+Scaffold ExtraClickMaxCPS 21
+Scaffold ExtraClickMinCPS 16
+Scaffold PlacementAttempt Independent
 Scaffold AutoBlock Spoof
+Scaffold SortByHighestAmount true
 Scaffold Sprint true
-Scaffold Search true
 Scaffold Down false
+Scaffold AllowClutching true
+Scaffold HorizontalClutchingBlocks 5
+Scaffold VerticalClutchingBlocks 3
 Scaffold Eagle Off
 Scaffold Rotations Off
 Scaffold SearchMode Area
@@ -189,18 +208,12 @@ Scaffold MinDist 0.0
 Scaffold Zitter Off
 Scaffold Timer 1.0
 Scaffold SpeedModifier 1.0
-Scaffold SpeedLimiter 1.0
+Scaffold SpeedLimiter false
 Scaffold Slow false
 Scaffold SameY false
 Scaffold SafeWalk false
 
-Speed Mode Custom
-Speed CustomSpeed 0.4825
-Speed CustomY 0.42
-Speed CustomTimer 1.0
-Speed CustomStrafe false
-Speed CustomResetXZ false
-Speed CustomResetY false
+Speed Mode UNCPLowHop
 
 Sprint Mode Vanilla
 Sprint OnlyOnSprintPress false
@@ -256,7 +269,7 @@ AutoRespawn toggle false
 AutoRod toggle false
 AutoSoup toggle false
 AvoidHazards toggle false
-Backtrack toggle true
+Backtrack toggle false
 BedDefender toggle false
 BedGodMode toggle false
 Blink toggle false
@@ -271,7 +284,7 @@ Criticals toggle false
 Damage toggle false
 Disabler toggle false
 Eagle toggle false
-FakeLag toggle false
+FakeLag toggle true
 FastBow toggle false
 FastBreak toggle false
 FastClimb toggle false
@@ -349,10 +362,10 @@ Zoot toggle false
 
 # Chat
 chat &r
-chat &r                   &7→ &c&lBLOCKSMC SETTINGS &7| &b07/21/2024 &7←
-chat &r&bCurrent bypasses include &b&lKillAura, Backtrack, NoSlow, Scaffold, Speed, ChestStealer, AutoArmor, and InventoryCleaner&7.
+chat &r                   &7→ &c&lBLOCKSMC SETTINGS &7| &b16/08/2024 &7←
+chat &r&bCurrent bypasses include &b&lKillAura, FakeLag, NoSlow, Scaffold, Speed, ChestStealer, AutoArmor, and InventoryCleaner&7.
 chat &r&bThis config might silent flag, so use it at times that staff aren't active.
 chat &r&bIf you lag, try to disable Backtrack; otherwise, just ignore this.
-chat &r&bCurrent Status: &aBypassing (Tested: 07/21/2024)
-chat &r&bBuild Version: &aLegacy b95
+chat &r&bCurrent Status: &aBypassing (Tested: 16/08/2024)
+chat &r&bBuild Version: &aLegacy b96 (Nightly)
 chat &r
