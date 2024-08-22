@@ -1,7 +1,7 @@
 /*
  *     Grim Config     
  *   by thatonecoder 
- *    Version 1.4.1
+ *    Version 1.4.2
  */
 
 # Module Values
@@ -21,35 +21,29 @@ AntiFireball MinVerticalSpeed 180.0
 AntiFireball AngleThresholdUntilReset 5.0
 
 AutoArmor MaxDelay 150
-AutoArmor MaxDelay 100
-AutoArmor InvOpen false
-AutoArmor SimulateInventory false
+AutoArmor MinDelay 100
+AutoArmor MinItemAge 0
+AutoArmor InvOpen true
+AutoArmor AutoClose true
+AutoArmor StartDelay 100
+AutoArmor CloseDelay 50
 AutoArmor SmartSwap true
-AutoArmor NoMoveClicks true
-AutoArmor NoClicksInAir true
-AutoArmor NoClicksOnGround true
-AutoArmor NoMove false
-AutoArmor ItemDelay 0
+AutoArmor NoMoveClicks false
 AutoArmor Hotbar true
 AutoArmor DelayedSlotSwitch true
 AutoArmor NotInContainers true
-
-AutoDisable onFlag true
-AutoDisable onWorldChange true
-AutoDisable onDeath true
-AutoDisable Warn Notification
 
 AutoWeapon SpoofItem false
 
 Backtrack NextBacktrackDelay 0
 Backtrack Delay 250
 Backtrack Mode Modern
-Backtrack Style Pulse
+Backtrack Style Smooth
 Backtrack MaxDistance 3.2
 Backtrack MinDistance 0.0
 Backtrack Smart true
 
-Blink Mode Both
+Blink Mode Sent
 Blink Pulse false
 Blink FakePlayer false
 
@@ -68,21 +62,19 @@ BowAimbot MaxVerticalSpeed 180.0
 BowAimbot MinVerticalSpeed 180.0
 BowAimbot AngleThresholdUntilReset 5.0
 
-ChestStealer MaxDelay 120
-ChestStealer MinDelay 80
-ChestStealer StartDelay 100
-ChestStealer CloseDelay 100
+ChestStealer SmartDelay false
+ChestStealer SimulateShortStop false
+ChestStealer MaxDelay 125
+ChestStealer MinDelay 100
+ChestStealer StartDelay 50
+ChestStealer CloseDelay 40
 ChestStealer NoMoveClicks false
-ChestStealer ChestTitle false
+ChestStealer ChestTitle true
 ChestStealer RandomSlot false
 
-Criticals Mode Jump
-Criticals Delay 0
-Criticals HurtTime 10
-
-FakeLag Delay 250
-FakeLag RecoilTime 250
-FakeLag AllowedDistanceToPlayers 3.05
+FakeLag Delay 275
+FakeLag RecoilTime 75
+FakeLag AllowedDistanceToPlayers 3.1
 
 FastPlace Speed 0
 FastPlace OnlyBlocks true
@@ -93,10 +85,6 @@ FastUse NoMove true
 FastUse CustomDelay 0
 FastUse CustomSpeed 34
 FastUse CustomTimer 0.1
-
-FlagCheck ResetCounterTicks 600
-FlagCheck RubberbandCheck true
-FlagCheck RubberBandThreshold 5.0
 
 Fucker Hypixel false
 Fucker Block 26
@@ -118,11 +106,11 @@ Fucker AngleThresholdUntilReset 5.0
 InventoryCleaner MaxDelay 100
 InventoryCleaner MinDelay 75
 InventoryCleaner MinItemAge 100
-InventoryCleaner InvOpen false
-InventoryCleaner SimulateInventory false
-InventoryCleaner NoMoveClicks true
-InventoryCleaner NoClicksInAir true
-InventoryCleaner NoClicksOnGround true
+InventoryCleaner InvOpen true
+InventoryCleaner AutoClose true
+InventoryCleaner StartDelay 100
+InventoryCleaner CloseDelay 100
+InventoryCleaner NoMoveClicks false
 InventoryCleaner RandomSlot false
 
 InventoryMove NotInChests false
@@ -218,9 +206,6 @@ NoSlow BowStrafeMultiplier 1.0
 NoSlow Soulsand false
 NoSlow LiquidPush false
 
-PingSpoof MaxDelay 1000
-PingSpoof MinDelay 500
-
 Reach CombatReach 3.0
 Reach BuildReach 5.0
 
@@ -269,10 +254,17 @@ Step Mode Jump
 Step JumpHeight 0.42
 Step Delay 0
 
-SuperKnockback HurtTime 10
-SuperKnockback Mode SneakPacket
-SuperKnockback OnlyGround false
+SuperKnockback Chance 100
 SuperKnockback Delay 0
+SuperKnockback HurtTime 8
+SuperKnockback Mode WTap
+SuperKnockback MaxTicksUntilBlock 5
+SuperKnockback MinTicksUntilBlock 1
+SuperKnockback ReSprintMaxTicks 3
+SuperKnockback ReSprintMinTicks 2
+SuperKnockback TargetDistance 3
+SuperKnockback MinRotationDiffFromEnemyToIgnore 110.53
+SuperKnockback OnlyGround false
 SuperKnockback OnlyMove true
 SuperKnockback OnlyMoveForward true
 
@@ -282,10 +274,11 @@ Teams GommeSW false
 
 Timer Speed 1.0
 
-Trigger MaxCPS 8
-Trigger MinCPS 5
-
 Velocity Mode Jump
+Velocity Chance 100
+Velocity JumpCooldownMode Ticks
+Velocity TicksUntilJump 1
+Velocity PauseOnExplosion false
 
 # Module States
 AbortBreaking toggle false
@@ -302,7 +295,7 @@ AntiHunger toggle false
 AntiVanish toggle false
 AutoArmor toggle false
 AutoClicker toggle false
-AutoDisable toggle true
+AutoDisable toggle false
 AutoPlay toggle false
 AutoPot toggle false
 AutoProjectile toggle false
@@ -332,7 +325,7 @@ FastClimb toggle false
 FastPlace toggle false
 FastStairs toggle false
 FastUse toggle false
-FlagCheck toggle true
+FlagCheck toggle false
 Fly toggle false
 Freeze toggle false
 Fucker toggle false
@@ -389,7 +382,7 @@ Sprint toggle true
 StaffDetector toggle false
 Step toggle false
 Strafe toggle false
-SuperKnockback toggle false
+SuperKnockback toggle true
 TNTBlock toggle false
 Teams toggle false
 Teleport toggle false
@@ -404,10 +397,10 @@ Zoot toggle false
 
 # Chat
 chat &r
-chat &r                   &7→ &c&lGRIM SETTINGS &7| &b01/08/2024 &7←
-chat &r&bCurrent bypasses include &b&lKillAura, Backtrack, NoSlow, Scaffold, Speed, LiquidWalk, FastLadder, ChestStealer, AutoArmor, and InventoryCleaner&7.
+chat &r                   &7→ &c&lGRIM SETTINGS &7| &b21/08/2024 &7←
+chat &r&bCurrent bypasses include &b&lKillAura, Backtrack, FakeLag, NoSlow, Scaffold, Speed, LiquidWalk, FastLadder, ChestStealer, AutoArmor, and InventoryCleaner&7.
 chat &r&bIf you lag, try to disable Backtrack; otherwise, just ignore this part.
 chat &r&bYou can also use Blink to surprise your enemies, without any flags.
-chat &r&bCurrent Status: &aBypassing (Tested: 01/08/2024)
+chat &r&bCurrent Status: &aBypassing (Tested: 21/08/2024)
 chat &r&bBuild Version: &aLegacy b96 (Nightly)
 chat &r
