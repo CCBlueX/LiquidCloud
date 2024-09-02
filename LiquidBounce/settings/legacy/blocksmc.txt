@@ -1,18 +1,20 @@
 /*
  *     BlocksMC Config     
- *     by thatonecoder
- *   Version 2.0-alpha.1
+ *   by thatonecoder & eclipsesdev
+ *   Version 2.1-nightly
  */
 
 # Module Values
 AntiBot Tab true
 AntiBot TabMode Contains
 AntiBot EntityID true
+AntiBot InvalidUUID true
 AntiBot Color false
 AntiBot LivingTime false
-AntiBot Ground true
+AntiBot Capabilities true
+AntiBot Ground false
 AntiBot Air false
-AntiBot InvalidGround true
+AntiBot InvalidGround false
 AntiBot Swing false
 AntiBot Health false
 AntiBot Derp true
@@ -34,14 +36,16 @@ AntiFireball MaxTurnSpeed 120.0
 AntiFireball MinTurnSpeed 80.0
 AntiFireball AngleThresholdUntilReset 5.0
 
-AutoArmor MaxDelay 100
-AutoArmor MinDelay 75
+AutoArmor MaxDelay 150
+AutoArmor MinDelay 125
 AutoArmor MinItemAge 0
 AutoArmor InvOpen true
 AutoArmor AutoClose false
-AutoArmor StartDelay 15
+AutoArmor StartDelay 100
 AutoArmor SmartSwap false
-AutoArmor NoMoveClicks false
+AutoArmor NoMoveClicks true
+AutoArmor NoClicksInAir true
+AutoArmor NoClicksOnGround true
 AutoArmor Hotbar true
 AutoArmor DelayedSlotSwitch true
 AutoArmor NotInContainers true
@@ -66,25 +70,33 @@ BugUp Mode GhostBlock
 BugUp MaxFallDistance 10
 BugUp MaxDistanceToSetback 10
 
-ChestStealer SmartDelay false
+ChestStealer SmartDelay true
+ChestStealer DelayMultiplier 50
+ChestStealer SmartOrder true
 ChestStealer SimulateShortStop false
-ChestStealer MaxDelay 150
-ChestStealer MinDelay 125
-ChestStealer StartDelay 50
-ChestStealer CloseDelay 50
-ChestStealer NoMoveClicks false
-ChestStealer ChestTitle false
+ChestStealer MaxDelay 160
+ChestStealer MinDelay 150
+ChestStealer StartDelay 100
+ChestStealer CloseDelay 100
+ChestStealer NoMoveClicks true
+ChestStealer NoClicksInAir true
+ChestStealer NoClicksOnGround true
+ChestStealer ChestTitle true
 ChestStealer RandomSlot true
+
+Disabler StartSprint true
+Disabler GrimPlace false
+Disabler GrimDebug false
+Disabler VulcanScaffold false
+Disabler VerusFly true
+Disabler VerusCombat false
+Disabler OnlyCombat false
 
 FakeLag Delay 550
 FakeLag RecoilTime 750
 FakeLag AllowedDistanceToPlayers 3.5
 
 FastClimb Mode AAC3.0.0
-
-FastPlace Speed 0
-FastPlace OnlyBlocks true
-FastPlace OnlyWhenFacingBlocks true
 
 Fucker Hypixel false
 Fucker Block 26
@@ -112,35 +124,39 @@ GameDetector CompassCheck false
 GameDetector EntityCheck false
 GameDetector ScoreboardCheck false
 
-InventoryCleaner MaxDelay 100
-InventoryCleaner MinDelay 75
+InventoryCleaner MaxDelay 160
+InventoryCleaner MinDelay 130
 InventoryCleaner MinItemAge 0
 InventoryCleaner InvOpen true
 InventoryCleaner AutoClose false
-InventoryCleaner StartDelay 15
-InventoryCleaner NoMoveClicks false
+InventoryCleaner StartDelay 100
+InventoryCleaner NoMoveClicks true
+InventoryCleaner NoClicksInAir true
+InventoryCleaner NoClicksOnGround true
 InventoryCleaner RandomSlot false
 
 InventoryMove NotInChests false
-InventoryMove AACAdditionPro true
+InventoryMove AACAdditionPro false
 InventoryMove Intave false
-InventoryMove NoMoveClicks false
-InventoryMove Undetectable false
+InventoryMove NoMoveClicks true
+InventoryMove NoClicksInAir true
+InventoryMove NoClicksOnGround true
+InventoryMove Undetectable true
 
 KillAura SimulateCooldown false
 KillAura SimulateDoubleClicking false
-KillAura MaxCPS 20
-KillAura MinCPS 11
+KillAura MaxCPS 14
+KillAura MinCPS 7
 KillAura HurtTime 10
 KillAura ClickOnly false
 KillAura Range 3.2
-KillAura ScanRange 3.0
+KillAura ScanRange 1.0
 KillAura ThroughWallsRange 3.0
 KillAura RangeSprintReduction 0.0
 KillAura Priority Health
 KillAura TargetMode Switch
 KillAura MaxSwitchFOV 180.0
-KillAura SwitchDelay 15
+KillAura SwitchDelay 1000
 KillAura Swing true
 KillAura KeepSprint true
 KillAura OnScaffold false
@@ -151,25 +167,25 @@ KillAura UnblockMode Stop
 KillAura ReleaseAutoBlock false
 KillAura UpdatedNCPAutoBlock true
 KillAura SwitchStartBlock false
-KillAura InteractAutoBlock false
+KillAura InteractAutoBlock true
 KillAura BlinkAutoBlock false
 KillAura SmartAutoBlock false
 KillAura NoRotation false
-KillAura StartRotatingSlow false
-KillAura SlowDownOnDirectionChange false
-KillAura UseStraightLinePath false
-KillAura MaxHorizontalSpeed 180.0
-KillAura MinHorizontalSpeed 180.0
+KillAura StartRotatingSlow true
+KillAura SlowDownOnDirectionChange true
+KillAura UseStraightLinePath true
+KillAura MaxHorizontalSpeed 175.0
+KillAura MinHorizontalSpeed 165.0
 KillAura MaxVerticalSpeed 180.0
 KillAura MinVerticalSpeed 180.0
 KillAura RayCast false
 KillAura UseHitDelay false
 KillAura KeepRotationTicks 1
 KillAura AngleThresholdUntilReset 5.0
-KillAura MinRotationDifference 1.0
+KillAura MinRotationDifference 0.0
 KillAura SilentRotation true
 KillAura Strafe Off
-KillAura SmootherMode Linear
+KillAura SmootherMode Relative
 KillAura SimulateShortStop false
 KillAura RandomizeRotations false
 KillAura Outborder false
@@ -179,55 +195,81 @@ KillAura MaxHorizontalBodySearch 0.7
 KillAura MinHorizontalBodySearch 0.3
 KillAura FOV 180.0
 KillAura PredictClientMovement 0
-KillAura PredictEnemyPosition 0.0
+KillAura PredictEnemyPosition 0.5
 KillAura FailSwing false
 KillAura SimulateClosingInventory false
 KillAura NoInvAttack false
 
 NoFall Mode MLG
 
+NoSlow SwordMode None
+NoSlow BlockForwardMultiplier 1.0
+NoSlow BlockStrafeMultiplier 1.0
+NoSlow ConsumeMode None
+NoSlow BowMode None
+NoSlow Soulsand false
+NoSlow LiquidPush false
+
 Scaffold TowerMode None
 Scaffold ScaffoldMode Normal
 Scaffold PlaceDelay false
-Scaffold DoExtraClicks true
-Scaffold SimulateDoubleClicking true
-Scaffold ExtraClickMaxCPS 21
-Scaffold ExtraClickMinCPS 16
-Scaffold PlacementAttempt Independent
+Scaffold DoExtraClicks false
+Scaffold SimulateDoubleClicking false
 Scaffold AutoBlock Spoof
 Scaffold SortByHighestAmount true
 Scaffold Sprint true
 Scaffold Down false
 Scaffold AllowClutching true
-Scaffold HorizontalClutchingBlocks 5
-Scaffold VerticalClutchingBlocks 3
-Scaffold Eagle Off
-Scaffold Rotations Off
+Scaffold HorizontalClutchBlocks 5
+Scaffold VerticalClutchBlocks 3
+Scaffold Rotations Normal
+Scaffold SmootherMode Relative
+Scaffold SilentRotation true
+Scaffold SimulateShortStop false
+Scaffold Strafe false
+Scaffold KeepRotation true
+Scaffold KeepTicks 1
 Scaffold SearchMode Area
 Scaffold MinDist 0.0
+Scaffold StartRotatingSlow false
+Scaffold SlowDownOnDirectionChange false
+Scaffold UseStraightLinePath false
+Scaffold MaxHorizontalSpeed 180.0
+Scaffold MinHorizontalSpeed 180.0
+Scaffold MaxVerticalSpeed 180.0
+Scaffold MinVerticalSpeed 180.0
+Scaffold AngleThresholdUntilReset 180.0
 Scaffold Zitter Off
 Scaffold Timer 1.0
 Scaffold SpeedModifier 1.0
 Scaffold SpeedLimiter false
-Scaffold Slow false
+Scaffold Slow true
+Scaffold SlowOnlyGround false
+Scaffold SlowSpeed 0.9
 Scaffold SameY false
 Scaffold SafeWalk false
 
-Speed Mode UNCPLowHop
+Speed Mode UNCPHopNew
 
 Sprint Mode Vanilla
 Sprint OnlyOnSprintPress false
 Sprint AlwaysCorrectSprint false
-Sprint AllDirections true
-Sprint JumpDirections true
-Sprint AllDirectionsLimitSpeed 1.0
-Sprint AllDirectionsLimitSpeedOnlyGround true
+Sprint AllDirections false
 Sprint Blindness true
 Sprint UsingItem false
 Sprint Inventory false
 Sprint Food true
 Sprint CheckServerSide false
 Sprint NoPackets false
+
+StaffDetector StaffMode BlocksMC
+StaffDetector TAB true
+StaffDetector Packet true
+StaffDetector AutoLeave Off
+StaffDetector StaffSpectator true
+StaffDetector OtherSpectator false
+StaffDetector InGame true
+StaffDetector Warn Chat
 
 TNTBlock Fuse 10
 TNTBlock Range 9.0
@@ -252,7 +294,7 @@ Aimbot toggle false
 AirJump toggle false
 AirLadder toggle false
 AntiAFK toggle false
-AntiBot toggle false
+AntiBot toggle true
 AntiBounce toggle false
 AntiCactus toggle false
 AntiExploit toggle false
@@ -282,13 +324,13 @@ CivBreak toggle false
 Clip toggle false
 Criticals toggle false
 Damage toggle false
-Disabler toggle false
+Disabler toggle true
 Eagle toggle false
-FakeLag toggle true
+FakeLag toggle false
 FastBow toggle false
 FastBreak toggle false
 FastClimb toggle false
-FastPlace toggle true
+FastPlace toggle false
 FastStairs toggle false
 FastUse toggle false
 FlagCheck toggle false
@@ -311,7 +353,7 @@ KeepContainer toggle false
 KeepSprint toggle false
 KillAura toggle false
 LadderJump toggle false
-LiquidWalk toggle true
+LiquidWalk toggle false
 Liquids toggle false
 LongJump toggle false
 MoreCarry toggle false
@@ -323,9 +365,9 @@ NoJumpDelay toggle true
 NoPitchLimit toggle false
 NoRotateSet toggle false
 NoSlotSet toggle false
-NoSlow toggle false
+NoSlow toggle true
 NoSlowBreak toggle false
-NoWeb toggle true
+NoWeb toggle false
 Nuker toggle false
 OverrideRaycast toggle false
 PacketDebugger toggle false
@@ -345,7 +387,7 @@ SlimeJump toggle false
 Sneak toggle false
 Speed toggle false
 Sprint toggle true
-StaffDetector toggle false
+StaffDetector toggle true
 Step toggle false
 Strafe toggle false
 SuperKnockback toggle false
@@ -362,10 +404,11 @@ Zoot toggle false
 
 # Chat
 chat &r
-chat &r                   &7→ &c&lBLOCKSMC SETTINGS &7| &b21/08/2024 &7←
-chat &r&bCurrent bypasses include &b&lKillAura, FakeLag, NoSlow, Scaffold, Speed, ChestStealer, AutoArmor, and InventoryCleaner&7.
+chat &r                   &7→ &c&lBLOCKSMC SETTINGS &7| &b01/09/2024 &7←
+chat &r&bCurrent bypasses include &b&lKillAura, &b&lNoSlow (Semi Sword), &b&lScaffold, &b&lSpeed, &b&lChestStealer, &b&lAutoArmor & &b&lInventoryCleaner&7.
+chat &r&cNote: &bIf you get lagback/flagged while using speed, you can try disabling &c(shouldboost) option.
 chat &r&bThis config might silent flag, so use it at times that staff aren't active.
 chat &r&bIf you lag, try to disable Backtrack; otherwise, just ignore this.
-chat &r&bCurrent Status: &aBypassing (Tested: 21/08/2024)
-chat &r&bBuild Version: &aLegacy b96 (Nightly)
+chat &r&bCurrent Status: &aBypassing (Tested: 01/09/2024)
+chat &r&bBuild Version: &aLegacy b97 (Nightly)
 chat &r
