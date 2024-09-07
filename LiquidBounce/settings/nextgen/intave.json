@@ -777,7 +777,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": true
+          "value": false
         },
         {
           "name": "Constraints",
@@ -2718,6 +2718,10 @@
           "value": true
         },
         {
+          "name": "KeepAfterDeath",
+          "value": true
+        },
+        {
           "name": "AntiSpam",
           "value": [
             {
@@ -2838,7 +2842,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": true
+          "value": false
         },
         {
           "name": "Constraints",
@@ -2846,15 +2850,15 @@
             {
               "name": "StartDelay",
               "value": {
-                "from": 6,
+                "from": 7,
                 "to": 8
               }
             },
             {
               "name": "ClickDelay",
               "value": {
-                "from": 2,
-                "to": 2
+                "from": 1,
+                "to": 3
               }
             },
             {
@@ -2867,8 +2871,8 @@
             {
               "name": "MissChance",
               "value": {
-                "from": 15,
-                "to": 15
+                "from": 0,
+                "to": 0
               }
             },
             {
@@ -3797,6 +3801,35 @@
         {
           "name": "Motion",
           "value": 5.0
+        }
+      ]
+    },
+    {
+      "name": "DebugRecorder",
+      "value": [
+        {
+          "name": "Mode",
+          "active": "Generic",
+          "value": [],
+          "choices": {
+            "Generic": {
+              "name": "Generic",
+              "value": []
+            },
+            "CPS": {
+              "name": "CPS",
+              "value": []
+            },
+            "Aim": {
+              "name": "Aim",
+              "value": []
+            },
+            "Box": {
+              "name": "Box",
+              "value": []
+            }
+          },
+          "valueType": "CHOICE"
         }
       ]
     },
@@ -5434,10 +5467,44 @@
       "name": "Focus",
       "value": [
         {
-          "name": "Usernames",
-          "value": [
-            "Notch"
-          ]
+          "name": "Mode",
+          "active": "Filter",
+          "value": [],
+          "choices": {
+            "Temporary": {
+              "name": "Temporary",
+              "value": [
+                {
+                  "name": "MaximumTime",
+                  "value": 30
+                },
+                {
+                  "name": "MaximumRange",
+                  "value": 20.0
+                },
+                {
+                  "name": "WhenNoFocus",
+                  "value": "AllowAll"
+                }
+              ]
+            },
+            "Filter": {
+              "name": "Filter",
+              "value": [
+                {
+                  "name": "Usernames",
+                  "value": [
+                    "Notch"
+                  ]
+                },
+                {
+                  "name": "FilterType",
+                  "value": "Whitelist"
+                }
+              ]
+            }
+          },
+          "valueType": "CHOICE"
         },
         {
           "name": "Combat",
@@ -5511,23 +5578,23 @@
         {
           "name": "Targets",
           "value": [
-            "minecraft:yellow_bed",
-            "minecraft:magenta_bed",
             "minecraft:white_bed",
-            "minecraft:green_bed",
-            "minecraft:pink_bed",
-            "minecraft:lime_bed",
-            "minecraft:gray_bed",
-            "minecraft:dragon_egg",
-            "minecraft:purple_bed",
-            "minecraft:red_bed",
-            "minecraft:light_gray_bed",
-            "minecraft:black_bed",
-            "minecraft:blue_bed",
-            "minecraft:brown_bed",
             "minecraft:light_blue_bed",
+            "minecraft:yellow_bed",
+            "minecraft:black_bed",
+            "minecraft:purple_bed",
+            "minecraft:lime_bed",
+            "minecraft:light_gray_bed",
+            "minecraft:orange_bed",
+            "minecraft:pink_bed",
             "minecraft:cyan_bed",
-            "minecraft:orange_bed"
+            "minecraft:blue_bed",
+            "minecraft:red_bed",
+            "minecraft:gray_bed",
+            "minecraft:brown_bed",
+            "minecraft:green_bed",
+            "minecraft:dragon_egg",
+            "minecraft:magenta_bed"
           ]
         },
         {
@@ -5773,8 +5840,8 @@
           "name": "TargetedBlocks",
           "value": [
             "minecraft:ender_chest",
-            "minecraft:trapped_chest",
-            "minecraft:chest"
+            "minecraft:chest",
+            "minecraft:trapped_chest"
           ]
         }
       ]
@@ -5865,7 +5932,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": true
+          "value": false
         },
         {
           "name": "Range",
@@ -6074,7 +6141,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": true
+          "value": false
         },
         {
           "name": "Constraints",
@@ -6103,8 +6170,8 @@
             {
               "name": "MissChance",
               "value": {
-                "from": 5,
-                "to": 5
+                "from": 0,
+                "to": 0
               }
             },
             {
@@ -6132,6 +6199,10 @@
         {
           "name": "MaximumThrowables",
           "value": 16
+        },
+        {
+          "name": "MaximumFoodPoints",
+          "value": 200
         },
         {
           "name": "Greedy",
@@ -6208,10 +6279,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "KeepChatAfterDeath",
-      "value": []
     },
     {
       "name": "KeepSprint",
@@ -6321,15 +6388,15 @@
                     {
                       "name": "HorizontalTurnSpeed",
                       "value": {
-                        "from": 24.0,
-                        "to": 78.0
+                        "from": 180.0,
+                        "to": 180.0
                       }
                     },
                     {
                       "name": "VerticalTurnSpeed",
                       "value": {
-                        "from": 24.0,
-                        "to": 78.0
+                        "from": 180.0,
+                        "to": 180.0
                       }
                     }
                   ]
@@ -6566,7 +6633,7 @@
             },
             {
               "name": "ShrinkBox",
-              "value": 0.05
+              "value": 0.1
             },
             {
               "name": "Intersects",
@@ -8620,7 +8687,7 @@
             },
             {
               "name": "SlotResetDelay",
-              "value": 1
+              "value": 0
             },
             {
               "name": "DoNotUseBelowCount",
@@ -8864,15 +8931,15 @@
                     {
                       "name": "HorizontalTurnSpeed",
                       "value": {
-                        "from": 25.0,
-                        "to": 25.0
+                        "from": 45.0,
+                        "to": 45.0
                       }
                     },
                     {
                       "name": "VerticalTurnSpeed",
                       "value": {
-                        "from": 25.0,
-                        "to": 25.0
+                        "from": 45.0,
+                        "to": 45.0
                       }
                     }
                   ]
@@ -9988,7 +10055,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": false
+          "value": true
         },
         {
           "name": "Mode",
@@ -10734,14 +10801,14 @@
       ]
     }
   ],
-  "author": "1zuna",
-  "date": "06/09/2024",
-  "time": "08:35:49",
-  "clientVersion": "0.13.0",
-  "clientCommit": "git-f513546",
-  "serverAddress": "mineblaze.ru",
-  "protocolName": "1.8.x",
-  "protocolVersion": 47,
+  "author": "Jermain42",
+  "date": "07/09/2024",
+  "time": "14:24:12",
+  "clientVersion": "0.13.1",
+  "clientCommit": "git-9b08a4e",
+  "serverAddress": "mineblaze.net",
+  "protocolName": "1.9.2",
+  "protocolVersion": 109,
   "type": "Rage",
   "status": "Bypassing"
 }
