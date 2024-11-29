@@ -645,6 +645,10 @@
         {
           "name": "Notify",
           "value": true
+        },
+        {
+          "name": "VFPScoreboardFix",
+          "value": false
         }
       ]
     },
@@ -1920,9 +1924,9 @@
                 {
                   "name": "Blocks",
                   "value": [
-                    "minecraft:dirt",
+                    "minecraft:netherrack",
                     "minecraft:cobblestone",
-                    "minecraft:netherrack"
+                    "minecraft:dirt"
                   ]
                 }
               ]
@@ -2402,7 +2406,7 @@
           "value": false
         },
         {
-          "name": "fortune",
+          "name": "UseFortune",
           "value": true
         },
         {
@@ -2417,8 +2421,21 @@
               "value": true
             },
             {
+              "name": "AutoJump",
+              "value": false
+            },
+            {
               "name": "ToItems",
-              "value": true
+              "value": [
+                {
+                  "name": "Enabled",
+                  "value": true
+                },
+                {
+                  "name": "Range",
+                  "value": 20.0
+                }
+              ]
             }
           ]
         },
@@ -3599,7 +3616,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": false
+          "value": true
         },
         {
           "name": "MaxLayers",
@@ -3607,7 +3624,7 @@
         },
         {
           "name": "SelfBed",
-          "active": "None",
+          "active": "SpawnLocation",
           "value": [],
           "choices": {
             "None": {
@@ -3639,7 +3656,7 @@
             },
             {
               "name": "WallRange",
-              "value": 4.5
+              "value": 0.0
             },
             {
               "name": "Cooldown",
@@ -3677,7 +3694,7 @@
             },
             {
               "name": "RotationMode",
-              "active": "None",
+              "active": "Normal",
               "value": [],
               "choices": {
                 "Normal": {
@@ -3692,7 +3709,7 @@
                       "value": [
                         {
                           "name": "AngleSmooth",
-                          "active": "Linear",
+                          "active": "Sigmoid",
                           "value": [],
                           "choices": {
                             "Linear": {
@@ -3743,15 +3760,15 @@
                                 {
                                   "name": "HorizontalTurnSpeed",
                                   "value": {
-                                    "from": 180.0,
-                                    "to": 180.0
+                                    "from": 70.0,
+                                    "to": 80.0
                                   }
                                 },
                                 {
                                   "name": "VerticalTurnSpeed",
                                   "value": {
-                                    "from": 180.0,
-                                    "to": 180.0
+                                    "from": 15.0,
+                                    "to": 20.0
                                   }
                                 },
                                 {
@@ -4144,7 +4161,7 @@
         },
         {
           "name": "RequiresSneak",
-          "value": false
+          "value": true
         }
       ]
     },
@@ -4228,10 +4245,6 @@
           "value": true
         },
         {
-          "name": "EvadeArrows",
-          "value": true
-        },
-        {
           "name": "AutoDisable",
           "value": false
         },
@@ -4277,8 +4290,8 @@
         {
           "name": "Blocks",
           "value": [
-            "minecraft:snow",
-            "minecraft:cobweb"
+            "minecraft:cobweb",
+            "minecraft:snow"
           ]
         }
       ]
@@ -4398,6 +4411,10 @@
             },
             {
               "name": "VisualSwing",
+              "value": true
+            },
+            {
+              "name": "NotDuringCombat",
               "value": true
             },
             {
@@ -4743,7 +4760,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": false
+          "value": true
         },
         {
           "name": "Locked",
@@ -4751,7 +4768,7 @@
         },
         {
           "name": "Mode",
-          "active": "Jump",
+          "active": "Blink",
           "value": [],
           "choices": {
             "None": {
@@ -4768,19 +4785,6 @@
                 {
                   "name": "PacketType",
                   "value": "Full"
-                },
-                {
-                  "name": "WhenSprinting",
-                  "value": [
-                    {
-                      "name": "Enabled",
-                      "value": true
-                    },
-                    {
-                      "name": "UnSprint",
-                      "value": false
-                    }
-                  ]
                 }
               ]
             },
@@ -4816,9 +4820,42 @@
                   "value": true
                 }
               ]
+            },
+            "Blink": {
+              "name": "Blink",
+              "value": [
+                {
+                  "name": "Delay",
+                  "value": {
+                    "from": 150,
+                    "to": 150
+                  }
+                },
+                {
+                  "name": "Range",
+                  "value": 4.0
+                }
+              ]
             }
           },
           "valueType": "CHOICE"
+        },
+        {
+          "name": "WhenSprinting",
+          "value": [
+            {
+              "name": "Enabled",
+              "value": false
+            },
+            {
+              "name": "StopSprinting",
+              "value": "Legit"
+            },
+            {
+              "name": "Range",
+              "value": 4.0
+            }
+          ]
         },
         {
           "name": "Visuals",
@@ -4832,12 +4869,12 @@
               "value": true
             },
             {
-              "name": "CritParticles",
+              "name": "Critical",
               "value": 1
             },
             {
-              "name": "MagicParticles",
-              "value": 4
+              "name": "Magic",
+              "value": 0
             }
           ]
         }
@@ -5452,9 +5489,9 @@
                     {
                       "name": "Blocks",
                       "value": [
-                        "minecraft:dirt",
+                        "minecraft:netherrack",
                         "minecraft:cobblestone",
-                        "minecraft:netherrack"
+                        "minecraft:dirt"
                       ]
                     }
                   ]
@@ -6647,10 +6684,6 @@
         {
           "name": "Mode",
           "value": "Dynamic"
-        },
-        {
-          "name": "EvadeArrows",
-          "value": true
         }
       ]
     },
@@ -8194,22 +8227,22 @@
         {
           "name": "Targets",
           "value": [
-            "minecraft:orange_bed",
-            "minecraft:dragon_egg",
-            "minecraft:purple_bed",
-            "minecraft:yellow_bed",
-            "minecraft:red_bed",
-            "minecraft:green_bed",
-            "minecraft:brown_bed",
-            "minecraft:black_bed",
-            "minecraft:light_gray_bed",
             "minecraft:light_blue_bed",
-            "minecraft:blue_bed",
-            "minecraft:lime_bed",
+            "minecraft:orange_bed",
             "minecraft:white_bed",
-            "minecraft:pink_bed",
+            "minecraft:black_bed",
+            "minecraft:purple_bed",
+            "minecraft:brown_bed",
+            "minecraft:yellow_bed",
             "minecraft:gray_bed",
             "minecraft:cyan_bed",
+            "minecraft:green_bed",
+            "minecraft:red_bed",
+            "minecraft:light_gray_bed",
+            "minecraft:blue_bed",
+            "minecraft:dragon_egg",
+            "minecraft:pink_bed",
+            "minecraft:lime_bed",
             "minecraft:magenta_bed"
           ]
         },
@@ -8460,9 +8493,9 @@
         {
           "name": "TargetedBlocks",
           "value": [
+            "minecraft:chest",
             "minecraft:trapped_chest",
-            "minecraft:ender_chest",
-            "minecraft:chest"
+            "minecraft:ender_chest"
           ]
         }
       ]
@@ -11862,7 +11895,7 @@
           "value": [
             {
               "name": "Enabled",
-              "value": true
+              "value": false
             }
           ]
         },
@@ -12126,8 +12159,8 @@
                     {
                       "name": "HorizontalTurnSpeed",
                       "value": {
-                        "from": 50.0,
-                        "to": 90.0
+                        "from": 180.0,
+                        "to": 180.0
                       }
                     },
                     {
@@ -12975,7 +13008,7 @@
           "value": [
             {
               "name": "Enabled",
-              "value": true
+              "value": false
             },
             {
               "name": "Mode",
@@ -13963,9 +13996,9 @@
         {
           "name": "Blocks",
           "value": [
+            "minecraft:crying_obsidian",
             "minecraft:obsidian",
-            "minecraft:ender_chest",
-            "minecraft:crying_obsidian"
+            "minecraft:ender_chest"
           ]
         },
         {
@@ -14255,12 +14288,12 @@
                 {
                   "name": "Blocks",
                   "value": [
-                    "minecraft:dirt",
-                    "minecraft:obsidian",
-                    "minecraft:ender_chest",
                     "minecraft:crying_obsidian",
+                    "minecraft:netherrack",
+                    "minecraft:obsidian",
                     "minecraft:cobblestone",
-                    "minecraft:netherrack"
+                    "minecraft:ender_chest",
+                    "minecraft:dirt"
                   ]
                 }
               ]
@@ -14782,7 +14815,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": true
+          "value": false
         },
         {
           "name": "Range",
@@ -15462,10 +15495,10 @@
     }
   ],
   "author": "Izuna",
-  "date": "26/11/2024",
-  "time": "00:37:56",
+  "date": "29/11/2024",
+  "time": "19:35:23",
   "clientVersion": "0.20.1",
-  "clientCommit": "git-bd080cf",
+  "clientCommit": "git-e2a719c",
   "serverAddress": "gommehd.net",
   "protocolName": "1.21-1.21.1",
   "protocolVersion": 767,
