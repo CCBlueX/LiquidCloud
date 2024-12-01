@@ -52,13 +52,16 @@ AntiBot AlwaysBehind false
 AntiBot toggle false
 AntiBounce toggle false
 AntiCactus toggle false
-AntiExploit LimitExplosionStrength true
-AntiExploit LimitExplosionRange true
+AntiExploit CancelExplosionMotion true
+AntiExploit CancelExplosionStrength true
+AntiExploit CancelExplosionRadius true
 AntiExploit LimitParticlesAmount true
 AntiExploit LimitParticlesSpeed true
-AntiExploit LimitedArrowsSpawned true
+AntiExploit LimitedEntitySpawn true
+AntiExploit MaxItemsDropped 500
 AntiExploit MaxArrowsSpawned 100
-AntiExploit CancelDemo true
+AntiExploit CancelDemoGUI true
+AntiExploit Warn Chat
 AntiExploit toggle false
 AntiFireball Range 3.0
 AntiFireball Swing Normal
@@ -102,9 +105,10 @@ AutoArmor Hotbar true
 AutoArmor DelayedSlotSwitch true
 AutoArmor NotInContainers true
 AutoArmor toggle true
-AutoClicker SimulateDoubleClicking true
+AutoClicker SimulateDoubleClicking false
 AutoClicker MaxCPS 17
-AutoClicker MinCPS 14
+AutoClicker MinCPS 11
+AutoClicker HurtTime 10
 AutoClicker Right false
 AutoClicker Left true
 AutoClicker Jitter false
@@ -170,13 +174,18 @@ AvoidHazards PressurePlate true
 AvoidHazards Snow true
 AvoidHazards toggle false
 Backtrack NextBacktrackDelay 0
-Backtrack Delay 42
+Backtrack MaxDelay 108
+Backtrack MinDelay 33
 Backtrack Mode Modern
 Backtrack Style Smooth
 Backtrack MaxDistance 3.2
 Backtrack MinDistance 2.25
 Backtrack Smart true
-Backtrack toggle false
+Backtrack ESP-Color Custom
+Backtrack ESP-R 0
+Backtrack ESP-G 255
+Backtrack ESP-B 0
+Backtrack toggle true
 BedDefender AutoBlock Spoof
 BedDefender Swing true
 BedDefender PlaceDelay 500
@@ -331,10 +340,14 @@ FlagCheck ResetCounterTicks 600
 FlagCheck GhostBlock-Check false
 FlagCheck Rubberband-Check false
 FlagCheck Text-Alpha 255
-FlagCheck toggle false
+FlagCheck toggle true
 Fly DeprecatedMode true
 Fly Mode Vanilla
 Fly toggle false
+ForwardTrack ESP-Color Custom
+ForwardTrack ESP-R 0
+ForwardTrack ESP-G 255
+ForwardTrack ESP-B 0
 ForwardTrack toggle false
 Freeze toggle false
 Fucker Hypixel false
@@ -362,7 +375,7 @@ Fucker AngleResetDifference 5.0
 Fucker MinRotationDifference 0.0
 Fucker BlockProgress true
 Fucker Scale 2.0
-Fucker Font net.minecraft.client.gui.FontRenderer@254a7103
+Fucker Font net.ccbluex.liquidbounce.ui.font.GameFontRenderer@1889c329
 Fucker Shadow true
 Fucker R 200
 Fucker G 100
@@ -421,6 +434,7 @@ InventoryMove NoClicksInAir true
 InventoryMove NoClicksOnGround true
 InventoryMove Undetectable true
 InventoryMove SilentlyCloseAndReopen false
+InventoryMove InventoryMotion 1.0
 InventoryMove toggle true
 ItemTeleport Mode New
 ItemTeleport ResetAfterTP true
@@ -433,9 +447,9 @@ KeepSprint MotionAfterAttackOnGround 1.0
 KeepSprint MotionAfterAttackInAir 1.0
 KeepSprint toggle false
 KillAura SimulateCooldown false
-KillAura SimulateDoubleClicking false
-KillAura MaxCPS 14
-KillAura MinCPS 7
+KillAura SimulateDoubleClicking true
+KillAura MaxCPS 20
+KillAura MinCPS 18
 KillAura HurtTime 10
 KillAura ClickOnly false
 KillAura Range 3.0
@@ -454,36 +468,46 @@ KillAura ApplyServerSide true
 KillAura SimulateShortStop true
 KillAura RotationDiffBuildUpToStop 257.61
 KillAura MaxThresholdAttemptsToStop 1
-KillAura ShortStopDuration 1..2
+KillAura ShortStopDuration 2..3
 KillAura Strafe true
 KillAura Strict false
 KillAura ResetTicks 3
 KillAura Legitimize true
-KillAura MaxHorizontalAngleChange 73.0
-KillAura MinHorizontalAngleChange 58.0
-KillAura MaxVerticalAngleChange 62.0
-KillAura MinVerticalAngleChange 46.0
+KillAura MaxHorizontalAngleChange 50.66
+KillAura MinHorizontalAngleChange 40.32
+KillAura MaxVerticalAngleChange 51.7
+KillAura MinVerticalAngleChange 42.39
 KillAura AngleResetDifference 1.0500001
-KillAura MinRotationDifference 0.0
+KillAura MinRotationDifference 2.0
 KillAura RayCast true
 KillAura RayCastIgnored true
 KillAura LivingRayCast true
 KillAura UseHitDelay false
-KillAura RandomizeRotations false
+KillAura RandomizeRotations true
+KillAura YawRandomizationChance 0.04494382..0.64044946
+KillAura YawRandomizationRange 5.730337..10.449438
+KillAura PitchRandomizationChance 0.51123595..1.0
+KillAura PitchRandomizationRange 1.3483146..3.0337079
 KillAura Outborder false
-KillAura HighestBodyPointToTarget Body
-KillAura LowestBodyPointToTarget Body
-KillAura MaxHorizontalBodySearch 0.73
-KillAura MinHorizontalBodySearch 0.3
+KillAura HighestBodyPointToTarget Head
+KillAura LowestBodyPointToTarget Feet
+KillAura MaxHorizontalBodySearch 0.9
+KillAura MinHorizontalBodySearch 0.1
 KillAura FOV 180.0
 KillAura PredictClientMovement 0
-KillAura PredictEnemyPosition 0.17
+KillAura PredictEnemyPosition -0.01
 KillAura FailSwing true
 KillAura RespectMissCooldown false
 KillAura SwingOnlyInAir true
 KillAura MaxRotationDifferenceToSwing 20.0
 KillAura SwingWhenTicksLate true
-KillAura TicksLateToSwing 2
+KillAura TicksLateToSwing 3
+KillAura RenderBoxOnSwingFail true
+KillAura RenderBoxColor-R 0
+KillAura RenderBoxColor-G 252
+KillAura RenderBoxColor-B 255
+KillAura RenderBoxColor-Alpha 255
+KillAura RenderBoxFadeSeconds 5.0
 KillAura NoInvAttack true
 KillAura NoInvDelay 0
 KillAura toggle false
@@ -513,7 +537,7 @@ NoPitchLimit ServerSide false
 NoPitchLimit toggle false
 NoRotateSet IgnoreOnSpawn true
 NoRotateSet AffectRotation true
-NoRotateSet TicksUntilStart 2..7
+NoRotateSet TicksUntilStart 6..11
 NoRotateSet SimulateShortStop false
 NoRotateSet Strafe true
 NoRotateSet Strict false
@@ -522,7 +546,7 @@ NoRotateSet MaxHorizontalAngleChange 86.61
 NoRotateSet MinHorizontalAngleChange 67.93
 NoRotateSet MaxVerticalAngleChange 41.47
 NoRotateSet MinVerticalAngleChange 33.69
-NoRotateSet AngleResetDifference 0.0
+NoRotateSet AngleResetDifference 1.35
 NoRotateSet MinRotationDifference 0.0
 NoRotateSet toggle true
 NoSlotSet toggle false
@@ -573,7 +597,7 @@ Nuker Nuke 1
 Nuker NukeDelay 1
 Nuker BlockProgress true
 Nuker Scale 2.0
-Nuker Font net.ccbluex.liquidbounce.ui.font.GameFontRenderer@7aa3bc11
+Nuker Font net.ccbluex.liquidbounce.ui.font.GameFontRenderer@1889c329
 Nuker Shadow true
 Nuker R 200
 Nuker G 100
@@ -732,7 +756,8 @@ TNTBlock Range 9.0
 TNTBlock AutoSword true
 TNTBlock toggle false
 Teams ScoreboardTeam true
-Teams Color true
+Teams NameColor true
+Teams ArmorColor true
 Teams GommeSW false
 Teams toggle false
 Teleport IgnoreNoCollision true
@@ -753,8 +778,8 @@ TickBase ForceGround false
 TickBase PauseAfterTick 0
 TickBase PauseOnFlag true
 TickBase toggle false
-Timer Mode OnMove
-Timer Speed 1.0
+Timer Mode Always
+Timer Speed 0.1
 Timer toggle false
 TimerRange TimerMode Smart
 TimerRange Ticks 3
@@ -797,7 +822,7 @@ Zoot toggle false
 # Chat
 chat &r
 chat &r                   &7→ &c&lPOLAR SETTINGS &7| &b11/20/2024 &7←
-chat &r&bCurrent bypasses include &e&lKillAura, &b&lScaffold, &b&lChestStealer, &b&lAutoArmor, &b&lInventoryCleaner&7.
-chat &r&bCurrent Status: &eExperimental (Tested: 11/20/2024)
+chat &r&bCurrent bypasses include &e&lKillAura, &b&lScaffold, %b%lBacktrack, &b&lChestStealer, &b&lAutoArmor, &b&lInventoryCleaner&7.
+chat &r&bCurrent Status: &eExperimental (Tested: 12/02/2024)
 chat &r&bBuild Version: &aLegacy b99 (Nightly)
 chat &r
