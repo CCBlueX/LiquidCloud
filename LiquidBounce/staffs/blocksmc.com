@@ -206,7 +206,6 @@ Morninng
 im3losh
 hussee862
 isfa7_
-L4nkyEgg
 qLimit
 Zep1yr
 iNERO0
