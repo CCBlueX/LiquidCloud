@@ -206,6 +206,8 @@ Morninng
 im3losh
 hussee862
 isfa7_
+L4nkyEgg
+qLimit
 Zep1yr
 iNERO0
 MHNDG3AN
@@ -213,3 +215,5 @@ ilyNony
 4Fl1ckz_
 iDhoom
 SKILLEN
+ItzMotaz
+1S3oD
