@@ -1,0 +1,81 @@
+name: Sync settings
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  upload_settings:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Process and Upload Settings
+        id: process_and_upload
+        env:
+          AUTHORIZATION: ${{ secrets.AUTHORIZATION }}
+          REPO_URL: ${{ github.repository }}
+          COMMIT_HASH: ${{ github.sha }}
+        run: |
+          set -e
+
+          settings="[]"
+
+          process_directory() {
+            local branch="$1"
+            echo "Processing settings for branch: $branch"
+
+            for file in "LiquidBounce/settings/$branch"/*; do
+              if [ -f "$file" ]; then
+                setting_id=$(basename "$file" | cut -f 1 -d '.')
+                raw_url="https://raw.githubusercontent.com/${REPO_URL}/${COMMIT_HASH}/${file}"
+                checksum=$(sha256sum "$file" | cut -d ' ' -f 1)
+                timestamp=$(git log -1 --format=%ai -- "$file" | cut -d ' ' -f 1,2 | tr ' ' 'T')Z
+                contributors=$(git log -1 --format='%an <%ae>' -- "$file")
+
+                settings=$(echo "$settings" | jq --arg name "$setting_id" \
+                                                          --arg branch "$branch" \
+                                                          --arg url "$raw_url" \
+                                                          --arg checksum "$checksum" \
+                                                          --arg timestamp "$timestamp" \
+                                                          --arg contributors "$contributors" \
+                                                          '. += [{
+                                                            "name": $name,
+                                                            "branch": $branch,
+                                                            "url": $url,
+                                                            "checksum": $checksum,
+                                                            "timestamp": $timestamp,
+                                                            "contributors": $contributors
+                                                          }]')
+              fi
+            done
+          }
+          
+          for branch in legacy nextgen; do
+            process_directory "$branch"
+          done
+
+          echo "$settings" > settings.json
+          
+          echo "Uploading settings..."
+          curl --fail -X POST \
+            -H "Authorization: $AUTHORIZATION" \
+            -H "Content-Type: application/json" \
+            -d @"settings.json" \
+            "https://api.liquidbounce.net/api/v3/marketplace/sync" \
+            && echo "Settings successfully uploaded" \
+            || (echo "Failed to upload settings" && exit 1)
+
+      - name: Upload JSON Files to Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: settings
+          path: 'settings.json'
