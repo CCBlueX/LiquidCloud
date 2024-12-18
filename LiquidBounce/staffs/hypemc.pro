@@ -54,7 +54,6 @@ Hi11Ti
 glebgeniy
 swiGEMAAOO
 Mr_GeoMheo
-филин223
 king335xxx
 sardelika5567
 fwamvm
@@ -62,3 +61,8 @@ Ryder46
 YaKudZa_MaRo
 TimoG03
 _Yu_Chan_
+santamuerte
+Kiwari
+Kontex
+ECLIPS_0
+Safari_XD
