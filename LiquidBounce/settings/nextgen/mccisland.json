@@ -80,14 +80,6 @@
                   }
                 },
                 {
-                  "name": "DynamicYawFactor",
-                  "value": 0.0
-                },
-                {
-                  "name": "DynamicPitchFactor",
-                  "value": 0.0
-                },
-                {
                   "name": "Chance",
                   "value": 100
                 },
@@ -101,6 +93,38 @@
                 {
                   "name": "Tolerance",
                   "value": 0.1
+                },
+                {
+                  "name": "Dynamic",
+                  "value": [
+                    {
+                      "name": "Enabled",
+                      "value": false
+                    },
+                    {
+                      "name": "HurtTime",
+                      "value": 10
+                    },
+                    {
+                      "name": "YawFactor",
+                      "value": 0.0
+                    },
+                    {
+                      "name": "PitchFactor",
+                      "value": 0.0
+                    },
+                    {
+                      "name": "Speed",
+                      "value": {
+                        "from": 0.5,
+                        "to": 0.75
+                      }
+                    },
+                    {
+                      "name": "Tolerance",
+                      "value": 0.1
+                    }
+                  ]
                 }
               ]
             },
@@ -228,6 +252,27 @@
         {
           "name": "Mode",
           "value": "JumpFreely"
+        }
+      ]
+    },
+    {
+      "name": "Anchor",
+      "value": [
+        {
+          "name": "Enabled",
+          "value": false
+        },
+        {
+          "name": "MaxDistance",
+          "value": 4.0
+        },
+        {
+          "name": "HorizontalSpeed",
+          "value": 0.3
+        },
+        {
+          "name": "VerticalSpeed",
+          "value": 0.1
         }
       ]
     },
@@ -406,27 +451,89 @@
                                   }
                                 },
                                 {
-                                  "name": "PitchAcceleration",
+                                  "name": "PitchAccelelation",
                                   "value": {
                                     "from": 20.0,
                                     "to": 25.0
                                   }
                                 },
                                 {
-                                  "name": "YawAccelerationError",
-                                  "value": 0.1
+                                  "name": "DynamicAccel",
+                                  "value": [
+                                    {
+                                      "name": "Enabled",
+                                      "value": false
+                                    },
+                                    {
+                                      "name": "CoefDistance",
+                                      "value": -1.393
+                                    },
+                                    {
+                                      "name": "YawCrosshairAccel",
+                                      "value": {
+                                        "from": 17.0,
+                                        "to": 20.0
+                                      }
+                                    },
+                                    {
+                                      "name": "PitchCrosshairAccel",
+                                      "value": {
+                                        "from": 17.0,
+                                        "to": 20.0
+                                      }
+                                    }
+                                  ]
                                 },
                                 {
-                                  "name": "PitchAccelerationError",
-                                  "value": 0.1
+                                  "name": "AccelerationError",
+                                  "value": [
+                                    {
+                                      "name": "Enabled",
+                                      "value": false
+                                    },
+                                    {
+                                      "name": "YawAccelError",
+                                      "value": 0.1
+                                    },
+                                    {
+                                      "name": "PitchAccelError",
+                                      "value": 0.1
+                                    }
+                                  ]
                                 },
                                 {
-                                  "name": "YawConstantError",
-                                  "value": 0.1
+                                  "name": "ConstantError",
+                                  "value": [
+                                    {
+                                      "name": "Enabled",
+                                      "value": true
+                                    },
+                                    {
+                                      "name": "YawConstantError",
+                                      "value": 0.1
+                                    },
+                                    {
+                                      "name": "PitchConstantError",
+                                      "value": 0.1
+                                    }
+                                  ]
                                 },
                                 {
-                                  "name": "PitchConstantError",
-                                  "value": 0.1
+                                  "name": "SigmoidDeceleration",
+                                  "value": [
+                                    {
+                                      "name": "Enabled",
+                                      "value": false
+                                    },
+                                    {
+                                      "name": "Steepness",
+                                      "value": 10.0
+                                    },
+                                    {
+                                      "name": "Midpoint",
+                                      "value": 0.3
+                                    }
+                                  ]
                                 }
                               ]
                             }
@@ -582,6 +689,83 @@
                       "value": 20
                     }
                   ]
+                },
+                {
+                  "name": "Armor",
+                  "value": [
+                    {
+                      "name": "Enabled",
+                      "value": false
+                    },
+                    {
+                      "name": "Helmet",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "Mode",
+                          "value": "Blacklist"
+                        },
+                        {
+                          "name": "Material",
+                          "value": "Leather"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Chestplate",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "Mode",
+                          "value": "Blacklist"
+                        },
+                        {
+                          "name": "Material",
+                          "value": "Leather"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Leggings",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "Mode",
+                          "value": "Blacklist"
+                        },
+                        {
+                          "name": "Material",
+                          "value": "Leather"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Boots",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "Mode",
+                          "value": "Blacklist"
+                        },
+                        {
+                          "name": "Material",
+                          "value": "Leather"
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             },
@@ -624,10 +808,6 @@
         },
         {
           "name": "LimitExplosionStrength",
-          "value": true
-        },
-        {
-          "name": "LimitExplosionRange",
           "value": true
         },
         {
@@ -1055,27 +1235,89 @@
                           }
                         },
                         {
-                          "name": "PitchAcceleration",
+                          "name": "PitchAccelelation",
                           "value": {
                             "from": 20.0,
                             "to": 25.0
                           }
                         },
                         {
-                          "name": "YawAccelerationError",
-                          "value": 0.1
+                          "name": "DynamicAccel",
+                          "value": [
+                            {
+                              "name": "Enabled",
+                              "value": false
+                            },
+                            {
+                              "name": "CoefDistance",
+                              "value": -1.393
+                            },
+                            {
+                              "name": "YawCrosshairAccel",
+                              "value": {
+                                "from": 17.0,
+                                "to": 20.0
+                              }
+                            },
+                            {
+                              "name": "PitchCrosshairAccel",
+                              "value": {
+                                "from": 17.0,
+                                "to": 20.0
+                              }
+                            }
+                          ]
                         },
                         {
-                          "name": "PitchAccelerationError",
-                          "value": 0.1
+                          "name": "AccelerationError",
+                          "value": [
+                            {
+                              "name": "Enabled",
+                              "value": false
+                            },
+                            {
+                              "name": "YawAccelError",
+                              "value": 0.1
+                            },
+                            {
+                              "name": "PitchAccelError",
+                              "value": 0.1
+                            }
+                          ]
                         },
                         {
-                          "name": "YawConstantError",
-                          "value": 0.1
+                          "name": "ConstantError",
+                          "value": [
+                            {
+                              "name": "Enabled",
+                              "value": true
+                            },
+                            {
+                              "name": "YawConstantError",
+                              "value": 0.1
+                            },
+                            {
+                              "name": "PitchConstantError",
+                              "value": 0.1
+                            }
+                          ]
                         },
                         {
-                          "name": "PitchConstantError",
-                          "value": 0.1
+                          "name": "SigmoidDeceleration",
+                          "value": [
+                            {
+                              "name": "Enabled",
+                              "value": false
+                            },
+                            {
+                              "name": "Steepness",
+                              "value": 10.0
+                            },
+                            {
+                              "name": "Midpoint",
+                              "value": 0.3
+                            }
+                          ]
                         }
                       ]
                     }
@@ -1544,27 +1786,89 @@
                       }
                     },
                     {
-                      "name": "PitchAcceleration",
+                      "name": "PitchAccelelation",
                       "value": {
                         "from": 20.0,
                         "to": 25.0
                       }
                     },
                     {
-                      "name": "YawAccelerationError",
-                      "value": 0.1
+                      "name": "DynamicAccel",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "CoefDistance",
+                          "value": -1.393
+                        },
+                        {
+                          "name": "YawCrosshairAccel",
+                          "value": {
+                            "from": 17.0,
+                            "to": 20.0
+                          }
+                        },
+                        {
+                          "name": "PitchCrosshairAccel",
+                          "value": {
+                            "from": 17.0,
+                            "to": 20.0
+                          }
+                        }
+                      ]
                     },
                     {
-                      "name": "PitchAccelerationError",
-                      "value": 0.1
+                      "name": "AccelerationError",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "YawAccelError",
+                          "value": 0.1
+                        },
+                        {
+                          "name": "PitchAccelError",
+                          "value": 0.1
+                        }
+                      ]
                     },
                     {
-                      "name": "YawConstantError",
-                      "value": 0.1
+                      "name": "ConstantError",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": true
+                        },
+                        {
+                          "name": "YawConstantError",
+                          "value": 0.1
+                        },
+                        {
+                          "name": "PitchConstantError",
+                          "value": 0.1
+                        }
+                      ]
                     },
                     {
-                      "name": "PitchConstantError",
-                      "value": 0.1
+                      "name": "SigmoidDeceleration",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "Steepness",
+                          "value": 10.0
+                        },
+                        {
+                          "name": "Midpoint",
+                          "value": 0.3
+                        }
+                      ]
                     }
                   ]
                 }
@@ -1843,27 +2147,89 @@
                                   }
                                 },
                                 {
-                                  "name": "PitchAcceleration",
+                                  "name": "PitchAccelelation",
                                   "value": {
                                     "from": 20.0,
                                     "to": 25.0
                                   }
                                 },
                                 {
-                                  "name": "YawAccelerationError",
-                                  "value": 0.1
+                                  "name": "DynamicAccel",
+                                  "value": [
+                                    {
+                                      "name": "Enabled",
+                                      "value": false
+                                    },
+                                    {
+                                      "name": "CoefDistance",
+                                      "value": -1.393
+                                    },
+                                    {
+                                      "name": "YawCrosshairAccel",
+                                      "value": {
+                                        "from": 17.0,
+                                        "to": 20.0
+                                      }
+                                    },
+                                    {
+                                      "name": "PitchCrosshairAccel",
+                                      "value": {
+                                        "from": 17.0,
+                                        "to": 20.0
+                                      }
+                                    }
+                                  ]
                                 },
                                 {
-                                  "name": "PitchAccelerationError",
-                                  "value": 0.1
+                                  "name": "AccelerationError",
+                                  "value": [
+                                    {
+                                      "name": "Enabled",
+                                      "value": false
+                                    },
+                                    {
+                                      "name": "YawAccelError",
+                                      "value": 0.1
+                                    },
+                                    {
+                                      "name": "PitchAccelError",
+                                      "value": 0.1
+                                    }
+                                  ]
                                 },
                                 {
-                                  "name": "YawConstantError",
-                                  "value": 0.1
+                                  "name": "ConstantError",
+                                  "value": [
+                                    {
+                                      "name": "Enabled",
+                                      "value": true
+                                    },
+                                    {
+                                      "name": "YawConstantError",
+                                      "value": 0.1
+                                    },
+                                    {
+                                      "name": "PitchConstantError",
+                                      "value": 0.1
+                                    }
+                                  ]
                                 },
                                 {
-                                  "name": "PitchConstantError",
-                                  "value": 0.1
+                                  "name": "SigmoidDeceleration",
+                                  "value": [
+                                    {
+                                      "name": "Enabled",
+                                      "value": false
+                                    },
+                                    {
+                                      "name": "Steepness",
+                                      "value": 10.0
+                                    },
+                                    {
+                                      "name": "Midpoint",
+                                      "value": 0.3
+                                    }
+                                  ]
                                 }
                               ]
                             }
@@ -1932,9 +2298,9 @@
                 {
                   "name": "Blocks",
                   "value": [
-                    "minecraft:dirt",
+                    "minecraft:cobblestone",
                     "minecraft:netherrack",
-                    "minecraft:cobblestone"
+                    "minecraft:dirt"
                   ]
                 }
               ]
@@ -2115,27 +2481,89 @@
                                       }
                                     },
                                     {
-                                      "name": "PitchAcceleration",
+                                      "name": "PitchAccelelation",
                                       "value": {
                                         "from": 20.0,
                                         "to": 25.0
                                       }
                                     },
                                     {
-                                      "name": "YawAccelerationError",
-                                      "value": 0.1
+                                      "name": "DynamicAccel",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": false
+                                        },
+                                        {
+                                          "name": "CoefDistance",
+                                          "value": -1.393
+                                        },
+                                        {
+                                          "name": "YawCrosshairAccel",
+                                          "value": {
+                                            "from": 17.0,
+                                            "to": 20.0
+                                          }
+                                        },
+                                        {
+                                          "name": "PitchCrosshairAccel",
+                                          "value": {
+                                            "from": 17.0,
+                                            "to": 20.0
+                                          }
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "PitchAccelerationError",
-                                      "value": 0.1
+                                      "name": "AccelerationError",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": false
+                                        },
+                                        {
+                                          "name": "YawAccelError",
+                                          "value": 0.1
+                                        },
+                                        {
+                                          "name": "PitchAccelError",
+                                          "value": 0.1
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "YawConstantError",
-                                      "value": 0.1
+                                      "name": "ConstantError",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": true
+                                        },
+                                        {
+                                          "name": "YawConstantError",
+                                          "value": 0.1
+                                        },
+                                        {
+                                          "name": "PitchConstantError",
+                                          "value": 0.1
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "PitchConstantError",
-                                      "value": 0.1
+                                      "name": "SigmoidDeceleration",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": false
+                                        },
+                                        {
+                                          "name": "Steepness",
+                                          "value": 10.0
+                                        },
+                                        {
+                                          "name": "Midpoint",
+                                          "value": 0.3
+                                        }
+                                      ]
                                     }
                                   ]
                                 }
@@ -2655,27 +3083,89 @@
                       }
                     },
                     {
-                      "name": "PitchAcceleration",
+                      "name": "PitchAccelelation",
                       "value": {
                         "from": 20.0,
                         "to": 25.0
                       }
                     },
                     {
-                      "name": "YawAccelerationError",
-                      "value": 0.1
+                      "name": "DynamicAccel",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "CoefDistance",
+                          "value": -1.393
+                        },
+                        {
+                          "name": "YawCrosshairAccel",
+                          "value": {
+                            "from": 17.0,
+                            "to": 20.0
+                          }
+                        },
+                        {
+                          "name": "PitchCrosshairAccel",
+                          "value": {
+                            "from": 17.0,
+                            "to": 20.0
+                          }
+                        }
+                      ]
                     },
                     {
-                      "name": "PitchAccelerationError",
-                      "value": 0.1
+                      "name": "AccelerationError",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "YawAccelError",
+                          "value": 0.1
+                        },
+                        {
+                          "name": "PitchAccelError",
+                          "value": 0.1
+                        }
+                      ]
                     },
                     {
-                      "name": "YawConstantError",
-                      "value": 0.1
+                      "name": "ConstantError",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": true
+                        },
+                        {
+                          "name": "YawConstantError",
+                          "value": 0.1
+                        },
+                        {
+                          "name": "PitchConstantError",
+                          "value": 0.1
+                        }
+                      ]
                     },
                     {
-                      "name": "PitchConstantError",
-                      "value": 0.1
+                      "name": "SigmoidDeceleration",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "Steepness",
+                          "value": 10.0
+                        },
+                        {
+                          "name": "Midpoint",
+                          "value": 0.3
+                        }
+                      ]
                     }
                   ]
                 }
@@ -2752,6 +3242,304 @@
         {
           "name": "Mode",
           "value": "Quit"
+        }
+      ]
+    },
+    {
+      "name": "AutoPearl",
+      "value": [
+        {
+          "name": "Mode",
+          "value": "Trigger"
+        },
+        {
+          "name": "Rotate",
+          "value": [
+            {
+              "name": "Enabled",
+              "value": true
+            },
+            {
+              "name": "Rotations",
+              "value": [
+                {
+                  "name": "AngleSmooth",
+                  "active": "Linear",
+                  "value": [],
+                  "choices": {
+                    "Linear": {
+                      "name": "Linear",
+                      "value": [
+                        {
+                          "name": "HorizontalTurnSpeed",
+                          "value": {
+                            "from": 180.0,
+                            "to": 180.0
+                          }
+                        },
+                        {
+                          "name": "VerticalTurnSpeed",
+                          "value": {
+                            "from": 180.0,
+                            "to": 180.0
+                          }
+                        }
+                      ]
+                    },
+                    "Bezier": {
+                      "name": "Bezier",
+                      "value": [
+                        {
+                          "name": "HorizontalTurnSpeed",
+                          "value": {
+                            "from": 180.0,
+                            "to": 180.0
+                          }
+                        },
+                        {
+                          "name": "VerticalTurnSpeed",
+                          "value": {
+                            "from": 180.0,
+                            "to": 180.0
+                          }
+                        },
+                        {
+                          "name": "ControlPoint",
+                          "value": 0.5
+                        }
+                      ]
+                    },
+                    "Sigmoid": {
+                      "name": "Sigmoid",
+                      "value": [
+                        {
+                          "name": "HorizontalTurnSpeed",
+                          "value": {
+                            "from": 180.0,
+                            "to": 180.0
+                          }
+                        },
+                        {
+                          "name": "VerticalTurnSpeed",
+                          "value": {
+                            "from": 180.0,
+                            "to": 180.0
+                          }
+                        },
+                        {
+                          "name": "Steepness",
+                          "value": 10.0
+                        },
+                        {
+                          "name": "Midpoint",
+                          "value": 0.3
+                        }
+                      ]
+                    },
+                    "Conditional": {
+                      "name": "Conditional",
+                      "value": [
+                        {
+                          "name": "CoefDistance",
+                          "value": -1.393
+                        },
+                        {
+                          "name": "CoefDiffH",
+                          "value": 0.21
+                        },
+                        {
+                          "name": "CoefDiffV",
+                          "value": 0.14
+                        },
+                        {
+                          "name": "CoefCrosshairH",
+                          "value": -5.99
+                        },
+                        {
+                          "name": "CoefCrosshairV",
+                          "value": -14.32
+                        },
+                        {
+                          "name": "InterceptH",
+                          "value": 11.988
+                        },
+                        {
+                          "name": "InterceptV",
+                          "value": 4.715
+                        },
+                        {
+                          "name": "MinimumTurnSpeedH",
+                          "value": 3.05E-5
+                        },
+                        {
+                          "name": "MinimumTurnSpeedV",
+                          "value": 5.96E-8
+                        },
+                        {
+                          "name": "FailCap",
+                          "value": 3
+                        },
+                        {
+                          "name": "FailIncrementH",
+                          "value": 0.0
+                        },
+                        {
+                          "name": "FailIncrementV",
+                          "value": 0.0
+                        }
+                      ]
+                    },
+                    "Acceleration": {
+                      "name": "Acceleration",
+                      "value": [
+                        {
+                          "name": "YawAcceleration",
+                          "value": {
+                            "from": 20.0,
+                            "to": 25.0
+                          }
+                        },
+                        {
+                          "name": "PitchAccelelation",
+                          "value": {
+                            "from": 20.0,
+                            "to": 25.0
+                          }
+                        },
+                        {
+                          "name": "DynamicAccel",
+                          "value": [
+                            {
+                              "name": "Enabled",
+                              "value": false
+                            },
+                            {
+                              "name": "CoefDistance",
+                              "value": -1.393
+                            },
+                            {
+                              "name": "YawCrosshairAccel",
+                              "value": {
+                                "from": 17.0,
+                                "to": 20.0
+                              }
+                            },
+                            {
+                              "name": "PitchCrosshairAccel",
+                              "value": {
+                                "from": 17.0,
+                                "to": 20.0
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "name": "AccelerationError",
+                          "value": [
+                            {
+                              "name": "Enabled",
+                              "value": true
+                            },
+                            {
+                              "name": "YawAccelError",
+                              "value": 0.1
+                            },
+                            {
+                              "name": "PitchAccelError",
+                              "value": 0.1
+                            }
+                          ]
+                        },
+                        {
+                          "name": "ConstantError",
+                          "value": [
+                            {
+                              "name": "Enabled",
+                              "value": true
+                            },
+                            {
+                              "name": "YawConstantError",
+                              "value": 0.1
+                            },
+                            {
+                              "name": "PitchConstantError",
+                              "value": 0.1
+                            }
+                          ]
+                        },
+                        {
+                          "name": "SigmoidDeceleration",
+                          "value": [
+                            {
+                              "name": "Enabled",
+                              "value": false
+                            },
+                            {
+                              "name": "Steepness",
+                              "value": 10.0
+                            },
+                            {
+                              "name": "Midpoint",
+                              "value": 0.3
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "valueType": "CHOICE"
+                },
+                {
+                  "name": "FixVelocity",
+                  "value": true
+                },
+                {
+                  "name": "ResetThreshold",
+                  "value": 2.0
+                },
+                {
+                  "name": "TicksUntilReset",
+                  "value": 5
+                },
+                {
+                  "name": "ChangeLook",
+                  "value": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Limits",
+          "value": [
+            {
+              "name": "Enabled",
+              "value": true
+            },
+            {
+              "name": "Angle",
+              "value": 180
+            },
+            {
+              "name": "MinDistance",
+              "value": 8.0
+            },
+            {
+              "name": "DestinationDistance",
+              "value": 8.0
+            }
+          ]
+        },
+        {
+          "name": "CombatPauseTime",
+          "value": 0
+        },
+        {
+          "name": "SlotResetDelay",
+          "value": {
+            "from": 0,
+            "to": 0
+          }
         }
       ]
     },
@@ -2899,14 +3687,6 @@
                   }
                 },
                 {
-                  "name": "DynamicYawFactor",
-                  "value": 0.0
-                },
-                {
-                  "name": "DynamicPitchFactor",
-                  "value": 0.0
-                },
-                {
                   "name": "Chance",
                   "value": 100
                 },
@@ -2920,6 +3700,38 @@
                 {
                   "name": "Tolerance",
                   "value": 0.1
+                },
+                {
+                  "name": "Dynamic",
+                  "value": [
+                    {
+                      "name": "Enabled",
+                      "value": false
+                    },
+                    {
+                      "name": "HurtTime",
+                      "value": 10
+                    },
+                    {
+                      "name": "YawFactor",
+                      "value": 0.0
+                    },
+                    {
+                      "name": "PitchFactor",
+                      "value": 0.0
+                    },
+                    {
+                      "name": "Speed",
+                      "value": {
+                        "from": 0.5,
+                        "to": 0.75
+                      }
+                    },
+                    {
+                      "name": "Tolerance",
+                      "value": 0.1
+                    }
+                  ]
                 }
               ]
             },
@@ -3094,27 +3906,89 @@
                       }
                     },
                     {
-                      "name": "PitchAcceleration",
+                      "name": "PitchAccelelation",
                       "value": {
                         "from": 20.0,
                         "to": 25.0
                       }
                     },
                     {
-                      "name": "YawAccelerationError",
-                      "value": 0.1
+                      "name": "DynamicAccel",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "CoefDistance",
+                          "value": -1.393
+                        },
+                        {
+                          "name": "YawCrosshairAccel",
+                          "value": {
+                            "from": 17.0,
+                            "to": 20.0
+                          }
+                        },
+                        {
+                          "name": "PitchCrosshairAccel",
+                          "value": {
+                            "from": 17.0,
+                            "to": 20.0
+                          }
+                        }
+                      ]
                     },
                     {
-                      "name": "PitchAccelerationError",
-                      "value": 0.1
+                      "name": "AccelerationError",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "YawAccelError",
+                          "value": 0.1
+                        },
+                        {
+                          "name": "PitchAccelError",
+                          "value": 0.1
+                        }
+                      ]
                     },
                     {
-                      "name": "YawConstantError",
-                      "value": 0.1
+                      "name": "ConstantError",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": true
+                        },
+                        {
+                          "name": "YawConstantError",
+                          "value": 0.1
+                        },
+                        {
+                          "name": "PitchConstantError",
+                          "value": 0.1
+                        }
+                      ]
                     },
                     {
-                      "name": "PitchConstantError",
-                      "value": 0.1
+                      "name": "SigmoidDeceleration",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "Steepness",
+                          "value": 10.0
+                        },
+                        {
+                          "name": "Midpoint",
+                          "value": 0.3
+                        }
+                      ]
                     }
                   ]
                 }
@@ -3244,16 +4118,30 @@
           "value": false
         },
         {
-          "name": "IgnoreDurability",
-          "value": false
-        },
-        {
-          "name": "Search",
-          "value": true
-        },
-        {
-          "name": "Slot",
-          "value": 0
+          "name": "ToolSelector",
+          "active": "Dynamic",
+          "value": [],
+          "choices": {
+            "Dynamic": {
+              "name": "Dynamic",
+              "value": [
+                {
+                  "name": "IgnoreDurability",
+                  "value": false
+                }
+              ]
+            },
+            "Static": {
+              "name": "Static",
+              "value": [
+                {
+                  "name": "Slot",
+                  "value": 0
+                }
+              ]
+            }
+          },
+          "valueType": "CHOICE"
         },
         {
           "name": "SwapPreviousDelay",
@@ -3428,27 +4316,89 @@
                       }
                     },
                     {
-                      "name": "PitchAcceleration",
+                      "name": "PitchAccelelation",
                       "value": {
                         "from": 20.0,
                         "to": 25.0
                       }
                     },
                     {
-                      "name": "YawAccelerationError",
-                      "value": 0.1
+                      "name": "DynamicAccel",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "CoefDistance",
+                          "value": -1.393
+                        },
+                        {
+                          "name": "YawCrosshairAccel",
+                          "value": {
+                            "from": 17.0,
+                            "to": 20.0
+                          }
+                        },
+                        {
+                          "name": "PitchCrosshairAccel",
+                          "value": {
+                            "from": 17.0,
+                            "to": 20.0
+                          }
+                        }
+                      ]
                     },
                     {
-                      "name": "PitchAccelerationError",
-                      "value": 0.1
+                      "name": "AccelerationError",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "YawAccelError",
+                          "value": 0.1
+                        },
+                        {
+                          "name": "PitchAccelError",
+                          "value": 0.1
+                        }
+                      ]
                     },
                     {
-                      "name": "YawConstantError",
-                      "value": 0.1
+                      "name": "ConstantError",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": true
+                        },
+                        {
+                          "name": "YawConstantError",
+                          "value": 0.1
+                        },
+                        {
+                          "name": "PitchConstantError",
+                          "value": 0.1
+                        }
+                      ]
                     },
                     {
-                      "name": "PitchConstantError",
-                      "value": 0.1
+                      "name": "SigmoidDeceleration",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "Steepness",
+                          "value": 10.0
+                        },
+                        {
+                          "name": "Midpoint",
+                          "value": 0.3
+                        }
+                      ]
                     }
                   ]
                 }
@@ -3492,51 +4442,24 @@
           "value": false
         },
         {
-          "name": "SlotMode",
-          "active": "Best",
-          "value": [],
-          "choices": {
-            "Best": {
-              "name": "Best",
-              "value": [
-                {
-                  "name": "WeaponType",
-                  "value": "Sword"
-                }
-              ]
-            },
-            "Constant": {
-              "name": "Constant",
-              "value": [
-                {
-                  "name": "Slot",
-                  "value": 1
-                }
-              ]
-            }
-          },
-          "valueType": "CHOICE"
+          "name": "Preferred",
+          "value": "Sword"
         },
         {
-          "name": "TicksUntilReset",
-          "value": 20
-        },
-        {
-          "name": "BreakShield",
-          "value": false
+          "name": "BlockedByShield",
+          "value": "Axe"
         },
         {
           "name": "Prepare",
-          "value": [
-            {
-              "name": "Enabled",
-              "value": false
-            },
-            {
-              "name": "Range",
-              "value": 4.2
-            }
-          ]
+          "value": true
+        },
+        {
+          "name": "SwitchOn",
+          "value": 1
+        },
+        {
+          "name": "SwitchBack",
+          "value": 20
         }
       ]
     },
@@ -3614,8 +4537,25 @@
           "value": 100.0
         },
         {
-          "name": "PauseOnHit",
-          "value": false
+          "name": "PauseOnHurtTime",
+          "value": [
+            {
+              "name": "Enabled",
+              "value": false
+            },
+            {
+              "name": "HurtTime",
+              "value": 3
+            }
+          ]
+        },
+        {
+          "name": "TargetMode",
+          "value": "Range"
+        },
+        {
+          "name": "LastAttackTimeToWork",
+          "value": 1000
         }
       ]
     },
@@ -3853,27 +4793,89 @@
                                   }
                                 },
                                 {
-                                  "name": "PitchAcceleration",
+                                  "name": "PitchAccelelation",
                                   "value": {
                                     "from": 20.0,
                                     "to": 25.0
                                   }
                                 },
                                 {
-                                  "name": "YawAccelerationError",
-                                  "value": 0.1
+                                  "name": "DynamicAccel",
+                                  "value": [
+                                    {
+                                      "name": "Enabled",
+                                      "value": false
+                                    },
+                                    {
+                                      "name": "CoefDistance",
+                                      "value": -1.393
+                                    },
+                                    {
+                                      "name": "YawCrosshairAccel",
+                                      "value": {
+                                        "from": 17.0,
+                                        "to": 20.0
+                                      }
+                                    },
+                                    {
+                                      "name": "PitchCrosshairAccel",
+                                      "value": {
+                                        "from": 17.0,
+                                        "to": 20.0
+                                      }
+                                    }
+                                  ]
                                 },
                                 {
-                                  "name": "PitchAccelerationError",
-                                  "value": 0.1
+                                  "name": "AccelerationError",
+                                  "value": [
+                                    {
+                                      "name": "Enabled",
+                                      "value": false
+                                    },
+                                    {
+                                      "name": "YawAccelError",
+                                      "value": 0.1
+                                    },
+                                    {
+                                      "name": "PitchAccelError",
+                                      "value": 0.1
+                                    }
+                                  ]
                                 },
                                 {
-                                  "name": "YawConstantError",
-                                  "value": 0.1
+                                  "name": "ConstantError",
+                                  "value": [
+                                    {
+                                      "name": "Enabled",
+                                      "value": true
+                                    },
+                                    {
+                                      "name": "YawConstantError",
+                                      "value": 0.1
+                                    },
+                                    {
+                                      "name": "PitchConstantError",
+                                      "value": 0.1
+                                    }
+                                  ]
                                 },
                                 {
-                                  "name": "PitchConstantError",
-                                  "value": 0.1
+                                  "name": "SigmoidDeceleration",
+                                  "value": [
+                                    {
+                                      "name": "Enabled",
+                                      "value": false
+                                    },
+                                    {
+                                      "name": "Steepness",
+                                      "value": 10.0
+                                    },
+                                    {
+                                      "name": "Midpoint",
+                                      "value": 0.3
+                                    }
+                                  ]
                                 }
                               ]
                             }
@@ -4096,27 +5098,89 @@
                                       }
                                     },
                                     {
-                                      "name": "PitchAcceleration",
+                                      "name": "PitchAccelelation",
                                       "value": {
                                         "from": 20.0,
                                         "to": 25.0
                                       }
                                     },
                                     {
-                                      "name": "YawAccelerationError",
-                                      "value": 0.1
+                                      "name": "DynamicAccel",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": false
+                                        },
+                                        {
+                                          "name": "CoefDistance",
+                                          "value": -1.393
+                                        },
+                                        {
+                                          "name": "YawCrosshairAccel",
+                                          "value": {
+                                            "from": 17.0,
+                                            "to": 20.0
+                                          }
+                                        },
+                                        {
+                                          "name": "PitchCrosshairAccel",
+                                          "value": {
+                                            "from": 17.0,
+                                            "to": 20.0
+                                          }
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "PitchAccelerationError",
-                                      "value": 0.1
+                                      "name": "AccelerationError",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": false
+                                        },
+                                        {
+                                          "name": "YawAccelError",
+                                          "value": 0.1
+                                        },
+                                        {
+                                          "name": "PitchAccelError",
+                                          "value": 0.1
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "YawConstantError",
-                                      "value": 0.1
+                                      "name": "ConstantError",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": true
+                                        },
+                                        {
+                                          "name": "YawConstantError",
+                                          "value": 0.1
+                                        },
+                                        {
+                                          "name": "PitchConstantError",
+                                          "value": 0.1
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "PitchConstantError",
-                                      "value": 0.1
+                                      "name": "SigmoidDeceleration",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": false
+                                        },
+                                        {
+                                          "name": "Steepness",
+                                          "value": 10.0
+                                        },
+                                        {
+                                          "name": "Midpoint",
+                                          "value": 0.3
+                                        }
+                                      ]
                                     }
                                   ]
                                 }
@@ -4234,6 +5298,158 @@
               "value": []
             }
           ]
+        },
+        {
+          "name": "Copy",
+          "value": [
+            {
+              "name": "Enabled",
+              "value": true
+            },
+            {
+              "name": "Notificate",
+              "value": true
+            },
+            {
+              "name": "Highlight",
+              "value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BetterTab",
+      "value": [
+        {
+          "name": "Limits",
+          "value": [
+            {
+              "name": "TabSize",
+              "value": 80
+            },
+            {
+              "name": "ColumnHeight",
+              "value": 20
+            }
+          ]
+        },
+        {
+          "name": "Visibility",
+          "value": [
+            {
+              "name": "Header",
+              "value": true
+            },
+            {
+              "name": "Footer",
+              "value": true
+            },
+            {
+              "name": "NameOnly",
+              "value": false
+            }
+          ]
+        },
+        {
+          "name": "Highlight",
+          "value": [
+            {
+              "name": "Enabled",
+              "value": true
+            },
+            {
+              "name": "Self",
+              "value": [
+                {
+                  "name": "Enabled",
+                  "value": true
+                },
+                {
+                  "name": "Color",
+                  "value": 1345503538
+                }
+              ]
+            },
+            {
+              "name": "Friends",
+              "value": [
+                {
+                  "name": "Enabled",
+                  "value": true
+                },
+                {
+                  "name": "Color",
+                  "value": 1343248843
+                }
+              ]
+            },
+            {
+              "name": "Others",
+              "value": [
+                {
+                  "name": "Enabled",
+                  "value": true
+                },
+                {
+                  "name": "Color",
+                  "value": 1344480035
+                },
+                {
+                  "name": "Filter",
+                  "value": [
+                    {
+                      "name": "FilterBy",
+                      "value": "Both"
+                    },
+                    {
+                      "name": "Names",
+                      "value": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "AccurateLatency",
+          "value": [
+            {
+              "name": "Enabled",
+              "value": true
+            },
+            {
+              "name": "AppendMSSuffix",
+              "value": true
+            }
+          ]
+        },
+        {
+          "name": "PlayerHider",
+          "value": [
+            {
+              "name": "Enabled",
+              "value": false
+            },
+            {
+              "name": "Filter",
+              "value": [
+                {
+                  "name": "FilterBy",
+                  "value": "Both"
+                },
+                {
+                  "name": "Names",
+                  "value": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sorting",
+          "value": "Vanilla"
         }
       ]
     },
@@ -4301,6 +5517,98 @@
             "minecraft:snow",
             "minecraft:cobweb"
           ]
+        }
+      ]
+    },
+    {
+      "name": "BookBot",
+      "value": [
+        {
+          "name": "Constraints",
+          "value": [
+            {
+              "name": "StartDelay",
+              "value": {
+                "from": 1,
+                "to": 2
+              }
+            },
+            {
+              "name": "ClickDelay",
+              "value": {
+                "from": 2,
+                "to": 4
+              }
+            },
+            {
+              "name": "CloseDelay",
+              "value": {
+                "from": 1,
+                "to": 2
+              }
+            },
+            {
+              "name": "MissChance",
+              "value": {
+                "from": 0,
+                "to": 0
+              }
+            },
+            {
+              "name": "RequiresNoMovement",
+              "value": false
+            },
+            {
+              "name": "RequiresNoRotation",
+              "value": false
+            },
+            {
+              "name": "RequiresInventoryOpen",
+              "value": false
+            }
+          ]
+        },
+        {
+          "name": "Mode",
+          "active": "Random",
+          "value": [],
+          "choices": {
+            "Random": {
+              "name": "Random",
+              "value": [
+                {
+                  "name": "Pages",
+                  "value": 50
+                },
+                {
+                  "name": "AsciiOnly",
+                  "value": false
+                },
+                {
+                  "name": "AllowSpace",
+                  "value": true
+                }
+              ]
+            }
+          },
+          "valueType": "CHOICE"
+        },
+        {
+          "name": "Sign",
+          "value": [
+            {
+              "name": "Enabled",
+              "value": true
+            },
+            {
+              "name": "Name",
+              "value": "Generated book #%count%"
+            }
+          ]
+        },
+        {
+          "name": "Delay",
+          "value": 0.5
         }
       ]
     },
@@ -4583,27 +5891,89 @@
                           }
                         },
                         {
-                          "name": "PitchAcceleration",
+                          "name": "PitchAccelelation",
                           "value": {
                             "from": 20.0,
                             "to": 25.0
                           }
                         },
                         {
-                          "name": "YawAccelerationError",
-                          "value": 0.1
+                          "name": "DynamicAccel",
+                          "value": [
+                            {
+                              "name": "Enabled",
+                              "value": false
+                            },
+                            {
+                              "name": "CoefDistance",
+                              "value": -1.393
+                            },
+                            {
+                              "name": "YawCrosshairAccel",
+                              "value": {
+                                "from": 17.0,
+                                "to": 20.0
+                              }
+                            },
+                            {
+                              "name": "PitchCrosshairAccel",
+                              "value": {
+                                "from": 17.0,
+                                "to": 20.0
+                              }
+                            }
+                          ]
                         },
                         {
-                          "name": "PitchAccelerationError",
-                          "value": 0.1
+                          "name": "AccelerationError",
+                          "value": [
+                            {
+                              "name": "Enabled",
+                              "value": false
+                            },
+                            {
+                              "name": "YawAccelError",
+                              "value": 0.1
+                            },
+                            {
+                              "name": "PitchAccelError",
+                              "value": 0.1
+                            }
+                          ]
                         },
                         {
-                          "name": "YawConstantError",
-                          "value": 0.1
+                          "name": "ConstantError",
+                          "value": [
+                            {
+                              "name": "Enabled",
+                              "value": true
+                            },
+                            {
+                              "name": "YawConstantError",
+                              "value": 0.1
+                            },
+                            {
+                              "name": "PitchConstantError",
+                              "value": 0.1
+                            }
+                          ]
                         },
                         {
-                          "name": "PitchConstantError",
-                          "value": 0.1
+                          "name": "SigmoidDeceleration",
+                          "value": [
+                            {
+                              "name": "Enabled",
+                              "value": false
+                            },
+                            {
+                              "name": "Steepness",
+                              "value": 10.0
+                            },
+                            {
+                              "name": "Midpoint",
+                              "value": 0.3
+                            }
+                          ]
                         }
                       ]
                     }
@@ -5408,27 +6778,89 @@
                                       }
                                     },
                                     {
-                                      "name": "PitchAcceleration",
+                                      "name": "PitchAccelelation",
                                       "value": {
                                         "from": 20.0,
                                         "to": 25.0
                                       }
                                     },
                                     {
-                                      "name": "YawAccelerationError",
-                                      "value": 0.1
+                                      "name": "DynamicAccel",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": false
+                                        },
+                                        {
+                                          "name": "CoefDistance",
+                                          "value": -1.393
+                                        },
+                                        {
+                                          "name": "YawCrosshairAccel",
+                                          "value": {
+                                            "from": 17.0,
+                                            "to": 20.0
+                                          }
+                                        },
+                                        {
+                                          "name": "PitchCrosshairAccel",
+                                          "value": {
+                                            "from": 17.0,
+                                            "to": 20.0
+                                          }
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "PitchAccelerationError",
-                                      "value": 0.1
+                                      "name": "AccelerationError",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": false
+                                        },
+                                        {
+                                          "name": "YawAccelError",
+                                          "value": 0.1
+                                        },
+                                        {
+                                          "name": "PitchAccelError",
+                                          "value": 0.1
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "YawConstantError",
-                                      "value": 0.1
+                                      "name": "ConstantError",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": true
+                                        },
+                                        {
+                                          "name": "YawConstantError",
+                                          "value": 0.1
+                                        },
+                                        {
+                                          "name": "PitchConstantError",
+                                          "value": 0.1
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "PitchConstantError",
-                                      "value": 0.1
+                                      "name": "SigmoidDeceleration",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": false
+                                        },
+                                        {
+                                          "name": "Steepness",
+                                          "value": 10.0
+                                        },
+                                        {
+                                          "name": "Midpoint",
+                                          "value": 0.3
+                                        }
+                                      ]
                                     }
                                   ]
                                 }
@@ -5497,9 +6929,9 @@
                     {
                       "name": "Blocks",
                       "value": [
-                        "minecraft:dirt",
+                        "minecraft:cobblestone",
                         "minecraft:netherrack",
-                        "minecraft:cobblestone"
+                        "minecraft:dirt"
                       ]
                     }
                   ]
@@ -5680,27 +7112,89 @@
                                           }
                                         },
                                         {
-                                          "name": "PitchAcceleration",
+                                          "name": "PitchAccelelation",
                                           "value": {
                                             "from": 20.0,
                                             "to": 25.0
                                           }
                                         },
                                         {
-                                          "name": "YawAccelerationError",
-                                          "value": 0.1
+                                          "name": "DynamicAccel",
+                                          "value": [
+                                            {
+                                              "name": "Enabled",
+                                              "value": false
+                                            },
+                                            {
+                                              "name": "CoefDistance",
+                                              "value": -1.393
+                                            },
+                                            {
+                                              "name": "YawCrosshairAccel",
+                                              "value": {
+                                                "from": 17.0,
+                                                "to": 20.0
+                                              }
+                                            },
+                                            {
+                                              "name": "PitchCrosshairAccel",
+                                              "value": {
+                                                "from": 17.0,
+                                                "to": 20.0
+                                              }
+                                            }
+                                          ]
                                         },
                                         {
-                                          "name": "PitchAccelerationError",
-                                          "value": 0.1
+                                          "name": "AccelerationError",
+                                          "value": [
+                                            {
+                                              "name": "Enabled",
+                                              "value": false
+                                            },
+                                            {
+                                              "name": "YawAccelError",
+                                              "value": 0.1
+                                            },
+                                            {
+                                              "name": "PitchAccelError",
+                                              "value": 0.1
+                                            }
+                                          ]
                                         },
                                         {
-                                          "name": "YawConstantError",
-                                          "value": 0.1
+                                          "name": "ConstantError",
+                                          "value": [
+                                            {
+                                              "name": "Enabled",
+                                              "value": true
+                                            },
+                                            {
+                                              "name": "YawConstantError",
+                                              "value": 0.1
+                                            },
+                                            {
+                                              "name": "PitchConstantError",
+                                              "value": 0.1
+                                            }
+                                          ]
                                         },
                                         {
-                                          "name": "PitchConstantError",
-                                          "value": 0.1
+                                          "name": "SigmoidDeceleration",
+                                          "value": [
+                                            {
+                                              "name": "Enabled",
+                                              "value": false
+                                            },
+                                            {
+                                              "name": "Steepness",
+                                              "value": 10.0
+                                            },
+                                            {
+                                              "name": "Midpoint",
+                                              "value": 0.3
+                                            }
+                                          ]
                                         }
                                       ]
                                     }
@@ -5906,27 +7400,89 @@
                               }
                             },
                             {
-                              "name": "PitchAcceleration",
+                              "name": "PitchAccelelation",
                               "value": {
                                 "from": 20.0,
                                 "to": 25.0
                               }
                             },
                             {
-                              "name": "YawAccelerationError",
-                              "value": 0.1
+                              "name": "DynamicAccel",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": false
+                                },
+                                {
+                                  "name": "CoefDistance",
+                                  "value": -1.393
+                                },
+                                {
+                                  "name": "YawCrosshairAccel",
+                                  "value": {
+                                    "from": 17.0,
+                                    "to": 20.0
+                                  }
+                                },
+                                {
+                                  "name": "PitchCrosshairAccel",
+                                  "value": {
+                                    "from": 17.0,
+                                    "to": 20.0
+                                  }
+                                }
+                              ]
                             },
                             {
-                              "name": "PitchAccelerationError",
-                              "value": 0.1
+                              "name": "AccelerationError",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": false
+                                },
+                                {
+                                  "name": "YawAccelError",
+                                  "value": 0.1
+                                },
+                                {
+                                  "name": "PitchAccelError",
+                                  "value": 0.1
+                                }
+                              ]
                             },
                             {
-                              "name": "YawConstantError",
-                              "value": 0.1
+                              "name": "ConstantError",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": true
+                                },
+                                {
+                                  "name": "YawConstantError",
+                                  "value": 0.1
+                                },
+                                {
+                                  "name": "PitchConstantError",
+                                  "value": 0.1
+                                }
+                              ]
                             },
                             {
-                              "name": "PitchConstantError",
-                              "value": 0.1
+                              "name": "SigmoidDeceleration",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": false
+                                },
+                                {
+                                  "name": "Steepness",
+                                  "value": 10.0
+                                },
+                                {
+                                  "name": "Midpoint",
+                                  "value": 0.3
+                                }
+                              ]
                             }
                           ]
                         }
@@ -5998,35 +7554,6 @@
         {
           "name": "Motion",
           "value": 5.0
-        }
-      ]
-    },
-    {
-      "name": "DebugRecorder",
-      "value": [
-        {
-          "name": "Mode",
-          "active": "Generic",
-          "value": [],
-          "choices": {
-            "Generic": {
-              "name": "Generic",
-              "value": []
-            },
-            "CPS": {
-              "name": "CPS",
-              "value": []
-            },
-            "Aim": {
-              "name": "Aim",
-              "value": []
-            },
-            "Box": {
-              "name": "Box",
-              "value": []
-            }
-          },
-          "valueType": "CHOICE"
         }
       ]
     },
@@ -6377,8 +7904,8 @@
           "value": false
         },
         {
-          "name": "Instant",
-          "value": true
+          "name": "InstantStart",
+          "value": false
         },
         {
           "name": "InstantStop",
@@ -6400,6 +7927,14 @@
               "value": 1.0
             }
           ]
+        },
+        {
+          "name": "NotInFluid",
+          "value": false
+        },
+        {
+          "name": "DurabilityExploit",
+          "value": false
         },
         {
           "name": "Mode",
@@ -6621,27 +8156,89 @@
                       }
                     },
                     {
-                      "name": "PitchAcceleration",
+                      "name": "PitchAccelelation",
                       "value": {
                         "from": 20.0,
                         "to": 25.0
                       }
                     },
                     {
-                      "name": "YawAccelerationError",
-                      "value": 0.1
+                      "name": "DynamicAccel",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "CoefDistance",
+                          "value": -1.393
+                        },
+                        {
+                          "name": "YawCrosshairAccel",
+                          "value": {
+                            "from": 17.0,
+                            "to": 20.0
+                          }
+                        },
+                        {
+                          "name": "PitchCrosshairAccel",
+                          "value": {
+                            "from": 17.0,
+                            "to": 20.0
+                          }
+                        }
+                      ]
                     },
                     {
-                      "name": "PitchAccelerationError",
-                      "value": 0.1
+                      "name": "AccelerationError",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "YawAccelError",
+                          "value": 0.1
+                        },
+                        {
+                          "name": "PitchAccelError",
+                          "value": 0.1
+                        }
+                      ]
                     },
                     {
-                      "name": "YawConstantError",
-                      "value": 0.1
+                      "name": "ConstantError",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": true
+                        },
+                        {
+                          "name": "YawConstantError",
+                          "value": 0.1
+                        },
+                        {
+                          "name": "PitchConstantError",
+                          "value": 0.1
+                        }
+                      ]
                     },
                     {
-                      "name": "PitchConstantError",
-                      "value": 0.1
+                      "name": "SigmoidDeceleration",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "Steepness",
+                          "value": 10.0
+                        },
+                        {
+                          "name": "Midpoint",
+                          "value": 0.3
+                        }
+                      ]
                     }
                   ]
                 }
@@ -6688,6 +8285,10 @@
             "from": 700,
             "to": 900
           }
+        },
+        {
+          "name": "RecoilTime",
+          "value": 250
         },
         {
           "name": "Mode",
@@ -6891,27 +8492,89 @@
                           }
                         },
                         {
-                          "name": "PitchAcceleration",
+                          "name": "PitchAccelelation",
                           "value": {
                             "from": 20.0,
                             "to": 25.0
                           }
                         },
                         {
-                          "name": "YawAccelerationError",
-                          "value": 0.1
+                          "name": "DynamicAccel",
+                          "value": [
+                            {
+                              "name": "Enabled",
+                              "value": false
+                            },
+                            {
+                              "name": "CoefDistance",
+                              "value": -1.393
+                            },
+                            {
+                              "name": "YawCrosshairAccel",
+                              "value": {
+                                "from": 17.0,
+                                "to": 20.0
+                              }
+                            },
+                            {
+                              "name": "PitchCrosshairAccel",
+                              "value": {
+                                "from": 17.0,
+                                "to": 20.0
+                              }
+                            }
+                          ]
                         },
                         {
-                          "name": "PitchAccelerationError",
-                          "value": 0.1
+                          "name": "AccelerationError",
+                          "value": [
+                            {
+                              "name": "Enabled",
+                              "value": false
+                            },
+                            {
+                              "name": "YawAccelError",
+                              "value": 0.1
+                            },
+                            {
+                              "name": "PitchAccelError",
+                              "value": 0.1
+                            }
+                          ]
                         },
                         {
-                          "name": "YawConstantError",
-                          "value": 0.1
+                          "name": "ConstantError",
+                          "value": [
+                            {
+                              "name": "Enabled",
+                              "value": true
+                            },
+                            {
+                              "name": "YawConstantError",
+                              "value": 0.1
+                            },
+                            {
+                              "name": "PitchConstantError",
+                              "value": 0.1
+                            }
+                          ]
                         },
                         {
-                          "name": "PitchConstantError",
-                          "value": 0.1
+                          "name": "SigmoidDeceleration",
+                          "value": [
+                            {
+                              "name": "Enabled",
+                              "value": false
+                            },
+                            {
+                              "name": "Steepness",
+                              "value": 10.0
+                            },
+                            {
+                              "name": "Midpoint",
+                              "value": 0.3
+                            }
+                          ]
                         }
                       ]
                     }
@@ -7351,27 +9014,89 @@
                               }
                             },
                             {
-                              "name": "PitchAcceleration",
+                              "name": "PitchAccelelation",
                               "value": {
                                 "from": 20.0,
                                 "to": 25.0
                               }
                             },
                             {
-                              "name": "YawAccelerationError",
-                              "value": 0.1
+                              "name": "DynamicAccel",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": false
+                                },
+                                {
+                                  "name": "CoefDistance",
+                                  "value": -1.393
+                                },
+                                {
+                                  "name": "YawCrosshairAccel",
+                                  "value": {
+                                    "from": 17.0,
+                                    "to": 20.0
+                                  }
+                                },
+                                {
+                                  "name": "PitchCrosshairAccel",
+                                  "value": {
+                                    "from": 17.0,
+                                    "to": 20.0
+                                  }
+                                }
+                              ]
                             },
                             {
-                              "name": "PitchAccelerationError",
-                              "value": 0.1
+                              "name": "AccelerationError",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": false
+                                },
+                                {
+                                  "name": "YawAccelError",
+                                  "value": 0.1
+                                },
+                                {
+                                  "name": "PitchAccelError",
+                                  "value": 0.1
+                                }
+                              ]
                             },
                             {
-                              "name": "YawConstantError",
-                              "value": 0.1
+                              "name": "ConstantError",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": true
+                                },
+                                {
+                                  "name": "YawConstantError",
+                                  "value": 0.1
+                                },
+                                {
+                                  "name": "PitchConstantError",
+                                  "value": 0.1
+                                }
+                              ]
                             },
                             {
-                              "name": "PitchConstantError",
-                              "value": 0.1
+                              "name": "SigmoidDeceleration",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": false
+                                },
+                                {
+                                  "name": "Steepness",
+                                  "value": 10.0
+                                },
+                                {
+                                  "name": "Midpoint",
+                                  "value": 0.3
+                                }
+                              ]
                             }
                           ]
                         }
@@ -7597,27 +9322,89 @@
                                       }
                                     },
                                     {
-                                      "name": "PitchAcceleration",
+                                      "name": "PitchAccelelation",
                                       "value": {
                                         "from": 20.0,
                                         "to": 25.0
                                       }
                                     },
                                     {
-                                      "name": "YawAccelerationError",
-                                      "value": 0.1
+                                      "name": "DynamicAccel",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": false
+                                        },
+                                        {
+                                          "name": "CoefDistance",
+                                          "value": -1.393
+                                        },
+                                        {
+                                          "name": "YawCrosshairAccel",
+                                          "value": {
+                                            "from": 17.0,
+                                            "to": 20.0
+                                          }
+                                        },
+                                        {
+                                          "name": "PitchCrosshairAccel",
+                                          "value": {
+                                            "from": 17.0,
+                                            "to": 20.0
+                                          }
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "PitchAccelerationError",
-                                      "value": 0.1
+                                      "name": "AccelerationError",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": false
+                                        },
+                                        {
+                                          "name": "YawAccelError",
+                                          "value": 0.1
+                                        },
+                                        {
+                                          "name": "PitchAccelError",
+                                          "value": 0.1
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "YawConstantError",
-                                      "value": 0.1
+                                      "name": "ConstantError",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": true
+                                        },
+                                        {
+                                          "name": "YawConstantError",
+                                          "value": 0.1
+                                        },
+                                        {
+                                          "name": "PitchConstantError",
+                                          "value": 0.1
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "PitchConstantError",
-                                      "value": 0.1
+                                      "name": "SigmoidDeceleration",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": false
+                                        },
+                                        {
+                                          "name": "Steepness",
+                                          "value": 10.0
+                                        },
+                                        {
+                                          "name": "Midpoint",
+                                          "value": 0.3
+                                        }
+                                      ]
                                     }
                                   ]
                                 }
@@ -7842,27 +9629,89 @@
                                       }
                                     },
                                     {
-                                      "name": "PitchAcceleration",
+                                      "name": "PitchAccelelation",
                                       "value": {
                                         "from": 20.0,
                                         "to": 25.0
                                       }
                                     },
                                     {
-                                      "name": "YawAccelerationError",
-                                      "value": 0.1
+                                      "name": "DynamicAccel",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": false
+                                        },
+                                        {
+                                          "name": "CoefDistance",
+                                          "value": -1.393
+                                        },
+                                        {
+                                          "name": "YawCrosshairAccel",
+                                          "value": {
+                                            "from": 17.0,
+                                            "to": 20.0
+                                          }
+                                        },
+                                        {
+                                          "name": "PitchCrosshairAccel",
+                                          "value": {
+                                            "from": 17.0,
+                                            "to": 20.0
+                                          }
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "PitchAccelerationError",
-                                      "value": 0.1
+                                      "name": "AccelerationError",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": false
+                                        },
+                                        {
+                                          "name": "YawAccelError",
+                                          "value": 0.1
+                                        },
+                                        {
+                                          "name": "PitchAccelError",
+                                          "value": 0.1
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "YawConstantError",
-                                      "value": 0.1
+                                      "name": "ConstantError",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": true
+                                        },
+                                        {
+                                          "name": "YawConstantError",
+                                          "value": 0.1
+                                        },
+                                        {
+                                          "name": "PitchConstantError",
+                                          "value": 0.1
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "PitchConstantError",
-                                      "value": 0.1
+                                      "name": "SigmoidDeceleration",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": false
+                                        },
+                                        {
+                                          "name": "Steepness",
+                                          "value": 10.0
+                                        },
+                                        {
+                                          "name": "Midpoint",
+                                          "value": 0.3
+                                        }
+                                      ]
                                     }
                                   ]
                                 }
@@ -8247,23 +10096,23 @@
         {
           "name": "Targets",
           "value": [
-            "minecraft:light_blue_bed",
-            "minecraft:green_bed",
-            "minecraft:white_bed",
-            "minecraft:black_bed",
-            "minecraft:yellow_bed",
-            "minecraft:blue_bed",
-            "minecraft:light_gray_bed",
-            "minecraft:orange_bed",
             "minecraft:cyan_bed",
-            "minecraft:pink_bed",
             "minecraft:magenta_bed",
+            "minecraft:black_bed",
+            "minecraft:dragon_egg",
+            "minecraft:lime_bed",
+            "minecraft:green_bed",
+            "minecraft:red_bed",
+            "minecraft:pink_bed",
+            "minecraft:blue_bed",
+            "minecraft:white_bed",
+            "minecraft:purple_bed",
+            "minecraft:orange_bed",
             "minecraft:gray_bed",
             "minecraft:brown_bed",
-            "minecraft:lime_bed",
-            "minecraft:red_bed",
-            "minecraft:dragon_egg",
-            "minecraft:purple_bed"
+            "minecraft:yellow_bed",
+            "minecraft:light_blue_bed",
+            "minecraft:light_gray_bed"
           ]
         },
         {
@@ -8456,27 +10305,89 @@
                       }
                     },
                     {
-                      "name": "PitchAcceleration",
+                      "name": "PitchAccelelation",
                       "value": {
                         "from": 20.0,
                         "to": 25.0
                       }
                     },
                     {
-                      "name": "YawAccelerationError",
-                      "value": 0.1
+                      "name": "DynamicAccel",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "CoefDistance",
+                          "value": -1.393
+                        },
+                        {
+                          "name": "YawCrosshairAccel",
+                          "value": {
+                            "from": 17.0,
+                            "to": 20.0
+                          }
+                        },
+                        {
+                          "name": "PitchCrosshairAccel",
+                          "value": {
+                            "from": 17.0,
+                            "to": 20.0
+                          }
+                        }
+                      ]
                     },
                     {
-                      "name": "PitchAccelerationError",
-                      "value": 0.1
+                      "name": "AccelerationError",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "YawAccelError",
+                          "value": 0.1
+                        },
+                        {
+                          "name": "PitchAccelError",
+                          "value": 0.1
+                        }
+                      ]
                     },
                     {
-                      "name": "YawConstantError",
-                      "value": 0.1
+                      "name": "ConstantError",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": true
+                        },
+                        {
+                          "name": "YawConstantError",
+                          "value": 0.1
+                        },
+                        {
+                          "name": "PitchConstantError",
+                          "value": 0.1
+                        }
+                      ]
                     },
                     {
-                      "name": "PitchConstantError",
-                      "value": 0.1
+                      "name": "SigmoidDeceleration",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "Steepness",
+                          "value": 10.0
+                        },
+                        {
+                          "name": "Midpoint",
+                          "value": 0.3
+                        }
+                      ]
                     }
                   ]
                 }
@@ -8513,8 +10424,8 @@
         {
           "name": "TargetedBlocks",
           "value": [
-            "minecraft:chest",
             "minecraft:trapped_chest",
+            "minecraft:chest",
             "minecraft:ender_chest"
           ]
         }
@@ -8840,27 +10751,89 @@
                                   }
                                 },
                                 {
-                                  "name": "PitchAcceleration",
+                                  "name": "PitchAccelelation",
                                   "value": {
                                     "from": 20.0,
                                     "to": 25.0
                                   }
                                 },
                                 {
-                                  "name": "YawAccelerationError",
-                                  "value": 0.1
+                                  "name": "DynamicAccel",
+                                  "value": [
+                                    {
+                                      "name": "Enabled",
+                                      "value": false
+                                    },
+                                    {
+                                      "name": "CoefDistance",
+                                      "value": -1.393
+                                    },
+                                    {
+                                      "name": "YawCrosshairAccel",
+                                      "value": {
+                                        "from": 17.0,
+                                        "to": 20.0
+                                      }
+                                    },
+                                    {
+                                      "name": "PitchCrosshairAccel",
+                                      "value": {
+                                        "from": 17.0,
+                                        "to": 20.0
+                                      }
+                                    }
+                                  ]
                                 },
                                 {
-                                  "name": "PitchAccelerationError",
-                                  "value": 0.1
+                                  "name": "AccelerationError",
+                                  "value": [
+                                    {
+                                      "name": "Enabled",
+                                      "value": true
+                                    },
+                                    {
+                                      "name": "YawAccelError",
+                                      "value": 0.1
+                                    },
+                                    {
+                                      "name": "PitchAccelError",
+                                      "value": 0.1
+                                    }
+                                  ]
                                 },
                                 {
-                                  "name": "YawConstantError",
-                                  "value": 0.1
+                                  "name": "ConstantError",
+                                  "value": [
+                                    {
+                                      "name": "Enabled",
+                                      "value": true
+                                    },
+                                    {
+                                      "name": "YawConstantError",
+                                      "value": 0.1
+                                    },
+                                    {
+                                      "name": "PitchConstantError",
+                                      "value": 0.1
+                                    }
+                                  ]
                                 },
                                 {
-                                  "name": "PitchConstantError",
-                                  "value": 0.1
+                                  "name": "SigmoidDeceleration",
+                                  "value": [
+                                    {
+                                      "name": "Enabled",
+                                      "value": false
+                                    },
+                                    {
+                                      "name": "Steepness",
+                                      "value": 10.0
+                                    },
+                                    {
+                                      "name": "Midpoint",
+                                      "value": 0.3
+                                    }
+                                  ]
                                 }
                               ]
                             }
@@ -9083,27 +11056,89 @@
                                       }
                                     },
                                     {
-                                      "name": "PitchAcceleration",
+                                      "name": "PitchAccelelation",
                                       "value": {
                                         "from": 20.0,
                                         "to": 25.0
                                       }
                                     },
                                     {
-                                      "name": "YawAccelerationError",
-                                      "value": 0.1
+                                      "name": "DynamicAccel",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": false
+                                        },
+                                        {
+                                          "name": "CoefDistance",
+                                          "value": -1.393
+                                        },
+                                        {
+                                          "name": "YawCrosshairAccel",
+                                          "value": {
+                                            "from": 17.0,
+                                            "to": 20.0
+                                          }
+                                        },
+                                        {
+                                          "name": "PitchCrosshairAccel",
+                                          "value": {
+                                            "from": 17.0,
+                                            "to": 20.0
+                                          }
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "PitchAccelerationError",
-                                      "value": 0.1
+                                      "name": "AccelerationError",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": true
+                                        },
+                                        {
+                                          "name": "YawAccelError",
+                                          "value": 0.1
+                                        },
+                                        {
+                                          "name": "PitchAccelError",
+                                          "value": 0.1
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "YawConstantError",
-                                      "value": 0.1
+                                      "name": "ConstantError",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": true
+                                        },
+                                        {
+                                          "name": "YawConstantError",
+                                          "value": 0.1
+                                        },
+                                        {
+                                          "name": "PitchConstantError",
+                                          "value": 0.1
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "PitchConstantError",
-                                      "value": 0.1
+                                      "name": "SigmoidDeceleration",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": false
+                                        },
+                                        {
+                                          "name": "Steepness",
+                                          "value": 10.0
+                                        },
+                                        {
+                                          "name": "Midpoint",
+                                          "value": 0.3
+                                        }
+                                      ]
                                     }
                                   ]
                                 }
@@ -9278,8 +11313,8 @@
           "value": true
         },
         {
-          "name": "Undetectable",
-          "value": false
+          "name": "Behavior",
+          "value": "Undetectable"
         },
         {
           "name": "PassthroughSneak",
@@ -9551,27 +11586,89 @@
                       }
                     },
                     {
-                      "name": "PitchAcceleration",
+                      "name": "PitchAccelelation",
                       "value": {
-                        "from": 20.0,
-                        "to": 25.0
+                        "from": 15.0,
+                        "to": 17.0
                       }
                     },
                     {
-                      "name": "YawAccelerationError",
-                      "value": 0.1
+                      "name": "DynamicAccel",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": true
+                        },
+                        {
+                          "name": "CoefDistance",
+                          "value": -0.13
+                        },
+                        {
+                          "name": "YawCrosshairAccel",
+                          "value": {
+                            "from": 23.0,
+                            "to": 28.0
+                          }
+                        },
+                        {
+                          "name": "PitchCrosshairAccel",
+                          "value": {
+                            "from": 18.0,
+                            "to": 20.0
+                          }
+                        }
+                      ]
                     },
                     {
-                      "name": "PitchAccelerationError",
-                      "value": 0.1
+                      "name": "AccelerationError",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "YawAccelError",
+                          "value": 0.1
+                        },
+                        {
+                          "name": "PitchAccelError",
+                          "value": 0.01
+                        }
+                      ]
                     },
                     {
-                      "name": "YawConstantError",
-                      "value": 0.1
+                      "name": "ConstantError",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "YawConstantError",
+                          "value": 0.5
+                        },
+                        {
+                          "name": "PitchConstantError",
+                          "value": 0.5
+                        }
+                      ]
                     },
                     {
-                      "name": "PitchConstantError",
-                      "value": 0.1
+                      "name": "SigmoidDeceleration",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "Steepness",
+                          "value": 20.0
+                        },
+                        {
+                          "name": "Midpoint",
+                          "value": 0.0
+                        }
+                      ]
                     }
                   ]
                 }
@@ -9719,14 +11816,6 @@
                   }
                 },
                 {
-                  "name": "DynamicYawFactor",
-                  "value": 0.0
-                },
-                {
-                  "name": "DynamicPitchFactor",
-                  "value": 0.0
-                },
-                {
                   "name": "Chance",
                   "value": 100
                 },
@@ -9740,6 +11829,38 @@
                 {
                   "name": "Tolerance",
                   "value": 0.1
+                },
+                {
+                  "name": "Dynamic",
+                  "value": [
+                    {
+                      "name": "Enabled",
+                      "value": true
+                    },
+                    {
+                      "name": "HurtTime",
+                      "value": 7
+                    },
+                    {
+                      "name": "YawFactor",
+                      "value": 6.5
+                    },
+                    {
+                      "name": "PitchFactor",
+                      "value": 1.0
+                    },
+                    {
+                      "name": "Speed",
+                      "value": {
+                        "from": 0.75,
+                        "to": 1.0
+                      }
+                    },
+                    {
+                      "name": "Tolerance",
+                      "value": 0.07
+                    }
+                  ]
                 }
               ]
             },
@@ -9875,8 +11996,45 @@
               "value": false
             },
             {
-              "name": "SafeRange",
-              "value": 4.0
+              "name": "AutoJump",
+              "value": true
+            },
+            {
+              "name": "AutoSwim",
+              "value": true
+            },
+            {
+              "name": "AutoSprint",
+              "value": true
+            },
+            {
+              "name": "OpponentRange",
+              "value": 3.0
+            },
+            {
+              "name": "DangerousYaw",
+              "value": 55.0
+            },
+            {
+              "name": "RunawayOnCooldown",
+              "value": true
+            },
+            {
+              "name": "Leader",
+              "value": [
+                {
+                  "name": "Enabled",
+                  "value": false
+                },
+                {
+                  "name": "Username",
+                  "value": ""
+                },
+                {
+                  "name": "Radius",
+                  "value": 5.0
+                }
+              ]
             }
           ]
         }
@@ -10102,27 +12260,89 @@
                               }
                             },
                             {
-                              "name": "PitchAcceleration",
+                              "name": "PitchAccelelation",
                               "value": {
                                 "from": 20.0,
                                 "to": 25.0
                               }
                             },
                             {
-                              "name": "YawAccelerationError",
-                              "value": 0.1
+                              "name": "DynamicAccel",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": false
+                                },
+                                {
+                                  "name": "CoefDistance",
+                                  "value": -1.393
+                                },
+                                {
+                                  "name": "YawCrosshairAccel",
+                                  "value": {
+                                    "from": 17.0,
+                                    "to": 20.0
+                                  }
+                                },
+                                {
+                                  "name": "PitchCrosshairAccel",
+                                  "value": {
+                                    "from": 17.0,
+                                    "to": 20.0
+                                  }
+                                }
+                              ]
                             },
                             {
-                              "name": "PitchAccelerationError",
-                              "value": 0.1
+                              "name": "AccelerationError",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": false
+                                },
+                                {
+                                  "name": "YawAccelError",
+                                  "value": 0.1
+                                },
+                                {
+                                  "name": "PitchAccelError",
+                                  "value": 0.1
+                                }
+                              ]
                             },
                             {
-                              "name": "YawConstantError",
-                              "value": 0.1
+                              "name": "ConstantError",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": true
+                                },
+                                {
+                                  "name": "YawConstantError",
+                                  "value": 0.1
+                                },
+                                {
+                                  "name": "PitchConstantError",
+                                  "value": 0.1
+                                }
+                              ]
                             },
                             {
-                              "name": "PitchConstantError",
-                              "value": 0.1
+                              "name": "SigmoidDeceleration",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": false
+                                },
+                                {
+                                  "name": "Steepness",
+                                  "value": 10.0
+                                },
+                                {
+                                  "name": "Midpoint",
+                                  "value": 0.3
+                                }
+                              ]
                             }
                           ]
                         }
@@ -10476,27 +12696,89 @@
                               }
                             },
                             {
-                              "name": "PitchAcceleration",
+                              "name": "PitchAccelelation",
                               "value": {
                                 "from": 20.0,
                                 "to": 25.0
                               }
                             },
                             {
-                              "name": "YawAccelerationError",
-                              "value": 0.1
+                              "name": "DynamicAccel",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": false
+                                },
+                                {
+                                  "name": "CoefDistance",
+                                  "value": -1.393
+                                },
+                                {
+                                  "name": "YawCrosshairAccel",
+                                  "value": {
+                                    "from": 17.0,
+                                    "to": 20.0
+                                  }
+                                },
+                                {
+                                  "name": "PitchCrosshairAccel",
+                                  "value": {
+                                    "from": 17.0,
+                                    "to": 20.0
+                                  }
+                                }
+                              ]
                             },
                             {
-                              "name": "PitchAccelerationError",
-                              "value": 0.1
+                              "name": "AccelerationError",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": false
+                                },
+                                {
+                                  "name": "YawAccelError",
+                                  "value": 0.1
+                                },
+                                {
+                                  "name": "PitchAccelError",
+                                  "value": 0.1
+                                }
+                              ]
                             },
                             {
-                              "name": "YawConstantError",
-                              "value": 0.1
+                              "name": "ConstantError",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": true
+                                },
+                                {
+                                  "name": "YawConstantError",
+                                  "value": 0.1
+                                },
+                                {
+                                  "name": "PitchConstantError",
+                                  "value": 0.1
+                                }
+                              ]
                             },
                             {
-                              "name": "PitchConstantError",
-                              "value": 0.1
+                              "name": "SigmoidDeceleration",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": false
+                                },
+                                {
+                                  "name": "Steepness",
+                                  "value": 10.0
+                                },
+                                {
+                                  "name": "Midpoint",
+                                  "value": 0.3
+                                }
+                              ]
                             }
                           ]
                         }
@@ -10518,6 +12800,22 @@
                     {
                       "name": "ChangeLook",
                       "value": false
+                    }
+                  ]
+                },
+                {
+                  "name": "PickUpWater",
+                  "value": [
+                    {
+                      "name": "Enabled",
+                      "value": true
+                    },
+                    {
+                      "name": "PickupSpan",
+                      "value": {
+                        "from": 200,
+                        "to": 1000
+                      }
                     }
                   ]
                 }
@@ -10599,8 +12897,12 @@
           "valueType": "CHOICE"
         },
         {
-          "name": "DuringFallFlying",
-          "value": false
+          "name": "NotWhileGliding",
+          "value": true
+        },
+        {
+          "name": "NotWithMace",
+          "value": true
         }
       ]
     },
@@ -10649,6 +12951,26 @@
         {
           "name": "Enabled",
           "value": true
+        },
+        {
+          "name": "Entities",
+          "value": true
+        },
+        {
+          "name": "Blocks",
+          "value": true
+        },
+        {
+          "name": "FishingRod",
+          "value": false
+        },
+        {
+          "name": "Liquids",
+          "value": false
+        },
+        {
+          "name": "Sinking",
+          "value": false
         }
       ]
     },
@@ -10812,27 +13134,89 @@
                               }
                             },
                             {
-                              "name": "PitchAcceleration",
+                              "name": "PitchAccelelation",
                               "value": {
                                 "from": 20.0,
                                 "to": 25.0
                               }
                             },
                             {
-                              "name": "YawAccelerationError",
-                              "value": 0.1
+                              "name": "DynamicAccel",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": false
+                                },
+                                {
+                                  "name": "CoefDistance",
+                                  "value": -1.393
+                                },
+                                {
+                                  "name": "YawCrosshairAccel",
+                                  "value": {
+                                    "from": 17.0,
+                                    "to": 20.0
+                                  }
+                                },
+                                {
+                                  "name": "PitchCrosshairAccel",
+                                  "value": {
+                                    "from": 17.0,
+                                    "to": 20.0
+                                  }
+                                }
+                              ]
                             },
                             {
-                              "name": "PitchAccelerationError",
-                              "value": 0.1
+                              "name": "AccelerationError",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": false
+                                },
+                                {
+                                  "name": "YawAccelError",
+                                  "value": 0.1
+                                },
+                                {
+                                  "name": "PitchAccelError",
+                                  "value": 0.1
+                                }
+                              ]
                             },
                             {
-                              "name": "YawConstantError",
-                              "value": 0.1
+                              "name": "ConstantError",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": true
+                                },
+                                {
+                                  "name": "YawConstantError",
+                                  "value": 0.1
+                                },
+                                {
+                                  "name": "PitchConstantError",
+                                  "value": 0.1
+                                }
+                              ]
                             },
                             {
-                              "name": "PitchConstantError",
-                              "value": 0.1
+                              "name": "SigmoidDeceleration",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": false
+                                },
+                                {
+                                  "name": "Steepness",
+                                  "value": 10.0
+                                },
+                                {
+                                  "name": "Midpoint",
+                                  "value": 0.3
+                                }
+                              ]
                             }
                           ]
                         }
@@ -11060,6 +13444,23 @@
           ]
         },
         {
+          "name": "Bundle",
+          "value": [
+            {
+              "name": "Enabled",
+              "value": true
+            },
+            {
+              "name": "Forward",
+              "value": 1.0
+            },
+            {
+              "name": "Sideways",
+              "value": 1.0
+            }
+          ]
+        },
+        {
           "name": "Sneaking",
           "value": [
             {
@@ -11164,6 +13565,19 @@
             {
               "name": "Collision",
               "value": true
+            }
+          ]
+        },
+        {
+          "name": "Slowness",
+          "value": [
+            {
+              "name": "Enabled",
+              "value": true
+            },
+            {
+              "name": "PerLevelMultiplier",
+              "value": 0.0
             }
           ]
         }
@@ -11421,27 +13835,89 @@
                               }
                             },
                             {
-                              "name": "PitchAcceleration",
+                              "name": "PitchAccelelation",
                               "value": {
                                 "from": 20.0,
                                 "to": 25.0
                               }
                             },
                             {
-                              "name": "YawAccelerationError",
-                              "value": 0.1
+                              "name": "DynamicAccel",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": false
+                                },
+                                {
+                                  "name": "CoefDistance",
+                                  "value": -1.393
+                                },
+                                {
+                                  "name": "YawCrosshairAccel",
+                                  "value": {
+                                    "from": 17.0,
+                                    "to": 20.0
+                                  }
+                                },
+                                {
+                                  "name": "PitchCrosshairAccel",
+                                  "value": {
+                                    "from": 17.0,
+                                    "to": 20.0
+                                  }
+                                }
+                              ]
                             },
                             {
-                              "name": "PitchAccelerationError",
-                              "value": 0.1
+                              "name": "AccelerationError",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": false
+                                },
+                                {
+                                  "name": "YawAccelError",
+                                  "value": 0.1
+                                },
+                                {
+                                  "name": "PitchAccelError",
+                                  "value": 0.1
+                                }
+                              ]
                             },
                             {
-                              "name": "YawConstantError",
-                              "value": 0.1
+                              "name": "ConstantError",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": true
+                                },
+                                {
+                                  "name": "YawConstantError",
+                                  "value": 0.1
+                                },
+                                {
+                                  "name": "PitchConstantError",
+                                  "value": 0.1
+                                }
+                              ]
                             },
                             {
-                              "name": "PitchConstantError",
-                              "value": 0.1
+                              "name": "SigmoidDeceleration",
+                              "value": [
+                                {
+                                  "name": "Enabled",
+                                  "value": false
+                                },
+                                {
+                                  "name": "Steepness",
+                                  "value": 10.0
+                                },
+                                {
+                                  "name": "Midpoint",
+                                  "value": 0.3
+                                }
+                              ]
                             }
                           ]
                         }
@@ -11535,6 +14011,14 @@
             }
           },
           "valueType": "CHOICE"
+        },
+        {
+          "name": "Filter",
+          "value": "Blacklist"
+        },
+        {
+          "name": "Blocks",
+          "value": []
         },
         {
           "name": "Swing",
@@ -11795,12 +14279,21 @@
                 {
                   "name": "ClientSideSet",
                   "value": false
+                },
+                {
+                  "name": "WaitForConfirm",
+                  "value": true
                 }
               ]
             },
             "Immediate": {
               "name": "Immediate",
-              "value": []
+              "value": [
+                {
+                  "name": "WaitForConfirm",
+                  "value": true
+                }
+              ]
             },
             "Civ": {
               "name": "Civ",
@@ -11979,27 +14472,89 @@
                       }
                     },
                     {
-                      "name": "PitchAcceleration",
+                      "name": "PitchAccelelation",
                       "value": {
                         "from": 20.0,
                         "to": 25.0
                       }
                     },
                     {
-                      "name": "YawAccelerationError",
-                      "value": 0.1
+                      "name": "DynamicAccel",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "CoefDistance",
+                          "value": -1.393
+                        },
+                        {
+                          "name": "YawCrosshairAccel",
+                          "value": {
+                            "from": 17.0,
+                            "to": 20.0
+                          }
+                        },
+                        {
+                          "name": "PitchCrosshairAccel",
+                          "value": {
+                            "from": 17.0,
+                            "to": 20.0
+                          }
+                        }
+                      ]
                     },
                     {
-                      "name": "PitchAccelerationError",
-                      "value": 0.1
+                      "name": "AccelerationError",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "YawAccelError",
+                          "value": 0.1
+                        },
+                        {
+                          "name": "PitchAccelError",
+                          "value": 0.1
+                        }
+                      ]
                     },
                     {
-                      "name": "YawConstantError",
-                      "value": 0.1
+                      "name": "ConstantError",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": true
+                        },
+                        {
+                          "name": "YawConstantError",
+                          "value": 0.1
+                        },
+                        {
+                          "name": "PitchConstantError",
+                          "value": 0.1
+                        }
+                      ]
                     },
                     {
-                      "name": "PitchConstantError",
-                      "value": 0.1
+                      "name": "SigmoidDeceleration",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "Steepness",
+                          "value": 10.0
+                        },
+                        {
+                          "name": "Midpoint",
+                          "value": 0.3
+                        }
+                      ]
                     }
                   ]
                 }
@@ -12027,6 +14582,14 @@
         {
           "name": "IgnoreOpenInventory",
           "value": true
+        },
+        {
+          "name": "BreakDamage",
+          "value": 1.0
+        },
+        {
+          "name": "SelectDelay",
+          "value": 200
         }
       ]
     },
@@ -12258,27 +14821,89 @@
                       }
                     },
                     {
-                      "name": "PitchAcceleration",
+                      "name": "PitchAccelelation",
                       "value": {
                         "from": 20.0,
                         "to": 25.0
                       }
                     },
                     {
-                      "name": "YawAccelerationError",
-                      "value": 0.1
+                      "name": "DynamicAccel",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "CoefDistance",
+                          "value": -1.393
+                        },
+                        {
+                          "name": "YawCrosshairAccel",
+                          "value": {
+                            "from": 17.0,
+                            "to": 20.0
+                          }
+                        },
+                        {
+                          "name": "PitchCrosshairAccel",
+                          "value": {
+                            "from": 17.0,
+                            "to": 20.0
+                          }
+                        }
+                      ]
                     },
                     {
-                      "name": "PitchAccelerationError",
-                      "value": 0.1
+                      "name": "AccelerationError",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "YawAccelError",
+                          "value": 0.1
+                        },
+                        {
+                          "name": "PitchAccelError",
+                          "value": 0.1
+                        }
+                      ]
                     },
                     {
-                      "name": "YawConstantError",
-                      "value": 0.1
+                      "name": "ConstantError",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": true
+                        },
+                        {
+                          "name": "YawConstantError",
+                          "value": 0.1
+                        },
+                        {
+                          "name": "PitchConstantError",
+                          "value": 0.1
+                        }
+                      ]
                     },
                     {
-                      "name": "PitchConstantError",
-                      "value": 0.1
+                      "name": "SigmoidDeceleration",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "Steepness",
+                          "value": 10.0
+                        },
+                        {
+                          "name": "Midpoint",
+                          "value": 0.3
+                        }
+                      ]
                     }
                   ]
                 }
@@ -12496,7 +15121,7 @@
           "value": [
             {
               "name": "Enabled",
-              "value": false
+              "value": true
             }
           ]
         },
@@ -12543,6 +15168,10 @@
                     {
                       "name": "Enabled",
                       "value": true
+                    },
+                    {
+                      "name": "ResetMode",
+                      "value": "Reverse"
                     },
                     {
                       "name": "Straight",
@@ -12887,27 +15516,89 @@
                       }
                     },
                     {
-                      "name": "PitchAcceleration",
+                      "name": "PitchAccelelation",
                       "value": {
                         "from": 20.0,
                         "to": 25.0
                       }
                     },
                     {
-                      "name": "YawAccelerationError",
-                      "value": 0.1
+                      "name": "DynamicAccel",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "CoefDistance",
+                          "value": -1.393
+                        },
+                        {
+                          "name": "YawCrosshairAccel",
+                          "value": {
+                            "from": 17.0,
+                            "to": 20.0
+                          }
+                        },
+                        {
+                          "name": "PitchCrosshairAccel",
+                          "value": {
+                            "from": 17.0,
+                            "to": 20.0
+                          }
+                        }
+                      ]
                     },
                     {
-                      "name": "PitchAccelerationError",
-                      "value": 0.1
+                      "name": "AccelerationError",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "YawAccelError",
+                          "value": 0.1
+                        },
+                        {
+                          "name": "PitchAccelError",
+                          "value": 0.1
+                        }
+                      ]
                     },
                     {
-                      "name": "YawConstantError",
-                      "value": 0.1
+                      "name": "ConstantError",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": true
+                        },
+                        {
+                          "name": "YawConstantError",
+                          "value": 0.1
+                        },
+                        {
+                          "name": "PitchConstantError",
+                          "value": 0.1
+                        }
+                      ]
                     },
                     {
-                      "name": "PitchConstantError",
-                      "value": 0.1
+                      "name": "SigmoidDeceleration",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "Steepness",
+                          "value": 10.0
+                        },
+                        {
+                          "name": "Midpoint",
+                          "value": 0.3
+                        }
+                      ]
                     }
                   ]
                 }
@@ -12937,6 +15628,23 @@
             {
               "name": "RotationTiming",
               "value": "Normal"
+            }
+          ]
+        },
+        {
+          "name": "SprintControl",
+          "value": [
+            {
+              "name": "Enabled",
+              "value": false
+            },
+            {
+              "name": "Client",
+              "value": "DoNotChange"
+            },
+            {
+              "name": "Server",
+              "value": "DoNotChange"
             }
           ]
         },
@@ -13189,6 +15897,14 @@
           "value": 12.0
         },
         {
+          "name": "CombatPauseTime",
+          "value": 0
+        },
+        {
+          "name": "NotDuringCombat",
+          "value": false
+        },
+        {
           "name": "SilentOffhand",
           "value": [
             {
@@ -13282,7 +15998,7 @@
       "value": [
         {
           "name": "Enabled",
-          "value": false
+          "value": true
         },
         {
           "name": "Locked",
@@ -13379,7 +16095,12 @@
             },
             "YPort": {
               "name": "YPort",
-              "value": []
+              "value": [
+                {
+                  "name": "Speed",
+                  "value": 0.4
+                }
+              ]
             },
             "VerusB3882": {
               "name": "VerusB3882",
@@ -13694,7 +16415,12 @@
                 },
                 "YPort": {
                   "name": "YPort",
-                  "value": []
+                  "value": [
+                    {
+                      "name": "Speed",
+                      "value": 0.4
+                    }
+                  ]
                 },
                 "VerusB3882": {
                   "name": "VerusB3882",
@@ -14039,7 +16765,12 @@
                 },
                 "YPort": {
                   "name": "YPort",
-                  "value": []
+                  "value": [
+                    {
+                      "name": "Speed",
+                      "value": 0.4
+                    }
+                  ]
                 },
                 "VerusB3882": {
                   "name": "VerusB3882",
@@ -14311,6 +17042,10 @@
           "value": false
         },
         {
+          "name": "IgnoreCollision",
+          "value": false
+        },
+        {
           "name": "StopOnGround",
           "value": true
         },
@@ -14578,8 +17313,8 @@
         {
           "name": "Blocks",
           "value": [
-            "minecraft:obsidian",
             "minecraft:crying_obsidian",
+            "minecraft:obsidian",
             "minecraft:ender_chest"
           ]
         },
@@ -14781,27 +17516,89 @@
                                   }
                                 },
                                 {
-                                  "name": "PitchAcceleration",
+                                  "name": "PitchAccelelation",
                                   "value": {
                                     "from": 20.0,
                                     "to": 25.0
                                   }
                                 },
                                 {
-                                  "name": "YawAccelerationError",
-                                  "value": 0.1
+                                  "name": "DynamicAccel",
+                                  "value": [
+                                    {
+                                      "name": "Enabled",
+                                      "value": false
+                                    },
+                                    {
+                                      "name": "CoefDistance",
+                                      "value": -1.393
+                                    },
+                                    {
+                                      "name": "YawCrosshairAccel",
+                                      "value": {
+                                        "from": 17.0,
+                                        "to": 20.0
+                                      }
+                                    },
+                                    {
+                                      "name": "PitchCrosshairAccel",
+                                      "value": {
+                                        "from": 17.0,
+                                        "to": 20.0
+                                      }
+                                    }
+                                  ]
                                 },
                                 {
-                                  "name": "PitchAccelerationError",
-                                  "value": 0.1
+                                  "name": "AccelerationError",
+                                  "value": [
+                                    {
+                                      "name": "Enabled",
+                                      "value": false
+                                    },
+                                    {
+                                      "name": "YawAccelError",
+                                      "value": 0.1
+                                    },
+                                    {
+                                      "name": "PitchAccelError",
+                                      "value": 0.1
+                                    }
+                                  ]
                                 },
                                 {
-                                  "name": "YawConstantError",
-                                  "value": 0.1
+                                  "name": "ConstantError",
+                                  "value": [
+                                    {
+                                      "name": "Enabled",
+                                      "value": true
+                                    },
+                                    {
+                                      "name": "YawConstantError",
+                                      "value": 0.1
+                                    },
+                                    {
+                                      "name": "PitchConstantError",
+                                      "value": 0.1
+                                    }
+                                  ]
                                 },
                                 {
-                                  "name": "PitchConstantError",
-                                  "value": 0.1
+                                  "name": "SigmoidDeceleration",
+                                  "value": [
+                                    {
+                                      "name": "Enabled",
+                                      "value": false
+                                    },
+                                    {
+                                      "name": "Steepness",
+                                      "value": 10.0
+                                    },
+                                    {
+                                      "name": "Midpoint",
+                                      "value": 0.3
+                                    }
+                                  ]
                                 }
                               ]
                             }
@@ -14870,11 +17667,11 @@
                 {
                   "name": "Blocks",
                   "value": [
-                    "minecraft:dirt",
-                    "minecraft:netherrack",
-                    "minecraft:obsidian",
-                    "minecraft:crying_obsidian",
                     "minecraft:cobblestone",
+                    "minecraft:netherrack",
+                    "minecraft:crying_obsidian",
+                    "minecraft:dirt",
+                    "minecraft:obsidian",
                     "minecraft:ender_chest"
                   ]
                 }
@@ -15056,27 +17853,89 @@
                                       }
                                     },
                                     {
-                                      "name": "PitchAcceleration",
+                                      "name": "PitchAccelelation",
                                       "value": {
                                         "from": 20.0,
                                         "to": 25.0
                                       }
                                     },
                                     {
-                                      "name": "YawAccelerationError",
-                                      "value": 0.1
+                                      "name": "DynamicAccel",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": false
+                                        },
+                                        {
+                                          "name": "CoefDistance",
+                                          "value": -1.393
+                                        },
+                                        {
+                                          "name": "YawCrosshairAccel",
+                                          "value": {
+                                            "from": 17.0,
+                                            "to": 20.0
+                                          }
+                                        },
+                                        {
+                                          "name": "PitchCrosshairAccel",
+                                          "value": {
+                                            "from": 17.0,
+                                            "to": 20.0
+                                          }
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "PitchAccelerationError",
-                                      "value": 0.1
+                                      "name": "AccelerationError",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": false
+                                        },
+                                        {
+                                          "name": "YawAccelError",
+                                          "value": 0.1
+                                        },
+                                        {
+                                          "name": "PitchAccelError",
+                                          "value": 0.1
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "YawConstantError",
-                                      "value": 0.1
+                                      "name": "ConstantError",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": true
+                                        },
+                                        {
+                                          "name": "YawConstantError",
+                                          "value": 0.1
+                                        },
+                                        {
+                                          "name": "PitchConstantError",
+                                          "value": 0.1
+                                        }
+                                      ]
                                     },
                                     {
-                                      "name": "PitchConstantError",
-                                      "value": 0.1
+                                      "name": "SigmoidDeceleration",
+                                      "value": [
+                                        {
+                                          "name": "Enabled",
+                                          "value": false
+                                        },
+                                        {
+                                          "name": "Steepness",
+                                          "value": 10.0
+                                        },
+                                        {
+                                          "name": "Midpoint",
+                                          "value": 0.3
+                                        }
+                                      ]
                                     }
                                   ]
                                 }
@@ -15400,6 +18259,14 @@
           "value": true
         },
         {
+          "name": "Mode",
+          "value": "Past"
+        },
+        {
+          "name": "Call",
+          "value": "Game"
+        },
+        {
           "name": "Range",
           "value": {
             "from": 2.5,
@@ -15423,8 +18290,12 @@
           "value": true
         },
         {
-          "name": "PauseAfterTick",
+          "name": "Pause",
           "value": 0
+        },
+        {
+          "name": "Cooldown",
+          "value": 15
         },
         {
           "name": "ForceGround",
@@ -15990,7 +18861,14 @@
                     },
                     {
                       "name": "HurtTime",
-                      "value": 9
+                      "value": {
+                        "from": 5,
+                        "to": 7
+                      }
+                    },
+                    {
+                      "name": "LastAttackTimeToReduce",
+                      "value": 2000
                     }
                   ]
                 },
@@ -16004,6 +18882,22 @@
                     {
                       "name": "Chance",
                       "value": 100.0
+                    },
+                    {
+                      "name": "Randomize",
+                      "value": [
+                        {
+                          "name": "Enabled",
+                          "value": false
+                        },
+                        {
+                          "name": "DelayTicks",
+                          "value": {
+                            "from": 0,
+                            "to": 5
+                          }
+                        }
+                      ]
                     }
                   ]
                 }
@@ -16085,13 +18979,13 @@
     }
   ],
   "author": "Izuna",
-  "date": "03/12/2024",
-  "time": "02:52:29",
-  "clientVersion": "0.21.1",
-  "clientCommit": "git-e49dec5",
+  "date": "12/01/2025",
+  "time": "00:06:28",
+  "clientVersion": "0.24.0",
+  "clientCommit": "git-0c2659d",
   "serverAddress": "mccisland.net",
-  "protocolName": "1.21-1.21.1",
-  "protocolVersion": 767,
+  "protocolName": "1.21.4",
+  "protocolVersion": 769,
   "type": "Rage",
   "status": "Bypassing"
 }
