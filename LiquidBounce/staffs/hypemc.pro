@@ -66,5 +66,6 @@ Kiwari
 Kontex
 ECLIPS_0
 Safari_XD
-RCON@skymeg1a
+skymeg1a
 NeNotice
+teisensni
