@@ -66,3 +66,6 @@ Kiwari
 Kontex
 ECLIPS_0
 Safari_XD
+skymeg1a
+NeNotice
+teisensni
