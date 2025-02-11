@@ -241,6 +241,14 @@
                 "value": false
               }
             ]
+          },
+          {
+            "name": "IgnoreOpenScreen",
+            "value": false
+          },
+          {
+            "name": "IgnoreOpenContainer",
+            "value": false
           }
         ]
       },
@@ -2300,8 +2308,8 @@
                   {
                     "name": "Blocks",
                     "value": [
-                      "minecraft:cobblestone",
                       "minecraft:dirt",
+                      "minecraft:cobblestone",
                       "minecraft:netherrack"
                     ]
                   }
@@ -2340,6 +2348,10 @@
                         "value": [
                           {
                             "name": "PostMove",
+                            "value": false
+                          },
+                          {
+                            "name": "instant",
                             "value": false
                           },
                           {
@@ -2601,6 +2613,10 @@
                         "value": [
                           {
                             "name": "PostMove",
+                            "value": false
+                          },
+                          {
+                            "name": "instant",
                             "value": false
                           },
                           {
@@ -4178,6 +4194,41 @@
             "value": true
           },
           {
+            "name": "Ignite",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": true
+              }
+            ]
+          },
+          {
+            "name": "AutoWeb",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": true
+              }
+            ]
+          },
+          {
+            "name": "Target",
+            "value": [
+              {
+                "name": "FOV",
+                "value": 180.0
+              },
+              {
+                "name": "HurtTime",
+                "value": 10
+              },
+              {
+                "name": "Priority",
+                "value": "Health"
+              }
+            ]
+          },
+          {
             "name": "Rotations",
             "value": [
               {
@@ -4453,7 +4504,7 @@
           },
           {
             "name": "Prepare",
-            "value": true
+            "value": false
           },
           {
             "name": "SwitchOn",
@@ -4960,6 +5011,10 @@
                             "value": false
                           },
                           {
+                            "name": "instant",
+                            "value": false
+                          },
+                          {
                             "name": "Rotations",
                             "value": [
                               {
@@ -5218,6 +5273,10 @@
                         "value": [
                           {
                             "name": "PostMove",
+                            "value": false
+                          },
+                          {
+                            "name": "instant",
                             "value": false
                           },
                           {
@@ -5503,6 +5562,700 @@
           {
             "name": "Motion",
             "value": 0.42
+          }
+        ]
+      },
+      {
+        "name": "BlockIn",
+        "value": [
+          {
+            "name": "Enabled",
+            "value": false
+          },
+          {
+            "name": "Placer",
+            "value": [
+              {
+                "name": "Range",
+                "value": 4.5
+              },
+              {
+                "name": "WallRange",
+                "value": 4.5
+              },
+              {
+                "name": "Cooldown",
+                "value": {
+                  "from": 1,
+                  "to": 2
+                }
+              },
+              {
+                "name": "Swing",
+                "value": "DoNotHide"
+              },
+              {
+                "name": "ConstructFailResult",
+                "value": true
+              },
+              {
+                "name": "Sneak",
+                "value": 1
+              },
+              {
+                "name": "IgnoreOpenInventory",
+                "value": true
+              },
+              {
+                "name": "IgnoreUsingItem",
+                "value": true
+              },
+              {
+                "name": "SlotResetDelay",
+                "value": {
+                  "from": 4,
+                  "to": 6
+                }
+              },
+              {
+                "name": "RotationMode",
+                "active": "Normal",
+                "value": [],
+                "choices": {
+                  "Normal": {
+                    "name": "Normal",
+                    "value": [
+                      {
+                        "name": "PostMove",
+                        "value": false
+                      },
+                      {
+                        "name": "Rotations",
+                        "value": [
+                          {
+                            "name": "AngleSmooth",
+                            "active": "Linear",
+                            "value": [],
+                            "choices": {
+                              "Linear": {
+                                "name": "Linear",
+                                "value": [
+                                  {
+                                    "name": "HorizontalTurnSpeed",
+                                    "value": {
+                                      "from": 180.0,
+                                      "to": 180.0
+                                    }
+                                  },
+                                  {
+                                    "name": "VerticalTurnSpeed",
+                                    "value": {
+                                      "from": 180.0,
+                                      "to": 180.0
+                                    }
+                                  }
+                                ]
+                              },
+                              "Bezier": {
+                                "name": "Bezier",
+                                "value": [
+                                  {
+                                    "name": "HorizontalTurnSpeed",
+                                    "value": {
+                                      "from": 180.0,
+                                      "to": 180.0
+                                    }
+                                  },
+                                  {
+                                    "name": "VerticalTurnSpeed",
+                                    "value": {
+                                      "from": 180.0,
+                                      "to": 180.0
+                                    }
+                                  },
+                                  {
+                                    "name": "ControlPoint",
+                                    "value": 0.5
+                                  }
+                                ]
+                              },
+                              "Sigmoid": {
+                                "name": "Sigmoid",
+                                "value": [
+                                  {
+                                    "name": "HorizontalTurnSpeed",
+                                    "value": {
+                                      "from": 180.0,
+                                      "to": 180.0
+                                    }
+                                  },
+                                  {
+                                    "name": "VerticalTurnSpeed",
+                                    "value": {
+                                      "from": 180.0,
+                                      "to": 180.0
+                                    }
+                                  },
+                                  {
+                                    "name": "Steepness",
+                                    "value": 10.0
+                                  },
+                                  {
+                                    "name": "Midpoint",
+                                    "value": 0.3
+                                  }
+                                ]
+                              },
+                              "Conditional": {
+                                "name": "Conditional",
+                                "value": [
+                                  {
+                                    "name": "CoefDistance",
+                                    "value": -1.393
+                                  },
+                                  {
+                                    "name": "CoefDiffH",
+                                    "value": 0.21
+                                  },
+                                  {
+                                    "name": "CoefDiffV",
+                                    "value": 0.14
+                                  },
+                                  {
+                                    "name": "CoefCrosshairH",
+                                    "value": -5.99
+                                  },
+                                  {
+                                    "name": "CoefCrosshairV",
+                                    "value": -14.32
+                                  },
+                                  {
+                                    "name": "InterceptH",
+                                    "value": 11.988
+                                  },
+                                  {
+                                    "name": "InterceptV",
+                                    "value": 4.715
+                                  },
+                                  {
+                                    "name": "MinimumTurnSpeedH",
+                                    "value": 3.05E-5
+                                  },
+                                  {
+                                    "name": "MinimumTurnSpeedV",
+                                    "value": 5.96E-8
+                                  },
+                                  {
+                                    "name": "FailCap",
+                                    "value": 3
+                                  },
+                                  {
+                                    "name": "FailIncrementH",
+                                    "value": 0.0
+                                  },
+                                  {
+                                    "name": "FailIncrementV",
+                                    "value": 0.0
+                                  }
+                                ]
+                              },
+                              "Acceleration": {
+                                "name": "Acceleration",
+                                "value": [
+                                  {
+                                    "name": "YawAcceleration",
+                                    "value": {
+                                      "from": 20.0,
+                                      "to": 25.0
+                                    }
+                                  },
+                                  {
+                                    "name": "PitchAccelelation",
+                                    "value": {
+                                      "from": 20.0,
+                                      "to": 25.0
+                                    }
+                                  },
+                                  {
+                                    "name": "DynamicAccel",
+                                    "value": [
+                                      {
+                                        "name": "Enabled",
+                                        "value": false
+                                      },
+                                      {
+                                        "name": "CoefDistance",
+                                        "value": -1.393
+                                      },
+                                      {
+                                        "name": "YawCrosshairAccel",
+                                        "value": {
+                                          "from": 17.0,
+                                          "to": 20.0
+                                        }
+                                      },
+                                      {
+                                        "name": "PitchCrosshairAccel",
+                                        "value": {
+                                          "from": 17.0,
+                                          "to": 20.0
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "AccelerationError",
+                                    "value": [
+                                      {
+                                        "name": "Enabled",
+                                        "value": true
+                                      },
+                                      {
+                                        "name": "YawAccelError",
+                                        "value": 0.1
+                                      },
+                                      {
+                                        "name": "PitchAccelError",
+                                        "value": 0.1
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "ConstantError",
+                                    "value": [
+                                      {
+                                        "name": "Enabled",
+                                        "value": true
+                                      },
+                                      {
+                                        "name": "YawConstantError",
+                                        "value": 0.1
+                                      },
+                                      {
+                                        "name": "PitchConstantError",
+                                        "value": 0.1
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "SigmoidDeceleration",
+                                    "value": [
+                                      {
+                                        "name": "Enabled",
+                                        "value": false
+                                      },
+                                      {
+                                        "name": "Steepness",
+                                        "value": 10.0
+                                      },
+                                      {
+                                        "name": "Midpoint",
+                                        "value": 0.3
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            },
+                            "valueType": "CHOICE"
+                          },
+                          {
+                            "name": "FixVelocity",
+                            "value": true
+                          },
+                          {
+                            "name": "ResetThreshold",
+                            "value": 2.0
+                          },
+                          {
+                            "name": "TicksUntilReset",
+                            "value": 5
+                          },
+                          {
+                            "name": "ChangeLook",
+                            "value": false
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "None": {
+                    "name": "None",
+                    "value": [
+                      {
+                        "name": "PostMove",
+                        "value": false
+                      },
+                      {
+                        "name": "SendRotationPacket",
+                        "value": false
+                      },
+                      {
+                        "name": "Placements",
+                        "value": 1
+                      }
+                    ]
+                  }
+                },
+                "valueType": "CHOICE"
+              },
+              {
+                "name": "Support",
+                "value": [
+                  {
+                    "name": "Enabled",
+                    "value": true
+                  },
+                  {
+                    "name": "Depth",
+                    "value": 4
+                  },
+                  {
+                    "name": "Delay",
+                    "value": 500
+                  },
+                  {
+                    "name": "Filter",
+                    "value": "Whitelist"
+                  },
+                  {
+                    "name": "Blocks",
+                    "value": [
+                      "minecraft:dirt",
+                      "minecraft:cobblestone",
+                      "minecraft:netherrack"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "DestroyCrystals",
+                "value": [
+                  {
+                    "name": "Enabled",
+                    "value": true
+                  },
+                  {
+                    "name": "Range",
+                    "value": 4.5
+                  },
+                  {
+                    "name": "WallRange",
+                    "value": 4.5
+                  },
+                  {
+                    "name": "Delay",
+                    "value": 0
+                  },
+                  {
+                    "name": "Swing",
+                    "value": true
+                  },
+                  {
+                    "name": "RotationMode",
+                    "active": "Normal",
+                    "value": [],
+                    "choices": {
+                      "Normal": {
+                        "name": "Normal",
+                        "value": [
+                          {
+                            "name": "PostMove",
+                            "value": false
+                          },
+                          {
+                            "name": "instant",
+                            "value": false
+                          },
+                          {
+                            "name": "Rotations",
+                            "value": [
+                              {
+                                "name": "AngleSmooth",
+                                "active": "Linear",
+                                "value": [],
+                                "choices": {
+                                  "Linear": {
+                                    "name": "Linear",
+                                    "value": [
+                                      {
+                                        "name": "HorizontalTurnSpeed",
+                                        "value": {
+                                          "from": 180.0,
+                                          "to": 180.0
+                                        }
+                                      },
+                                      {
+                                        "name": "VerticalTurnSpeed",
+                                        "value": {
+                                          "from": 180.0,
+                                          "to": 180.0
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  "Bezier": {
+                                    "name": "Bezier",
+                                    "value": [
+                                      {
+                                        "name": "HorizontalTurnSpeed",
+                                        "value": {
+                                          "from": 180.0,
+                                          "to": 180.0
+                                        }
+                                      },
+                                      {
+                                        "name": "VerticalTurnSpeed",
+                                        "value": {
+                                          "from": 180.0,
+                                          "to": 180.0
+                                        }
+                                      },
+                                      {
+                                        "name": "ControlPoint",
+                                        "value": 0.5
+                                      }
+                                    ]
+                                  },
+                                  "Sigmoid": {
+                                    "name": "Sigmoid",
+                                    "value": [
+                                      {
+                                        "name": "HorizontalTurnSpeed",
+                                        "value": {
+                                          "from": 180.0,
+                                          "to": 180.0
+                                        }
+                                      },
+                                      {
+                                        "name": "VerticalTurnSpeed",
+                                        "value": {
+                                          "from": 180.0,
+                                          "to": 180.0
+                                        }
+                                      },
+                                      {
+                                        "name": "Steepness",
+                                        "value": 10.0
+                                      },
+                                      {
+                                        "name": "Midpoint",
+                                        "value": 0.3
+                                      }
+                                    ]
+                                  },
+                                  "Conditional": {
+                                    "name": "Conditional",
+                                    "value": [
+                                      {
+                                        "name": "CoefDistance",
+                                        "value": -1.393
+                                      },
+                                      {
+                                        "name": "CoefDiffH",
+                                        "value": 0.21
+                                      },
+                                      {
+                                        "name": "CoefDiffV",
+                                        "value": 0.14
+                                      },
+                                      {
+                                        "name": "CoefCrosshairH",
+                                        "value": -5.99
+                                      },
+                                      {
+                                        "name": "CoefCrosshairV",
+                                        "value": -14.32
+                                      },
+                                      {
+                                        "name": "InterceptH",
+                                        "value": 11.988
+                                      },
+                                      {
+                                        "name": "InterceptV",
+                                        "value": 4.715
+                                      },
+                                      {
+                                        "name": "MinimumTurnSpeedH",
+                                        "value": 3.05E-5
+                                      },
+                                      {
+                                        "name": "MinimumTurnSpeedV",
+                                        "value": 5.96E-8
+                                      },
+                                      {
+                                        "name": "FailCap",
+                                        "value": 3
+                                      },
+                                      {
+                                        "name": "FailIncrementH",
+                                        "value": 0.0
+                                      },
+                                      {
+                                        "name": "FailIncrementV",
+                                        "value": 0.0
+                                      }
+                                    ]
+                                  },
+                                  "Acceleration": {
+                                    "name": "Acceleration",
+                                    "value": [
+                                      {
+                                        "name": "YawAcceleration",
+                                        "value": {
+                                          "from": 20.0,
+                                          "to": 25.0
+                                        }
+                                      },
+                                      {
+                                        "name": "PitchAccelelation",
+                                        "value": {
+                                          "from": 20.0,
+                                          "to": 25.0
+                                        }
+                                      },
+                                      {
+                                        "name": "DynamicAccel",
+                                        "value": [
+                                          {
+                                            "name": "Enabled",
+                                            "value": false
+                                          },
+                                          {
+                                            "name": "CoefDistance",
+                                            "value": -1.393
+                                          },
+                                          {
+                                            "name": "YawCrosshairAccel",
+                                            "value": {
+                                              "from": 17.0,
+                                              "to": 20.0
+                                            }
+                                          },
+                                          {
+                                            "name": "PitchCrosshairAccel",
+                                            "value": {
+                                              "from": 17.0,
+                                              "to": 20.0
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "name": "AccelerationError",
+                                        "value": [
+                                          {
+                                            "name": "Enabled",
+                                            "value": true
+                                          },
+                                          {
+                                            "name": "YawAccelError",
+                                            "value": 0.1
+                                          },
+                                          {
+                                            "name": "PitchAccelError",
+                                            "value": 0.1
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "name": "ConstantError",
+                                        "value": [
+                                          {
+                                            "name": "Enabled",
+                                            "value": true
+                                          },
+                                          {
+                                            "name": "YawConstantError",
+                                            "value": 0.1
+                                          },
+                                          {
+                                            "name": "PitchConstantError",
+                                            "value": 0.1
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "name": "SigmoidDeceleration",
+                                        "value": [
+                                          {
+                                            "name": "Enabled",
+                                            "value": false
+                                          },
+                                          {
+                                            "name": "Steepness",
+                                            "value": 10.0
+                                          },
+                                          {
+                                            "name": "Midpoint",
+                                            "value": 0.3
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                },
+                                "valueType": "CHOICE"
+                              },
+                              {
+                                "name": "FixVelocity",
+                                "value": true
+                              },
+                              {
+                                "name": "ResetThreshold",
+                                "value": 2.0
+                              },
+                              {
+                                "name": "TicksUntilReset",
+                                "value": 5
+                              },
+                              {
+                                "name": "ChangeLook",
+                                "value": false
+                              }
+                            ]
+                          },
+                          {
+                            "name": "IgnoreOpenInventory",
+                            "value": true
+                          }
+                        ]
+                      },
+                      "None": {
+                        "name": "None",
+                        "value": [
+                          {
+                            "name": "PostMove",
+                            "value": false
+                          },
+                          {
+                            "name": "instant",
+                            "value": false
+                          },
+                          {
+                            "name": "SendRotationPacket",
+                            "value": false
+                          }
+                        ]
+                      }
+                    },
+                    "valueType": "CHOICE"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "AutoDisable",
+            "value": true
+          },
+          {
+            "name": "Filter",
+            "value": "Blacklist"
+          },
+          {
+            "name": "Blocks",
+            "value": []
           }
         ]
       },
@@ -6271,6 +7024,18 @@
               {
                 "name": "OnlyAbove",
                 "value": false
+              },
+              {
+                "name": "Sequenced",
+                "value": false
+              },
+              {
+                "name": "NotFacingAway",
+                "value": false
+              },
+              {
+                "name": "Jitter",
+                "value": false
               }
             ]
           },
@@ -6283,7 +7048,7 @@
               },
               {
                 "name": "Swing",
-                "value": true
+                "value": "DoNotHide"
               },
               {
                 "name": "Delay",
@@ -6296,6 +7061,10 @@
               {
                 "name": "WallsRange",
                 "value": 4.5
+              },
+              {
+                "name": "PrioritizeVisibleFaces",
+                "value": false
               }
             ]
           },
@@ -6325,6 +7094,51 @@
               {
                 "name": "Terrain",
                 "value": true
+              }
+            ]
+          },
+          {
+            "name": "Triggers",
+            "value": [
+              {
+                "name": "NotWhileUsingItem",
+                "value": false
+              },
+              {
+                "name": "Off-Thread",
+                "value": true
+              },
+              {
+                "name": "Tick",
+                "value": true
+              },
+              {
+                "name": "BlockChange",
+                "value": true
+              },
+              {
+                "name": "ClientBlockBreak",
+                "value": true
+              },
+              {
+                "name": "CrystalSpawn",
+                "value": true
+              },
+              {
+                "name": "CrystalDestroy",
+                "value": true
+              },
+              {
+                "name": "ExplodeSound",
+                "value": true
+              },
+              {
+                "name": "EntityMove",
+                "value": true
+              },
+              {
+                "name": "SelfMove",
+                "value": false
               }
             ]
           },
@@ -6880,8 +7694,8 @@
                       {
                         "name": "Blocks",
                         "value": [
-                          "minecraft:cobblestone",
                           "minecraft:dirt",
+                          "minecraft:cobblestone",
                           "minecraft:netherrack"
                         ]
                       }
@@ -6920,6 +7734,10 @@
                             "value": [
                               {
                                 "name": "PostMove",
+                                "value": false
+                              },
+                              {
+                                "name": "instant",
                                 "value": false
                               },
                               {
@@ -7184,6 +8002,10 @@
                                 "value": false
                               },
                               {
+                                "name": "instant",
+                                "value": false
+                              },
+                              {
                                 "name": "SendRotationPacket",
                                 "value": false
                               }
@@ -7208,6 +8030,10 @@
                 "value": [
                   {
                     "name": "PostMove",
+                    "value": false
+                  },
+                  {
+                    "name": "instant",
                     "value": false
                   },
                   {
@@ -7472,6 +8298,10 @@
                     "value": false
                   },
                   {
+                    "name": "instant",
+                    "value": false
+                  },
+                  {
                     "name": "SendRotationPacket",
                     "value": false
                   }
@@ -7505,6 +8335,35 @@
           {
             "name": "Motion",
             "value": 5.0
+          }
+        ]
+      },
+      {
+        "name": "DebugRecorder",
+        "value": [
+          {
+            "name": "Mode",
+            "active": "Generic",
+            "value": [],
+            "choices": {
+              "Generic": {
+                "name": "Generic",
+                "value": []
+              },
+              "CPS": {
+                "name": "CPS",
+                "value": []
+              },
+              "Aim": {
+                "name": "Aim",
+                "value": []
+              },
+              "Box": {
+                "name": "Box",
+                "value": []
+              }
+            },
+            "valueType": "CHOICE"
           }
         ]
       },
@@ -10117,28 +10976,28 @@
           {
             "name": "Targets",
             "value": [
-              "minecraft:red_bed",
-              "minecraft:dragon_egg",
-              "minecraft:blue_bed",
-              "minecraft:green_bed",
-              "minecraft:gray_bed",
-              "minecraft:magenta_bed",
-              "minecraft:purple_bed",
-              "minecraft:light_blue_bed",
-              "minecraft:black_bed",
-              "minecraft:yellow_bed",
-              "minecraft:brown_bed",
-              "minecraft:pink_bed",
-              "minecraft:light_gray_bed",
               "minecraft:cyan_bed",
-              "minecraft:orange_bed",
+              "minecraft:pink_bed",
+              "minecraft:green_bed",
+              "minecraft:brown_bed",
+              "minecraft:red_bed",
               "minecraft:white_bed",
-              "minecraft:lime_bed"
+              "minecraft:light_gray_bed",
+              "minecraft:light_blue_bed",
+              "minecraft:purple_bed",
+              "minecraft:magenta_bed",
+              "minecraft:blue_bed",
+              "minecraft:black_bed",
+              "minecraft:gray_bed",
+              "minecraft:dragon_egg",
+              "minecraft:lime_bed",
+              "minecraft:orange_bed",
+              "minecraft:yellow_bed"
             ]
           },
           {
             "name": "Delay",
-            "value": 5
+            "value": 0
           },
           {
             "name": "Action",
@@ -10158,7 +11017,7 @@
           },
           {
             "name": "PrioritizeOverKillAura",
-            "value": false
+            "value": true
           },
           {
             "name": "SelfBed",
@@ -10199,15 +11058,15 @@
                       {
                         "name": "HorizontalTurnSpeed",
                         "value": {
-                          "from": 50.0,
-                          "to": 70.0
+                          "from": 180.0,
+                          "to": 180.0
                         }
                       },
                       {
                         "name": "VerticalTurnSpeed",
                         "value": {
-                          "from": 30.0,
-                          "to": 35.0
+                          "from": 180.0,
+                          "to": 180.0
                         }
                       }
                     ]
@@ -10271,11 +11130,11 @@
                       },
                       {
                         "name": "CoefDiffH",
-                        "value": 0.051
+                        "value": 0.21
                       },
                       {
                         "name": "CoefDiffV",
-                        "value": -0.024
+                        "value": 0.14
                       },
                       {
                         "name": "CoefCrosshairH",
@@ -10417,15 +11276,15 @@
               },
               {
                 "name": "FixVelocity",
-                "value": true
+                "value": false
               },
               {
                 "name": "ResetThreshold",
-                "value": 2.0
+                "value": 1.0
               },
               {
                 "name": "TicksUntilReset",
-                "value": 3
+                "value": 1
               },
               {
                 "name": "ChangeLook",
@@ -10445,9 +11304,9 @@
           {
             "name": "TargetedBlocks",
             "value": [
-              "minecraft:ender_chest",
               "minecraft:trapped_chest",
-              "minecraft:chest"
+              "minecraft:chest",
+              "minecraft:ender_chest"
             ]
           }
         ]
@@ -10937,6 +11796,10 @@
                             "value": false
                           },
                           {
+                            "name": "instant",
+                            "value": false
+                          },
+                          {
                             "name": "Rotations",
                             "value": [
                               {
@@ -11198,6 +12061,10 @@
                             "value": false
                           },
                           {
+                            "name": "instant",
+                            "value": false
+                          },
+                          {
                             "name": "SendRotationPacket",
                             "value": false
                           }
@@ -11393,6 +12260,20 @@
             }
           },
           {
+            "name": "MotionWhenHurt",
+            "value": {
+              "from": 100.0,
+              "to": 100.0
+            }
+          },
+          {
+            "name": "HurtTime",
+            "value": {
+              "from": 1,
+              "to": 10
+            }
+          },
+          {
             "name": "Chance",
             "value": 100.0
           }
@@ -11416,7 +12297,7 @@
         "value": [
           {
             "name": "Enabled",
-            "value": false
+            "value": true
           },
           {
             "name": "ClickScheduler",
@@ -11989,7 +12870,7 @@
               },
               {
                 "name": "Blink",
-                "value": false
+                "value": 0
               },
               {
                 "name": "OnScanRange",
@@ -13012,6 +13893,40 @@
                   {
                     "name": "JumpHeight",
                     "value": 0.11
+                  }
+                ]
+              },
+              "Cancel": {
+                "name": "Cancel",
+                "value": [
+                  {
+                    "name": "FallDistance",
+                    "active": "Smart",
+                    "value": [],
+                    "choices": {
+                      "Smart": {
+                        "name": "Smart",
+                        "value": []
+                      },
+                      "Constant": {
+                        "name": "Constant",
+                        "value": [
+                          {
+                            "name": "Value",
+                            "value": 1.7
+                          }
+                        ]
+                      }
+                    },
+                    "valueType": "CHOICE"
+                  },
+                  {
+                    "name": "ResetFallDistance",
+                    "value": true
+                  },
+                  {
+                    "name": "CancelSetbackPacket",
+                    "value": false
                   }
                 ]
               },
@@ -14418,7 +15333,7 @@
         "value": [
           {
             "name": "Enabled",
-            "value": false
+            "value": true
           },
           {
             "name": "Mode",
@@ -14477,7 +15392,41 @@
           },
           {
             "name": "Switch",
-            "value": "OnStop"
+            "active": "OnStop",
+            "value": [],
+            "choices": {
+              "Always": {
+                "name": "Always",
+                "value": [
+                  {
+                    "name": "AbortOnSwitch",
+                    "value": true
+                  },
+                  {
+                    "name": "CancelAutomaticSwitching",
+                    "value": true
+                  }
+                ]
+              },
+              "PostStart": {
+                "name": "PostStart",
+                "value": []
+              },
+              "OnStop": {
+                "name": "OnStop",
+                "value": [
+                  {
+                    "name": "SwitchMethod",
+                    "value": "Normal"
+                  }
+                ]
+              },
+              "Never": {
+                "name": "Never",
+                "value": []
+              }
+            },
+            "valueType": "CHOICE"
           },
           {
             "name": "Rotate",
@@ -14740,6 +15689,10 @@
             "value": 1.0
           },
           {
+            "name": "AbortAlwaysDown",
+            "value": false
+          },
+          {
             "name": "SelectDelay",
             "value": 200
           }
@@ -14751,6 +15704,27 @@
           {
             "name": "Enabled",
             "value": false
+          }
+        ]
+      },
+      {
+        "name": "Phase",
+        "value": [
+          {
+            "name": "Enabled",
+            "value": false
+          },
+          {
+            "name": "Mode",
+            "active": "Hypixel",
+            "value": [],
+            "choices": {
+              "Hypixel": {
+                "name": "Hypixel",
+                "value": []
+              }
+            },
+            "valueType": "CHOICE"
           }
         ]
       },
@@ -17563,9 +18537,9 @@
           {
             "name": "Blocks",
             "value": [
-              "minecraft:ender_chest",
               "minecraft:obsidian",
-              "minecraft:crying_obsidian"
+              "minecraft:crying_obsidian",
+              "minecraft:ender_chest"
             ]
           },
           {
@@ -17917,12 +18891,12 @@
                   {
                     "name": "Blocks",
                     "value": [
-                      "minecraft:ender_chest",
-                      "minecraft:cobblestone",
                       "minecraft:dirt",
+                      "minecraft:cobblestone",
                       "minecraft:obsidian",
                       "minecraft:crying_obsidian",
-                      "minecraft:netherrack"
+                      "minecraft:netherrack",
+                      "minecraft:ender_chest"
                     ]
                   }
                 ]
@@ -17960,6 +18934,10 @@
                         "value": [
                           {
                             "name": "PostMove",
+                            "value": false
+                          },
+                          {
+                            "name": "instant",
                             "value": false
                           },
                           {
@@ -18221,6 +19199,10 @@
                         "value": [
                           {
                             "name": "PostMove",
+                            "value": false
+                          },
+                          {
+                            "name": "instant",
                             "value": false
                           },
                           {
@@ -19027,6 +20009,19 @@
                     "value": 1.0
                   },
                   {
+                    "name": "OnlyFacing",
+                    "value": [
+                      {
+                        "name": "Enabled",
+                        "value": false
+                      },
+                      {
+                        "name": "Range",
+                        "value": 3.5
+                      }
+                    ]
+                  },
+                  {
                     "name": "UntilGround",
                     "value": false
                   }
@@ -19329,11 +20324,11 @@
       }
     ]
   },
-  "author": "1zun4",
-  "date": "28/01/2025",
-  "time": "00:03:06",
-  "clientVersion": "0.25.0",
-  "clientCommit": "git-a568502",
+  "author": "Izuna",
+  "date": "11/02/2025",
+  "time": "12:07:42",
+  "clientVersion": "0.26.1",
+  "clientCommit": "git-3202df8",
   "serverAddress": "pika.host",
   "protocolName": "1.21.4",
   "protocolVersion": 769,
