@@ -1,9 +1,10 @@
 TheFlamingOMG
+Valentine
 ImD4mn_x
-34_
-Juanilo10
+Juan
 prijak125
-dinitri
-xWestx_
-Cubogamer12357
 OverSnowMC
+Cubogamer12357
+Daniiloo_
+Duartetopsx
+Cernileitor19
