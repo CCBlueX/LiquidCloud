@@ -8,3 +8,7 @@ Cubogamer12357
 Daniiloo_
 Duartetopsx
 Cernileitor19
+dinitri
+Juanilo10
+34_
+xWestx_
