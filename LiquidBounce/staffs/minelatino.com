@@ -12,3 +12,6 @@ Bartolo_MC
 Ferris
 Safflun
 IsValerain_
+zuy_
+Lightec
+ezegt99
