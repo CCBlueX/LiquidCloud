@@ -4,7 +4,7 @@ A storage repository for our client [LiquidBounce](https://liquidbounce.net/)
 
 Website: <https://liquidbounce.net> \
 Forum: <https://forums.ccbluex.net> \
-Guilded: <https://www.guilded.gg/CCBlueX> \
+Discord: <https://liquidbounce.net/discord> \
 YouTube: <https://youtube.com/CCBlueX> \
 Twitter: <https://twitter.com/CCBlueX>
 
