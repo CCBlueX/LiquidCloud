@@ -19307,7 +19307,7 @@
                         },
                         {
                             "name": "Technique",
-                            "active": "Breezily",
+                            "active": "Normal",
                             "value": [],
                             "choices": {
                                 "Normal": {
@@ -19319,7 +19319,7 @@
                                         },
                                         {
                                             "name": "RequiresSight",
-                                            "value": false
+                                            "value": true
                                         },
                                         {
                                             "name": "Eagle",
@@ -19406,7 +19406,7 @@
                                             "value": [
                                                 {
                                                     "name": "Enabled",
-                                                    "value": true
+                                                    "value": false
                                                 }
                                             ]
                                         }
@@ -19571,7 +19571,7 @@
                             "value": [
                                 {
                                     "name": "AngleSmooth",
-                                    "active": "Linear",
+                                    "active": "Sigmoid",
                                     "value": [],
                                     "choices": {
                                         "Linear": {
@@ -19599,15 +19599,15 @@
                                                 {
                                                     "name": "HorizontalTurnSpeed",
                                                     "value": {
-                                                        "from": 180.0,
-                                                        "to": 180.0
+                                                        "from": 140.0,
+                                                        "to": 170.0
                                                     }
                                                 },
                                                 {
                                                     "name": "VerticalTurnSpeed",
                                                     "value": {
-                                                        "from": 180.0,
-                                                        "to": 180.0
+                                                        "from": 140.0,
+                                                        "to": 170.0
                                                     }
                                                 },
                                                 {
@@ -19881,6 +19881,10 @@
                                     "value": false
                                 }
                             ]
+                        },
+                        {
+                            "name": "AutoSpeed",
+                            "value": true
                         },
                         {
                             "name": "Ledge",
@@ -23800,14 +23804,750 @@
                             "value": 2
                         }
                     ]
-                }
-            ]
+                },
+                {
+                    "name": "ItemScroller",
+                    "value": [
+                        {
+                            "name": "Enabled",
+                            "value": true
+                        },
+                        {
+                            "name": "Hidden",
+                            "value": false
+                        },
+                        {
+                            "name": "ClickMode",
+                            "value": "QuickMove"
+                        },
+                        {
+                            "name": "Delay",
+                            "value": {
+                                "from": 2,
+                                "to": 3
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "EasyPearl",
+                    "value": [
+                        {
+                            "name": "Enabled",
+                            "value": true
+                        },
+                        {
+                            "name": "Hidden",
+                            "value": false
+                        },
+                        {
+                            "name": "AimOffThreshold",
+                            "value": 2
+                        },
+                        {
+                            "name": "ReachableCheck",
+                            "value": true
+                        },
+                        {
+                            "name": "Rotations",
+                            "value": [
+                                {
+                                    "name": "AngleSmooth",
+                                    "active": "Sigmoid",
+                                    "value": [],
+                                    "choices": {
+                                        "Linear": {
+                                            "name": "Linear",
+                                            "value": [
+                                                {
+                                                    "name": "HorizontalTurnSpeed",
+                                                    "value": {
+                                                        "from": 180,
+                                                        "to": 180
+                                                    }
+                                                },
+                                                {
+                                                    "name": "VerticalTurnSpeed",
+                                                    "value": {
+                                                        "from": 180,
+                                                        "to": 180
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "Sigmoid": {
+                                            "name": "Sigmoid",
+                                            "value": [
+                                                {
+                                                    "name": "HorizontalTurnSpeed",
+                                                    "value": {
+                                                        "from": 180,
+                                                        "to": 180
+                                                    }
+                                                },
+                                                {
+                                                    "name": "VerticalTurnSpeed",
+                                                    "value": {
+                                                        "from": 180,
+                                                        "to": 180
+                                                    }
+                                                },
+                                                {
+                                                    "name": "Steepness",
+                                                    "value": 10
+                                                },
+                                                {
+                                                    "name": "Midpoint",
+                                                    "value": 0.3
+                                                }
+                                            ]
+                                        },
+                                        "Acceleration": {
+                                            "name": "Acceleration",
+                                            "value": [
+                                                {
+                                                    "name": "YawAcceleration",
+                                                    "value": {
+                                                        "from": 20,
+                                                        "to": 25
+                                                    }
+                                                },
+                                                {
+                                                    "name": "PitchAccelelation",
+                                                    "value": {
+                                                        "from": 20,
+                                                        "to": 25
+                                                    }
+                                                },
+                                                {
+                                                    "name": "DynamicAccel",
+                                                    "value": [
+                                                        {
+                                                            "name": "Enabled",
+                                                            "value": false
+                                                        },
+                                                        {
+                                                            "name": "CoefDistance",
+                                                            "value": -1.393
+                                                        },
+                                                        {
+                                                            "name": "YawCrosshairAccel",
+                                                            "value": {
+                                                                "from": 17,
+                                                                "to": 20
+                                                            }
+                                                        },
+                                                        {
+                                                            "name": "PitchCrosshairAccel",
+                                                            "value": {
+                                                                "from": 17,
+                                                                "to": 20
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "AccelerationError",
+                                                    "value": [
+                                                        {
+                                                            "name": "Enabled",
+                                                            "value": true
+                                                        },
+                                                        {
+                                                            "name": "YawAccelError",
+                                                            "value": 0.1
+                                                        },
+                                                        {
+                                                            "name": "PitchAccelError",
+                                                            "value": 0.1
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "ConstantError",
+                                                    "value": [
+                                                        {
+                                                            "name": "Enabled",
+                                                            "value": true
+                                                        },
+                                                        {
+                                                            "name": "YawConstantError",
+                                                            "value": 0.1
+                                                        },
+                                                        {
+                                                            "name": "PitchConstantError",
+                                                            "value": 0.1
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "SigmoidDeceleration",
+                                                    "value": [
+                                                        {
+                                                            "name": "Enabled",
+                                                            "value": false
+                                                        },
+                                                        {
+                                                            "name": "Steepness",
+                                                            "value": 10
+                                                        },
+                                                        {
+                                                            "name": "Midpoint",
+                                                            "value": 0.3
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "valueType": "CHOICE"
+                                },
+                                {
+                                    "name": "MovementCorrection",
+                                    "value": "Silent"
+                                },
+                                {
+                                    "name": "ResetThreshold",
+                                    "value": 2
+                                },
+                                {
+                                    "name": "TicksUntilReset",
+                                    "value": 5
+                                }
+                            ]
+                        }
+                    ]
+                },
+            {
+                "name": "PotionSpoof",
+                "value": [
+                    {
+                        "name": "Enabled",
+                        "value": false
+                    },
+                    {
+                        "name": "Locked",
+                        "value": true
+                    },
+                    {
+                        "name": "Hidden",
+                        "value": false
+                    },
+                    {
+                        "name": "Speed",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Slowness",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Haste",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mining Fatigue",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Strength",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Instant Health",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Instant Damage",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Jump Boost",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Nausea",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Regeneration",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Resistance",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Fire Resistance",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Water Breathing",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Invisibility",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Blindness",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Night Vision",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Hunger",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Weakness",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Poison",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Wither",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Health Boost",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Absorption",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Saturation",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Glowing",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Levitation",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Luck",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Bad Luck",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Slow Falling",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Conduit Power",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Dolphin's Grace",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Bad Omen",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Hero of the Village",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Darkness",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Trial Omen",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Raid Omen",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Wind Charged",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Weaving",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Oozing",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Infested",
+                        "value": [
+                            {
+                                "name": "Enabled",
+                                "value": false
+                            },
+                            {
+                                "name": "Level",
+                                "value": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     },
     "author": " BiliBili:小龙蛇HWC",
     "date": "17/6/2025",
     "time": "20:06:07",
-    "clientVersion": "0.30.0",
-    "clientCommit": "git-4f0aa0f",
+    "clientVersion": "0.31.0",
     "serverAddress": "127.0.0.1",
     "protocolName": "1.20-1.20.1",
     "protocolVersion": 763,
