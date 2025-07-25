@@ -746,35 +746,8 @@
         "name": "AntiStaff",
         "value": [
           {
-            "name": "VelocityCheck",
-            "value": [
-              {
-                "name": "Enabled",
-                "value": true
-              }
-            ]
-          },
-          {
-            "name": "VanishCheck",
-            "value": [
-              {
-                "name": "Enabled",
-                "value": false
-              }
-            ]
-          },
-          {
-            "name": "UsernameCheck",
-            "value": [
-              {
-                "name": "Enabled",
-                "value": false
-              },
-              {
-                "name": "ShowInTabList",
-                "value": true
-              }
-            ]
+            "name": "ShowInTabList",
+            "value": true
           }
         ]
       },
@@ -783,7 +756,7 @@
         "value": [
           {
             "name": "Enabled",
-            "value": true
+            "value": false
           },
           {
             "name": "Mode",
@@ -800,6 +773,14 @@
                   {
                     "name": "FallDistance",
                     "value": 1.05
+                  },
+                  {
+                    "name": "Height",
+                    "value": 0.42
+                  },
+                  {
+                    "name": "Silent",
+                    "value": false
                   }
                 ]
               },
@@ -2672,6 +2653,25 @@
             }
           },
           {
+            "name": "Sounds",
+            "value": [
+              "minecraft:entity.fishing_bobber.splash"
+            ]
+          },
+          {
+            "name": "SoundDistance",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": true
+              },
+              {
+                "name": "MaxDistance",
+                "value": 1.0
+              }
+            ]
+          },
+          {
             "name": "RecastRod",
             "value": [
               {
@@ -2702,7 +2702,10 @@
           },
           {
             "name": "Delay",
-            "value": 0
+            "value": {
+              "from": 0,
+              "to": 0
+            }
           },
           {
             "name": "Mode",
@@ -5722,7 +5725,7 @@
         "value": [
           {
             "name": "Enabled",
-            "value": false
+            "value": true
           },
           {
             "name": "Constraints",
@@ -7561,8 +7564,11 @@
             "value": false
           },
           {
-            "name": "EagleEdgeDistance",
-            "value": 0.01
+            "name": "EdgeDistance",
+            "value": {
+              "from": 0.4,
+              "to": 0.6
+            }
           },
           {
             "name": "Conditional",
@@ -7583,6 +7589,187 @@
                   "from": -90.0,
                   "to": 90.0
                 }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "EasyPearl",
+        "value": [
+          {
+            "name": "AimOffThreshold",
+            "value": 2.0
+          },
+          {
+            "name": "ReachableCheck",
+            "value": true
+          },
+          {
+            "name": "Rotations",
+            "value": [
+              {
+                "name": "AngleSmooth",
+                "active": "Linear",
+                "value": [],
+                "choices": {
+                  "Linear": {
+                    "name": "Linear",
+                    "value": [
+                      {
+                        "name": "HorizontalTurnSpeed",
+                        "value": {
+                          "from": 180.0,
+                          "to": 180.0
+                        }
+                      },
+                      {
+                        "name": "VerticalTurnSpeed",
+                        "value": {
+                          "from": 180.0,
+                          "to": 180.0
+                        }
+                      }
+                    ]
+                  },
+                  "Sigmoid": {
+                    "name": "Sigmoid",
+                    "value": [
+                      {
+                        "name": "HorizontalTurnSpeed",
+                        "value": {
+                          "from": 180.0,
+                          "to": 180.0
+                        }
+                      },
+                      {
+                        "name": "VerticalTurnSpeed",
+                        "value": {
+                          "from": 180.0,
+                          "to": 180.0
+                        }
+                      },
+                      {
+                        "name": "Steepness",
+                        "value": 10.0
+                      },
+                      {
+                        "name": "Midpoint",
+                        "value": 0.3
+                      }
+                    ]
+                  },
+                  "Acceleration": {
+                    "name": "Acceleration",
+                    "value": [
+                      {
+                        "name": "YawAcceleration",
+                        "value": {
+                          "from": 20.0,
+                          "to": 25.0
+                        }
+                      },
+                      {
+                        "name": "PitchAccelelation",
+                        "value": {
+                          "from": 20.0,
+                          "to": 25.0
+                        }
+                      },
+                      {
+                        "name": "DynamicAccel",
+                        "value": [
+                          {
+                            "name": "Enabled",
+                            "value": false
+                          },
+                          {
+                            "name": "CoefDistance",
+                            "value": -1.393
+                          },
+                          {
+                            "name": "YawCrosshairAccel",
+                            "value": {
+                              "from": 17.0,
+                              "to": 20.0
+                            }
+                          },
+                          {
+                            "name": "PitchCrosshairAccel",
+                            "value": {
+                              "from": 17.0,
+                              "to": 20.0
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "AccelerationError",
+                        "value": [
+                          {
+                            "name": "Enabled",
+                            "value": true
+                          },
+                          {
+                            "name": "YawAccelError",
+                            "value": 0.1
+                          },
+                          {
+                            "name": "PitchAccelError",
+                            "value": 0.1
+                          }
+                        ]
+                      },
+                      {
+                        "name": "ConstantError",
+                        "value": [
+                          {
+                            "name": "Enabled",
+                            "value": true
+                          },
+                          {
+                            "name": "YawConstantError",
+                            "value": 0.1
+                          },
+                          {
+                            "name": "PitchConstantError",
+                            "value": 0.1
+                          }
+                        ]
+                      },
+                      {
+                        "name": "SigmoidDeceleration",
+                        "value": [
+                          {
+                            "name": "Enabled",
+                            "value": false
+                          },
+                          {
+                            "name": "Steepness",
+                            "value": 10.0
+                          },
+                          {
+                            "name": "Midpoint",
+                            "value": 0.3
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "valueType": "CHOICE"
+              },
+              {
+                "name": "MovementCorrection",
+                "value": "Silent"
+              },
+              {
+                "name": "ResetThreshold",
+                "value": 2.0
+              },
+              {
+                "name": "TicksUntilReset",
+                "value": 5
               }
             ]
           }
@@ -7660,6 +7847,47 @@
               "Vanilla": {
                 "name": "Vanilla",
                 "value": []
+              },
+              "Boost": {
+                "name": "Boost",
+                "value": [
+                  {
+                    "name": "Speed",
+                    "value": 0.9
+                  },
+                  {
+                    "name": "Acceleration",
+                    "value": 0.01
+                  },
+                  {
+                    "name": "AutoBoost",
+                    "value": true
+                  },
+                  {
+                    "name": "DiveMechanics",
+                    "value": true
+                  },
+                  {
+                    "name": "SmartGroundBehavior",
+                    "value": true
+                  },
+                  {
+                    "name": "GroundDistance",
+                    "value": 3.0
+                  },
+                  {
+                    "name": "VerticalControl",
+                    "value": 0.8
+                  },
+                  {
+                    "name": "DiveAcceleration",
+                    "value": 0.05
+                  },
+                  {
+                    "name": "DiveEfficiency",
+                    "value": 0.8
+                  }
+                ]
               }
             },
             "valueType": "CHOICE"
@@ -8380,13 +8608,20 @@
           },
           {
             "name": "Cooldown",
-            "value": 1
+            "value": {
+              "from": 1,
+              "to": 1
+            }
           },
           {
             "name": "ApplyTo",
             "value": [
               "Blocks"
             ]
+          },
+          {
+            "name": "StartDelay",
+            "value": 0
           }
         ]
       },
@@ -9570,23 +9805,23 @@
           {
             "name": "Targets",
             "value": [
-              "minecraft:brown_bed",
-              "minecraft:lime_bed",
-              "minecraft:black_bed",
-              "minecraft:light_gray_bed",
-              "minecraft:dragon_egg",
-              "minecraft:blue_bed",
-              "minecraft:magenta_bed",
               "minecraft:green_bed",
-              "minecraft:light_blue_bed",
+              "minecraft:magenta_bed",
+              "minecraft:pink_bed",
+              "minecraft:orange_bed",
+              "minecraft:cyan_bed",
+              "minecraft:purple_bed",
+              "minecraft:black_bed",
               "minecraft:white_bed",
               "minecraft:red_bed",
-              "minecraft:cyan_bed",
-              "minecraft:orange_bed",
-              "minecraft:gray_bed",
+              "minecraft:lime_bed",
               "minecraft:yellow_bed",
-              "minecraft:purple_bed",
-              "minecraft:pink_bed"
+              "minecraft:blue_bed",
+              "minecraft:light_gray_bed",
+              "minecraft:dragon_egg",
+              "minecraft:gray_bed",
+              "minecraft:brown_bed",
+              "minecraft:light_blue_bed"
             ]
           },
           {
@@ -9818,9 +10053,9 @@
           {
             "name": "TargetedBlocks",
             "value": [
+              "minecraft:chest",
               "minecraft:ender_chest",
-              "minecraft:trapped_chest",
-              "minecraft:chest"
+              "minecraft:trapped_chest"
             ]
           }
         ]
@@ -10516,6 +10751,40 @@
             "value": false
           },
           {
+            "name": "SprintControl",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Client",
+                "value": "DoNotChange"
+              },
+              {
+                "name": "Server",
+                "value": "DoNotChange"
+              }
+            ]
+          },
+          {
+            "name": "SneakControl",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Client",
+                "value": "DoNotChange"
+              },
+              {
+                "name": "Server",
+                "value": "DoNotChange"
+              }
+            ]
+          },
+          {
             "name": "Timer",
             "value": [
               {
@@ -10557,11 +10826,27 @@
         ]
       },
       {
+        "name": "ItemScroller",
+        "value": [
+          {
+            "name": "ClickMode",
+            "value": "QuickMove"
+          },
+          {
+            "name": "Delay",
+            "value": {
+              "from": 2,
+              "to": 3
+            }
+          }
+        ]
+      },
+      {
         "name": "KeepSprint",
         "value": [
           {
             "name": "Enabled",
-            "value": true
+            "value": false
           },
           {
             "name": "Motion",
@@ -10635,7 +10920,7 @@
           },
           {
             "name": "Range",
-            "value": 3.2
+            "value": 3.0
           },
           {
             "name": "WallRange",
@@ -11008,7 +11293,7 @@
               },
               {
                 "name": "MovementCorrection",
-                "value": "Off"
+                "value": "Silent"
               },
               {
                 "name": "ResetThreshold",
@@ -11161,7 +11446,7 @@
           },
           {
             "name": "KeepSprint",
-            "value": true
+            "value": false
           },
           {
             "name": "IgnoreOpenInventory",
@@ -11180,7 +11465,7 @@
               },
               {
                 "name": "BlockMode",
-                "value": "Fake"
+                "value": "Hypixel"
               },
               {
                 "name": "UnblockMode",
@@ -11676,7 +11961,7 @@
         "value": [
           {
             "name": "Enabled",
-            "value": true
+            "value": false
           },
           {
             "name": "Mode",
@@ -12113,6 +12398,10 @@
               "Hypixel": {
                 "name": "Hypixel",
                 "value": []
+              },
+              "BlocksMC": {
+                "name": "BlocksMC",
+                "value": []
               }
             },
             "valueType": "CHOICE"
@@ -12379,7 +12668,7 @@
         "value": [
           {
             "name": "Enabled",
-            "value": false
+            "value": true
           },
           {
             "name": "Blocking",
@@ -12757,6 +13046,15 @@
               "Intave14": {
                 "name": "Intave14",
                 "value": []
+              },
+              "Vulcan": {
+                "name": "Vulcan",
+                "value": [
+                  {
+                    "name": "Strength",
+                    "value": 0.23
+                  }
+                ]
               }
             },
             "valueType": "CHOICE"
@@ -13036,9 +13334,9 @@
             "name": "Blocks",
             "value": [
               "minecraft:tall_seagrass",
-              "minecraft:seagrass",
+              "minecraft:short_grass",
               "minecraft:tall_grass",
-              "minecraft:short_grass"
+              "minecraft:seagrass"
             ]
           },
           {
@@ -13577,6 +13875,19 @@
               "Intave": {
                 "name": "Intave",
                 "value": []
+              },
+              "Blink": {
+                "name": "Blink",
+                "value": [
+                  {
+                    "name": "Maximum",
+                    "value": 120
+                  }
+                ]
+              },
+              "BlocksMC": {
+                "name": "BlocksMC",
+                "value": []
               }
             },
             "valueType": "CHOICE"
@@ -13619,6 +13930,522 @@
           {
             "name": "Enabled",
             "value": false
+          }
+        ]
+      },
+      {
+        "name": "PotionSpoof",
+        "value": [
+          {
+            "name": "Enabled",
+            "value": false
+          },
+          {
+            "name": "Speed",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Slowness",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Haste",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Mining Fatigue",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Instant Health",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Instant Damage",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Jump Boost",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Nausea",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Regeneration",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Resistance",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Fire Resistance",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Water Breathing",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Invisibility",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Blindness",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Night Vision",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Hunger",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Weakness",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Poison",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Wither",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Health Boost",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Absorption",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Saturation",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Glowing",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Levitation",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Luck",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Bad Luck",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Slow Falling",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Conduit Power",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Dolphin\u0027s Grace",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Bad Omen",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Hero of the Village",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Darkness",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Trial Omen",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Raid Omen",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Wind Charged",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Weaving",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Oozing",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Infested",
+            "value": [
+              {
+                "name": "Enabled",
+                "value": false
+              },
+              {
+                "name": "Level",
+                "value": 1
+              }
+            ]
           }
         ]
       },
@@ -13836,7 +14663,7 @@
         "value": [
           {
             "name": "Enabled",
-            "value": true
+            "value": false
           },
           {
             "name": "CombatReach",
@@ -13990,7 +14817,7 @@
           },
           {
             "name": "Mode",
-            "active": "Simulate",
+            "active": "Safe",
             "value": [],
             "choices": {
               "None": {
@@ -13999,28 +14826,36 @@
               },
               "Safe": {
                 "name": "Safe",
-                "value": [
-                  {
-                    "name": "EagleOnLedge",
-                    "value": true
-                  }
-                ]
-              },
-              "Simulate": {
-                "name": "Simulate",
-                "value": [
-                  {
-                    "name": "Ticks",
-                    "value": 6
-                  }
-                ]
+                "value": []
               },
               "OnEdge": {
                 "name": "OnEdge",
                 "value": [
                   {
-                    "name": "EdgeDistance",
-                    "value": 0.01
+                    "name": "Distance",
+                    "value": 0.1
+                  },
+                  {
+                    "name": "Keep",
+                    "value": {
+                      "from": 1,
+                      "to": 2
+                    }
+                  },
+                  {
+                    "name": "Mode",
+                    "value": "Stop"
+                  },
+                  {
+                    "name": "Sneak",
+                    "value": {
+                      "from": 0,
+                      "to": 0
+                    }
+                  },
+                  {
+                    "name": "Jump",
+                    "value": false
                   }
                 ]
               }
@@ -14045,7 +14880,7 @@
           },
           {
             "name": "MinDist",
-            "value": 0.0
+            "value": 0.25
           },
           {
             "name": "Timer",
@@ -14064,7 +14899,7 @@
               },
               {
                 "name": "SlotResetDelay",
-                "value": 0
+                "value": 1
               },
               {
                 "name": "DoNotUseBelowCount",
@@ -14091,11 +14926,11 @@
                 "value": [
                   {
                     "name": "RotationMode",
-                    "value": "NearestRotation"
+                    "value": "Stabilized"
                   },
                   {
                     "name": "RequiresSight",
-                    "value": false
+                    "value": true
                   },
                   {
                     "name": "Eagle",
@@ -14127,7 +14962,7 @@
                     "value": [
                       {
                         "name": "Enabled",
-                        "value": true
+                        "value": false
                       },
                       {
                         "name": "ResetMode",
@@ -14135,7 +14970,7 @@
                       },
                       {
                         "name": "Straight",
-                        "value": 0
+                        "value": 1
                       },
                       {
                         "name": "Jump",
@@ -14206,13 +15041,13 @@
                   },
                   {
                     "name": "ForceSneakBelowCount",
-                    "value": 6
+                    "value": 2
                   },
                   {
                     "name": "SneakTime",
                     "value": {
-                      "from": 1,
-                      "to": 1
+                      "from": 2,
+                      "to": 3
                     }
                   }
                 ]
@@ -14238,7 +15073,7 @@
           },
           {
             "name": "Tower",
-            "active": "None",
+            "active": "Karhu",
             "value": [],
             "choices": {
               "None": {
@@ -14250,19 +15085,15 @@
                 "value": [
                   {
                     "name": "Motion",
-                    "value": 0.06
+                    "value": 0.0
                   },
                   {
                     "name": "TriggerHeight",
-                    "value": 0.85
-                  },
-                  {
-                    "name": "Slow",
                     "value": 1.0
                   },
                   {
-                    "name": "PlaceOffsetOnNoInput",
-                    "value": false
+                    "name": "Slow",
+                    "value": 0.99
                   }
                 ]
               },
@@ -14271,7 +15102,7 @@
                 "value": [
                   {
                     "name": "Trigger",
-                    "value": 0.1
+                    "value": 0.09
                   }
                 ]
               },
@@ -14284,7 +15115,7 @@
                   },
                   {
                     "name": "Trigger",
-                    "value": 0.06
+                    "value": 0.007
                   },
                   {
                     "name": "Pulldown",
@@ -14314,28 +15145,36 @@
               },
               "Safe": {
                 "name": "Safe",
-                "value": [
-                  {
-                    "name": "EagleOnLedge",
-                    "value": false
-                  }
-                ]
-              },
-              "Simulate": {
-                "name": "Simulate",
-                "value": [
-                  {
-                    "name": "Ticks",
-                    "value": 3
-                  }
-                ]
+                "value": []
               },
               "OnEdge": {
                 "name": "OnEdge",
                 "value": [
                   {
-                    "name": "EdgeDistance",
-                    "value": 0.01
+                    "name": "Distance",
+                    "value": 0.1
+                  },
+                  {
+                    "name": "Keep",
+                    "value": {
+                      "from": 1,
+                      "to": 2
+                    }
+                  },
+                  {
+                    "name": "Mode",
+                    "value": "Invert"
+                  },
+                  {
+                    "name": "Sneak",
+                    "value": {
+                      "from": 0,
+                      "to": 0
+                    }
+                  },
+                  {
+                    "name": "Jump",
+                    "value": false
                   }
                 ]
               }
@@ -14344,7 +15183,7 @@
           },
           {
             "name": "Swing",
-            "value": "HideForClient"
+            "value": "DoNotHide"
           },
           {
             "name": "Rotations",
@@ -14406,15 +15245,15 @@
                       {
                         "name": "YawAcceleration",
                         "value": {
-                          "from": 20.0,
-                          "to": 25.0
+                          "from": 180.0,
+                          "to": 180.0
                         }
                       },
                       {
                         "name": "PitchAccelelation",
                         "value": {
-                          "from": 20.0,
-                          "to": 25.0
+                          "from": 180.0,
+                          "to": 180.0
                         }
                       },
                       {
@@ -14449,7 +15288,7 @@
                         "value": [
                           {
                             "name": "Enabled",
-                            "value": true
+                            "value": false
                           },
                           {
                             "name": "YawAccelError",
@@ -14466,7 +15305,7 @@
                         "value": [
                           {
                             "name": "Enabled",
-                            "value": true
+                            "value": false
                           },
                           {
                             "name": "YawConstantError",
@@ -14483,7 +15322,7 @@
                         "value": [
                           {
                             "name": "Enabled",
-                            "value": true
+                            "value": false
                           },
                           {
                             "name": "Steepness",
@@ -14502,7 +15341,7 @@
               },
               {
                 "name": "MovementCorrection",
-                "value": "Off"
+                "value": "Silent"
               },
               {
                 "name": "ResetThreshold",
@@ -14510,7 +15349,7 @@
               },
               {
                 "name": "TicksUntilReset",
-                "value": 25
+                "value": 1
               },
               {
                 "name": "ConsiderInventory",
@@ -14552,8 +15391,8 @@
                   {
                     "name": "CPS",
                     "value": {
-                      "from": 1,
-                      "to": 3
+                      "from": 4,
+                      "to": 7
                     }
                   },
                   {
@@ -14647,24 +15486,30 @@
             "value": [
               {
                 "name": "Enabled",
-                "value": false
+                "value": true
               },
               {
                 "name": "Time",
                 "value": {
-                  "from": 50,
-                  "to": 50
+                  "from": 350,
+                  "to": 350
                 }
               },
               {
-                "name": "FallCancel",
-                "value": true
+                "name": "FlushOn",
+                "value": [
+                  "Place"
+                ]
               }
             ]
           },
           {
+            "name": "AutoSpeed",
+            "value": false
+          },
+          {
             "name": "Ledge",
-            "value": true
+            "value": false
           }
         ]
       },
@@ -14913,18 +15758,13 @@
                   }
                 ]
               },
-              "Spartan524": {
-                "name": "Spartan524",
+              "Spartan-4.0.4.3": {
+                "name": "Spartan-4.0.4.3",
                 "value": []
               },
-              "Spartan524GroundTimer": {
-                "name": "Spartan524GroundTimer",
-                "value": [
-                  {
-                    "name": "AdditionalTicks",
-                    "value": 2
-                  }
-                ]
+              "Spartan-4.0.4.3-FastFall": {
+                "name": "Spartan-4.0.4.3-FastFall",
+                "value": []
               },
               "SentinelDamage": {
                 "name": "SentinelDamage",
@@ -15063,26 +15903,14 @@
                 "name": "BlocksMC",
                 "value": [
                   {
-                    "name": "FullStrafe",
-                    "value": true
-                  },
-                  {
-                    "name": "LowHop",
-                    "value": true
-                  },
-                  {
-                    "name": "DamageBoost",
-                    "value": true
-                  },
-                  {
-                    "name": "DamageLowHop",
+                    "name": "RoundStrafeYaw",
                     "value": false
-                  },
-                  {
-                    "name": "SafeY",
-                    "value": true
                   }
                 ]
+              },
+              "Matrix7": {
+                "name": "Matrix7",
+                "value": []
               }
             },
             "valueType": "CHOICE"
@@ -15229,18 +16057,13 @@
                       }
                     ]
                   },
-                  "Spartan524": {
-                    "name": "Spartan524",
+                  "Spartan-4.0.4.3": {
+                    "name": "Spartan-4.0.4.3",
                     "value": []
                   },
-                  "Spartan524GroundTimer": {
-                    "name": "Spartan524GroundTimer",
-                    "value": [
-                      {
-                        "name": "AdditionalTicks",
-                        "value": 2
-                      }
-                    ]
+                  "Spartan-4.0.4.3-FastFall": {
+                    "name": "Spartan-4.0.4.3-FastFall",
+                    "value": []
                   },
                   "SentinelDamage": {
                     "name": "SentinelDamage",
@@ -15379,26 +16202,14 @@
                     "name": "BlocksMC",
                     "value": [
                       {
-                        "name": "FullStrafe",
-                        "value": true
-                      },
-                      {
-                        "name": "LowHop",
-                        "value": true
-                      },
-                      {
-                        "name": "DamageBoost",
-                        "value": true
-                      },
-                      {
-                        "name": "DamageLowHop",
+                        "name": "RoundStrafeYaw",
                         "value": false
-                      },
-                      {
-                        "name": "SafeY",
-                        "value": true
                       }
                     ]
+                  },
+                  "Matrix7": {
+                    "name": "Matrix7",
+                    "value": []
                   }
                 },
                 "valueType": "CHOICE"
@@ -15580,18 +16391,13 @@
                       }
                     ]
                   },
-                  "Spartan524": {
-                    "name": "Spartan524",
+                  "Spartan-4.0.4.3": {
+                    "name": "Spartan-4.0.4.3",
                     "value": []
                   },
-                  "Spartan524GroundTimer": {
-                    "name": "Spartan524GroundTimer",
-                    "value": [
-                      {
-                        "name": "AdditionalTicks",
-                        "value": 2
-                      }
-                    ]
+                  "Spartan-4.0.4.3-FastFall": {
+                    "name": "Spartan-4.0.4.3-FastFall",
+                    "value": []
                   },
                   "SentinelDamage": {
                     "name": "SentinelDamage",
@@ -15730,26 +16536,14 @@
                     "name": "BlocksMC",
                     "value": [
                       {
-                        "name": "FullStrafe",
-                        "value": true
-                      },
-                      {
-                        "name": "LowHop",
-                        "value": true
-                      },
-                      {
-                        "name": "DamageBoost",
-                        "value": true
-                      },
-                      {
-                        "name": "DamageLowHop",
-                        "value": true
-                      },
-                      {
-                        "name": "SafeY",
-                        "value": true
+                        "name": "RoundStrafeYaw",
+                        "value": false
                       }
                     ]
+                  },
+                  "Matrix7": {
+                    "name": "Matrix7",
+                    "value": []
                   }
                 },
                 "valueType": "CHOICE"
@@ -15798,7 +16592,12 @@
               },
               "Polar-29.03.2025": {
                 "name": "Polar-29.03.2025",
-                "value": []
+                "value": [
+                  {
+                    "name": "JumpHeight",
+                    "value": 0.55
+                  }
+                ]
               },
               "Vulcan288": {
                 "name": "Vulcan288",
@@ -16355,10 +17154,10 @@
                     "name": "Blocks",
                     "value": [
                       "minecraft:dirt",
+                      "minecraft:ender_chest",
+                      "minecraft:netherrack",
                       "minecraft:obsidian",
                       "minecraft:crying_obsidian",
-                      "minecraft:netherrack",
-                      "minecraft:ender_chest",
                       "minecraft:cobblestone"
                     ]
                   }
@@ -17298,7 +18097,7 @@
           },
           {
             "name": "Mode",
-            "active": "Modify",
+            "active": "JumpReset",
             "value": [],
             "choices": {
               "Modify": {
@@ -17331,6 +18130,10 @@
                   {
                     "name": "OnlyMove",
                     "value": false
+                  },
+                  {
+                    "name": "TransactionBuffer",
+                    "value": 0
                   }
                 ]
               },
@@ -17636,15 +18439,18 @@
       }
     ]
   },
-  "author": "ShadowCheats",
-  "date": "27/06/2025",
-  "time": "21:26:35",
-  "clientVersion": "0.30.0",
-  "clientCommit": "git-4f0aa0f",
-  "serverAddress": "hypixel.net",
+  "author": "iamxiaoqio & localp",
+  "date": "22/07/2025",
+  "time": "23:49:35",
+  "clientVersion": "0.31.1",
+  "clientCommit": "git-85c18ad",
+  "serverAddress": "loyisa.cn",
   "protocolName": "1.21.4",
   "protocolVersion": 769,
   "type": "Rage",
   "status": "Bypassing",
-  "chat": ["Have Fun ;) ~sub to xShadowCheats~"]
+  "chat": [
+    "This config is for the new Hypixel Simulation / Prediciton anti-cheat",
+    "5.16 m/s Hypixel Prediciton Scaffold"
+  ]
 }
