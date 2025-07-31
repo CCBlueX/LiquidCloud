@@ -1,0 +1,20 @@
+Note: This is the STAFFS list for BuJiIsland(Heypixel)/HYT and other netease servers for they need a proxy to log in, this file is named as 127.0.0.1.
+妖猫
+qxtmlc99
+aiyuki
+bruh
+CandyApostle
+chunyi1
+coffcebean
+叼口仙气就飘飘
+苟大悲
+流影只会嘤嘤嘤
+qtesdf_674
+Skyfoy
+神坑之逗
+圣上荣耀233
+天不容我万事随安
+TempMono
+小军君丶天使之翼
+枕上书丶傲寒
+_winner_
