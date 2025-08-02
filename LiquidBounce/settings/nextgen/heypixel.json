@@ -265,7 +265,7 @@
           },
           {
             "name": "Mode",
-            "value": "GhostBlock"
+            "value": "DoubleJump"
           }
         ]
       },
@@ -551,11 +551,11 @@
         "value": [
           {
             "name": "Enabled",
-            "value": false
+            "value": true
           },
           {
             "name": "Mode",
-            "active": "Custom",
+            "active": "Matrix",
             "value": [],
             "choices": {
               "Custom": {
@@ -563,7 +563,13 @@
                 "value": [
                   {
                     "name": "Conditions",
-                    "value": []
+                    "value": [
+                      "NoGameMode",
+                      "IllegalPitch",
+                      "FakeEntityID",
+                      "IllegalHealth",
+                      "Swung"
+                    ]
                   },
                   {
                     "name": "InvalidGround",
@@ -583,11 +589,11 @@
                     "value": [
                       {
                         "name": "Enabled",
-                        "value": false
+                        "value": true
                       },
                       {
                         "name": "AlwaysInRadiusRange",
-                        "value": 6.0
+                        "value": 5.0
                       }
                     ]
                   },
@@ -596,11 +602,11 @@
                     "value": [
                       {
                         "name": "Enabled",
-                        "value": false
+                        "value": true
                       },
                       {
                         "name": "Minimum",
-                        "value": 20
+                        "value": 19
                       }
                     ]
                   },
@@ -725,6 +731,39 @@
           {
             "name": "KeepFloating",
             "value": true
+          }
+        ]
+      },
+      {
+        "name": "AntiKB",
+        "value": [
+          {
+            "name": "Enabled",
+            "value": false
+          },
+          {
+            "name": "HorizontalRatio",
+            "value": 0.1
+          },
+          {
+            "name": "VerticalRatio",
+            "value": 0.1
+          },
+          {
+            "name": "Randomness",
+            "value": 0.02
+          },
+          {
+            "name": "DynamicThreshold",
+            "value": 0.5
+          },
+          {
+            "name": "DynamicExtraRatio",
+            "value": 0.0
+          },
+          {
+            "name": "KBDurationFactor",
+            "value": 0.7
           }
         ]
       },
@@ -2284,7 +2323,7 @@
         "value": [
           {
             "name": "Enabled",
-            "value": true
+            "value": false
           },
           {
             "name": "On",
@@ -2299,7 +2338,7 @@
         "value": [
           {
             "name": "Enabled",
-            "value": true
+            "value": false
           },
           {
             "name": "Ignore",
@@ -2674,11 +2713,14 @@
           },
           {
             "name": "WordPattern",
-            "value": "Poem"
+            "value": "Custom"
           },
           {
             "name": "CustomMessages",
-            "value": []
+            "value": [
+              "妈妈！草喔",
+              "妈妈！"
+            ]
           },
           {
             "name": "NameInFront",
@@ -3937,27 +3979,27 @@
           {
             "name": "Range",
             "value": {
-              "from": 1.5,
-              "to": 6.0
+              "from": 2.0,
+              "to": 4.5
             }
           },
           {
             "name": "Delay",
             "value": {
-              "from": 1000,
-              "to": 1000
+              "from": 150,
+              "to": 300
             }
           },
           {
             "name": "NextBacktrackDelay",
             "value": {
               "from": 0,
-              "to": 0
+              "to": 50
             }
           },
           {
             "name": "TrackingBuffer",
-            "value": 2000
+            "value": 500
           },
           {
             "name": "Chance",
@@ -4539,11 +4581,11 @@
               },
               {
                 "name": "ResetAfter",
-                "value": 59
+                "value": 6
               },
               {
                 "name": "ResetAction",
-                "value": "Blink"
+                "value": "Reset"
               }
             ]
           }
@@ -5797,15 +5839,15 @@
               {
                 "name": "StartDelay",
                 "value": {
-                  "from": 4,
-                  "to": 5
+                  "from": 2,
+                  "to": 3
                 }
               },
               {
                 "name": "ClickDelay",
                 "value": {
-                  "from": 2,
-                  "to": 5
+                  "from": 3,
+                  "to": 4
                 }
               },
               {
@@ -5824,9 +5866,7 @@
               },
               {
                 "name": "Requires",
-                "value": [
-                  "NoMovement"
-                ]
+                "value": []
               }
             ]
           },
@@ -9666,23 +9706,23 @@
           {
             "name": "Targets",
             "value": [
-              "minecraft:black_bed",
-              "minecraft:light_gray_bed",
-              "minecraft:cyan_bed",
-              "minecraft:white_bed",
-              "minecraft:lime_bed",
-              "minecraft:pink_bed",
               "minecraft:magenta_bed",
-              "minecraft:brown_bed",
-              "minecraft:dragon_egg",
-              "minecraft:blue_bed",
-              "minecraft:green_bed",
               "minecraft:red_bed",
+              "minecraft:black_bed",
+              "minecraft:gray_bed",
+              "minecraft:light_gray_bed",
+              "minecraft:dragon_egg",
               "minecraft:yellow_bed",
-              "minecraft:light_blue_bed",
-              "minecraft:purple_bed",
               "minecraft:orange_bed",
-              "minecraft:gray_bed"
+              "minecraft:light_blue_bed",
+              "minecraft:blue_bed",
+              "minecraft:white_bed",
+              "minecraft:cyan_bed",
+              "minecraft:purple_bed",
+              "minecraft:green_bed",
+              "minecraft:brown_bed",
+              "minecraft:pink_bed",
+              "minecraft:lime_bed"
             ]
           },
           {
@@ -9914,9 +9954,9 @@
           {
             "name": "TargetedBlocks",
             "value": [
-              "minecraft:ender_chest",
               "minecraft:trapped_chest",
-              "minecraft:chest"
+              "minecraft:chest",
+              "minecraft:ender_chest"
             ]
           }
         ]
@@ -10641,11 +10681,11 @@
         "value": [
           {
             "name": "Enabled",
-            "value": false
+            "value": true
           },
           {
             "name": "Behavior",
-            "value": "Normal"
+            "value": "Safe"
           },
           {
             "name": "PassthroughSneak",
@@ -10765,7 +10805,7 @@
         "value": [
           {
             "name": "Enabled",
-            "value": false
+            "value": true
           },
           {
             "name": "Clicker",
@@ -10844,7 +10884,7 @@
             "value": [
               {
                 "name": "AngleSmooth",
-                "active": "Acceleration",
+                "active": "Sigmoid",
                 "value": [],
                 "choices": {
                   "Linear": {
@@ -10872,15 +10912,15 @@
                       {
                         "name": "HorizontalTurnSpeed",
                         "value": {
-                          "from": 180.0,
-                          "to": 180.0
+                          "from": 32.4,
+                          "to": 74.7
                         }
                       },
                       {
                         "name": "VerticalTurnSpeed",
                         "value": {
-                          "from": 180.0,
-                          "to": 180.0
+                          "from": 46.8,
+                          "to": 114.3
                         }
                       },
                       {
@@ -11143,7 +11183,7 @@
                 "value": [
                   {
                     "name": "Enabled",
-                    "value": false
+                    "value": true
                   },
                   {
                     "name": "Rate",
@@ -11156,15 +11196,15 @@
                   {
                     "name": "StrengthHorizontal",
                     "value": {
-                      "from": 5.0,
-                      "to": 10.0
+                      "from": 5.45,
+                      "to": 9.56
                     }
                   },
                   {
                     "name": "StrengthVertical",
                     "value": {
                       "from": 0.0,
-                      "to": 2.0
+                      "to": 4.25
                     }
                   },
                   {
@@ -11203,7 +11243,7 @@
             "value": [
               {
                 "name": "HighestPoint",
-                "value": "Body"
+                "value": "Head"
               },
               {
                 "name": "LowestPoint",
@@ -11346,11 +11386,11 @@
             "value": [
               {
                 "name": "Enabled",
-                "value": true
+                "value": false
               },
               {
                 "name": "BlockMode",
-                "value": "Fake"
+                "value": "Basic"
               },
               {
                 "name": "UnblockMode",
@@ -14274,7 +14314,7 @@
                 "value": [
                   {
                     "name": "RotationMode",
-                    "value": "Stabilized"
+                    "value": "AngleYaw"
                   },
                   {
                     "name": "RequiresSight",
@@ -16282,8 +16322,8 @@
           {
             "name": "Blocks",
             "value": [
-              "minecraft:ender_chest",
               "minecraft:obsidian",
+              "minecraft:ender_chest",
               "minecraft:crying_obsidian"
             ]
           },
@@ -16555,9 +16595,9 @@
                   {
                     "name": "Blocks",
                     "value": [
+                      "minecraft:crying_obsidian",
                       "minecraft:obsidian",
-                      "minecraft:ender_chest",
-                      "minecraft:crying_obsidian"
+                      "minecraft:ender_chest"
                     ]
                   }
                 ]
@@ -16963,6 +17003,15 @@
           },
           {
             "name": "WithDisablerOnWait",
+            "value": false
+          }
+        ]
+      },
+      {
+        "name": "TellyBridge",
+        "value": [
+          {
+            "name": "Enabled",
             "value": false
           }
         ]
@@ -17750,11 +17799,11 @@
         "value": [
           {
             "name": "Enabled",
-            "value": true
+            "value": false
           },
           {
             "name": "Mode",
-            "active": "Vanilla",
+            "active": "Lunar",
             "value": [],
             "choices": {
               "Vanilla": {
@@ -17833,13 +17882,13 @@
       }
     ]
   },
-  "author": "qwqngm",
-  "date": "30/07/2025",
-  "time": "12:22:14",
-  "clientVersion": "fork https://github.com/ShootForever-codejoe/BMWClient",
-  "clientCommit": "git-2b17e7c",
-  "serverAddress": "pc.bjd-mc.com:25565",
+  "author": "Cat girl",
+  "date": "02/08/2025",
+  "time": "11:45:14",
+  "clientVersion": "fork https://github.com/ShootForever-codejoe/BMWClient 6.4",
+  "clientCommit": "git-1561886",
   "protocolName": "1.20-1.20.1",
+  "serverAddress": "pc.bjd-mc.com:25565",
   "protocolVersion": 763,
   "type": "Rage",
   "status": "Bypassing",
@@ -17847,5 +17896,7 @@
     "§7Tested on §bpc.bjd-mc.com:25565 §7on §aMinecraft §71.20.1",
     "§7For §eSkyWars and BedWars",
     "§7Test Server: §9pc.bjd-mc.com:25565"
+    "If you are using LiquidBounce instead of BMWClient, you should disable NoWeb."
+    "§7如果你使用的是LiquidBounce，而不是BMWClient|你应该关闭NoWeb"
   ]
 }
