@@ -18,6 +18,15 @@ jobs:
       - name: Install jq
         run: sudo apt-get install -y jq
 
+      - name: Validate JSON files
+        run: |
+          echo "🔍 Checking JSON files..."
+          find . -type f -name "*.json" | while read file; do
+            echo "Checking $file"
+            jq empty "$file"
+          done
+          echo "✅ All JSON files are valid"
+
       - name: Process and Upload Settings
         id: process_and_upload
         env:
