@@ -785,7 +785,7 @@
         "value": [
           {
             "name": "Enabled",
-            "value": false
+            "value": true
           },
           {
             "choiceByName": {
@@ -2165,8 +2165,8 @@
                     "name": "Blocks",
                     "value": [
                       "minecraft:dirt",
-                      "minecraft:cobblestone",
-                      "minecraft:netherrack"
+                      "minecraft:netherrack",
+                      "minecraft:cobblestone"
                     ]
                   }
                 ]
@@ -3284,6 +3284,17 @@
                               "Новая игра",
                               "游戏结束"
                             ]
+                          },
+                          {
+                            "choiceByName": {
+                              "ChatMessage": "ChatMessage",
+                              "DisguisedChatMessage": "DisguisedChatMessage",
+                              "GameMessage": "GameMessage"
+                            },
+                            "name": "ChatTypes",
+                            "value": [
+                              "GameMessage"
+                            ]
                           }
                         ]
                       },
@@ -3415,7 +3426,7 @@
           },
           {
             "name": "GravityType",
-            "value": "Linear"
+            "value": "Projectile"
           },
           {
             "name": "Range",
@@ -3428,7 +3439,7 @@
             "name": "ScanExtraRange",
             "value": {
               "from": 0.0,
-              "to": 0.0
+              "to": 1.0
             }
           },
           {
@@ -3627,7 +3638,7 @@
             "value": [
               {
                 "name": "AngleSmooth",
-                "active": "Linear",
+                "active": "Sigmoid",
                 "value": [],
                 "choices": {
                   "Linear": {
@@ -3856,7 +3867,7 @@
           {
             "name": "Range",
             "value": {
-              "from": 3.0,
+              "from": 3.2,
               "to": 8.0
             }
           },
@@ -4204,7 +4215,7 @@
           },
           {
             "name": "NotDuringCombat",
-            "value": false
+            "value": true
           },
           {
             "name": "ConstantLag",
@@ -4372,7 +4383,7 @@
           },
           {
             "name": "SwapPreviousDelay",
-            "value": 10
+            "value": 8
           },
           {
             "name": "RequireSneaking",
@@ -4700,7 +4711,7 @@
                 "value": [
                   {
                     "name": "AngleSmooth",
-                    "active": "Linear",
+                    "active": "Sigmoid",
                     "value": [],
                     "choices": {
                       "Linear": {
@@ -4913,27 +4924,27 @@
         "value": [
           {
             "name": "Enabled",
-            "value": true
+            "value": false
           },
           {
             "name": "Range",
             "value": {
-              "from": 1.5,
+              "from": 3.0,
               "to": 4.0
             }
           },
           {
             "name": "Delay",
             "value": {
-              "from": 250,
-              "to": 420
+              "from": 100,
+              "to": 200
             }
           },
           {
             "name": "NextBacktrackDelay",
             "value": {
               "from": 100,
-              "to": 200
+              "to": 100
             }
           },
           {
@@ -4942,7 +4953,7 @@
           },
           {
             "name": "Chance",
-            "value": 100.0
+            "value": 50.0
           },
           {
             "name": "PauseOnHurtTime",
@@ -4959,7 +4970,7 @@
           },
           {
             "name": "TargetMode",
-            "value": "Attack"
+            "value": "Range"
           },
           {
             "name": "LastAttackTimeToWork",
@@ -5520,7 +5531,7 @@
             "value": [
               {
                 "name": "Enabled",
-                "value": true
+                "value": false
               },
               {
                 "name": "ResetAfter",
@@ -6821,8 +6832,8 @@
               {
                 "name": "StartDelay",
                 "value": {
-                  "from": 0,
-                  "to": 0
+                  "from": 1,
+                  "to": 2
                 }
               },
               {
@@ -6835,15 +6846,15 @@
               {
                 "name": "CloseDelay",
                 "value": {
-                  "from": 0,
-                  "to": 0
+                  "from": 2,
+                  "to": 3
                 }
               },
               {
                 "name": "MissChance",
                 "value": {
                   "from": 0,
-                  "to": 13
+                  "to": 11
                 }
               },
               {
@@ -6865,7 +6876,7 @@
           },
           {
             "name": "SelectionMode",
-            "value": "Random"
+            "value": "Distance"
           },
           {
             "name": "MoveMode",
@@ -6884,14 +6895,14 @@
             "value": [
               {
                 "name": "Enabled",
-                "value": true
+                "value": false
               },
               {
                 "name": "Types",
                 "value": [
                   "minecraft:generic_9x3",
-                  "minecraft:shulker_box",
-                  "minecraft:generic_9x6"
+                  "minecraft:generic_9x6",
+                  "minecraft:shulker_box"
                 ]
               },
               {
@@ -6901,7 +6912,7 @@
             ]
           },
           {
-            "name": "CheckTitle",
+            "name": "CheckScreenTitle",
             "value": [
               {
                 "name": "Enabled",
@@ -6926,8 +6937,10 @@
                 "name": "Titles",
                 "value": [
                   "Barrel",
+                  "BrewingStand",
                   "Chest",
                   "LargeChest",
+                  "Furnace",
                   "ShulkerBox"
                 ]
               },
@@ -6969,35 +6982,43 @@
                 "value": true
               },
               {
+                "choiceByName": {
+                  "Combat": "Combat",
+                  "UsingItem": "UsingItem"
+                },
+                "name": "PauseOn",
+                "value": []
+              },
+              {
                 "name": "ValidStorageBlocks",
                 "value": [
-                  "minecraft:gray_shulker_box",
-                  "minecraft:decorated_pot",
                   "minecraft:lime_shulker_box",
-                  "minecraft:chest",
-                  "minecraft:hopper",
-                  "minecraft:dispenser",
-                  "minecraft:ender_chest",
-                  "minecraft:orange_shulker_box",
-                  "minecraft:shulker_box",
-                  "minecraft:light_blue_shulker_box",
-                  "minecraft:trapped_chest",
-                  "minecraft:pink_shulker_box",
-                  "minecraft:black_shulker_box",
-                  "minecraft:magenta_shulker_box",
-                  "minecraft:furnace",
-                  "minecraft:yellow_shulker_box",
-                  "minecraft:barrel",
-                  "minecraft:blue_shulker_box",
-                  "minecraft:brewing_stand",
                   "minecraft:green_shulker_box",
-                  "minecraft:white_shulker_box",
                   "minecraft:cyan_shulker_box",
-                  "minecraft:light_gray_shulker_box",
-                  "minecraft:purple_shulker_box",
-                  "minecraft:red_shulker_box",
                   "minecraft:blast_furnace",
-                  "minecraft:brown_shulker_box"
+                  "minecraft:yellow_shulker_box",
+                  "minecraft:light_gray_shulker_box",
+                  "minecraft:blue_shulker_box",
+                  "minecraft:magenta_shulker_box",
+                  "minecraft:brown_shulker_box",
+                  "minecraft:gray_shulker_box",
+                  "minecraft:barrel",
+                  "minecraft:decorated_pot",
+                  "minecraft:hopper",
+                  "minecraft:red_shulker_box",
+                  "minecraft:light_blue_shulker_box",
+                  "minecraft:pink_shulker_box",
+                  "minecraft:shulker_box",
+                  "minecraft:chest",
+                  "minecraft:black_shulker_box",
+                  "minecraft:orange_shulker_box",
+                  "minecraft:trapped_chest",
+                  "minecraft:purple_shulker_box",
+                  "minecraft:white_shulker_box",
+                  "minecraft:dispenser",
+                  "minecraft:furnace",
+                  "minecraft:ender_chest",
+                  "minecraft:brewing_stand"
                 ]
               },
               {
@@ -7425,7 +7446,7 @@
         "value": [
           {
             "name": "Enabled",
-            "value": true
+            "value": false
           },
           {
             "name": "Target",
@@ -8327,18 +8348,18 @@
                 "value": [
                   {
                     "name": "PostMove",
-                    "value": false
+                    "value": true
                   },
                   {
                     "name": "Instant",
-                    "value": false
+                    "value": true
                   },
                   {
                     "name": "Rotations",
                     "value": [
                       {
                         "name": "AngleSmooth",
-                        "active": "Linear",
+                        "active": "Sigmoid",
                         "value": [],
                         "choices": {
                           "Linear": {
@@ -8728,7 +8749,7 @@
             "value": [
               {
                 "name": "Enabled",
-                "value": true
+                "value": false
               },
               {
                 "name": "NotWithStar",
@@ -8741,7 +8762,7 @@
             "value": [
               {
                 "name": "Enabled",
-                "value": true
+                "value": false
               }
             ]
           },
@@ -11056,7 +11077,7 @@
           },
           {
             "name": "Mode",
-            "active": "Queue",
+            "active": "Stationary",
             "value": [],
             "choices": {
               "Queue": {
@@ -11068,9 +11089,7 @@
                       "Outgoing": "Outgoing"
                     },
                     "name": "Origin",
-                    "value": [
-                      "Outgoing"
-                    ]
+                    "value": []
                   }
                 ]
               },
@@ -11083,21 +11102,28 @@
                       "Outgoing": "Outgoing"
                     },
                     "name": "Origin",
-                    "value": [
-                      "Outgoing"
-                    ]
+                    "value": []
                   }
                 ]
               },
               "Stationary": {
                 "name": "Stationary",
-                "value": []
+                "value": [
+                  {
+                    "name": "CancelC0B",
+                    "value": true
+                  }
+                ]
               }
             },
             "valueType": "CHOICE"
           },
           {
             "name": "DisableOnFlag",
+            "value": true
+          },
+          {
+            "name": "Notification",
             "value": false
           },
           {
@@ -11141,23 +11167,23 @@
           {
             "name": "Targets",
             "value": [
-              "minecraft:gray_bed",
+              "minecraft:yellow_bed",
+              "minecraft:purple_bed",
               "minecraft:dragon_egg",
-              "minecraft:white_bed",
-              "minecraft:brown_bed",
-              "minecraft:pink_bed",
-              "minecraft:light_blue_bed",
+              "minecraft:blue_bed",
               "minecraft:lime_bed",
-              "minecraft:cyan_bed",
+              "minecraft:pink_bed",
+              "minecraft:green_bed",
+              "minecraft:brown_bed",
+              "minecraft:gray_bed",
+              "minecraft:light_gray_bed",
               "minecraft:black_bed",
+              "minecraft:magenta_bed",
               "minecraft:orange_bed",
               "minecraft:red_bed",
-              "minecraft:light_gray_bed",
-              "minecraft:green_bed",
-              "minecraft:magenta_bed",
-              "minecraft:purple_bed",
-              "minecraft:yellow_bed",
-              "minecraft:blue_bed"
+              "minecraft:light_blue_bed",
+              "minecraft:cyan_bed",
+              "minecraft:white_bed"
             ]
           },
           {
@@ -11384,16 +11410,16 @@
         "value": [
           {
             "name": "Enabled",
-            "value": true
+            "value": false
           },
           {
             "name": "TargetedBlocks",
             "value": [
-              "minecraft:ender_chest",
-              "minecraft:furnace",
+              "minecraft:chest",
               "minecraft:trapped_chest",
               "minecraft:brewing_stand",
-              "minecraft:chest"
+              "minecraft:ender_chest",
+              "minecraft:furnace"
             ]
           }
         ]
@@ -12006,29 +12032,29 @@
               {
                 "name": "StartDelay",
                 "value": {
-                  "from": 0,
-                  "to": 0
+                  "from": 1,
+                  "to": 2
                 }
               },
               {
                 "name": "ClickDelay",
                 "value": {
-                  "from": 4,
-                  "to": 6
+                  "from": 3,
+                  "to": 4
                 }
               },
               {
                 "name": "CloseDelay",
                 "value": {
-                  "from": 0,
-                  "to": 0
+                  "from": 3,
+                  "to": 3
                 }
               },
               {
                 "name": "MissChance",
                 "value": {
                   "from": 0,
-                  "to": 20
+                  "to": 10
                 }
               },
               {
@@ -12265,7 +12291,7 @@
               {
                 "name": "CPS",
                 "value": {
-                  "from": 12,
+                  "from": 14,
                   "to": 15
                 }
               },
@@ -12331,7 +12357,7 @@
               },
               {
                 "name": "Priority",
-                "value": "Health"
+                "value": "HurtTime"
               },
               {
                 "name": "IgnoreShield",
@@ -12372,14 +12398,14 @@
                       {
                         "name": "HorizontalTurnSpeed",
                         "value": {
-                          "from": 178.0,
+                          "from": 180.0,
                           "to": 180.0
                         }
                       },
                       {
                         "name": "VerticalTurnSpeed",
                         "value": {
-                          "from": 178.0,
+                          "from": 180.0,
                           "to": 180.0
                         }
                       },
@@ -12525,7 +12551,7 @@
                     "value": [
                       {
                         "name": "Model",
-                        "active": "21KC11KP",
+                        "active": "kkc1",
                         "value": [],
                         "choices": {
                           "21KC11KP": {
@@ -12535,13 +12561,17 @@
                           "19KC8KP": {
                             "name": "19KC8KP",
                             "value": []
+                          },
+                          "kkc1": {
+                            "name": "kkc1",
+                            "value": []
                           }
                         },
                         "valueType": "CHOICE"
                       },
                       {
                         "name": "Correction",
-                        "active": "None",
+                        "active": "Interpolation",
                         "value": [],
                         "choices": {
                           "Interpolation": {
@@ -12550,22 +12580,22 @@
                               {
                                 "name": "HorizontalSpeed",
                                 "value": {
-                                  "from": 5,
-                                  "to": 6
+                                  "from": 17,
+                                  "to": 30
                                 }
                               },
                               {
                                 "name": "VerticalSpeed",
                                 "value": {
-                                  "from": 4,
-                                  "to": 5
+                                  "from": 17,
+                                  "to": 22
                                 }
                               },
                               {
                                 "name": "DirectionChangeFactor",
                                 "value": {
-                                  "from": 10,
-                                  "to": 15
+                                  "from": 2,
+                                  "to": 10
                                 }
                               },
                               {
@@ -12643,7 +12673,7 @@
                 "value": [
                   {
                     "name": "Enabled",
-                    "value": false
+                    "value": true
                   },
                   {
                     "name": "Rate",
@@ -12913,7 +12943,7 @@
             "value": [
               {
                 "name": "Enabled",
-                "value": false
+                "value": true
               },
               {
                 "name": "AdditionalRange",
@@ -13394,8 +13424,8 @@
           {
             "name": "EntityTypes",
             "value": [
-              "minecraft:villager",
-              "minecraft:armor_stand"
+              "minecraft:armor_stand",
+              "minecraft:villager"
             ]
           },
           {
@@ -13405,36 +13435,36 @@
           {
             "name": "HoldingItems",
             "value": [
-              "minecraft:netherite_shovel",
-              "minecraft:netherite_axe",
-              "minecraft:golden_axe",
-              "minecraft:wooden_axe",
-              "minecraft:tnt",
-              "minecraft:golden_shovel",
-              "minecraft:stone_axe",
-              "minecraft:iron_axe",
-              "minecraft:iron_hoe",
-              "minecraft:stone_shovel",
-              "minecraft:lava_bucket",
-              "minecraft:shears",
-              "minecraft:stone_hoe",
-              "minecraft:wooden_shovel",
-              "minecraft:stone_pickaxe",
-              "minecraft:netherite_hoe",
-              "minecraft:diamond_hoe",
-              "minecraft:water_bucket",
-              "minecraft:golden_hoe",
-              "minecraft:wooden_hoe",
-              "minecraft:diamond_shovel",
-              "minecraft:golden_pickaxe",
               "minecraft:iron_pickaxe",
-              "minecraft:iron_shovel",
-              "minecraft:diamond_axe",
-              "minecraft:diamond_pickaxe",
+              "minecraft:golden_hoe",
+              "minecraft:lava_bucket",
+              "minecraft:tnt",
+              "minecraft:stone_pickaxe",
               "minecraft:air",
-              "minecraft:cobweb",
+              "minecraft:golden_pickaxe",
+              "minecraft:diamond_pickaxe",
+              "minecraft:wooden_hoe",
+              "minecraft:golden_shovel",
+              "minecraft:wooden_axe",
+              "minecraft:wooden_shovel",
+              "minecraft:diamond_axe",
+              "minecraft:shears",
+              "minecraft:golden_axe",
+              "minecraft:stone_shovel",
+              "minecraft:diamond_shovel",
+              "minecraft:stone_axe",
+              "minecraft:netherite_shovel",
               "minecraft:netherite_pickaxe",
-              "minecraft:wooden_pickaxe"
+              "minecraft:netherite_hoe",
+              "minecraft:water_bucket",
+              "minecraft:netherite_axe",
+              "minecraft:diamond_hoe",
+              "minecraft:wooden_pickaxe",
+              "minecraft:iron_shovel",
+              "minecraft:cobweb",
+              "minecraft:stone_hoe",
+              "minecraft:iron_hoe",
+              "minecraft:iron_axe"
             ]
           }
         ]
@@ -13448,7 +13478,7 @@
           },
           {
             "name": "Mode",
-            "active": "HypixelPacket",
+            "active": "Grim2371-1.9+",
             "value": [],
             "choices": {
               "SpoofGround": {
@@ -13478,6 +13508,19 @@
                   {
                     "name": "ResetFallDistance",
                     "value": true
+                  }
+                ]
+              },
+              "SpoofLanding": {
+                "name": "SpoofLanding",
+                "value": [
+                  {
+                    "name": "Modification",
+                    "value": {
+                      "x": 1337.0,
+                      "y": 0.0,
+                      "z": 1337.0
+                    }
                   }
                 ]
               },
@@ -16026,7 +16069,7 @@
         "value": [
           {
             "name": "Enabled",
-            "value": false
+            "value": true
           },
           {
             "name": "Clicker",
@@ -16035,12 +16078,12 @@
                 "name": "CPS",
                 "value": {
                   "from": 16,
-                  "to": 18
+                  "to": 20
                 }
               },
               {
                 "name": "Technique",
-                "value": "Butterfly"
+                "value": "Stabilized"
               },
               {
                 "name": "AttackCooldown",
@@ -16065,7 +16108,7 @@
             "value": [
               {
                 "name": "AngleSmooth",
-                "active": "Linear",
+                "active": "Sigmoid",
                 "value": [],
                 "choices": {
                   "Linear": {
@@ -16337,13 +16380,13 @@
             "value": [
               {
                 "name": "Enabled",
-                "value": false
+                "value": true
               },
               {
                 "name": "Delay",
                 "value": {
                   "from": 1,
-                  "to": 3
+                  "to": 2
                 }
               },
               {
@@ -16361,11 +16404,11 @@
             "value": [
               {
                 "name": "Enabled",
-                "value": false
+                "value": true
               },
               {
                 "name": "Mode",
-                "active": "Hypixel",
+                "active": "Heypixel",
                 "value": [],
                 "choices": {
                   "Hypixel": {
@@ -16536,21 +16579,21 @@
               {
                 "name": "Disallowed",
                 "value": [
+                  "minecraft:cobweb",
                   "minecraft:nether_portal",
-                  "minecraft:tnt",
-                  "minecraft:cobweb"
+                  "minecraft:tnt"
                 ]
               },
               {
                 "name": "Unfavorable",
                 "value": [
-                  "minecraft:fletching_table",
-                  "minecraft:enchanting_table",
                   "minecraft:smithing_table",
+                  "minecraft:enchanting_table",
                   "minecraft:jigsaw",
+                  "minecraft:cauldron",
+                  "minecraft:fletching_table",
                   "minecraft:magma_block",
-                  "minecraft:crafting_table",
-                  "minecraft:cauldron"
+                  "minecraft:crafting_table"
                 ]
               }
             ]
@@ -16622,7 +16665,7 @@
                       },
                       {
                         "name": "OnlyOnGround",
-                        "value": false
+                        "value": true
                       }
                     ]
                   },
@@ -16697,7 +16740,7 @@
                 "value": [
                   {
                     "name": "Length",
-                    "value": 4
+                    "value": 3
                   }
                 ]
               },
@@ -16738,7 +16781,7 @@
           },
           {
             "name": "SameY",
-            "value": "Hypixel"
+            "value": "On"
           },
           {
             "name": "Tower",
@@ -18431,28 +18474,15 @@
         ]
       },
       {
-        "name": "Stuck",
-        "value": [
-          {
-            "name": "Enabled",
-            "value": false
-          },
-          {
-            "name": "DisableOnFlag",
-            "value": true
-          }
-        ]
-      },
-      {
         "name": "SuperKnockback",
         "value": [
           {
             "name": "Enabled",
-            "value": false
+            "value": true
           },
           {
             "name": "Mode",
-            "active": "Packet",
+            "active": "SprintTap",
             "value": [],
             "choices": {
               "Packet": {
@@ -18465,8 +18495,8 @@
                   {
                     "name": "ReSprint",
                     "value": {
-                      "from": 0,
-                      "to": 1
+                      "from": 1,
+                      "to": 2
                     }
                   }
                 ]
@@ -18478,13 +18508,13 @@
                     "name": "UntilMovementBlock",
                     "value": {
                       "from": 0,
-                      "to": 1
+                      "to": 0
                     }
                   },
                   {
                     "name": "UntilAllowedMovement",
                     "value": {
-                      "from": 0,
+                      "from": 1,
                       "to": 1
                     }
                   }
@@ -18517,11 +18547,11 @@
             "value": [
               {
                 "name": "Enabled",
-                "value": true
+                "value": false
               },
               {
                 "name": "OnlyForward",
-                "value": true
+                "value": false
               }
             ]
           }
@@ -18602,9 +18632,9 @@
           {
             "name": "Blocks",
             "value": [
-              "minecraft:ender_chest",
+              "minecraft:obsidian",
               "minecraft:crying_obsidian",
-              "minecraft:obsidian"
+              "minecraft:ender_chest"
             ]
           },
           {
@@ -18879,12 +18909,12 @@
                   {
                     "name": "Blocks",
                     "value": [
-                      "minecraft:ender_chest",
                       "minecraft:dirt",
-                      "minecraft:cobblestone",
-                      "minecraft:crying_obsidian",
                       "minecraft:netherrack",
-                      "minecraft:obsidian"
+                      "minecraft:obsidian",
+                      "minecraft:crying_obsidian",
+                      "minecraft:ender_chest",
+                      "minecraft:cobblestone"
                     ]
                   }
                 ]
@@ -19858,7 +19888,7 @@
                   },
                   {
                     "name": "Vertical",
-                    "value": 0.0
+                    "value": 1.0
                   },
                   {
                     "name": "MotionHorizontal",
@@ -19866,7 +19896,7 @@
                   },
                   {
                     "name": "MotionVertical",
-                    "value": 0.0
+                    "value": 1.0
                   },
                   {
                     "name": "Chance",
@@ -19895,11 +19925,11 @@
                   },
                   {
                     "name": "XModifier",
-                    "value": 1.0
+                    "value": 0.5
                   },
                   {
                     "name": "ZModifier",
-                    "value": 1.0
+                    "value": 0.5
                   },
                   {
                     "name": "OnlyMoving",
@@ -19912,7 +19942,7 @@
                 "value": [
                   {
                     "name": "Delay",
-                    "value": 2
+                    "value": 0
                   },
                   {
                     "name": "Strength",
@@ -19942,7 +19972,7 @@
                 "value": [
                   {
                     "name": "Chance",
-                    "value": 95.0
+                    "value": 100.0
                   },
                   {
                     "name": "JumpByReceivedHits",
@@ -19970,8 +20000,8 @@
                       {
                         "name": "UntilJump",
                         "value": {
-                          "from": 1,
-                          "to": 1
+                          "from": 0,
+                          "to": 0
                         }
                       }
                     ]
@@ -19987,11 +20017,11 @@
                 "value": [
                   {
                     "name": "HReduce",
-                    "value": 0.0
+                    "value": 0.3
                   },
                   {
                     "name": "AttacksToWork",
-                    "value": 10
+                    "value": 4
                   }
                 ]
               },
@@ -20021,7 +20051,7 @@
                 "value": [
                   {
                     "name": "Reduce",
-                    "value": 1.0
+                    "value": 0.62
                   }
                 ]
               },
@@ -20037,18 +20067,18 @@
                       },
                       {
                         "name": "Factor",
-                        "value": 0.6
+                        "value": 0.97
                       },
                       {
                         "name": "HurtTime",
                         "value": {
-                          "from": 1,
-                          "to": 1
+                          "from": 5,
+                          "to": 7
                         }
                       },
                       {
                         "name": "LastAttackTimeToReduce",
-                        "value": 1
+                        "value": 2000
                       }
                     ]
                   },
@@ -20061,7 +20091,7 @@
                       },
                       {
                         "name": "Chance",
-                        "value": 100.0
+                        "value": 50.0
                       },
                       {
                         "name": "Randomize",
@@ -20095,7 +20125,7 @@
           },
           {
             "name": "PauseOnFlag",
-            "value": 0
+            "value": 2
           }
         ]
       },
@@ -20104,7 +20134,7 @@
         "value": [
           {
             "name": "Enabled",
-            "value": false
+            "value": true
           },
           {
             "name": "ForceSlimModel",
@@ -20122,11 +20152,11 @@
         "value": [
           {
             "name": "Enabled",
-            "value": false
+            "value": true
           },
           {
             "name": "Mode",
-            "active": "Lunar",
+            "active": "Vanilla",
             "value": [],
             "choices": {
               "Vanilla": {
@@ -20214,10 +20244,11 @@
       }
     ]
   },
-  "author": "Cat girl",
-  "date": "07/10/2025",
-  "time": "11:45:14",
-  "clientVersion": "0.33.1",
+  "author": "小男娘",
+  "date": "01/11/2025",
+  "time": "21:16:05",
+  "clientVersion": "0.34.0",
+  "clientCommit": "git-8a82571",
   "serverAddress": "pc.bjd-mc.com:25565",
   "protocolName": "1.20-1.20.1",
   "protocolVersion": 763,
