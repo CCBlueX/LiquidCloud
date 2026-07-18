@@ -11,18 +11,15 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Install jq
-        run: sudo apt-get install -y jq
+        uses: actions/checkout@v5
 
       - name: Validate JSON files
         run: |
-          echo "🔍 Checking JSON files..."
-          find . -type f -name "*.json" | while read file; do
-            echo "Checking $file"
-            jq empty "$file"
-          done
-          echo "✅ All JSON files are valid"
+          status=0
+          while IFS= read -r -d '' file; do
+            if ! jq empty "$file"; then
+              echo "Invalid JSON: $file"
+              status=1
+            fi
+          done < <(find . -type f -name '*.json' -print0)
+          exit $status
