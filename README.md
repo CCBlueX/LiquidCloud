@@ -2,6 +2,10 @@
 
 A storage repository for our client [LiquidBounce](https://liquidbounce.net/)
 
+Configs are no longer stored here. They are published and maintained on the
+LiquidBounce Marketplace: load them in the client with `.config`, publish them
+from <https://liquidbounce.net/account/resources>.
+
 Website: <https://liquidbounce.net> \
 Forum: <https://forums.ccbluex.net> \
 Discord: <https://liquidbounce.net/discord> \
